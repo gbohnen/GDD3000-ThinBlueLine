@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour {
 
@@ -11,6 +12,9 @@ public class MainMenuButtons : MonoBehaviour {
     /// </summary>
     public void Awake()
     {
+        // set starting page
+        PlayerPrefs.SetInt("currentPage", 1);
+
         // disable credits panel
         creditsPanel.GetComponent<CanvasGroup>().interactable = false;
         creditsPanel.GetComponent<CanvasGroup>().alpha = 0;
@@ -27,7 +31,7 @@ public class MainMenuButtons : MonoBehaviour {
     /// </summary>
 	public void PlayButton()
     {
-
+        SceneManager.LoadScene(1);
     }
 
     /// <summary>
