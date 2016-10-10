@@ -2,7 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class XMLTextTest : MonoBehaviour {
+public class XMLTextTest : MonoBehaviour
+{
 
     public Text text0;
     public Text text1;
@@ -15,13 +16,15 @@ public class XMLTextTest : MonoBehaviour {
 
     XMLParser parser;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
