@@ -2,8 +2,8 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class MainMenuButtons : MonoBehaviour {
-
+public class MainMenuButtons : MonoBehaviour
+{
     public GameObject creditsPanel;
     public GameObject optionsPanel;
 
