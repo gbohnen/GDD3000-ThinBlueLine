@@ -53,9 +53,9 @@
         #region Public Methodas
 
         /// <summary>
-        /// Switch the neighborhood that this player is in
+        /// Switch the current neighborhood that this player is in
         /// </summary>
-        public void ChangeNeighborhood()
+        public void SwitchNeighborhood()
         { }
 
         /// <summary>

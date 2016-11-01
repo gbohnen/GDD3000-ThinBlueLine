@@ -3,14 +3,15 @@
 namespace Assets.Scripts
 {
     /// <summary>
-    /// Class which handles the major crime
+    /// Script which handles the mob boss
     /// </summary>
-    class MajorCrime : CardScript
+    class MobBossScript : CardScript
     {
         #region Fields
 
-        // store the list of situations
-        //List<Situation> tiers;
+        // store the revealed & loss conditons flag
+        bool isRevealed = false;
+        bool lossConditionMet = false;
 
         // store the stats spent and modifiers for crime
         Vector3 statsSpent;
@@ -20,22 +21,10 @@ namespace Assets.Scripts
 
         #region Properties
 
-        ///// <summary>
-        ///// Gets or sets the current tier of this crime
-        ///// </summary>
-        //public Situation CurrentTier
-        //{ get; private set; }
-
         /// <summary>
-        /// Gets or sets the stats spent on this crime
+        /// Gets or sets if this object is active
         /// </summary>
-        public Vector3 StatsSpent
-        { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the modifiers on this crime
-        /// </summary>
-        public Vector3 Modifiers
+        public bool IsActive
         { get; private set; }
 
         #endregion
@@ -45,7 +34,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Constructor
         /// </summary>
-        public MajorCrime() : base()
+        public MobBossScript() : base()
         { }
 
         #endregion
@@ -74,6 +63,18 @@ namespace Assets.Scripts
         /// Triggers an ongoing effect
         /// </summary>
         public void TriggerOngEffect()
+        { }
+
+        /// <summary>
+        /// Reveals this boss in the game
+        /// </summary>
+        public void RevealSelf()
+        { }
+
+        /// <summary>
+        /// Checks the loss condition of this boss
+        /// </summary>
+        public void CheckLossCondition()
         { }
 
         #endregion
