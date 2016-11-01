@@ -28,7 +28,7 @@ public class GameManager
     //Player currentPlyer;
     //List<Player> players;
     //MajorCrime majorCrime;
-    //List<Situations> situations;
+    //List<Situation> situations;
     //MobBoss mobBoss;
     //PoliceChief policeChief;
 

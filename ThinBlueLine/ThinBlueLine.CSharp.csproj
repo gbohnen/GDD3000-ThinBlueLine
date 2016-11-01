@@ -71,8 +71,10 @@
     <Compile Include="Assets\Scripts\CardScript.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
+    <Compile Include="Assets\Scripts\MajorCrime.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\PageState.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
     <Compile Include="Assets\Scripts\XML Tools\XMLNode.cs" />
     <Compile Include="Assets\Scripts\XML Tools\XMLNodeList.cs" />
