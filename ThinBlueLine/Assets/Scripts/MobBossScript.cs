@@ -22,7 +22,7 @@ namespace Assets.Scripts
         #region Properties
 
         /// <summary>
-        /// Gets or sets if this object is active
+        /// Gets or sets if the mob boss is active
         /// </summary>
         public bool IsActive
         { get; private set; }

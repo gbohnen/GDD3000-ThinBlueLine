@@ -20,7 +20,7 @@ public abstract class CardScript : MonoBehaviour
     Vector3 stats;
 
     // store the objects tool tip
-    //Tooltip toolTip;
+    ToolTipScript toolTip;
 
     #endregion
 
@@ -30,25 +30,13 @@ public abstract class CardScript : MonoBehaviour
     /// Gets or sets the name of the object
     /// </summary>
     public string Name
-    {
-        get; private set;
-    }
+    { get; private set; }
 
     /// <summary>
     /// Gets or sets the description of the object
     /// </summary>
     public string Description
-    {
-        get; private set;
-    }
-
-    /// <summary>
-    /// Gets or sets the tool tip for the object
-    /// </summary>
-    public string ToolTip
-    {
-        get; private set;
-    }
+    { get; private set; }
 
     #endregion
 
@@ -72,6 +60,8 @@ public abstract class CardScript : MonoBehaviour
     {
         gameObject = Resources.Load<GameObject>(Constants.CARD_FOLDER_NAME);
     }
+
+    // TODO: Animation
 
     #endregion
 }

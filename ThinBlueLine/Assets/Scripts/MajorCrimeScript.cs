@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 namespace Assets.Scripts
 {
@@ -10,7 +11,7 @@ namespace Assets.Scripts
         #region Fields
 
         // store the list of situations
-        //List<Situation> tiers;
+        List<SituationScript> tiers;
 
         // store the stats spent and modifiers for crime
         Vector3 statsSpent;
@@ -20,11 +21,11 @@ namespace Assets.Scripts
 
         #region Properties
 
-        ///// <summary>
-        ///// Gets or sets the current tier of this crime
-        ///// </summary>
-        //public Situation CurrentTier
-        //{ get; private set; }
+        /// <summary>
+        /// Gets or sets the current tier of this crime
+        /// </summary>
+        public SituationScript CurrentTier
+        { get; private set; }
 
         /// <summary>
         /// Gets or sets the stats spent on this crime

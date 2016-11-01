@@ -18,32 +18,26 @@
         /// Gets or sets the players moxie
         /// </summary>
         public int Moxie
-        {
-            get; private set;
-        }
+        { get; private set; }
 
         /// <summary>
         /// Gets or sets the players strength
         /// </summary>
         public int Strength
-        {
-            get; private set;
-        }
+        { get; private set; }
 
         /// <summary>
         /// Gets or sets the players smarts
         /// </summary>
         public int Smarts
-        {
-            get; private set;
-        }
+        { get; private set; }
 
         #endregion
 
         #region Constructor
 
         /// <summary>
-        /// 
+        /// Constructor
         /// </summary>
         public PlayerScript() : base ()
         { }

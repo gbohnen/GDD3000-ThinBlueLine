@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Assets.Scripts
+﻿namespace Assets.Scripts
 {
     /// <summary>
     /// Script which handles the police chief
@@ -12,7 +7,7 @@ namespace Assets.Scripts
     {
         #region Fields
 
-        // store the different moods the character holds
+        // store the different moods the police chief holds
         float angry;
         float happy;
         float worried;

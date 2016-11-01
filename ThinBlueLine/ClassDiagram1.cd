@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameManager">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAEAAAAAAhUFAYBgEAIBiCACAYASAAAAQAAM=</HashCode>
+      <FileName>Assets\Scripts\Managers\GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Audio" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assets.Scripts.Managers.AudioManager">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAEAAAAAAAAAAAAAEAAAgAAAAACACAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Managers\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardScript">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAgAAAAKAAAAAQAABAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\CardScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.PlayerScript">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAQAAAAEgEAAAAAAAAAAABAAAAAAAAQAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\PlayerScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.MajorCrimeScript">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAkMgAAAAIAAQAAABQ=</HashCode>
+      <FileName>Assets\Scripts\MajorCrimeScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.SituationScript">
+    <Position X="7" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SituationScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.MobBossScript">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAQAAAQAgMAAAAAIAAwAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\MobBossScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assets.Scripts.PoliceChiefScript">
+    <Position X="11" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAggAEAAAgABAAAggAAAAAAAAAAEAAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\PoliceChiefScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
