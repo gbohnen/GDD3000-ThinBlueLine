@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LoadGameData.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\PageState.cs" />
@@ -74,6 +75,9 @@
     <Compile Include="Assets\Scripts\XML Tools\XMLNodeList.cs" />
     <Compile Include="Assets\Scripts\XML Tools\XMLParser.cs" />
     <Compile Include="Assets\Scripts\XMLTextTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\XML Resources\AvatarData.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
