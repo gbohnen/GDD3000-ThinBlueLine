@@ -2,7 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+/// <summary>
+/// Singleton class which manages the state of the game
+/// </summary>
+public class GameManager
+{
+    #region Fields
 
     public Sprite player1Avat;
     public Sprite player2Avat;
@@ -18,6 +23,47 @@ public class GameManager : MonoBehaviour {
 
     Color32 active = new Color32(50, 194, 255, 255);
     Color32 inactive = new Color32(255, 255, 255, 100);
+
+    static GameManager instance;
+    //Player currentPlyer;
+    //List<Player> players;
+    //MajorCrime majorCrime;
+    //List<Situations> situations;
+    //MobBoss mobBoss;
+    //PoliceChief policeChief;
+
+    #endregion
+
+    #region Properties
+
+    /// <summary>
+    /// Gets the singleton instance of the game manager
+    /// </summary>
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new GameManager();
+            }
+            return instance;
+        }
+    }
+
+    #endregion
+
+    #region Constructor
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    private GameManager()
+    { }
+
+    #endregion
+
+    #region Public Methods
 
     public void PlayerWClicked()
     {
@@ -63,4 +109,6 @@ public class GameManager : MonoBehaviour {
         playerYWindow.GetComponent<Button>().interactable = true;
         playerZWindow.GetComponent<Button>().interactable = true;
     }
+
+    #endregion
 }
