@@ -1,4 +1,12 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/PlayerSelect.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Scenes/DemoScene.unity
+=======
+- path: Assets/Scenes/gameplay.unity
+>>>>>>> ad1c14b970e72bfc0d8d96d7776e641396979431
+>>>>>>> 042845eb50b1caddd888684f3e3513d5c5fd10cb
   isLoaded: 1
   isActive: 1
