@@ -64,19 +64,23 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\LoadGameData.cs" />
+    <Compile Include="Assets\Scripts\GameLibrary.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\PageState.cs" />
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
-    <Compile Include="Assets\Scripts\XML Tools\XMLNode.cs" />
-    <Compile Include="Assets\Scripts\XML Tools\XMLNodeList.cs" />
-    <Compile Include="Assets\Scripts\XML Tools\XMLParser.cs" />
-    <Compile Include="Assets\Scripts\XMLTextTest.cs" />
+    <Compile Include="Assets\Scripts\XML Tools\LoadGameData.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Assets\XML Resources\AvatarData.xml" />
     <None Include="Assets\XML Resources\AvatarData.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
