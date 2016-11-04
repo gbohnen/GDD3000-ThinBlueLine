@@ -1,0 +1,643 @@
+<?xml version="1.0" ?>
+<!-- Created by XML:Wrench -->
+<root>
+  <!-- content of XML goes 'here'  -->
+  <situations>
+    <situation>
+      <name>A Mole Discovered</name>
+      <description>Someone in the force is feeding information to the mob.</description>
+      <immediate>Add 2 points to Police Corruption</immediate>
+      <ongoing>Add 1 point to Police Corruption</ongoing>
+      <cost>5</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>0.75</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>Decrease Mafia Presence by 2</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Informant Gone Wrong</name>
+      <description>One of the force's informants has been missing for a few days...</description>
+      <immediate>Add 2 points to Mafia Presence</immediate>
+      <ongoing>Add one to a Random City Crime Category</ongoing>
+      <cost>4</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>Reduce Police Corruption by 2</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Territorial Monopoly</name>
+      <description>The mafia is becoming violent and influential</description>
+      <immediate>Add 2 points to Mafia Presence and 1 point to Chaos</immediate>
+      <ongoing>Add 1 point to Mafia Presence</ongoing>
+      <cost>5</cost>
+      <smartsmod>0.5</smartsmod>
+      <musclemod>1</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>Reduce Chaos by 1</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Car Chase</name>
+      <description>A high speed chase has developed in the neighborhood.</description>
+      <immediate>Add 2 points to Chaos</immediate>
+      <ongoing>None</ongoing>
+      <cost>3</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>0.75</muslcemod>
+      <moxiemod>0.75</moxiemod>
+      <positive>Reduce Chaos by 2</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Thug Brawls</name>
+      <description>Thugs from various mob families have been getting in fights...</description>
+      <immediate>Add 1 point to Chaos and 1 point to Mafia Presence</immediate>
+      <ongoing>Reduce points spent toward the Major Crime by 2.</ongoing>
+      <cost>3</cost>
+      <smartsmod>0.5</smartsmod>
+      <musclemod>1.5</muslcemod>
+      <moxiemod>0.5</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Gambling</name>
+      <description>The mafia is running several casinos and the populace is partaking.</description>
+      <immediate>Add 1 point to Mafia Presence and 2 points to Police Corruption</immediate>
+      <ongoing>Reduce a random player's Moxie by 1</ongoing>
+      <cost>4</cost>
+      <smartsmod>0.75</smartsmod>
+      <musclemod>1</muslcemod>
+      <moxiemod>1.5</moxiemod>
+      <positive>Whoever Deals with this Situation gains 4 Moxie.</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Violence</name>
+      <description>Mob violence is escalating across the land</description>
+      <immediate>Add 3 points to Chaos</immediate>
+      <ongoing>Reduce a random player's Muscle by 1</ongoing>
+      <cost>3</cost>
+      <smartsmod>0.5</smartsmod>
+      <musclemod>2</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Loan Shark</name>
+      <description>The mob is funding a loan shark in the city that's bringing desperate people to even worse situations.</description>
+      <immediate>Add 1 point to Mafia Presence</immediate>
+      <ongoing>No Ongoing Effects</ongoing>
+      <cost>3</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>1.5</muslcemod>
+      <moxiemod>-0.5</moxiemod>
+      <positive>Whoever Deals with this Situation gains 3 Moxie</positive>
+      <negative>Whoever Fails this Situation immediately loses 5 stat points at random (minimum 0 in any Pool)</negative>
+    </situation>
+    <situation>
+      <name>Unlawful Gains</name>
+      <description>There's a serious fraud problem in the city.</description>
+      <immediate>Add 1 point to Mafia Presence and 1 point to Police Corruption</immediate>
+      <ongoing>Reduce one random player's random stat pool by 1.</ongoing>
+      <cost>6</cost>
+      <smartsmod>2</smartsmod>
+      <musclemod>0.75</muslcemod>
+      <moxiemod>1.5</moxiemod>
+      <positive>Reduce Police Corruption by 1 and Mafia Presence by 1.</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Liquor Trade</name>
+      <description>The Mafia is moving large amounts of booze across the city.</description>
+      <immediate>Add 2 points to Mafia Presence</immediate>
+      <ongoing>Add 1 point to Chaos</ongoing>
+      <cost>2</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>0.5</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>Reduce Chaos by 1 point.</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Bribery</name>
+      <description>Turns out several city officials have been taking bribes from the mob.</description>
+      <immediate>Add 2 points to Police Corruption</immediate>
+      <ongoing>Randomly do one of the following: Add 2 points to Police Corruption OR 1 point to Chaos and 1 point to Mafia Presence</ongoing>
+      <cost>5</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>0.75</muslcemod>
+      <moxiemod>1.5</moxiemod>
+      <positive>Reduce all City Crime Categories by 1 point.</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Witness Protection Program</name>
+      <description>A witness provided a massive amount of information in exchange for protection.</description>
+      <immediate>Choose One: Either all players gain 4 Smarts and 2 Moxie OR Reduce all General City Crime Categories by 1. Then remove this card from play.</immediate>
+      <ongoing>None</ongoing>
+      <cost>None</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</muslcemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Recruiting Grounds</name>
+      <description>The Mafia is actively recruiting from this area.</description>
+      <immediate>Add 2 points to Mafia Presence</immediate>
+      <ongoing>Add 1 point to Mafia Presence</ongoing>
+      <cost>4</cost>
+      <smartsmod>0.75</smartsmod>
+      <musclemod>1.25</muslcemod>
+      <moxiemod>0.75</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Right to Bear Arms</name>
+      <description>Firearms are missing from the armory and showing up in the hands of mob enforcers.</description>
+      <immediate>Add 1 point to Mafia Presence and 2 points to Police Corruption</immediate>
+      <ongoing>Add 1 point to Chaos</ongoing>
+      <cost>6</cost>
+      <smartsmod>-1</smartsmod>
+      <musclemod>2</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>Reduce Chaos by 2</positive>
+      <negative>Increase Chaos by 2</negative>
+    </situation>
+    <situation>
+      <name>Jack Rabbit</name>
+      <description>A steet racer is running for the mob, and they are fast.</description>
+      <immediate>Add 2 points to Chaos</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>3</cost>
+      <smartsmod>0.75</smartsmod>
+      <musclemod>0</muslcemod>
+      <moxiemod>1.5</moxiemod>
+      <positive>All players gain 1 Smarts</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Loss of Evidence</name>
+      <description>Vital evidence has been misplaced... or taken.</description>
+      <immediate>Add 3 points to Police Corruption</immediate>
+      <ongoing>All players lose 1 Smarts</ongoing>
+      <cost>6</cost>
+      <smartsmod>2</smartsmod>
+      <musclemod>0.5</muslcemod>
+      <moxiemod>0.75</moxiemod>
+      <positive>Increase all players' stat pools by 1</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Service Loss</name>
+      <description>Surveillance is down across the Neighborhood.</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>All players lose 1 Moxie</ongoing>
+      <cost>4</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>0.75</muslcemod>
+      <moxiemod>0.75</moxiemod>
+      <positive>Increase all players' pools by 1</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Prison Break</name>
+      <description>Several members of the mafia organized a prison break.</description>
+      <immediate>Add 4 points to Police Corruption and 2 points to Chaos</immediate>
+      <ongoing>Add 2 to Mafia Presence</ongoing>
+      <cost>10</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>1</muslcemod>
+      <moxiemod>1.25</moxiemod>
+      <positive>All players gain 2 points to each pool. In addition, lower City Crime in this Neighborhood by 5 points, as desired across the Categories.</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Get Out of Jail Free</name>
+      <description>A plea bargain means a mobster is getting away scotfree, but his information was priceless.</description>
+      <immediate>Add 2 points to Police Corruption. Decrease Chaos by 2. Then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</muslcemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Prosecutor</name>
+      <description>The prosecutor did their job today.</description>
+      <immediate>Remove 2 points from Chaos and 1 point from Mafia Presence. Then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</muslcemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Recruiter</name>
+      <description>The Police are looking for new recruits to boost their manpower.</description>
+      <immediate>All player pools increase by 2.</immediate>
+      <ongoing>Increase Police Corruption by 1.</ongoing>
+      <cost>6</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>0.5</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>Player pools increase by 1.</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Code of Loyalty</name>
+      <description>Mob members are being even more close-lipped than usual.</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>All stat modifiers on other Situations and the Major Crime are halved while this is active</ongoing>
+      <cost>15</cost>
+      <smartsmod>0.75</smartsmod>
+      <musclemod>1.25</muslcemod>
+      <moxiemod>2</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Shootout</name>
+      <description>Police and Mafia forces have turned this area into a warzone.</description>
+      <immediate>Add 3 points to Chaos</immediate>
+      <ongoing>Add 1 point to Chaos</ongoing>
+      <cost>5</cost>
+      <smartsmod>-1</smartsmod>
+      <musclemod>2</muslcemod>
+      <moxiemod>-0.5</moxiemod>
+      <positive>Reduce Chaos by 1 point</positive>
+      <negative>Add 1 to Chaos in every Neighborhood</negative>
+    </situation>
+    <situation>
+      <name>Street Races</name>
+      <description>A number of cars are racing through the streets, how many are mafia runners?</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>Add 1 point to Chaos or 1 point to Mafia Presence at random.</ongoing>
+      <cost>8</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>0.5</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>Reduce Chaos and Mafia Presence by 1</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Weapons Deals</name>
+      <description>A large shipment of weapons came into the City.</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>Place a Gun Token on Weapons Deal. If Weapons Deal has 3 Gun Tokens, remove it from play and add 4 points to Chaos and 2 points to Police Corruption</ongoing>
+      <cost>15</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</muslcemod>
+      <moxiemod>1</moxiemod>
+      <positive>Reduce all Crime Categories by 1</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name>Drug Den</name>
+      <description>A mafia run drug dun is being investigated by the police.</description>
+      <immediate>Add 2 points to Police Corruption</immediate>
+      <ongoing>Add 1 to Mafia Presence</ongoing>
+      <cost>10</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>1</muslcemod>
+      <moxiemod>1.5</moxiemod>
+      <positive>The Player who deals with this Situation recover 4 points to distribute among their Stat pools.</positive>
+      <negative>No Negative Outcome</negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+    <situation>
+      <name></name>
+      <description></description>
+      <immediate></immediate>
+      <ongoing></ongoing>
+      <cost></cost>
+      <smartsmod></smartsmod>
+      <musclemod></muslcemod>
+      <moxiemod></moxiemod>
+      <positive></positive>
+      <negative></negative>
+    </situation>
+  </situations>
+</root>

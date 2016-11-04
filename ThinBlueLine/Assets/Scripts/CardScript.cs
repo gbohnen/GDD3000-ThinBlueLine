@@ -20,7 +20,7 @@ public abstract class CardScript : MonoBehaviour
     Vector3 stats;
 
     // store the objects tool tip
-    ToolTipScript toolTip;
+    //ToolTipScript toolTip;
 
     #endregion
 
