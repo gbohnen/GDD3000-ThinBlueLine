@@ -6,11 +6,11 @@ using System.Collections.Generic;
 
 
 public static class LoadGameData {
-
-    public static TextAsset playerFile;
-
+    
     public static List<Player> LoadPlayers()
     {
+        TextAsset playerFile = (TextAsset)Resources.Load("Assets/XML Resources/AvatarData");
+
         // instantiate necessary components
         XmlDocument playerDoc = new XmlDocument();                                      // blank xml doc
         playerDoc.LoadXml(playerFile.text);                                             // load player file

@@ -19,7 +19,10 @@ public class GameLibrary : MonoBehaviour {
 
     private static GameLibrary instance;
 
-    private List<Player> avatars;
+    List<PlayerScript> playerLib;
+
+    private Dictionary<Players, PlayerScript> players;
+
     //private List<Situation> situationDeck;
     //private List<MajorCrimes> crimeDeck;
     // etc.
@@ -31,14 +34,22 @@ public class GameLibrary : MonoBehaviour {
 
     public void Initialize()
     {
-        avatars = LoadGameData.LoadPlayers();
+        // load players
+        List<Player> avatars = LoadGameData.LoadPlayers();
+        foreach (Player play in avatars)
+        {
+            playerLib.Add(new PlayerScript(play));
+        }
+
+        players = new Dictionary<Players, PlayerScript>();
+
         //situationDeck = LoadGameData.LoadSituations();
         //Shuffle(situationDeck);
         //crimeDeck = LoadGameData.LoadCrimes();
         //Shuffle(crimeDeck);
     }
 
-    public GameLibrary Instance
+    public static GameLibrary Instance
     {
         get
         {
@@ -49,8 +60,40 @@ public class GameLibrary : MonoBehaviour {
         }
     }
 
-    public List<Player> Avatars
+    public List<PlayerScript> GetPlayerChoices()
     {
-        get { return avatars; }
+        List<PlayerScript> choices = new List<PlayerScript>();
+
+        int index;
+
+        for (int i = 0; i < 3; i++)
+        {
+            do
+            {
+                index = Random.Range(0, playerLib.Count);
+
+                if (!players.ContainsValue(playerLib[index]))
+                {
+                    choices.Add(playerLib[index]);
+                }
+            } while (!choices.Contains(playerLib[index]));
+        }
+
+        foreach (PlayerScript p in choices)
+        {
+            Debug.Log(p.Name);
+        }
+
+        return choices;
+    }
+ 
+    public List<PlayerScript> PlayerLib
+    {
+        get { return playerLib; }
+    }
+
+    public Dictionary<Players, PlayerScript> Players
+    {
+        get { return players; }
     }
 }
