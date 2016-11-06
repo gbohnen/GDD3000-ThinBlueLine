@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Xml;
 using System;
 using System.Collections.Generic;
@@ -194,6 +193,60 @@ public static class LoadGameData
         return mobBosses;
     }
 
-    //public static List<MajorCrimes> LoadMajorCrimes()
-    //{ }
+    /// <summary>
+    /// Loads in the Major Crimes from the XML
+    /// </summary>
+    /// <returns>the major crimes</returns>
+    public static List<MajorCrime> LoadMajorCrimes()
+    {
+        TextAsset majorCrimeFile = (TextAsset)Resources.Load(Constants.MAJOR_CRIMES_FILE_NAME);
+
+        // instantiate necessary components
+        XmlDocument majorCrimeDoc = new XmlDocument();                                           // blank xml doc
+        majorCrimeDoc.LoadXml(majorCrimeFile.text);                                              // load major crime file
+        XmlNodeList majorCrimeList = majorCrimeDoc.GetElementsByTagName("majorCrime");           // get all tags labeled major crime
+
+        List<MajorCrime> majorCrimes = new List<MajorCrime>();                                   // list of major crimes
+
+        // iterate all "mob boss" tags
+        foreach (XmlNode node in majorCrimeList)
+        {
+            // make a list of all child node (this is where the major crime data is stored)
+            XmlNodeList majorCrimeData = node.ChildNodes;
+
+            // empty major crime
+            MajorCrime majorCrime = new MajorCrime();
+
+            // iterate those nodes
+            foreach (XmlNode childNode in majorCrimeData)
+            {
+                // make a list of all child node (this is where the major crime child data is stored)
+                XmlNodeList majorCrimeDataChild = childNode.ChildNodes;
+
+                // load data into major crime based on child tag
+                switch (childNode.Name)
+                {
+                    case "name": majorCrime.name = childNode.InnerText; break;
+                    case "mobBoss": majorCrime.mobBoss = childNode.InnerText; break;
+                    default: break;
+                }
+
+                //// 
+                //foreach (XmlNode childChildNode in majorCrimeDataChild)
+                //{
+                //    switch (childNode.Name)
+                //    {
+                //        default:
+                //            break;
+                //    }
+                //}
+            }
+
+            // add child to the list
+            majorCrimes.Add(majorCrime);
+        }
+
+        // return list of all major crimes
+        return majorCrimes;
+    }
 }
