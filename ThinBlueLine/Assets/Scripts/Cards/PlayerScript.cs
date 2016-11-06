@@ -27,19 +27,36 @@ namespace Assets.Scripts
         /// Gets or sets the players moxie
         /// </summary>
         public int Moxie
-        { get; private set; }
+        {
+            get { return moxie; }
+        }
 
         /// <summary>
         /// Gets or sets the players strength
         /// </summary>
         public int Strength
-        { get; private set; }
+        {
+            get { return muscles; }
+        }
 
         /// <summary>
         /// Gets or sets the players smarts
         /// </summary>
         public int Smarts
-        { get; private set; }
+        {
+            get { return smarts; }
+        }
+
+        public string Special
+        {
+            get { return special; }
+        }
+
+        public string Bio
+        {
+            get { return bio; }
+        }
+
 
         #endregion
 

@@ -17,22 +17,26 @@ public struct Player
 
 public class GameLibrary : MonoBehaviour {
 
-    private static GameLibrary instance;
+    public static GameLibrary instance;
 
     List<PlayerScript> playerLib = new List<PlayerScript>();
 
     private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
-
-    bool init = false;
-
+    
     //private List<Situation> situationDeck;
     //private List<MajorCrimes> crimeDeck;
     // etc.
 
-    void Start()
+    void Awake()
     {
-        DontDestroyOnLoad(this);
         Initialize();
+
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Initialize()
@@ -44,56 +48,33 @@ public class GameLibrary : MonoBehaviour {
             playerLib.Add(new PlayerScript(play));
         }
 
+
+        Debug.Log(playerLib.Count);
+
         //situationDeck = LoadGameData.LoadSituations();
         //Shuffle(situationDeck);
         //crimeDeck = LoadGameData.LoadCrimes();
         //Shuffle(crimeDeck);
-
-        init = true;
-    }
-
-    public static GameLibrary Instance
-    {
-        get
-        {
-            if (instance == null)
-                instance = new GameLibrary();
-
-            return instance;
-        }
     }
 
     public List<PlayerScript> GetPlayerChoices()
     {
-        if (init)
+        List<PlayerScript> choices = new List<PlayerScript>();
+
+        int index;
+
+        for (int i = 0; i < 3; i++)
         {
-            List<PlayerScript> choices = new List<PlayerScript>();
-
-            int index;
-
-            for (int i = 0; i < 3; i++)
+            Debug.Log(playerLib.Count);
+            do
             {
-                do
-                {
-                    index = Random.Range(0, playerLib.Count);
+                index = Random.Range(0, playerLib.Count);                
+            } while (choices.Contains(playerLib[index]) || players.ContainsValue(playerLib[index]));
 
-                    if (!players.ContainsValue(playerLib[index]))
-                    {
-                        choices.Add(playerLib[index]);
-                    }
-                } while (!choices.Contains(playerLib[index]));
-            }
-
-            foreach (PlayerScript p in choices)
-            {
-                Debug.Log(p.Name);
-            }
-
-            return choices;
+            choices.Add(playerLib[index]);
         }
 
-        else
-            return null;
+        return choices;
     }
  
     public List<PlayerScript> PlayerLib

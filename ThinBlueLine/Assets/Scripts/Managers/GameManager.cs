@@ -75,7 +75,10 @@ public class GameManager : MonoBehaviour
         {
             // check if there is already an instance of the game manager
             if (instance == null)
-            { instance = new GameManager(); }
+            {
+                instance = new GameManager();
+            }
+
             return instance;
         }
     }
