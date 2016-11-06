@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" ?>
+<!-- Created by XML:Wrench -->
+<root>
+  <!-- content of XML goes 'here'  -->
+  <majorCrimes>
+           <majorCrime>
+                   <name>Bank Heist</name>
+                   <mobBoss>Ricky Veers</mobBoss>
+                   <tierOne>
+                     <crimeEffect>No crime effect.</crimeEffect>
+                     <choiceOne>Amp up Security: 6 Might -> Move to Tier Two and Add 4 to Chaos</choiceOne>
+                     <choiceTwo>Establish Surveillance: 3 Smarts + 3 Moxie -> Move to Tier Two and Add 4 to Mafia Presence.</choiceTwo>
+                   </tierOne>
+                    <tierTwo>
+                     <crimeEffect>Chaos goes up by one every turn.</crimeEffect>
+                     <choiceOne>Shake Down Informants: 6 Muscle + 5 Moxie -> Move to Tier Three and Add 4 to Police Corruption.</choiceOne>
+                     <choiceTwo>Piece Together Evidence: 7 Smarts + 4 Moxie -> Move to Tier Three. Add 1 to each Crime Category.</choiceTwo>
+                   </tierTwo>
+                   <tierThree>
+                     <crimeEffect>Heist countdown begins, 15 turns until it reaches zero, if it does, the players lose.</crimeEffect>
+                     <choiceOne>Heist in Progress! Rush the bank!: 8 Might + 5 Moxie. -> Move to tier four. Add 4 to chaos.</choiceOne>
+                     <choiceTwo>Heist in Progress! Set up a perimeter!: 10 Smarts. -> Move to tier four. Add 5 to Mafia Presence.</choiceTwo>
+                   </tierThree>
+                   <tierFour>
+                     <crimeEffect>Countdown gains three counts (if the countdown was at 4 it’s now at 7) but continues down, and if it reaches zero the players lose. Each category goes up by one every turn.</crimeEffect>
+                     <choiceOne>Hostage Situation! Call in a negotiator: 7 Smarts + 5 Moxie. -> Move to tier five. Add 6 to Police Corruption.</choiceOne>
+                     <choiceTwo>Hostage Situation! Take the shot: 9 Moxie + 4 Might. -> Move to tier five. Add 6 to Chaos.</choiceTwo>
+                   </tierFour>
+                   <tierFive>
+                     <crimeEffect>Countdown gains five counts, but still continues to countdown. Each category goes up by two each turn.</crimeEffect>
+                     <choiceFinal>Stop the Getaway!: 30 points total from the stat pools. -> Players win.</choiceFinal>
+                   </tierFive>
+           </majorCrime>
+           <majorCrime>
+                   <name></name>
+                   <mobBoss></mobBoss>
+                   <tierOne>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierOne>
+                    <tierTwo>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierTwo>
+                   <tierThree>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierThree>
+                   <tierFour>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierFour>
+                   <tierFive>
+                     <crimeEffect></crimeEffect>
+                     <choiceFinal></choiceFinal>
+                   </tierFive>
+           </majorCrime>
+           <majorCrime>
+                   <name></name>
+                   <mobBoss></mobBoss>
+                   <tierOne>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierOne>
+                    <tierTwo>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierTwo>
+                   <tierThree>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierThree>
+                   <tierFour>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierFour>
+                   <tierFive>
+                     <crimeEffect></crimeEffect>
+                     <choiceFinal></choiceFinal>
+                   </tierFive>
+           </majorCrime>
+           <majorCrime>
+                   <name></name>
+                   <mobBoss></mobBoss>
+                   <tierOne>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierOne>
+                    <tierTwo>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierTwo>
+                   <tierThree>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierThree>
+                   <tierFour>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierFour>
+                   <tierFive>
+                     <crimeEffect></crimeEffect>
+                     <choiceFinal></choiceFinal>
+                   </tierFive>
+           </majorCrime>
+           <majorCrime>
+                   <name></name>
+                   <mobBoss></mobBoss>
+                   <tierOne>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierOne>
+                    <tierTwo>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierTwo>
+                   <tierThree>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierThree>
+                   <tierFour>
+                     <crimeEffect></crimeEffect>
+                     <choiceOne></choiceOne>
+                     <choiceTwo></choiceTwo>
+                   </tierFour>
+                   <tierFive>
+                     <crimeEffect></crimeEffect>
+                     <choiceFinal></choiceFinal>
+                   </tierFive>
+           </majorCrime>
+   </majorCrimes>
+</root>

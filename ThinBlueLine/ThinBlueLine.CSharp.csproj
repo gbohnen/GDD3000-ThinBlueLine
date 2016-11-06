@@ -72,7 +72,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PlayerSelect.cs" />
     <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MobBossScript.cs" />
@@ -86,6 +85,7 @@
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\PageState.cs" />
     <Compile Include="Assets\Scripts\ParticleButton.cs" />
+    <Compile Include="Assets\Scripts\PlayerSelect.cs" />
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TimerFinishedEvent.cs" />
@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\XML Resources\AvatarData.xml" />
+    <None Include="Assets\Resources\XML Resources\MajorCrimesData.xml" />
     <None Include="Assets\Resources\XML Resources\MobBossData.xml" />
     <None Include="Assets\Resources\XML Resources\SituationData.xml" />
   </ItemGroup>

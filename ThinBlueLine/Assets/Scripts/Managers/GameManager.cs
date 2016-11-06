@@ -7,7 +7,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Singleton class which manages the state of the game
 /// </summary>
-public class GameManager
+public class GameManager : MonoBehaviour
 {
     #region Fields
 
@@ -54,7 +54,10 @@ public class GameManager
         {
             // check if there is already an instance of the game manager
             if (instance == null)
-            { instance = new GameManager(); }
+            {
+                instance = new GameManager();
+            }
+
             return instance;
         }
     }
