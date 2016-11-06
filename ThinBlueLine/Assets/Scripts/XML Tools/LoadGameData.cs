@@ -9,7 +9,7 @@ public static class LoadGameData {
     
     public static List<Player> LoadPlayers()
     {
-        TextAsset playerFile = (TextAsset)Resources.Load("Assets/XML Resources/AvatarData");
+        TextAsset playerFile = (TextAsset)Resources.Load(@"XML Resources/AvatarData");
 
         // instantiate necessary components
         XmlDocument playerDoc = new XmlDocument();                                      // blank xml doc

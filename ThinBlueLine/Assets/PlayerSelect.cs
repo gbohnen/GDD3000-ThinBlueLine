@@ -60,8 +60,7 @@ public class PlayerSelect : MonoBehaviour {
         playerZName.text = "Player 4";
 
 
-        // set up gamelibrary
-        GameLibrary.Instance.Initialize();
+        LoadChoices();
         
 
     }

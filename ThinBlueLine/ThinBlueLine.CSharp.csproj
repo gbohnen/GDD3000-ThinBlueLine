@@ -73,29 +73,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PlayerSelect.cs" />
-    <Compile Include="Assets\Scripts\CardScript.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
+    <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
+    <Compile Include="Assets\Scripts\Cards\MobBossScript.cs" />
+    <Compile Include="Assets\Scripts\Cards\PlayerScript.cs" />
+    <Compile Include="Assets\Scripts\Cards\PoliceChiefScript.cs" />
+    <Compile Include="Assets\Scripts\Cards\SituationScript.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />
     <Compile Include="Assets\Scripts\GameLibrary.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
-    <Compile Include="Assets\Scripts\MajorCrimeScript.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
-    <Compile Include="Assets\Scripts\MobBossScript.cs" />
     <Compile Include="Assets\Scripts\PageState.cs" />
     <Compile Include="Assets\Scripts\ParticleButton.cs" />
-    <Compile Include="Assets\Scripts\PlayerScript.cs" />
-    <Compile Include="Assets\Scripts\PoliceChiefScript.cs" />
-    <Compile Include="Assets\Scripts\SituationScript.cs" />
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TimerFinishedEvent.cs" />
     <Compile Include="Assets\Scripts\XML Tools\LoadGameData.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Assets\XML Resources\AvatarData.xml" />
-    <None Include="Assets\XML Resources\AvatarData.xml" />
-    <None Include="Assets\XML Resources\MobBossData.xml" />
-    <None Include="Assets\XML Resources\SituationData.xml" />
+    <None Include="Assets\Resources\XML Resources\AvatarData.xml" />
+    <None Include="Assets\Resources\XML Resources\MobBossData.xml" />
+    <None Include="Assets\Resources\XML Resources\SituationData.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

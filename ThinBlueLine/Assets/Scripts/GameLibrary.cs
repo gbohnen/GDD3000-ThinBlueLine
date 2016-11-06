@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts;
 
 public enum Players { Player1, Player2, Player3, Player4 }
 
@@ -27,13 +28,16 @@ public class GameLibrary : MonoBehaviour {
     //private List<MajorCrimes> crimeDeck;
     // etc.
 
-    private GameLibrary()
+    void Start()
     {
         DontDestroyOnLoad(this);
+        Initialize();
     }
 
     public void Initialize()
     {
+        playerLib = new List<PlayerScript>();
+
         // load players
         List<Player> avatars = LoadGameData.LoadPlayers();
         foreach (Player play in avatars)
