@@ -32,7 +32,7 @@ namespace Assets.Scripts
         }
 
         /// <summary>
-        /// Gets or sets the players strength
+        /// Gets the players strength
         /// </summary>
         public int Strength
         {
