@@ -67,7 +67,7 @@ public class PlayerSelect : MonoBehaviour {
 
     void LoadChoices()
     {
-        GameLibrary.Instance.GetPlayerChoices();
+         
     }
 
 }
