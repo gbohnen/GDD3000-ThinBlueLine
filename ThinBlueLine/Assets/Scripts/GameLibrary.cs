@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 
@@ -18,26 +17,30 @@ public struct Player
 
 public class GameLibrary : MonoBehaviour {
 
-    private static GameLibrary instance;
+    public static GameLibrary instance;
 
-    List<PlayerScript> playerLib;
+    List<PlayerScript> playerLib = new List<PlayerScript>();
 
-    private Dictionary<Players, PlayerScript> players;
-
+    private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
+    
     //private List<Situation> situationDeck;
     //private List<MajorCrimes> crimeDeck;
     // etc.
 
-    void Start()
+    void Awake()
     {
-        DontDestroyOnLoad(this);
         Initialize();
+
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+        
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Initialize()
     {
-        playerLib = new List<PlayerScript>();
-
         // load players
         List<Player> avatars = LoadGameData.LoadPlayers();
         foreach (Player play in avatars)
@@ -45,23 +48,13 @@ public class GameLibrary : MonoBehaviour {
             playerLib.Add(new PlayerScript(play));
         }
 
-        players = new Dictionary<Players, PlayerScript>();
+
+        Debug.Log(playerLib.Count);
 
         //situationDeck = LoadGameData.LoadSituations();
         //Shuffle(situationDeck);
         //crimeDeck = LoadGameData.LoadCrimes();
         //Shuffle(crimeDeck);
-    }
-
-    public static GameLibrary Instance
-    {
-        get
-        {
-            if (instance = null)
-                instance = new GameLibrary();
-
-            return instance;
-        }
     }
 
     public List<PlayerScript> GetPlayerChoices()
@@ -74,18 +67,10 @@ public class GameLibrary : MonoBehaviour {
         {
             do
             {
-                index = Random.Range(0, playerLib.Count);
+                index = Random.Range(0, playerLib.Count);                
+            } while (choices.Contains(playerLib[index]) || players.ContainsValue(playerLib[index]));
 
-                if (!players.ContainsValue(playerLib[index]))
-                {
-                    choices.Add(playerLib[index]);
-                }
-            } while (!choices.Contains(playerLib[index]));
-        }
-
-        foreach (PlayerScript p in choices)
-        {
-            Debug.Log(p.Name);
+            choices.Add(playerLib[index]);
         }
 
         return choices;
