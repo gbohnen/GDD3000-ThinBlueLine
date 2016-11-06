@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TimerFinishedEvent.cs" />
+    <Compile Include="Assets\Scripts\ToolTipScript.cs" />
     <Compile Include="Assets\Scripts\XML Tools\LoadGameData.cs" />
   </ItemGroup>
   <ItemGroup>
