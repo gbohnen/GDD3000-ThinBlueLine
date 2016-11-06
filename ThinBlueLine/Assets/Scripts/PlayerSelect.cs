@@ -109,8 +109,8 @@ public class PlayerSelect : MonoBehaviour
         section1Skill.text = trio[0].Special;
         section1Bio.text = trio[0].Bio;
         section1Smarts.text = trio[0].Smarts.ToString();
-        section1Moxie.text = trio[0].Smarts.ToString();
-        section1Strength.text = trio[0].Smarts.ToString();
+        section1Moxie.text = trio[0].Moxie.ToString();
+        section1Strength.text = trio[0].Strength.ToString();
         section1Player = trio[0];
 
         // load second section
@@ -118,8 +118,8 @@ public class PlayerSelect : MonoBehaviour
         section2Skill.text = trio[1].Special;
         section2Bio.text = trio[1].Bio;
         section2Smarts.text = trio[1].Smarts.ToString();
-        section2Moxie.text = trio[1].Smarts.ToString();
-        section2Strength.text = trio[1].Smarts.ToString();
+        section2Moxie.text = trio[1].Moxie.ToString();
+        section2Strength.text = trio[1].Strength.ToString();
         section2Player = trio[1];
 
         // load third section
@@ -127,8 +127,8 @@ public class PlayerSelect : MonoBehaviour
         section3Skill.text = trio[2].Special;
         section3Bio.text = trio[2].Bio;
         section3Smarts.text = trio[2].Smarts.ToString();
-        section3Moxie.text = trio[2].Smarts.ToString();
-        section3Strength.text = trio[2].Smarts.ToString();
+        section3Moxie.text = trio[2].Moxie.ToString();
+        section3Strength.text = trio[2].Strength.ToString();
         section3Player = trio[2];
     }
 
@@ -164,7 +164,7 @@ public class PlayerSelect : MonoBehaviour
                 playerWName.text = choice.Name;
                 playerWSma.text = choice.Smarts.ToString();
                 playerWMox.text = choice.Moxie.ToString();
-                playerWMus.text = choice.Moxie.ToString();
+                playerWMus.text = choice.Strength.ToString();
                 break;
 
             case Players.Player2:
@@ -172,7 +172,7 @@ public class PlayerSelect : MonoBehaviour
                 playerXName.text = choice.Name;
                 playerXSma.text = choice.Smarts.ToString();
                 playerXMox.text = choice.Moxie.ToString();
-                playerXMus.text = choice.Moxie.ToString();
+                playerXMus.text = choice.Strength.ToString();
                 break;
             case Players.Player3:
 
@@ -180,7 +180,7 @@ public class PlayerSelect : MonoBehaviour
                 playerYName.text = choice.Name;
                 playerYSma.text = choice.Smarts.ToString();
                 playerYMox.text = choice.Moxie.ToString();
-                playerYMus.text = choice.Moxie.ToString();
+                playerYMus.text = choice.Strength.ToString();
                 break;
 
             case Players.Player4:
@@ -188,7 +188,7 @@ public class PlayerSelect : MonoBehaviour
                 playerZName.text = choice.Name;
                 playerZSma.text = choice.Smarts.ToString();
                 playerZMox.text = choice.Moxie.ToString();
-                playerZMus.text = choice.Moxie.ToString();
+                playerZMus.text = choice.Strength.ToString();
 
                 PlayMeOut();
                 break;
