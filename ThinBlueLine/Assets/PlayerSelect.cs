@@ -11,6 +11,11 @@ public class PlayerSelect : MonoBehaviour
 
     #region Fields
 
+    // animation
+    private Animator section1animator;
+    private Animator section2animator;
+    private Animator section3animator;
+
     // player UI fields
     public Text playerWName;
     public Text playerWSma;
@@ -72,6 +77,13 @@ public class PlayerSelect : MonoBehaviour
 
     #endregion
 
+    void Awake()
+    {
+        section1animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        section2animator = gameObject.transform.GetChild(1).GetComponent<Animator>();
+        section3animator = gameObject.transform.GetChild(2).GetComponent<Animator>();
+    }
+
     void Start()
     {
         // set names
@@ -120,7 +132,10 @@ public class PlayerSelect : MonoBehaviour
         // get player based on first char of button name
         SetPlayer(trio[Int32.Parse(EventSystem.current.currentSelectedGameObject.name.Substring(0, 1)) - 1]);
 
-        LoadChoices();
+        CloseAnim();
+        
+        Invoke("LoadChoices", 1);
+        Invoke("OpenAnim", 1);
     }
 
     private void SetPlayer(PlayerScript choice)
@@ -163,5 +178,19 @@ public class PlayerSelect : MonoBehaviour
         }
 
         currentPlayer++;
+    }
+
+    private void CloseAnim()
+    {
+        section1animator.SetBool("open", false);
+        section2animator.SetBool("open", false);
+        section3animator.SetBool("open", false);
+    }
+
+    private void OpenAnim()
+    {
+        section1animator.SetBool("open", true);
+        section2animator.SetBool("open", true);
+        section3animator.SetBool("open", true);
     }
 }
