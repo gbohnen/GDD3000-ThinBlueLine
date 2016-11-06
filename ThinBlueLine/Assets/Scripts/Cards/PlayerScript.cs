@@ -24,7 +24,7 @@ namespace Assets.Scripts
         #region Properties
 
         /// <summary>
-        /// Gets the players moxie
+        /// Gets or sets the players moxie
         /// </summary>
         public int Moxie
         {
@@ -32,7 +32,7 @@ namespace Assets.Scripts
         }
 
         /// <summary>
-        /// Gets the players strength
+        /// Gets or sets the players strength
         /// </summary>
         public int Strength
         {
@@ -47,17 +47,11 @@ namespace Assets.Scripts
             get { return smarts; }
         }
 
-        /// <summary>
-        /// Gets the players special
-        /// </summary>
         public string Special
         {
             get { return special; }
         }
 
-        /// <summary>
-        /// Gets the players bio
-        /// </summary>
         public string Bio
         {
             get { return bio; }
@@ -71,7 +65,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Constructor
         /// </summary>
-        public PlayerScript(LoadGameData.Player data) : base()
+        public PlayerScript(Player data) : base()
         {
             cardName = data.name;
 

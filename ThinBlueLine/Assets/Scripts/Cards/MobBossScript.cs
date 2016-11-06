@@ -34,10 +34,8 @@ namespace Assets.Scripts
         /// <summary>
         /// Constructor
         /// </summary>
-        public MobBossScript(LoadGameData.MobBoss data) : base()
-        {
-
-        }
+        public MobBossScript() : base()
+        { }
 
         #endregion
 

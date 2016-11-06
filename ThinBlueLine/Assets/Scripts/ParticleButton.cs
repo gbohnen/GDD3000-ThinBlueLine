@@ -54,6 +54,4 @@ public class ParticleButton : MonoBehaviour {
 
         emitter.Stop();
     }
-
-
 }
