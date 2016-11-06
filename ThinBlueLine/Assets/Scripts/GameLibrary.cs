@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
 
@@ -57,7 +56,7 @@ public class GameLibrary : MonoBehaviour {
     {
         get
         {
-            if (instance = null)
+            if (instance == null)
                 instance = new GameLibrary();
 
             return instance;
