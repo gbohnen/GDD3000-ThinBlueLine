@@ -81,7 +81,6 @@ public class PlayerSelect : MonoBehaviour
         playerZName.text = "Player 4";
 
         LoadChoices();
-
     }
 
     void LoadChoices()
@@ -122,21 +121,6 @@ public class PlayerSelect : MonoBehaviour
         SetPlayer(trio[Int32.Parse(EventSystem.current.currentSelectedGameObject.name.Substring(0, 1)) - 1]);
 
         LoadChoices();
-
-        //switch (EventSystem.current.currentSelectedGameObject.name)
-        //{
-        //    case "Section1Button":
-        //        SetPlayer(trio[0]);
-        //        break;
-        //    case "Section2Button":
-        //        SetPlayer(trio[1]);
-        //        break;
-        //    case "Section3Button":
-        //        SetPlayer(trio[2]);
-        //        break;
-        //    default:
-        //        break;
-        //}
     }
 
     private void SetPlayer(PlayerScript choice)
