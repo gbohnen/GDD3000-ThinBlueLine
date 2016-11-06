@@ -32,59 +32,59 @@
                    </tierFive>
            </majorCrime>
            <majorCrime>
-                   <name></name>
-                   <mobBoss></mobBoss>
+                   <name>Anarchy Hit List</name>
+                   <mobBoss>Jon Biers</mobBoss>
                    <tierOne>
-                     <crimeEffect></crimeEffect>
-                     <choiceOne></choiceOne>
-                     <choiceTwo></choiceTwo>
+                     <crimeEffect>Add 3 to chaos.</crimeEffect>
+                     <choiceOne>Bombs strapped to support pillars! Evacuate!: 2 Might + 2 Moxie -> Move to Tier Two and Add 2 to Chaos</choiceOne>
+                     <choiceTwo>Bombs strapped to support pillars! Diffuse!: 6 Smarts -> Move to Tier Two and subtract 1 to Chaos.</choiceTwo>
                    </tierOne>
                     <tierTwo>
-                     <crimeEffect></crimeEffect>
-                     <choiceOne></choiceOne>
-                     <choiceTwo></choiceTwo>
+                     <crimeEffect>Add 4 to Chaos.</crimeEffect>
+                     <choiceOne>Downtown Under Attack! Rush in!: 7 Muscle + 6 Moxie -> Move to Tier Three and Add 1 to Chaos.</choiceOne>
+                     <choiceTwo>Downtown Under Attack! Keep a level head, secure a perimeter: 10 Smarts + 5 Moxie -> Move to Tier Three. Subtract 2 to Chaos.</choiceTwo>
                    </tierTwo>
                    <tierThree>
-                     <crimeEffect></crimeEffect>
-                     <choiceOne></choiceOne>
-                     <choiceTwo></choiceTwo>
+                     <crimeEffect>Lasts three turns, Chaos increases by 1 every turn. Can only pick one of the two choices once over the period of the three turns.</crimeEffect>
+                     <choiceOne>Calm before the storm. Investigate Biers: 8 Smarts + 3 Moxie. -> Decrease cost of tier four choices by 3 Moxie.</choiceOne>
+                     <choiceTwo>Calm Before the Storm. Prepare: 5 Smarts + 2 Might. -> Subtract 2 to Chaos.</choiceTwo>
                    </tierThree>
                    <tierFour>
-                     <crimeEffect></crimeEffect>
-                     <choiceOne></choiceOne>
-                     <choiceTwo></choiceTwo>
+                     <crimeEffect>Chaos increases by 3. Chaos increases by 1 every turn.</crimeEffect>
+                     <choiceOne>Siege on Stony Gate! Sneak in: 10 Smarts + 7 Moxie. -> Move to tier five. Add 2 to Chaos.</choiceOne>
+                     <choiceTwo>Siege on Stony Gate! Guns Blazing!: 6 Moxie + 4 Might. -> Move to tier five. Add 5 to Chaos.</choiceTwo>
                    </tierFour>
                    <tierFive>
-                     <crimeEffect></crimeEffect>
-                     <choiceFinal></choiceFinal>
+                     <crimeEffect>Chaos increases by 2 every turn.</crimeEffect>
+                     <choiceFinal>Stop the Assassination!: 15 total of Might and/or Smarts + 15 Moxie. -> Players win.</choiceFinal>
                    </tierFive>
            </majorCrime>
            <majorCrime>
-                   <name></name>
-                   <mobBoss></mobBoss>
+                   <name>Devil’s Recruiting</name>
+                   <mobBoss>Sergei Rostislav</mobBoss>
                    <tierOne>
-                     <crimeEffect></crimeEffect>
-                     <choiceOne></choiceOne>
-                     <choiceTwo></choiceTwo>
+                     <crimeEffect>No Crime Effect</crimeEffect>
+                     <choiceOne>There’s something happening here… Investigate nearby housing: 4 Smarts -> Move to Tier Two. Add 2 Police Corruption.</choiceOne>
+                     <choiceTwo>There’s something happening here... Investigate rumors circulating among the populace: 2 Smarts + 2 Moxie -> Move to Tier Two and Add 4 to Mafia Presence.</choiceTwo>
                    </tierOne>
                     <tierTwo>
-                     <crimeEffect></crimeEffect>
-                     <choiceOne></choiceOne>
-                     <choiceTwo></choiceTwo>
+                     <crimeEffect>Mafia presence increases by 2.</crimeEffect>
+                     <choiceOne>What it is ain’t exactly clear... Get a warrant to search certain suspects: 6 Moxie + 4 Smarts -> Move to Tier Three and Add 2 Mafia Presence.</choiceOne>
+                     <choiceTwo>What it is ain’t exactly clear...Capture new recruits: 10 Might + 2 Moxie -> Move to Tier Three. Subtract 1 to Mafia Presence, add 2 to Police Corruption.</choiceTwo>
                    </tierTwo>
                    <tierThree>
-                     <crimeEffect></crimeEffect>
-                     <choiceOne></choiceOne>
-                     <choiceTwo></choiceTwo>
+                     <crimeEffect>Mafia presence increases by 3.</crimeEffect>
+                     <choiceOne>There’s a man with a gun over there... Storm the compounds: 12 Might. -> Move to tier four. Add 4 to chaos and subtract 3 from mafia presence.</choiceOne>
+                     <choiceTwo>There’s a man with a gun over there… Send in a double agent: 5 Smarts and 5 Moxie. -> Move to tier four. Add 2 to Mafia Presence.</choiceTwo>
                    </tierThree>
                    <tierFour>
-                     <crimeEffect></crimeEffect>
-                     <choiceOne></choiceOne>
-                     <choiceTwo></choiceTwo>
+                     <crimeEffect>Mafia presence increases by 1 every turn.</crimeEffect>
+                     <choiceOne>Telling me I got to beware... Firefight: 8 Moxie + 8 Might. -> Move to tier five. Add 2 to Chaos subtract 3 from mafia presence.</choiceOne>
+                     <choiceTwo>Telling me I got to beware... Gather evidence: 6 Moxie + 5 Smarts. -> Move to tier five. Add 3 to Mafia presence but for the final choice you can spend 15 might instead of twenty.</choiceTwo>
                    </tierFour>
                    <tierFive>
-                     <crimeEffect></crimeEffect>
-                     <choiceFinal></choiceFinal>
+                     <crimeEffect>Mafia presence and chaos increases by 1 every turn.</crimeEffect>
+                     <choiceFinal>Stop! Hey! What’s that sound!: 20 (15 if choice two was picked for tier four) might total from the stat pools. → Players win.</choiceFinal>
                    </tierFive>
            </majorCrime>
            <majorCrime>
