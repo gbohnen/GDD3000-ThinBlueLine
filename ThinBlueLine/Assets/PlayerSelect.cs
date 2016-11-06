@@ -3,8 +3,11 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using Assets.Scripts;
+using UnityEngine.EventSystems;
+using System;
 
-public class PlayerSelect : MonoBehaviour {
+public class PlayerSelect : MonoBehaviour
+{
 
     #region Fields
 
@@ -39,6 +42,7 @@ public class PlayerSelect : MonoBehaviour {
     public Text section1Smarts;
     public Text section1Moxie;
     public Text section1Strength;
+    PlayerScript section1Player;
 
     public GameObject section2;
     public Button section2Button;
@@ -49,6 +53,7 @@ public class PlayerSelect : MonoBehaviour {
     public Text section2Smarts;
     public Text section2Moxie;
     public Text section2Strength;
+    PlayerScript section2Player;
 
     public GameObject section3;
     public Button section3Button;
@@ -59,6 +64,11 @@ public class PlayerSelect : MonoBehaviour {
     public Text section3Smarts;
     public Text section3Moxie;
     public Text section3Strength;
+    PlayerScript section3Player;
+
+    List<PlayerScript> trio;
+
+    Players currentPlayer = Players.Player1;
 
     #endregion
 
@@ -70,15 +80,13 @@ public class PlayerSelect : MonoBehaviour {
         playerYName.text = "Player 3";
         playerZName.text = "Player 4";
 
-
         LoadChoices();
-        
 
     }
 
     void LoadChoices()
     {
-        List<PlayerScript> trio = GameLibrary.instance.GetPlayerChoices();
+        trio = GameLibrary.instance.GetPlayerChoices();
 
         // load first section
         section1Name.text = trio[0].Name;
@@ -87,6 +95,7 @@ public class PlayerSelect : MonoBehaviour {
         section1Smarts.text = trio[0].Smarts.ToString();
         section1Moxie.text = trio[0].Smarts.ToString();
         section1Strength.text = trio[0].Smarts.ToString();
+        section1Player = trio[0];
 
         // load second section
         section2Name.text = trio[1].Name;
@@ -95,6 +104,7 @@ public class PlayerSelect : MonoBehaviour {
         section2Smarts.text = trio[1].Smarts.ToString();
         section2Moxie.text = trio[1].Smarts.ToString();
         section2Strength.text = trio[1].Smarts.ToString();
+        section2Player = trio[1];
 
         // load third section
         section3Name.text = trio[2].Name;
@@ -103,8 +113,71 @@ public class PlayerSelect : MonoBehaviour {
         section3Smarts.text = trio[2].Smarts.ToString();
         section3Moxie.text = trio[2].Smarts.ToString();
         section3Strength.text = trio[2].Smarts.ToString();
+        section3Player = trio[2];
     }
 
-    
+    public void ButtonSelect()
+    {
+        // get player based on first char of button name
+        SetPlayer(trio[Int32.Parse(EventSystem.current.currentSelectedGameObject.name.Substring(0, 1)) - 1]);
 
+        LoadChoices();
+
+        //switch (EventSystem.current.currentSelectedGameObject.name)
+        //{
+        //    case "Section1Button":
+        //        SetPlayer(trio[0]);
+        //        break;
+        //    case "Section2Button":
+        //        SetPlayer(trio[1]);
+        //        break;
+        //    case "Section3Button":
+        //        SetPlayer(trio[2]);
+        //        break;
+        //    default:
+        //        break;
+        //}
+    }
+
+    private void SetPlayer(PlayerScript choice)
+    {
+        switch (currentPlayer)
+        {
+            case Players.Player1:
+                GameLibrary.instance.Players[Players.Player1] = choice;
+                playerWName.text = choice.Name;
+                playerWSma.text = choice.Smarts.ToString();
+                playerWMox.text = choice.Moxie.ToString();
+                playerWMus.text = choice.Moxie.ToString();
+                break;
+
+            case Players.Player2:
+                GameLibrary.instance.Players[Players.Player2] = choice;
+                playerXName.text = choice.Name;
+                playerXSma.text = choice.Smarts.ToString();
+                playerXMox.text = choice.Moxie.ToString();
+                playerXMus.text = choice.Moxie.ToString();
+                break;
+            case Players.Player3:
+
+                GameLibrary.instance.Players[Players.Player3] = choice;
+                playerYName.text = choice.Name;
+                playerYSma.text = choice.Smarts.ToString();
+                playerYMox.text = choice.Moxie.ToString();
+                playerYMus.text = choice.Moxie.ToString();
+                break;
+
+            case Players.Player4:
+                GameLibrary.instance.Players[Players.Player4] = choice;
+                playerZName.text = choice.Name;
+                playerZSma.text = choice.Smarts.ToString();
+                playerZMox.text = choice.Moxie.ToString();
+                playerZMus.text = choice.Moxie.ToString();
+                break;
+            default:
+                break;
+        }
+
+        currentPlayer++;
+    }
 }
