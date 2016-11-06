@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        UpdateUI();
+        //UpdateUI();
     }
 
     /// <summary>

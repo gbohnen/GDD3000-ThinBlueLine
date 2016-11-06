@@ -140,7 +140,7 @@
       <description>A witness provided a massive amount of information in exchange for protection.</description>
       <immediate>Choose One: Either all players gain 4 Smarts and 2 Moxie OR Reduce all General City Crime Categories by 1. Then remove this card from play.</immediate>
       <ongoing>None</ongoing>
-      <cost>None</cost>
+      <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
       <moxiemod>0</moxiemod>

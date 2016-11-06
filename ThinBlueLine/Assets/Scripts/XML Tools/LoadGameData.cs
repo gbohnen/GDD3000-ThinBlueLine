@@ -148,8 +148,51 @@ public static class LoadGameData
         return situations;
     }
 
-    //public static List<MobBosses> LoadMobBosses()
-    //{ }
+    /// <summary>
+    /// Loads in the mob boss XML
+    /// </summary>
+    /// <returns>the mob bosses</returns>
+    public static List<MobBoss> LoadMobBosses()
+    {
+        TextAsset mobBossFile = (TextAsset)Resources.Load(Constants.MOB_BOSS_FILE_NAME);
+
+        // instantiate necessary components
+        XmlDocument mobBossDoc = new XmlDocument();                                        // blank xml doc
+        mobBossDoc.LoadXml(mobBossFile.text);                                              // load situation file
+        XmlNodeList mobBossList = mobBossDoc.GetElementsByTagName("mobBoss");              // get all tags labeled mob boss
+
+        List<MobBoss> mobBosses = new List<MobBoss>();                                     // list of mob bosses
+
+        // iterate all "mob boss" tags
+        foreach (XmlNode node in mobBossList)
+        {
+            // make a list of all child node (this is where the mob boss data is stored)
+            XmlNodeList mobBossData = node.ChildNodes;
+
+            // empty mob boss
+            MobBoss mobBoss = new MobBoss();
+
+            // iterate those nodes
+            foreach (XmlNode childNode in mobBossData)
+            {
+                // load data into mob boss based on child tag
+                switch (childNode.Name)
+                {
+                    case "name": mobBoss.name = childNode.InnerText; break;
+                    case "lossCondition": mobBoss.lossCond = childNode.InnerText; break;
+                    case "ongoingEffect": mobBoss.ongEff = childNode.InnerText; break;
+                    case "modifier": mobBoss.mod = childNode.InnerText; break;
+                    case "story": mobBoss.story = childNode.InnerText; break;
+                    default: break;
+                }
+            }
+            // add child to the list
+            mobBosses.Add(mobBoss);
+        }
+
+        // return list of all mob bosses
+        return mobBosses;
+    }
 
     //public static List<MajorCrimes> LoadMajorCrimes()
     //{ }

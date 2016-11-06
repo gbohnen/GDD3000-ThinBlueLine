@@ -10,6 +10,7 @@ public class GameLibrary : MonoBehaviour {
 
     List<PlayerScript> playerLib = new List<PlayerScript>();
     List<SituationScript> situationLib = new List<SituationScript>();
+    List<MobBossScript> mobBossLib = new List<MobBossScript>();
 
     private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
     
@@ -44,8 +45,15 @@ public class GameLibrary : MonoBehaviour {
             situationLib.Add(new SituationScript(sit));
         }
 
+        List<LoadGameData.MobBoss> mobBosses = LoadGameData.LoadMobBosses();
+        foreach (LoadGameData.MobBoss mobBoss in mobBosses)
+        {
+            mobBossLib.Add(new MobBossScript(mobBoss));
+        }
+
         Debug.Log(playerLib.Count);
         Debug.Log(situationLib.Count);
+        Debug.Log(mobBossLib.Count);
 
         //situationDeck = LoadGameData.LoadSituations();
         //Shuffle(situationDeck);
