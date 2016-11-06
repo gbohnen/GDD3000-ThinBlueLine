@@ -82,6 +82,10 @@ public class PlayerSelect : MonoBehaviour
         section1animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
         section2animator = gameObject.transform.GetChild(1).GetComponent<Animator>();
         section3animator = gameObject.transform.GetChild(2).GetComponent<Animator>();
+
+        section1animator.SetBool("open", true);
+        section2animator.SetBool("open", true);
+        section3animator.SetBool("open", true);
     }
 
     void Start()

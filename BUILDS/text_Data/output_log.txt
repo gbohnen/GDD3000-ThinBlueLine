@@ -16,30 +16,13 @@ Platform assembly: C:\Users\Gray\Documents\GitHub\GDD3000-ThinBlueLine\BUILDS\te
 Loading C:\Users\Gray\Documents\GitHub\GDD3000-ThinBlueLine\BUILDS\text_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Gray\Documents\GitHub\GDD3000-ThinBlueLine\BUILDS\text_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Gray\Documents\GitHub\GDD3000-ThinBlueLine\BUILDS\text_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.129 seconds
+- Completed reload, in  0.156 seconds
 Platform assembly: C:\Users\Gray\Documents\GitHub\GDD3000-ThinBlueLine\BUILDS\text_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Gray\Documents\GitHub\GDD3000-ThinBlueLine\BUILDS\text_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 1920x1080 59Hz; virtual: 3840x1080 at -1920,0
 <RI> Initialized touch support.
-UnloadTime: 1.038090 ms
-Platform assembly: C:\Users\Gray\Documents\GitHub\GDD3000-ThinBlueLine\BUILDS\text_Data\Managed\System.Xml.dll (this message is harmless)
-12
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-12
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-12
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
-12
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
-
+UnloadTime: 1.139181 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: fe8 -> priority: 1 
+  Thread -> id: 13e4 -> priority: 1 
