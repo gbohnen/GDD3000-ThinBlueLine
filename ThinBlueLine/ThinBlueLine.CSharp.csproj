@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\PageState.cs" />
     <Compile Include="Assets\Scripts\ParticleButton.cs" />
     <Compile Include="Assets\Scripts\PlayerSelect.cs" />
+    <Compile Include="Assets\Scripts\RaycastMask.cs" />
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TimerFinishedEvent.cs" />
