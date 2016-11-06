@@ -9,6 +9,7 @@ public class GameLibrary : MonoBehaviour {
     public static GameLibrary instance;
 
     List<PlayerScript> playerLib = new List<PlayerScript>();
+    List<SituationScript> situationLib = new List<SituationScript>();
 
     private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
     
@@ -37,8 +38,14 @@ public class GameLibrary : MonoBehaviour {
             playerLib.Add(new PlayerScript(play));
         }
 
+        List<LoadGameData.Situation> situations = LoadGameData.LoadSituations();
+        foreach (LoadGameData.Situation sit in situations)
+        {
+            situationLib.Add(new SituationScript(sit));
+        }
 
         Debug.Log(playerLib.Count);
+        Debug.Log(situationLib.Count);
 
         //situationDeck = LoadGameData.LoadSituations();
         //Shuffle(situationDeck);

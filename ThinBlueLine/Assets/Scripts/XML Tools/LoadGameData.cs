@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 using Assets.Scripts;
 
-public static class LoadGameData {
-
+public static class LoadGameData
+{
     public struct Player
     {
         public string name;
@@ -25,9 +25,9 @@ public static class LoadGameData {
         public string immEff;
         public string ongEff;
         public int cost;
-        public int smMod;
-        public int musMod;
-        public int moxMod;
+        public float smMod;
+        public float musMod;
+        public float moxMod;
         public string posOut;
         public string negOut;
     }
@@ -63,10 +63,10 @@ public static class LoadGameData {
         List<Player> players = new List<Player>();                                      // list of player objects
 
         // iterate all "avatar" tags
-        foreach (XmlNode node in avatarList)                                            
+        foreach (XmlNode node in avatarList)
         {
             // make a list of all child node (this is where the palyer data is stored)
-            XmlNodeList playerData = node.ChildNodes;                                           
+            XmlNodeList playerData = node.ChildNodes;
 
             // empty player
             Player player = new Player();
@@ -77,14 +77,14 @@ public static class LoadGameData {
                 // load data into player based on child tag
                 switch (childNode.Name)
                 {
-                    case "name":    player.name = childNode.InnerText; break;
-                    case "desc":    player.desc = childNode.InnerText; break;
-                    case "muscle":  player.muscle = int.Parse(childNode.InnerText); break;
-                    case "smarts":  player.smarts = int.Parse(childNode.InnerText); break;
-                    case "moxie":   player.moxie = int.Parse(childNode.InnerText); break;
+                    case "name": player.name = childNode.InnerText; break;
+                    case "desc": player.desc = childNode.InnerText; break;
+                    case "muscle": player.muscle = Int32.Parse(childNode.InnerText); break;
+                    case "smarts": player.smarts = Int32.Parse(childNode.InnerText); break;
+                    case "moxie": player.moxie = Int32.Parse(childNode.InnerText); break;
                     case "special": player.special = childNode.InnerText; break;
-                    case "story":   player.story = childNode.InnerText; break;
-                    default:        break;
+                    case "story": player.story = childNode.InnerText; break;
+                    default: break;
                 }
             }
 
@@ -107,7 +107,7 @@ public static class LoadGameData {
         // instantiate necessary components
         XmlDocument situationDoc = new XmlDocument();                                         // blank xml doc
         situationDoc.LoadXml(situationFile.text);                                             // load situation file
-        XmlNodeList situationList = situationDoc.GetElementsByTagName("situation");           // get all tags labeled situaiton
+        XmlNodeList situationList = situationDoc.GetElementsByTagName("situation");           // get all tags labeled situation
 
         List<Situation> situations = new List<Situation>();                                   // list of situations
 
@@ -130,17 +130,21 @@ public static class LoadGameData {
                     case "description": situation.desc = childNode.InnerText; break;
                     case "immediate": situation.immEff = childNode.InnerText; break;
                     case "ongoing": situation.ongEff = childNode.InnerText; break;
-                    case "cost": situation.cost = int.Parse(childNode.InnerText); break;
-                    case "smartsmod": situation.smMod = int.Parse(childNode.InnerText); break;
-                    case "musclemod": situation.musMod = int.Parse(childNode.InnerText); break;
-                    case "moxiemod": situation.moxMod = int.Parse(childNode.InnerText); break;
+                    case "cost": situation.cost = Int32.Parse(childNode.InnerText); break;
+                    case "smartsmod": situation.smMod = float.Parse(childNode.InnerText); break;
+                    case "musclemod": situation.musMod = float.Parse(childNode.InnerText); break;
+                    case "moxiemod": situation.moxMod = float.Parse(childNode.InnerText); break;
                     case "positive": situation.posOut = childNode.InnerText; break;
                     case "negative": situation.negOut = childNode.InnerText; break;
                     default: break;
                 }
             }
+
+            // add child to the list
             situations.Add(situation);
         }
+
+        // return list of all situations
         return situations;
     }
 

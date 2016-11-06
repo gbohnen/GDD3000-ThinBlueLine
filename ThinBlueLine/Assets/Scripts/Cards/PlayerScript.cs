@@ -24,7 +24,7 @@ namespace Assets.Scripts
         #region Properties
 
         /// <summary>
-        /// Gets or sets the players moxie
+        /// Gets the players moxie
         /// </summary>
         public int Moxie
         {
@@ -32,7 +32,7 @@ namespace Assets.Scripts
         }
 
         /// <summary>
-        /// Gets or sets the players strength
+        /// Gets the players strength
         /// </summary>
         public int Strength
         {
@@ -47,11 +47,17 @@ namespace Assets.Scripts
             get { return smarts; }
         }
 
+        /// <summary>
+        /// Gets the players special
+        /// </summary>
         public string Special
         {
             get { return special; }
         }
 
+        /// <summary>
+        /// Gets the players bio
+        /// </summary>
         public string Bio
         {
             get { return bio; }
