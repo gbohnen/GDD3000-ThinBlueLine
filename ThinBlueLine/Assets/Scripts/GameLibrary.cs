@@ -54,7 +54,6 @@ public class GameLibrary : MonoBehaviour {
 
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log(playerLib.Count);
             do
             {
                 index = Random.Range(0, playerLib.Count);                
