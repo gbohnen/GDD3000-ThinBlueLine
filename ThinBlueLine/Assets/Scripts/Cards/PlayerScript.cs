@@ -65,7 +65,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Constructor
         /// </summary>
-        public PlayerScript(Player data) : base()
+        public PlayerScript(LoadGameData.Player data) : base()
         {
             cardName = data.name;
 

@@ -120,28 +120,28 @@ public class GameManager : MonoBehaviour
     public void UpdateUI()
     {
         // player one
-        playerWName.text = GameLibrary.Instance.Players[Players.Player1].Name;
-        playerWSma.text = GameLibrary.Instance.Players[Players.Player1].Smarts.ToString();
-        playerWMox.text = GameLibrary.Instance.Players[Players.Player1].Moxie.ToString();
-        playerWMus.text = GameLibrary.Instance.Players[Players.Player1].Strength.ToString();
+        playerWName.text = GameLibrary.instance.Players[Players.Player1].Name;
+        playerWSma.text = GameLibrary.instance.Players[Players.Player1].Smarts.ToString();
+        playerWMox.text = GameLibrary.instance.Players[Players.Player1].Moxie.ToString();
+        playerWMus.text = GameLibrary.instance.Players[Players.Player1].Strength.ToString();
 
         // player two
-        playerXName.text = GameLibrary.Instance.Players[Players.Player2].Name;
-        playerXSma.text = GameLibrary.Instance.Players[Players.Player2].Smarts.ToString();
-        playerXMox.text = GameLibrary.Instance.Players[Players.Player2].Moxie.ToString();
-        playerXMus.text = GameLibrary.Instance.Players[Players.Player2].Strength.ToString();
+        playerXName.text = GameLibrary.instance.Players[Players.Player2].Name;
+        playerXSma.text = GameLibrary.instance.Players[Players.Player2].Smarts.ToString();
+        playerXMox.text = GameLibrary.instance.Players[Players.Player2].Moxie.ToString();
+        playerXMus.text = GameLibrary.instance.Players[Players.Player2].Strength.ToString();
 
         // player three
-        playerYName.text = GameLibrary.Instance.Players[Players.Player3].Name;
-        playerYSma.text = GameLibrary.Instance.Players[Players.Player3].Smarts.ToString();
-        playerYMox.text = GameLibrary.Instance.Players[Players.Player3].Moxie.ToString();
-        playerYMus.text = GameLibrary.Instance.Players[Players.Player3].Strength.ToString();
+        playerYName.text = GameLibrary.instance.Players[Players.Player3].Name;
+        playerYSma.text = GameLibrary.instance.Players[Players.Player3].Smarts.ToString();
+        playerYMox.text = GameLibrary.instance.Players[Players.Player3].Moxie.ToString();
+        playerYMus.text = GameLibrary.instance.Players[Players.Player3].Strength.ToString();
 
         // player four
-        playerZName.text = GameLibrary.Instance.Players[Players.Player4].Name;
-        playerZSma.text = GameLibrary.Instance.Players[Players.Player4].Smarts.ToString();
-        playerZMox.text = GameLibrary.Instance.Players[Players.Player4].Moxie.ToString();
-        playerZMus.text = GameLibrary.Instance.Players[Players.Player4].Strength.ToString();
+        playerZName.text = GameLibrary.instance.Players[Players.Player4].Name;
+        playerZSma.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
+        playerZMox.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
+        playerZMus.text = GameLibrary.instance.Players[Players.Player4].Strength.ToString();
     }
 
     /// <summary>

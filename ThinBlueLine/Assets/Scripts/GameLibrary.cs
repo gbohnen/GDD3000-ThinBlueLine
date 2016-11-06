@@ -4,17 +4,6 @@ using Assets.Scripts;
 
 public enum Players { Player1, Player2, Player3, Player4 }
 
-public struct Player
-{
-    public string name;
-    public string desc;
-    public int muscle;
-    public int smarts;
-    public int moxie;
-    public string special;
-    public string story;
-}
-
 public class GameLibrary : MonoBehaviour {
 
     public static GameLibrary instance;
@@ -42,8 +31,8 @@ public class GameLibrary : MonoBehaviour {
     public void Initialize()
     {
         // load players
-        List<Player> avatars = LoadGameData.LoadPlayers();
-        foreach (Player play in avatars)
+        List<LoadGameData.Player> avatars = LoadGameData.LoadPlayers();
+        foreach (LoadGameData.Player play in avatars)
         {
             playerLib.Add(new PlayerScript(play));
         }
