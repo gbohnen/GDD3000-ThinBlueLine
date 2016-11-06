@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using Assets.Scripts;
 
 public class PlayerSelect : MonoBehaviour {
 
@@ -34,6 +36,9 @@ public class PlayerSelect : MonoBehaviour {
     public Image section1Avat;
     public Text section1Skill;
     public Text section1Bio;
+    public Text section1Smarts;
+    public Text section1Moxie;
+    public Text section1Strength;
 
     public GameObject section2;
     public Button section2Button;
@@ -41,6 +46,9 @@ public class PlayerSelect : MonoBehaviour {
     public Image section2Avat;
     public Text section2Skill;
     public Text section2Bio;
+    public Text section2Smarts;
+    public Text section2Moxie;
+    public Text section2Strength;
 
     public GameObject section3;
     public Button section3Button;
@@ -48,6 +56,9 @@ public class PlayerSelect : MonoBehaviour {
     public Image section3Avat;
     public Text section3Skill;
     public Text section3Bio;
+    public Text section3Smarts;
+    public Text section3Moxie;
+    public Text section3Strength;
 
     #endregion
 
@@ -67,7 +78,33 @@ public class PlayerSelect : MonoBehaviour {
 
     void LoadChoices()
     {
-         
+        List<PlayerScript> trio = GameLibrary.instance.GetPlayerChoices();
+
+        // load first section
+        section1Name.text = trio[0].Name;
+        section1Skill.text = trio[0].Special;
+        section1Bio.text = trio[0].Bio;
+        section1Smarts.text = trio[0].Smarts.ToString();
+        section1Moxie.text = trio[0].Smarts.ToString();
+        section1Strength.text = trio[0].Smarts.ToString();
+
+        // load second section
+        section2Name.text = trio[1].Name;
+        section2Skill.text = trio[1].Special;
+        section2Bio.text = trio[1].Bio;
+        section2Smarts.text = trio[1].Smarts.ToString();
+        section2Moxie.text = trio[1].Smarts.ToString();
+        section2Strength.text = trio[1].Smarts.ToString();
+
+        // load third section
+        section3Name.text = trio[2].Name;
+        section3Skill.text = trio[2].Special;
+        section3Bio.text = trio[2].Bio;
+        section3Smarts.text = trio[2].Smarts.ToString();
+        section3Moxie.text = trio[2].Smarts.ToString();
+        section3Strength.text = trio[2].Smarts.ToString();
     }
+
+    
 
 }
