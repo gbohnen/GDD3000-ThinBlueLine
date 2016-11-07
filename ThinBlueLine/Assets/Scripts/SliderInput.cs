@@ -65,9 +65,11 @@ public class SliderInput : MonoBehaviour
         slider.minValue = newMin;
         slider.maxValue = newMax;
 
+        // set the Min and Max value text below the slider
         transform.FindChild("MinValue").gameObject.GetComponent<Text>().text = newMin.ToString();
         transform.FindChild("MaxValue").gameObject.GetComponent<Text>().text = newMax.ToString();
 
+        // check for changed value
         OnSliderChanged(value);
     }
 

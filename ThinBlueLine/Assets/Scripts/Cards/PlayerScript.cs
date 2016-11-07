@@ -40,7 +40,7 @@ namespace Assets.Scripts
         }
 
         /// <summary>
-        /// Gets or sets the players smarts
+        /// Gets the players smarts
         /// </summary>
         public int Smarts
         {

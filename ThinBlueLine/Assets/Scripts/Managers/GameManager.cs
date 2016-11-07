@@ -30,8 +30,7 @@ public class GameManager : MonoBehaviour
     static GameManager instance;
 
     // store the players
-    PlayerScript currentPlayer;
-    List<PlayerScript> players;
+    Players currentPlayer;
 
     // store the crimes & situations
     MajorCrimeScript majorCrime;
@@ -63,21 +62,6 @@ public class GameManager : MonoBehaviour
     public Text playerZSma;
     public Text playerZMox;
     public Text playerZMus;
-
-    // situation allocaiton UI fields
-    public Text currPlayerSmarts;
-    public Text newPlayerSmarts;
-    public Text currPlayerMoxie;
-    public Text newPlayerMoxie;
-    public Text currPlayerStrength;
-    public Text newPlayerStrength;
-
-    public Text currSitSmarts;
-    public Text newSitSmarts;
-    public Text currSitMoxie;
-    public Text newSitMoxie;
-    public Text currSitStrength;
-    public Text newSitStrength;
 
     #endregion
 
@@ -123,8 +107,12 @@ public class GameManager : MonoBehaviour
     { get; private set; }
 
     /// <summary>
-    /// 
+    /// Gets the current player
     /// </summary>
+    public Players CurrentPlayer
+    { get { return currentPlayer; } }
+
+	// Use this for initialization
     void Start()
     {
         UpdateUI();
@@ -158,23 +146,6 @@ public class GameManager : MonoBehaviour
         playerZSma.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
         playerZMox.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
         playerZMus.text = GameLibrary.instance.Players[Players.Player4].Strength.ToString();
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public void UpdateSituationUI()
-    {
-        // players current stats
-        currPlayerSmarts.text = currentPlayer.Smarts.ToString();
-        currPlayerMoxie.text = currentPlayer.Moxie.ToString();
-        currPlayerStrength.text = currentPlayer.Strength.ToString();
-
-        // TODO: players new stats
-
-        // TODO: situations current stats
-
-        // TODO: situations new stats
     }
 
     /// <summary>
