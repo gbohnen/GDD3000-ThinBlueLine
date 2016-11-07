@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     MobBossScript mobBoss;
     PoliceChiefScript policeChief;
 
+    #region UI
+
     // player UI fields
     public Text playerWName;
     public Text playerWSma;
@@ -62,6 +64,23 @@ public class GameManager : MonoBehaviour
     public Text playerZMox;
     public Text playerZMus;
 
+    // situation allocaiton UI fields
+    public Text currPlayerSmarts;
+    public Text newPlayerSmarts;
+    public Text currPlayerMoxie;
+    public Text newPlayerMoxie;
+    public Text currPlayerStrength;
+    public Text newPlayerStrength;
+
+    public Text currSitSmarts;
+    public Text newSitSmarts;
+    public Text currSitMoxie;
+    public Text newSitMoxie;
+    public Text currSitStrength;
+    public Text newSitStrength;
+
+    #endregion
+
     #endregion
 
     #region Properties
@@ -75,10 +94,7 @@ public class GameManager : MonoBehaviour
         {
             // check if there is already an instance of the game manager
             if (instance == null)
-            {
-                instance = new GameManager();
-            }
-
+            { instance = new GameManager(); }
             return instance;
         }
     }
@@ -142,6 +158,23 @@ public class GameManager : MonoBehaviour
         playerZSma.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
         playerZMox.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
         playerZMus.text = GameLibrary.instance.Players[Players.Player4].Strength.ToString();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public void UpdateSituationUI()
+    {
+        // players current stats
+        currPlayerSmarts.text = currentPlayer.Smarts.ToString();
+        currPlayerMoxie.text = currentPlayer.Moxie.ToString();
+        currPlayerStrength.text = currentPlayer.Strength.ToString();
+
+        // TODO: players new stats
+
+        // TODO: situations current stats
+
+        // TODO: situations new stats
     }
 
     /// <summary>
