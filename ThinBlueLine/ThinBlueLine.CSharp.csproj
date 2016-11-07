@@ -66,7 +66,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CrimeSitManager.cs" />
     <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MobBossScript.cs" />
@@ -74,14 +73,20 @@
     <Compile Include="Assets\Scripts\Cards\PoliceChiefScript.cs" />
     <Compile Include="Assets\Scripts\Cards\SituationScript.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />
+    <Compile Include="Assets\Scripts\ErrorButton.cs" />
     <Compile Include="Assets\Scripts\GameLibrary.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\CrimeSitManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\CurrentPlayerManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\PageState.cs" />
     <Compile Include="Assets\Scripts\ParticleButton.cs" />
     <Compile Include="Assets\Scripts\PlayerSelect.cs" />
     <Compile Include="Assets\Scripts\RaycastMask.cs" />
+    <Compile Include="Assets\Scripts\SituationButton.cs" />
     <Compile Include="Assets\Scripts\SliderInput.cs" />
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />

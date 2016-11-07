@@ -9,28 +9,14 @@ using System.Collections.Generic;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    #region Fields
+    #region Fields    
 
-    // store the players sprites
-    public Sprite player1Avat;
-    public Sprite player2Avat;
-    public Sprite player3Avat;
-    public Sprite player4Avat;
-
-    // store the player ame objects
-    public GameObject playerWWindow;
-    public GameObject playerXWindow;
-    public GameObject playerYWindow;
-    public GameObject playerZWindow;
-
-    // store the players avatar
-    public Image avatThumb;
-
-    // store an instance of the game manager
-    static GameManager instance;
+    // store an Instance of the game manager
+    public static GameManager Instance;
 
     // store the players
     Players currentPlayer;
+<<<<<<< HEAD
 
     // store the crimes & situations
     MajorCrimeScript majorCrime;
@@ -64,42 +50,23 @@ public class GameManager : MonoBehaviour
     public Text playerZMus;
 
     #endregion
+=======
+>>>>>>> origin/master
 
     #endregion
 
     #region Properties
 
-    /// <summary>
-    /// Gets the singleton instance of the game manager
-    /// </summary>
-    public static GameManager Instance
+    public Players CurrentPlayer
     {
-        get
-        {
-            // check if there is already an instance of the game manager
-            if (instance == null)
-            { instance = new GameManager(); }
-            return instance;
-        }
-    }
-
-    #endregion
-
-    #region Constructor
-
-    /// <summary>
-    /// Constructor
-    /// </summary>
-    private GameManager()
-    {
-        // initialize the audio manager
-        Audio = new AudioManager();
+        get { return currentPlayer; }
     }
 
     #endregion
 
     #region Public Methods
 
+<<<<<<< HEAD
     /// <summary>
     /// Gets or sets the audio manager
     /// </summary>
@@ -146,6 +113,19 @@ public class GameManager : MonoBehaviour
         playerZSma.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
         playerZMox.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
         playerZMus.text = GameLibrary.instance.Players[Players.Player4].Strength.ToString();
+=======
+    void Start()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        currentPlayer = Players.Player1;
+        
+        UIManager.instance.AddSituation(GameLibrary.instance.SituationList[3]);
+        UIManager.instance.UpdateUI();
+>>>>>>> origin/master
     }
 
     /// <summary>
@@ -166,71 +146,22 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     { }
 
-    /// <summary>
-    /// Culls the objects which shall be inactive
-    /// </summary>
-    public void CullInactive()
-    { }
-
-    /// <summary>
-    /// Player W is clicked
-    /// </summary>
-    public void PlayerWClicked()
+    public void ClickDrawSituation()
     {
-        ResetPlayers();
-        playerWWindow.GetComponent<Image>().color = Constants.ACTIVE;
-        playerWWindow.GetComponent<Button>().interactable = false;
-        avatThumb.sprite = player1Avat;
+        UIManager.instance.DrawSituation();
     }
 
-    /// <summary>
-    /// Player X is clicked
-    /// </summary>
-    public void PlayerXCLicked()
+    public void ClickLowerCrime()
     {
-        ResetPlayers();
-        playerXWindow.GetComponent<Image>().color = Constants.ACTIVE;
-        playerXWindow.GetComponent<Button>().interactable = false;
-        avatThumb.sprite = player2Avat;
+        UIManager.instance.LowerCrime();
     }
 
-    /// <summary>
-    /// Player Y is clicked
-    /// </summary>
-    public void PlayerYClicked()
+    public void ClickSpecialAbility()
     {
-        ResetPlayers();
-        playerYWindow.GetComponent<Image>().color = Constants.ACTIVE;
-        playerYWindow.GetComponent<Button>().interactable = false;
-        avatThumb.sprite = player3Avat;
-    }
-
-    /// <summary>
-    /// Player Z is clicked
-    /// </summary>
-    public void PlayerZClicked()
-    {
-        ResetPlayers();
-        playerZWindow.GetComponent<Image>().color = Constants.ACTIVE;
-        playerZWindow.GetComponent<Button>().interactable = false;
-        avatThumb.sprite = player4Avat;
-    }
-
-    /// <summary>
-    /// Resets the players image and button
-    /// </summary>
-    void ResetPlayers()
-    {
-        playerWWindow.GetComponent<Image>().color = Constants.INACTIVE;
-        playerXWindow.GetComponent<Image>().color = Constants.INACTIVE;
-        playerYWindow.GetComponent<Image>().color = Constants.INACTIVE;
-        playerZWindow.GetComponent<Image>().color = Constants.INACTIVE;
-
-        playerWWindow.GetComponent<Button>().interactable = true;
-        playerXWindow.GetComponent<Button>().interactable = true;
-        playerYWindow.GetComponent<Button>().interactable = true;
-        playerZWindow.GetComponent<Button>().interactable = true;
+        UIManager.instance.SpecialAbility();
     }
 
     #endregion
+
+    
 }

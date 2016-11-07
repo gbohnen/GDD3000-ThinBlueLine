@@ -5,16 +5,16 @@ using System.Collections;
 
 public class PageState : MonoBehaviour {
 
-	public static PageState instance = null;
+	public static PageState Instance = null;
 	
 	public int currentPage = 1;
 	
 	void Awake()
 	{
 		
-		if (instance == null)
+		if (Instance == null)
 		{
-			instance = this;
+			Instance = this;
 		
 			currentPage = 1;
 		}
