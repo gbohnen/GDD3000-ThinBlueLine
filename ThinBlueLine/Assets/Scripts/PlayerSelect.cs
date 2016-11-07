@@ -210,10 +210,6 @@ public class PlayerSelect : MonoBehaviour
 
     private void CloseAnim()
     {
-        section1Button.GetComponent<ParticleButton>().OnMouseExit();
-        section2Button.GetComponent<ParticleButton>().OnMouseExit();
-        section3Button.GetComponent<ParticleButton>().OnMouseExit();
-
         DisableButtons();
 
         section1animator.SetBool("open", false);
@@ -242,5 +238,9 @@ public class PlayerSelect : MonoBehaviour
         section1Button.interactable = true;
         section2Button.interactable = true;
         section3Button.interactable = true;
+
+        section1Button.GetComponent<ParticleButton>().OnMouseExit();
+        section2Button.GetComponent<ParticleButton>().OnMouseExit();
+        section3Button.GetComponent<ParticleButton>().OnMouseExit();
     }
 }

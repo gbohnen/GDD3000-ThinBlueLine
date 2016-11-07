@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Assets.Scripts;
 
-public enum Players { Player1, Player2, Player3, Player4 }
+public enum Players { Player1 = 0, Player2 = 1, Player3 = 2, Player4 = 3 }
 
 public class GameLibrary : MonoBehaviour {
 
@@ -51,14 +51,9 @@ public class GameLibrary : MonoBehaviour {
             mobBossLib.Add(new MobBossScript(mobBoss));
         }
 
-        Debug.Log(playerLib.Count);
-        Debug.Log(situationLib.Count);
-        Debug.Log(mobBossLib.Count);
-
-        //situationDeck = LoadGameData.LoadSituations();
-        //Shuffle(situationDeck);
-        //crimeDeck = LoadGameData.LoadCrimes();
-        //Shuffle(crimeDeck);
+        //Debug.Log(playerLib.Count);
+        //Debug.Log(situationLib.Count);
+        //Debug.Log(mobBossLib.Count);
     }
 
     public List<PlayerScript> GetPlayerChoices()
@@ -79,7 +74,7 @@ public class GameLibrary : MonoBehaviour {
 
         return choices;
     }
- 
+
     public List<PlayerScript> PlayerLib
     {
         get { return playerLib; }
@@ -88,5 +83,10 @@ public class GameLibrary : MonoBehaviour {
     public Dictionary<Players, PlayerScript> Players
     {
         get { return players; }
+    }
+
+    public List<SituationScript> SituationList
+    {
+        get { return situationLib; }
     }
 }

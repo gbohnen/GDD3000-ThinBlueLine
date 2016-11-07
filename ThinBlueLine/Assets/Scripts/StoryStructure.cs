@@ -7,7 +7,7 @@ public class StoryStructure : MonoBehaviour {
 
     // updates the story page. called by buttons and other "progress" keys
 	
-	public static StoryStructure instance = null;
+	public static StoryStructure Instance = null;
 
     static int totalPages;                  		// total pages in current level
     public static int currentPage;                  // currently displayed page
@@ -32,8 +32,8 @@ public class StoryStructure : MonoBehaviour {
 
 	void Start()
 	{
-		if (instance == null)
-			instance = this;
+		if (Instance == null)
+			Instance = this;
 		else
 			Destroy(gameObject);
 
