@@ -4,22 +4,13 @@ using Assets.Scripts;
 
 public enum Players { Player1, Player2, Player3, Player4 }
 
-public struct Player
-{
-    public string name;
-    public string desc;
-    public int muscle;
-    public int smarts;
-    public int moxie;
-    public string special;
-    public string story;
-}
-
 public class GameLibrary : MonoBehaviour {
 
     public static GameLibrary instance;
 
     List<PlayerScript> playerLib = new List<PlayerScript>();
+    List<SituationScript> situationLib = new List<SituationScript>();
+    List<MobBossScript> mobBossLib = new List<MobBossScript>();
 
     private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
     
@@ -42,14 +33,27 @@ public class GameLibrary : MonoBehaviour {
     public void Initialize()
     {
         // load players
-        List<Player> avatars = LoadGameData.LoadPlayers();
-        foreach (Player play in avatars)
+        List<LoadGameData.Player> avatars = LoadGameData.LoadPlayers();
+        foreach (LoadGameData.Player play in avatars)
         {
             playerLib.Add(new PlayerScript(play));
         }
 
+        List<LoadGameData.Situation> situations = LoadGameData.LoadSituations();
+        foreach (LoadGameData.Situation sit in situations)
+        {
+            situationLib.Add(new SituationScript(sit));
+        }
+
+        List<LoadGameData.MobBoss> mobBosses = LoadGameData.LoadMobBosses();
+        foreach (LoadGameData.MobBoss mobBoss in mobBosses)
+        {
+            mobBossLib.Add(new MobBossScript(mobBoss));
+        }
 
         Debug.Log(playerLib.Count);
+        Debug.Log(situationLib.Count);
+        Debug.Log(mobBossLib.Count);
 
         //situationDeck = LoadGameData.LoadSituations();
         //Shuffle(situationDeck);
