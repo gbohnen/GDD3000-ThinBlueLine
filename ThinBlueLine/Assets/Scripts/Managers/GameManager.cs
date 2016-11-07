@@ -11,12 +11,6 @@ public class GameManager : MonoBehaviour
 {
     #region Fields
 
-    // store the players sprites
-    public Sprite player1Avat;
-    public Sprite player2Avat;
-    public Sprite player3Avat;
-    public Sprite player4Avat;
-
     // store the player ame objects
     public GameObject playerWWindow;
     public GameObject playerXWindow;
@@ -30,8 +24,8 @@ public class GameManager : MonoBehaviour
     static GameManager instance;
 
     // store the players
-    PlayerScript currentPlayer;
-    List<PlayerScript> players;
+    Players currentPlayer;
+    Dictionary<Players, PlayerScript> players;
 
     // store the crimes & situations
     MajorCrimeScript majorCrime;
@@ -194,56 +188,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void EndGame()
     { }
-
-    /// <summary>
-    /// Culls the objects which shall be inactive
-    /// </summary>
-    public void CullInactive()
-    { }
-
-    /// <summary>
-    /// Player W is clicked
-    /// </summary>
-    public void PlayerWClicked()
-    {
-        ResetPlayers();
-        playerWWindow.GetComponent<Image>().color = Constants.ACTIVE;
-        playerWWindow.GetComponent<Button>().interactable = false;
-        avatThumb.sprite = player1Avat;
-    }
-
-    /// <summary>
-    /// Player X is clicked
-    /// </summary>
-    public void PlayerXCLicked()
-    {
-        ResetPlayers();
-        playerXWindow.GetComponent<Image>().color = Constants.ACTIVE;
-        playerXWindow.GetComponent<Button>().interactable = false;
-        avatThumb.sprite = player2Avat;
-    }
-
-    /// <summary>
-    /// Player Y is clicked
-    /// </summary>
-    public void PlayerYClicked()
-    {
-        ResetPlayers();
-        playerYWindow.GetComponent<Image>().color = Constants.ACTIVE;
-        playerYWindow.GetComponent<Button>().interactable = false;
-        avatThumb.sprite = player3Avat;
-    }
-
-    /// <summary>
-    /// Player Z is clicked
-    /// </summary>
-    public void PlayerZClicked()
-    {
-        ResetPlayers();
-        playerZWindow.GetComponent<Image>().color = Constants.ACTIVE;
-        playerZWindow.GetComponent<Button>().interactable = false;
-        avatThumb.sprite = player4Avat;
-    }
 
     /// <summary>
     /// Resets the players image and button

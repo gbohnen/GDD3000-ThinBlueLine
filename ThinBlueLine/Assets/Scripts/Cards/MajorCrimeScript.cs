@@ -6,7 +6,7 @@ namespace Assets.Scripts
     /// <summary>
     /// Script which handles the major crime
     /// </summary>
-    class MajorCrimeScript : CardScript
+    public class MajorCrimeScript : CardScript
     {
         #region Fields
 

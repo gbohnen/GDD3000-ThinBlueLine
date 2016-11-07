@@ -66,7 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CrimeSitManager.cs" />
+    <Compile Include="Assets\Animation\Drawer\CrimeSitManager.cs" />
     <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MobBossScript.cs" />
@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\TimerFinishedEvent.cs" />
     <Compile Include="Assets\Scripts\ToolTipScript.cs" />
     <Compile Include="Assets\Scripts\XML Tools\LoadGameData.cs" />
+    <Compile Include="Assets\SituationButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\XML Resources\AvatarData.xml" />
