@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     // store the players
     Players currentPlayer;
-<<<<<<< HEAD
 
     // store the crimes & situations
     MajorCrimeScript majorCrime;
@@ -50,28 +49,10 @@ public class GameManager : MonoBehaviour
     public Text playerZMus;
 
     #endregion
-=======
->>>>>>> origin/master
 
     #endregion
 
     #region Properties
-
-    public Players CurrentPlayer
-    {
-        get { return currentPlayer; }
-    }
-
-    #endregion
-
-    #region Public Methods
-
-<<<<<<< HEAD
-    /// <summary>
-    /// Gets or sets the audio manager
-    /// </summary>
-    public AudioManager Audio
-    { get; private set; }
 
     /// <summary>
     /// Gets the current player
@@ -79,10 +60,28 @@ public class GameManager : MonoBehaviour
     public Players CurrentPlayer
     { get { return currentPlayer; } }
 
-	// Use this for initialization
+    #endregion
+
+    #region Public Methods
+
+    /// <summary>
+    /// Gets or sets the audio manager
+    /// </summary>
+    public AudioManager Audio
+    { get; private set; }
+
+    // Use this for initialization
     void Start()
     {
-        UpdateUI();
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        currentPlayer = Players.Player1;
+
+        UIManager.instance.AddSituation(GameLibrary.instance.SituationList[3]);
+        UIManager.instance.UpdateUI();
     }
 
     /// <summary>
@@ -113,19 +112,6 @@ public class GameManager : MonoBehaviour
         playerZSma.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
         playerZMox.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
         playerZMus.text = GameLibrary.instance.Players[Players.Player4].Strength.ToString();
-=======
-    void Start()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-
-        currentPlayer = Players.Player1;
-        
-        UIManager.instance.AddSituation(GameLibrary.instance.SituationList[3]);
-        UIManager.instance.UpdateUI();
->>>>>>> origin/master
     }
 
     /// <summary>
@@ -162,6 +148,4 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
-
-    
 }
