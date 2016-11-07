@@ -160,9 +160,9 @@ public class GameManager : MonoBehaviour
     public void UpdateSituationUI()
     {
         // players current stats
-        currPlayerSmarts.text = currentPlayer.Smarts.ToString();
-        currPlayerMoxie.text = currentPlayer.Moxie.ToString();
-        currPlayerStrength.text = currentPlayer.Strength.ToString();
+        //currPlayerSmarts.text = currentPlayer.Smarts.ToString();
+        //currPlayerMoxie.text = currentPlayer.Moxie.ToString();
+        //currPlayerStrength.text = currentPlayer.Strength.ToString();
 
         // TODO: players new stats
 
