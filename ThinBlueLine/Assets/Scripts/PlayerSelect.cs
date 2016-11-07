@@ -114,6 +114,7 @@ public class PlayerSelect : MonoBehaviour
         section1Smarts.text = trio[0].Smarts.ToString();
         section1Moxie.text = trio[0].Moxie.ToString();
         section1Strength.text = trio[0].Strength.ToString();
+        section1Avat.sprite = trio[0].Avatar;
         section1Player = trio[0];
 
         // load second section
@@ -123,6 +124,7 @@ public class PlayerSelect : MonoBehaviour
         section2Smarts.text = trio[1].Smarts.ToString();
         section2Moxie.text = trio[1].Moxie.ToString();
         section2Strength.text = trio[1].Strength.ToString();
+        section2Avat.sprite = trio[1].Avatar;
         section2Player = trio[1];
 
         // load third section
@@ -132,6 +134,7 @@ public class PlayerSelect : MonoBehaviour
         section3Smarts.text = trio[2].Smarts.ToString();
         section3Moxie.text = trio[2].Moxie.ToString();
         section3Strength.text = trio[2].Strength.ToString();
+        section3Avat.sprite = trio[2].Avatar;
         section3Player = trio[2];
     }
 

@@ -15,6 +15,7 @@ public static class LoadGameData
         public int moxie;
         public string special;
         public string story;
+        public string avatPath;
     }
 
     public struct Situation
@@ -76,13 +77,14 @@ public static class LoadGameData
                 // load data into player based on child tag
                 switch (childNode.Name)
                 {
-                    case "name": player.name = childNode.InnerText; break;
-                    case "desc": player.desc = childNode.InnerText; break;
-                    case "muscle": player.muscle = Int32.Parse(childNode.InnerText); break;
-                    case "smarts": player.smarts = Int32.Parse(childNode.InnerText); break;
-                    case "moxie": player.moxie = Int32.Parse(childNode.InnerText); break;
+                    case "name":    player.name = childNode.InnerText; break;
+                    case "desc":    player.desc = childNode.InnerText; break;
+                    case "muscle":  player.muscle = Int32.Parse(childNode.InnerText); break;
+                    case "smarts":  player.smarts = Int32.Parse(childNode.InnerText); break;
+                    case "moxie":   player.moxie = Int32.Parse(childNode.InnerText); break;
                     case "special": player.special = childNode.InnerText; break;
-                    case "story": player.story = childNode.InnerText; break;
+                    case "story":   player.story = childNode.InnerText; break;
+                    case "profpic": player.avatPath = childNode.InnerText; break;
                     default: break;
                 }
             }

@@ -1,4 +1,5 @@
-﻿using UnityEngine.UI;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -15,7 +16,7 @@ namespace Assets.Scripts
         int smarts;
         int moxie;
         int muscles;
-        Image avat;
+        Sprite avat;
         string bio;
         string special;
 
@@ -63,6 +64,11 @@ namespace Assets.Scripts
             get { return bio; }
         }
 
+        public Sprite Avatar
+        {
+            get { return avat; }
+        }
+
 
         #endregion
 
@@ -81,6 +87,8 @@ namespace Assets.Scripts
 
             bio = data.story;
             special = data.special;
+
+            avat = Resources.Load<Sprite>(data.avatPath);
         }
 
         #endregion

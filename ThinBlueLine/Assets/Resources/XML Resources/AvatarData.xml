@@ -7,7 +7,7 @@
                    <name>The Crusher</name>
                    
                    <desc>Strong jaw, furrowed brow, thick head</desc>
-                   <profpic>@"Player Images/Crusher"</profpic>
+                   <profpic>Player Images/Crusher</profpic>
                    <muscle>9</muscle>
                    <smarts>2</smarts>
                    <moxie>2</moxie>
@@ -18,7 +18,7 @@
            <avatar>
                    <name>The Detective</name>
                    <desc>Cigar and Fedora</desc>
-                   <profpic>@"Player Images/Detective"</profpic>
+                   <profpic>Player Images/Detective</profpic>
                    <muscle>4</muscle>
                    <smarts>7</smarts>
                    <moxie>2</moxie>
@@ -28,7 +28,7 @@
            <avatar>
              <name>The Fed</name>
              <desc>Pressed suit with tie</desc>
-             <profpic>@"Player Images/Fed"</profpic>
+             <profpic>Player Images/Fed</profpic>
              <muscle>2</muscle>
              <smarts>4</smarts>
              <moxie>7</moxie>
@@ -38,7 +38,7 @@
            <avatar>
              <name>The Informant</name>
              <desc>Newsboy's cap, perhaps a simple jacket</desc>
-             <profpic>@"Player Images/Informant"</profpic>
+             <profpic>Player Images/Informant</profpic>
              <muscle>4</muscle>
              <smarts>5</smarts>
              <moxie>4</moxie>
@@ -48,7 +48,7 @@
            <avatar>
              <name>The Rookie</name>
              <desc>Police hat, uniform</desc>
-             <profpic>@"Player Images/Rookie"</profpic>
+             <profpic>Player Images/Rookie</profpic>
              <muscle>3</muscle>
              <smarts>3</smarts>
              <moxie>3</moxie>
@@ -58,7 +58,7 @@
            <avatar>
              <name>The Power Luster</name>
              <desc>Slicked back hair, half grin, cop outfit</desc>
-             <profpic>@"Player Images/PowerLuster"</profpic>
+             <profpic>Player Images/PowerLuster</profpic>
              <muscle>5</muscle>
              <smarts>8</smarts>
              <moxie>6</moxie>
@@ -68,7 +68,7 @@
            <avatar>
              <name>The Old Dog</name>
              <desc>Big bushy mustache, possibly fluffy, cop outfit.</desc>
-             <profpic>@"Player Images/OldDog"</profpic>
+             <profpic>Player Images/OldDog</profpic>
              <muscle>1</muscle>
              <smarts>6</smarts>
              <moxie>6</moxie>
@@ -78,7 +78,7 @@
            <avatar>
              <name>The P.I.</name>
              <desc>Suspenders, possible eye, possible five o'clock shadow</desc>
-             <profpic>@"Player Images/PI"</profpic>
+             <profpic>Player Images/PI</profpic>
              <muscle>2</muscle>
              <smarts>6</smarts>
              <moxie>6</moxie>
@@ -88,7 +88,7 @@
            <avatar>
              <name>The Undercover</name>
              <desc>Fedora, nice suit</desc>
-             <profpic>@"Player Images/Undercover"</profpic>
+             <profpic>Player Images/Undercover</profpic>
              <muscle>5</muscle>
              <smarts>6</smarts>
              <moxie>7</moxie>
@@ -98,7 +98,7 @@
            <avatar>
              <name>The Driver</name>
              <desc>Cigarette and baseball cap</desc>
-             <profpic>@"Player Images/Driver"</profpic>
+             <profpic>Player Images/Driver</profpic>
              <muscle>3</muscle>
              <smarts>6</smarts>
              <moxie>5</moxie>
