@@ -16,6 +16,7 @@ public class PlayerSelect : MonoBehaviour
     private Animator section1animator;
     private Animator section2animator;
     private Animator section3animator;
+    public Animator indicatorAnimator;
 
     // player UI fields
     public Text playerWName;
@@ -83,6 +84,8 @@ public class PlayerSelect : MonoBehaviour
         section1animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
         section2animator = gameObject.transform.GetChild(1).GetComponent<Animator>();
         section3animator = gameObject.transform.GetChild(2).GetComponent<Animator>();
+
+        indicatorAnimator.SetInteger("Phase", 0);
 
         section1animator.SetBool("open", true);
         section2animator.SetBool("open", true);
@@ -165,6 +168,7 @@ public class PlayerSelect : MonoBehaviour
                 playerWSma.text = choice.Smarts.ToString();
                 playerWMox.text = choice.Moxie.ToString();
                 playerWMus.text = choice.Strength.ToString();
+                indicatorAnimator.SetInteger("Phase", 1);
                 break;
 
             case Players.Player2:
@@ -173,14 +177,16 @@ public class PlayerSelect : MonoBehaviour
                 playerXSma.text = choice.Smarts.ToString();
                 playerXMox.text = choice.Moxie.ToString();
                 playerXMus.text = choice.Strength.ToString();
+                indicatorAnimator.SetInteger("Phase", 2);
                 break;
-            case Players.Player3:
 
+            case Players.Player3:
                 GameLibrary.instance.Players[Players.Player3] = choice;
                 playerYName.text = choice.Name;
                 playerYSma.text = choice.Smarts.ToString();
                 playerYMox.text = choice.Moxie.ToString();
                 playerYMus.text = choice.Strength.ToString();
+                indicatorAnimator.SetInteger("Phase", 3);
                 break;
 
             case Players.Player4:
@@ -201,9 +207,11 @@ public class PlayerSelect : MonoBehaviour
 
     private void CloseAnim()
     {
-        //section1Button.GetComponent<ParticleButton>().OnMouseExit();
-        //section2Button.GetComponent<ParticleButton>().OnMouseExit();
-        //section3Button.GetComponent<ParticleButton>().OnMouseExit();
+        section1Button.GetComponent<ParticleButton>().OnMouseExit();
+        section2Button.GetComponent<ParticleButton>().OnMouseExit();
+        section3Button.GetComponent<ParticleButton>().OnMouseExit();
+
+        DisableButtons();
 
         section1animator.SetBool("open", false);
         section2animator.SetBool("open", false);
@@ -215,5 +223,21 @@ public class PlayerSelect : MonoBehaviour
         section1animator.SetBool("open", true);
         section2animator.SetBool("open", true);
         section3animator.SetBool("open", true);
+
+        Invoke("EnableButtons", 1);
+    }
+
+    private void DisableButtons()
+    {
+        section1Button.interactable = false;
+        section2Button.interactable = false;
+        section3Button.interactable = false;
+    }
+
+    private void EnableButtons()
+    {
+        section1Button.interactable = true;
+        section2Button.interactable = true;
+        section3Button.interactable = true;
     }
 }
