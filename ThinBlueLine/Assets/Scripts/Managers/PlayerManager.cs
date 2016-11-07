@@ -65,7 +65,5 @@ public class PlayerManager : MonoBehaviour {
     public void UpdateIndicator()
     {
         indicatorAnimator.SetInteger("Phase", (int)GameManager.Instance.CurrentPlayer);
-
-        Debug.Log((int)GameManager.Instance.CurrentPlayer);
     }
 }

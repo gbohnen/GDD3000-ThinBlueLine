@@ -61,6 +61,21 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     { }
 
+    public void ClickDrawSituation()
+    {
+        UIManager.instance.DrawSituation();
+    }
+
+    public void ClickLowerCrime()
+    {
+        UIManager.instance.LowerCrime();
+    }
+
+    public void ClickSpecialAbility()
+    {
+        UIManager.instance.SpecialAbility();
+    }
+
     #endregion
 
     

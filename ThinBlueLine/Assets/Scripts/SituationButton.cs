@@ -30,7 +30,7 @@ public class SituationButton : MonoBehaviour {
     public void ClickSituation()
     {
         // tell ui manager to spawn a resolve situation panel with this situation;
-
+        UIManager.instance.ResolveSituation();
     }
 
     public void UpdateCost(int i)

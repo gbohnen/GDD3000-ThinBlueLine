@@ -49,7 +49,10 @@ namespace Assets.Scripts
 
         public void OpenSituations()
         {
-            drawerAnimator.SetBool("Open", true);
+            if (drawerAnimator.GetBool("Open"))
+                CloseDrawer();
+            else
+                drawerAnimator.SetBool("Open", true);
         }
 
         public void CloseDrawer()

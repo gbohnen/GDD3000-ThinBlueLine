@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour {
     // fields for other manager objects;
     public CrimeSitManager situationManager;
     public PlayerManager playerManager;
-    //public ControllerManager controllerManager;
+    public CurrentPlayerManager currentPlayerManager;
     //public NeighborHoodManager neighborhoodManager;
 
     // fields for window prefabs
@@ -28,16 +28,59 @@ public class UIManager : MonoBehaviour {
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+
+        DumbStartupCode();
+    }
+
+    public void DumbStartupCode()
+    {
+        GameObject panel = GameObject.Find("ErrorPrefab");
+
+        drawSituationWindow = Instantiate(panel);
+        resolveSituationWindow = Instantiate(panel);
+        changeNeighborhoodWindow = Instantiate(panel);
+        actionUnavailableWindow = Instantiate(panel);
+
+        Destroy(panel);
     }
 
     public void UpdateUI()
     {
         playerManager.UpdateUI();
         playerManager.UpdateIndicator();
+        currentPlayerManager.UpdateUI();
     }
 
     public void AddSituation(SituationScript sitch)
     {
         situationManager.AddSituation(sitch);
+    }
+
+    public void DrawSituation()
+    {
+        var panel = Instantiate(drawSituationWindow);
+        panel.transform.SetParent(gameObject.transform);
+        panel.transform.localPosition = new Vector3(0, 0, 0);
+    }
+
+    public void LowerCrime()
+    {
+        var panel = Instantiate(drawSituationWindow);
+        panel.transform.SetParent(gameObject.transform);
+        panel.transform.localPosition = new Vector3(0, 0, 0);
+    }
+
+    public void SpecialAbility()
+    {
+        var panel = Instantiate(drawSituationWindow);
+        panel.transform.SetParent(gameObject.transform);
+        panel.transform.localPosition = new Vector3(0, 0, 0);
+    }
+
+    public void ResolveSituation()
+    {
+        var panel = Instantiate(drawSituationWindow);
+        panel.transform.SetParent(gameObject.transform);
+        panel.transform.localPosition = new Vector3(0, 0, 0);
     }
 }
