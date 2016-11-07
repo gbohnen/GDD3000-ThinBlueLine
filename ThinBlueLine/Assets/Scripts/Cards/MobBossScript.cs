@@ -5,7 +5,7 @@ namespace Assets.Scripts
     /// <summary>
     /// Script which handles the mob boss
     /// </summary>
-    class MobBossScript : CardScript
+    public class MobBossScript : CardScript
     {
         #region Fields
 

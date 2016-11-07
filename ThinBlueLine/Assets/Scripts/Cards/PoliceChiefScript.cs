@@ -3,7 +3,7 @@
     /// <summary>
     /// Script which handles the police chief
     /// </summary>
-    class PoliceChiefScript : CardScript
+    public class PoliceChiefScript : CardScript
     {
         #region Fields
 

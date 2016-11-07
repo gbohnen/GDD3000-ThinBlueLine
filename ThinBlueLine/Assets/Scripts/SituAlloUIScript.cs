@@ -50,7 +50,7 @@ public class SituAlloUIScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        UpdateSituationUI();
+        //UpdateSituationUI();
     }
 
     // Update is called once per frame

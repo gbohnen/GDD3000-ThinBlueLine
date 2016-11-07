@@ -7,48 +7,29 @@ using Assets.Scripts;
 /// </summary>
 public class SituationSpawnScript : MonoBehaviour
 {
-    #region Fields
-
-    // store the prefab object
+    // parent of the prefab object, prefab object
+    public Transform situationCardParent;
     public GameObject situationCardPrefab;
 
-    // store the situations information
-    public Text situationName;
-    public Text cost;
-    //public Text smartsCost;
-    //public Text moxieCost;
-    //public Text strengthCost;
-    public Text description;
-
-    // store the demo situation
-    SituationScript demoSitch;
-
-    #endregion
-
-    #region Public Methods
-
-    // Use this for initilization
-    void Start()
-    {
-        demoSitch = new SituationScript(LoadGameData.LoadSituations()[0]);
-        UpdateFields();
-    }
-
     /// <summary>
-    /// Updates the information for the situation card
+    /// 
     /// </summary>
-    public void UpdateFields()
+    /// <param name="situation"></param>
+    public void OpenSituationCard(SituationScript situation)
     {
-        situationName.text = demoSitch.Name;
-        cost.text = demoSitch.Cost.ToString();
-        description.text = demoSitch.Description;
+        // instantiate the prefab, load the script attached to it
+        GameObject prefab = Instantiate(situationCardPrefab) as GameObject;
+        SituationCardUIScript situationCard = prefab.GetComponent<SituationCardUIScript>();
+
+        // set all UI fields based on the situation
+        situationCard.situationName.text = situation.Name;
+        situationCard.cost.text = situation.Cost.ToString();
+        situationCard.description.text = situation.Description;
+
+        // set the situation
+        situationCard.demoSitch = situation;
+
+        // set the parent of the object
+        prefab.transform.SetParent(situationCardParent);
     }
-
-    /// <summary>
-    /// Closes the window
-    /// </summary>
-    public void Close()
-    { Destroy(this); }
-
-    #endregion
 }

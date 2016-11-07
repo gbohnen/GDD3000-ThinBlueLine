@@ -3,7 +3,7 @@
     /// <summary>
     /// Script which handles the situations in the game
     /// </summary>
-    class SituationScript : MajorCrimeScript
+    public class SituationScript : MajorCrimeScript
     {
         #region Fields
 
