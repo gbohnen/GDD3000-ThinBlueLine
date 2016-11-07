@@ -22,7 +22,7 @@
       <ongoing>Add one to a Random City Crime Category</ongoing>
       <cost>4</cost>
       <smartsmod>1</smartsmod>
-      <musclemod>1</muslcemod>
+      <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
       <positive>Reduce Police Corruption by 2</positive>
       <negative>No Negative Outcome</negative>
@@ -34,7 +34,7 @@
       <ongoing>Add 1 point to Mafia Presence</ongoing>
       <cost>5</cost>
       <smartsmod>0.5</smartsmod>
-      <musclemod>1</muslcemod>
+      <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
       <positive>Reduce Chaos by 1</positive>
       <negative>No Negative Outcome</negative>
@@ -46,7 +46,7 @@
       <ongoing>None</ongoing>
       <cost>3</cost>
       <smartsmod>1</smartsmod>
-      <musclemod>0.75</muslcemod>
+      <musclemod>0.75</musclemod>
       <moxiemod>0.75</moxiemod>
       <positive>Reduce Chaos by 2</positive>
       <negative>No Negative Outcome</negative>
@@ -58,7 +58,7 @@
       <ongoing>Reduce points spent toward the Major Crime by 2.</ongoing>
       <cost>3</cost>
       <smartsmod>0.5</smartsmod>
-      <musclemod>1.5</muslcemod>
+      <musclemod>1.5</musclemod>
       <moxiemod>0.5</moxiemod>
       <positive>No Positive Outcome</positive>
       <negative>No Negative Outcome</negative>
@@ -70,7 +70,7 @@
       <ongoing>Reduce a random player's Moxie by 1</ongoing>
       <cost>4</cost>
       <smartsmod>0.75</smartsmod>
-      <musclemod>1</muslcemod>
+      <musclemod>1</musclemod>
       <moxiemod>1.5</moxiemod>
       <positive>Whoever Deals with this Situation gains 4 Moxie.</positive>
       <negative>No Negative Outcome</negative>
@@ -82,7 +82,7 @@
       <ongoing>Reduce a random player's Muscle by 1</ongoing>
       <cost>3</cost>
       <smartsmod>0.5</smartsmod>
-      <musclemod>2</muslcemod>
+      <musclemod>2</musclemod>
       <moxiemod>1</moxiemod>
       <positive>No Positive Outcome</positive>
       <negative>No Negative Outcome</negative>
@@ -94,7 +94,7 @@
       <ongoing>No Ongoing Effects</ongoing>
       <cost>3</cost>
       <smartsmod>1.5</smartsmod>
-      <musclemod>1.5</muslcemod>
+      <musclemod>1.5</musclemod>
       <moxiemod>-0.5</moxiemod>
       <positive>Whoever Deals with this Situation gains 3 Moxie</positive>
       <negative>Whoever Fails this Situation immediately loses 5 stat points at random (minimum 0 in any Pool)</negative>
@@ -106,7 +106,7 @@
       <ongoing>Reduce one random player's random stat pool by 1.</ongoing>
       <cost>6</cost>
       <smartsmod>2</smartsmod>
-      <musclemod>0.75</muslcemod>
+      <musclemod>0.75</musclemod>
       <moxiemod>1.5</moxiemod>
       <positive>Reduce Police Corruption by 1 and Mafia Presence by 1.</positive>
       <negative>No Negative Outcome</negative>
@@ -118,7 +118,7 @@
       <ongoing>Add 1 point to Chaos</ongoing>
       <cost>2</cost>
       <smartsmod>1</smartsmod>
-      <musclemod>0.5</muslcemod>
+      <musclemod>0.5</musclemod>
       <moxiemod>1</moxiemod>
       <positive>Reduce Chaos by 1 point.</positive>
       <negative>No Negative Outcome</negative>
@@ -130,7 +130,7 @@
       <ongoing>Randomly do one of the following: Add 2 points to Police Corruption OR 1 point to Chaos and 1 point to Mafia Presence</ongoing>
       <cost>5</cost>
       <smartsmod>1</smartsmod>
-      <musclemod>0.75</muslcemod>
+      <musclemod>0.75</musclemod>
       <moxiemod>1.5</moxiemod>
       <positive>Reduce all City Crime Categories by 1 point.</positive>
       <negative>No Negative Outcome</negative>
@@ -140,9 +140,9 @@
       <description>A witness provided a massive amount of information in exchange for protection.</description>
       <immediate>Choose One: Either all players gain 4 Smarts and 2 Moxie OR Reduce all General City Crime Categories by 1. Then remove this card from play.</immediate>
       <ongoing>None</ongoing>
-      <cost>None</cost>
+      <cost>0</cost>
       <smartsmod>0</smartsmod>
-      <musclemod>0</muslcemod>
+      <musclemod>0</musclemod>
       <moxiemod>0</moxiemod>
       <positive>No Positive Outcome</positive>
       <negative>No Negative Outcome</negative>
@@ -154,7 +154,7 @@
       <ongoing>Add 1 point to Mafia Presence</ongoing>
       <cost>4</cost>
       <smartsmod>0.75</smartsmod>
-      <musclemod>1.25</muslcemod>
+      <musclemod>1.25</musclemod>
       <moxiemod>0.75</moxiemod>
       <positive>No Positive Outcome</positive>
       <negative>No Negative Outcome</negative>
@@ -166,7 +166,7 @@
       <ongoing>Add 1 point to Chaos</ongoing>
       <cost>6</cost>
       <smartsmod>-1</smartsmod>
-      <musclemod>2</muslcemod>
+      <musclemod>2</musclemod>
       <moxiemod>1</moxiemod>
       <positive>Reduce Chaos by 2</positive>
       <negative>Increase Chaos by 2</negative>
@@ -178,7 +178,7 @@
       <ongoing>No Ongoing Effect</ongoing>
       <cost>3</cost>
       <smartsmod>0.75</smartsmod>
-      <musclemod>0</muslcemod>
+      <musclemod>0</musclemod>
       <moxiemod>1.5</moxiemod>
       <positive>All players gain 1 Smarts</positive>
       <negative>No Negative Outcome</negative>
@@ -190,7 +190,7 @@
       <ongoing>All players lose 1 Smarts</ongoing>
       <cost>6</cost>
       <smartsmod>2</smartsmod>
-      <musclemod>0.5</muslcemod>
+      <musclemod>0.5</musclemod>
       <moxiemod>0.75</moxiemod>
       <positive>Increase all players' stat pools by 1</positive>
       <negative>No Negative Outcome</negative>
@@ -202,7 +202,7 @@
       <ongoing>All players lose 1 Moxie</ongoing>
       <cost>4</cost>
       <smartsmod>1</smartsmod>
-      <musclemod>0.75</muslcemod>
+      <musclemod>0.75</musclemod>
       <moxiemod>0.75</moxiemod>
       <positive>Increase all players' pools by 1</positive>
       <negative>No Negative Outcome</negative>
@@ -214,7 +214,7 @@
       <ongoing>Add 2 to Mafia Presence</ongoing>
       <cost>10</cost>
       <smartsmod>1.5</smartsmod>
-      <musclemod>1</muslcemod>
+      <musclemod>1</musclemod>
       <moxiemod>1.25</moxiemod>
       <positive>All players gain 2 points to each pool. In addition, lower City Crime in this Neighborhood by 5 points, as desired across the Categories.</positive>
       <negative>No Negative Outcome</negative>
@@ -226,7 +226,7 @@
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
-      <musclemod>0</muslcemod>
+      <musclemod>0</musclemod>
       <moxiemod>0</moxiemod>
       <positive>No Positive Outcome</positive>
       <negative>No Negative Outcome</negative>
@@ -238,7 +238,7 @@
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
-      <musclemod>0</muslcemod>
+      <musclemod>0</musclemod>
       <moxiemod>0</moxiemod>
       <positive>No Positive Outcome</positive>
       <negative>No Negative Outcome</negative>
@@ -250,7 +250,7 @@
       <ongoing>Increase Police Corruption by 1.</ongoing>
       <cost>6</cost>
       <smartsmod>1</smartsmod>
-      <musclemod>0.5</muslcemod>
+      <musclemod>0.5</musclemod>
       <moxiemod>1</moxiemod>
       <positive>Player pools increase by 1.</positive>
       <negative>No Negative Outcome</negative>
@@ -262,7 +262,7 @@
       <ongoing>All stat modifiers on other Situations and the Major Crime are halved while this is active</ongoing>
       <cost>15</cost>
       <smartsmod>0.75</smartsmod>
-      <musclemod>1.25</muslcemod>
+      <musclemod>1.25</musclemod>
       <moxiemod>2</moxiemod>
       <positive>No Positive Outcome</positive>
       <negative>No Negative Outcome</negative>
@@ -274,7 +274,7 @@
       <ongoing>Add 1 point to Chaos</ongoing>
       <cost>5</cost>
       <smartsmod>-1</smartsmod>
-      <musclemod>2</muslcemod>
+      <musclemod>2</musclemod>
       <moxiemod>-0.5</moxiemod>
       <positive>Reduce Chaos by 1 point</positive>
       <negative>Add 1 to Chaos in every Neighborhood</negative>
@@ -286,7 +286,7 @@
       <ongoing>Add 1 point to Chaos or 1 point to Mafia Presence at random.</ongoing>
       <cost>8</cost>
       <smartsmod>1.5</smartsmod>
-      <musclemod>0.5</muslcemod>
+      <musclemod>0.5</musclemod>
       <moxiemod>1</moxiemod>
       <positive>Reduce Chaos and Mafia Presence by 1</positive>
       <negative>No Negative Outcome</negative>
@@ -298,7 +298,7 @@
       <ongoing>Place a Gun Token on Weapons Deal. If Weapons Deal has 3 Gun Tokens, remove it from play and add 4 points to Chaos and 2 points to Police Corruption</ongoing>
       <cost>15</cost>
       <smartsmod>1</smartsmod>
-      <musclemod>1</muslcemod>
+      <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
       <positive>Reduce all Crime Categories by 1</positive>
       <negative>No Negative Outcome</negative>
@@ -310,334 +310,322 @@
       <ongoing>Add 1 to Mafia Presence</ongoing>
       <cost>10</cost>
       <smartsmod>1.5</smartsmod>
-      <musclemod>1</muslcemod>
+      <musclemod>1</musclemod>
       <moxiemod>1.5</moxiemod>
       <positive>The Player who deals with this Situation recover 4 points to distribute among their Stat pools.</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Arson</name>
+      <description>Fires are being intentionally set around the city.</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>Add 2 points to Chaos</ongoing>
+      <cost>5</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1.5</moxiemod>
+      <positive>All players gain 3 points to a stat of their choice</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Power Grab - Mafia</name>
+      <description>There seem to be power squabbles going on within the mafia.</description>
+      <immediate>Remove 3 points from Mafia Presence</immediate>
+      <ongoing>Add 1 point to Chaos</ongoing>
+      <cost>10</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>All players get 5 points to distribute among their pools.</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Power Grab</name>
+      <description>There seems to be a power struggle in the department right now.</description>
+      <immediate>Immediately add 3 points to Police Corruption</immediate>
+      <ongoing>Add 1 point to Chaos</ongoing>
+      <cost>7</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>All players gain 2 points to each pool</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Robbery</name>
+      <description>Small personal banks are being robbed by the mafia.</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>Reduce points spent toward the Major Crime by 2</ongoing>
+      <cost>7</cost>
+      <smartsmod>0.5</smartsmod>
+      <musclemod>1.5</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>Place 5 points on the Major Crime from any pool for free</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Major Loss</name>
+      <description>An officer lost their life to the mafia today.</description>
+      <immediate>Add 1 to all City Crime Categories. Add 2 to each of the players' stat pools.</immediate>
+      <ongoing>Add 1 point to a random City Crime Category</ongoing>
+      <cost>6</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Serial Crime</name>
+      <description>Murders are increaseing throughout the city...</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>Add 2 points to Chaos</ongoing>
+      <cost>9</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>1.5</musclemod>
+      <moxiemod>-1</moxiemod>
+      <positive>Player who deals with this Situation recovers 4 points to distribute among their pools</positive>
+      <negative>Players each lose 4 random stat points.</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Born to Steal</name>
+      <description>Wealthy families have become the target of skilled thieves.</description>
+      <immediate>Add 2 points to Chaos</immediate>
+      <ongoing>Reduce points spent toward Major Crime by 2</ongoing>
+      <cost>4</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>0.75</musclemod>
+      <moxiemod>1.25</moxiemod>
+      <positive>All players gain 1 point to each pool</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Closing Up Shop</name>
+      <description>Many small shops are controlled by the mafia now.</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>Add 2 points to Mafia Presence</ongoing>
+      <cost>6</cost>
+      <smartsmod>0.5</smartsmod>
+      <musclemod>0.5</musclemod>
+      <moxiemod>1.75</moxiemod>
+      <positive>Reduces Mafia Presence by a number of points equal to the number of points in the muscle or smarts (whichever is higher) pool of the player that dealt with this situation</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Major Find!</name>
+      <description>You found some major intel about the heist that was left behind during a raid.</description>
+      <immediate>Add 2 points to each of all players' stat pools. Then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</musclemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Skimming</name>
+      <description>The Mafia is funneling money from casinos across the area.</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>Reduce points spent toward Major Crime by 2.</ongoing>
+      <cost>5</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1.5</moxiemod>
+      <positive>All players gain 1 point to each pool</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Newspaper Sluggers</name>
+      <description>Newspaper stands are selling publications owned by the mafia.</description>
+      <immediate>Add 2 points to Chaos. Then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</musclemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Car Bombing</name>
+      <description>Many people are hurt within the city from improvised explosions.</description>
+      <immediate>Add 4 points to Chaos</immediate>
+      <ongoing>Add 2 points to Chaos</ongoing>
+      <cost>6</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>All players gain 2 points to each of their pools.</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Union Scheme</name>
+      <description>The mafia have found their way into the unions.</description>
+      <immediate>Add 1 point to Mafia Presence</immediate>
+      <ongoing>Add 1 point to Mafia Presence and 1 point to Chaos</ongoing>
+      <cost>8</cost>
+      <smartsmod>0.5</smartsmod>
+      <musclemod>1.25</musclemod>
+      <moxiemod>1.25</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Cracked the Code</name>
+      <description>The Mafia have figured out how to crack safes incredibly quickly.</description>
+      <immediate>Add 2 points to Mafia Presence</immediate>
+      <ongoing>Add 1 point to Mafia Presence</ongoing>
+      <cost>3</cost>
+      <smartsmod>2</smartsmod>
+      <musclemod>0.5</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>Remove 2 points from Mafia Presence</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Hijacker</name>
+      <description>One of our squad cars was stolen...</description>
+      <immediate>Add 1 point to Mafia Presence and 2 points to Chaos</immediate>
+      <ongoing>Add 1 point to Chaos</ongoing>
+      <cost>6</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>0.5</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>Remove 2 points from Chaos</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Candy Store</name>
+      <description>Mafia assassins busted in a candy shop.</description>
+      <immediate>Reduce mafia presence by 3 then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect.</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</musclemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Political Influence</name>
+      <description>The mafia has garnered massive influence over the voters in the city.</description>
+      <immediate>Add 1 to all City Crime Categories and reduce points spent toward Major Crime by 2. Then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</musclemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Bust-out</name>
+      <description>The mob has caused a bank to go bankrupt...</description>
+      <immediate>No Immediate Effect</immediate>
+      <ongoing>Add 2 points to Chaos</ongoing>
+      <cost>8</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Drug Trends</name>
+      <description>Drug dealers are spreading many illicit substances throughout the city.</description>
+      <immediate>Add 1 point to each Crime Category</immediate>
+      <ongoing>Add 1 point to a random Crime Category</ongoing>
+      <cost>4</cost>
+      <smartsmod>0.7</smartsmod>
+      <musclemod>0.75</musclemod>
+      <moxiemod>1.25</moxiemod>
+      <positive>Remove 2 points from any Crime Category</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Gun Runner Drive-by</name>
+      <description>A hit and run by gun runners leaves several injured.</description>
+      <immediate>Add 1 point to Chaos</immediate>
+      <ongoing>Remove 2 points spent toward the Major Crime</ongoing>
+      <cost>4</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Poisoned Chief</name>
+      <description>The Police Chief has been poisoned by some unknown party.</description>
+      <immediate>Add 1 point to Chaos and 1 point to Police Corruption</immediate>
+      <ongoing>The Chief does not act until this card is dealt with.</ongoing>
+      <cost>8</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Ill Politicians</name>
+      <description>A number of politicians are turning up with mysterious symptoms...</description>
+      <immediate>Add 2 points to Chaos</immediate>
+      <ongoing>Add 1 point to Chaos</ongoing>
+      <cost>6</cost>
+      <smartsmod>1</smartsmod>
+      <musclemod>1</musclemod>
+      <moxiemod>1</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Poisoner Caught</name>
+      <description>The culprit responsible for several poisonings in the city has been apprehended.</description>
+      <immediate>Add 5 points, distributed to your stat pools then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</musclemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Speakeasies Established</name>
+      <description>The mob is running illegal bars...</description>
+      <immediate>Add 1 point to Police Corruption and 2 points to Mafia Presence</immediate>
+      <ongoing>Add 1 point to either Police Corruption or Mafia Presence, decided randomly</ongoing>
+      <cost>8</cost>
+      <smartsmod>1.5</smartsmod>
+      <musclemod>-0.5</musclemod>
+      <moxiemod>1.5</moxiemod>
+      <positive>Remove 2 points from Police Corruption and 2 points from Mafia Presence</positive>
+      <negative>Add 2 to Chaos</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Liquor Bust</name>
+      <description>A large warehouse holding illegal liquor was busted by the police.</description>
+      <immediate>Remove 3 points from either Mafia Presence or Police Corruption then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</musclemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
     <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
-    </situation>
-    <situation>
-      <name></name>
-      <description></description>
-      <immediate></immediate>
-      <ongoing></ongoing>
-      <cost></cost>
-      <smartsmod></smartsmod>
-      <musclemod></muslcemod>
-      <moxiemod></moxiemod>
-      <positive></positive>
-      <negative></negative>
+      <name>Godfather's Dinner</name>
+      <description>The Don seems to be having a meal with important figures.</description>
+      <immediate>Add 2 points to Police Corruption and 1 point to Mafia Presence. Then remove this card from play.</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
+      <cost>0</cost>
+      <smartsmod>0</smartsmod>
+      <musclemod>0</musclemod>
+      <moxiemod>0</moxiemod>
+      <positive>No Positive Outcome</positive>
+      <negative>No Negative Outcome</negative>
     </situation>
   </situations>
 </root>
