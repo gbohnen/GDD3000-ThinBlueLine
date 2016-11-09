@@ -108,6 +108,7 @@
            <avatar>
              <name>The Warden</name>
              <desc>Round glasses, brought around beard</desc>
+             <profpic>Player Images/Warden</profpic>
              <muscle>2</muscle>
              <smarts>6</smarts>
              <moxie>5</moxie>
@@ -117,6 +118,7 @@
            <avatar>
              <name>The Bookie</name>
              <desc>Big glasses, possibly overbite</desc>
+             <profpic>Player Images/Bookie</profpic>
              <muscle>1</muscle>
              <smarts>9</smarts>
              <moxie>2</moxie>
