@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
 
     public void ClickDrawSituation()
     {
-        UIManager.instance.DrawSituation();
+        UIManager.instance.DrawSituation(GameLibrary.instance.GetNewSituation());
     }
 
     public void ClickLowerCrime()

@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using Assets.Scripts;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour {
 
@@ -11,11 +12,15 @@ public class UIManager : MonoBehaviour {
     public CurrentPlayerManager currentPlayerManager;
     //public NeighborHoodManager neighborhoodManager;
 
-    // fields for window prefabs
+    // fields for popup window gameobjects
     public GameObject drawSituationWindow;
     public GameObject resolveSituationWindow;
     public GameObject changeNeighborhoodWindow;
-    public GameObject actionUnavailableWindow;
+    public GameObject useSpecialActionWindow;
+    public GameObject lowerCrimeWindow;
+
+    // collection of windows
+    List<GameObject> modalWindows;
 
     // singleton Instance
     public static UIManager instance;
@@ -29,19 +34,18 @@ public class UIManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
 
-        DumbStartupCode();
+        Initialize();
     }
 
-    public void DumbStartupCode()
+    public void Initialize()
     {
-        GameObject panel = GameObject.Find("ErrorPrefab");
+        modalWindows = new List<GameObject>();
 
-        drawSituationWindow = Instantiate(panel);
-        resolveSituationWindow = Instantiate(panel);
-        changeNeighborhoodWindow = Instantiate(panel);
-        actionUnavailableWindow = Instantiate(panel);
-
-        Destroy(panel);
+        modalWindows.Add(drawSituationWindow);
+        modalWindows.Add(resolveSituationWindow);
+        modalWindows.Add(changeNeighborhoodWindow);
+        modalWindows.Add(useSpecialActionWindow);
+        modalWindows.Add(lowerCrimeWindow);
     }
 
     public void UpdateUI()
@@ -56,31 +60,38 @@ public class UIManager : MonoBehaviour {
         situationManager.AddSituation(sitch);
     }
 
-    public void DrawSituation()
+    public void DrawSituation(SituationScript sitch)
     {
-        var panel = Instantiate(drawSituationWindow);
-        panel.transform.SetParent(gameObject.transform);
-        panel.transform.localPosition = new Vector3(0, 0, 0);
+        AddSituation(sitch);
+        drawSituationWindow.GetComponent<DrawSituationCard>().Initialize(sitch);
+        drawSituationWindow.SetActive(true);
+        drawSituationWindow.transform.SetAsLastSibling();
     }
 
     public void LowerCrime()
     {
-        var panel = Instantiate(drawSituationWindow);
-        panel.transform.SetParent(gameObject.transform);
-        panel.transform.localPosition = new Vector3(0, 0, 0);
+        lowerCrimeWindow.SetActive(true);
+        lowerCrimeWindow.transform.SetAsLastSibling();
     }
 
     public void SpecialAbility()
     {
-        var panel = Instantiate(drawSituationWindow);
-        panel.transform.SetParent(gameObject.transform);
-        panel.transform.localPosition = new Vector3(0, 0, 0);
+        useSpecialActionWindow.SetActive(true);
+        useSpecialActionWindow.transform.SetAsLastSibling();
     }
 
     public void ResolveSituation()
     {
-        var panel = Instantiate(drawSituationWindow);
-        panel.transform.SetParent(gameObject.transform);
-        panel.transform.localPosition = new Vector3(0, 0, 0);
+        resolveSituationWindow.SetActive(true);
+        resolveSituationWindow.transform.SetAsLastSibling();
+    }
+
+    public void CloseWindows()
+    {
+        // set all popup windows to inactive
+        foreach (GameObject obj in modalWindows)
+        {
+            obj.SetActive(false);
+        }
     }
 }

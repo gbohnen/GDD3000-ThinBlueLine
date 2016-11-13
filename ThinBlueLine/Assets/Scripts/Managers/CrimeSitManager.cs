@@ -10,8 +10,7 @@ namespace Assets.Scripts
     {
         // gameobject management fields
         public Animator drawerAnimator;
-
-
+        
         // situation list fields
         public Transform situationScrollPanel;              // parent that the prefab goes in
         public GameObject situationPrefab;                  // prefab that we want to spawn

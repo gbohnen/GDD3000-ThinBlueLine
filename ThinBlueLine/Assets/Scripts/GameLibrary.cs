@@ -75,6 +75,15 @@ public class GameLibrary : MonoBehaviour {
         return choices;
     }
 
+    public SituationScript GetNewSituation()
+    {
+        int i = Random.Range(0, situationLib.Count);
+        SituationScript sitch = situationLib[i];
+        situationLib.RemoveAt(i);
+
+        return sitch;
+    }
+
     public List<PlayerScript> PlayerLib
     {
         get { return playerLib; }
