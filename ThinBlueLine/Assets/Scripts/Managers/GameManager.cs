@@ -57,9 +57,12 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Gets the current player
     /// </summary>
+    public PlayerScript CurrentPlayerObj
+    { get { return GameLibrary.instance.Players[currentPlayer]; } }
+
+
     public Players CurrentPlayer
     { get { return currentPlayer; } }
-
     #endregion
 
     #region Public Methods
@@ -79,6 +82,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         currentPlayer = Players.Player1;
+
+        if (GameLibrary.instance.Players.Count == 0)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                GameLibrary.instance.Players.Add((Players)i, GameLibrary.instance.PlayerLib[Random.Range(0, 12)]);
+            }
+        }
 
         UIManager.instance.AddSituation(GameLibrary.instance.SituationList[3]);
         UIManager.instance.UpdateUI();
@@ -134,7 +145,7 @@ public class GameManager : MonoBehaviour
 
     public void ClickDrawSituation()
     {
-        UIManager.instance.DrawSituation();
+        UIManager.instance.DrawSituation(GameLibrary.instance.GetNewSituation());
     }
 
     public void ClickLowerCrime()
