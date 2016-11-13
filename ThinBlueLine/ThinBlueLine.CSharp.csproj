@@ -66,6 +66,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DrawSituationCard.cs" />
+    <Compile Include="Assets\ResolveSituationCard.cs" />
     <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MobBossScript.cs" />
@@ -86,7 +88,10 @@
     <Compile Include="Assets\Scripts\ParticleButton.cs" />
     <Compile Include="Assets\Scripts\PlayerSelect.cs" />
     <Compile Include="Assets\Scripts\RaycastMask.cs" />
+    <Compile Include="Assets\Scripts\SituAlloUIScript.cs" />
     <Compile Include="Assets\Scripts\SituationButton.cs" />
+    <Compile Include="Assets\Scripts\SituationCardUIScript.cs" />
+    <Compile Include="Assets\Scripts\SituationSpawnScript.cs" />
     <Compile Include="Assets\Scripts\SliderInput.cs" />
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />

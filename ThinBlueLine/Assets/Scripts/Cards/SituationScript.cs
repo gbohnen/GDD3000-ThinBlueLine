@@ -51,6 +51,7 @@
         public int Cost
         {
             get { return cost; }
+            set { cost = value; }
         }
 
         /// <summary>
