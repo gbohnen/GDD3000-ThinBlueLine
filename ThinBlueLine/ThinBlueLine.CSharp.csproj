@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DrawSituationCard.cs" />
+    <Compile Include="Assets\ResolveSituationCard.cs" />
     <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MobBossScript.cs" />

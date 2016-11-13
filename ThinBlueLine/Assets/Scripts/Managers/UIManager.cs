@@ -80,9 +80,10 @@ public class UIManager : MonoBehaviour {
         useSpecialActionWindow.transform.SetAsLastSibling();
     }
 
-    public void ResolveSituation()
+    public void ResolveSituation(SituationScript sitch)
     {
         resolveSituationWindow.SetActive(true);
+        resolveSituationWindow.GetComponent<ResolveSituationCard>().LoadSituation(sitch);
         resolveSituationWindow.transform.SetAsLastSibling();
     }
 
