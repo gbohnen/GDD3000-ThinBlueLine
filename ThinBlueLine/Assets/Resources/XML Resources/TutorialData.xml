@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<!-- Created by XML:Wrench -->
+<root>
+  <!-- content of XML goes 'here'  -->
+  <tutorialpages>
+    <page>Put Your Text here</page>
+    <page>Put The next Text here</page>
+    <page></page>
+  </tutorialpages>
+</root>
