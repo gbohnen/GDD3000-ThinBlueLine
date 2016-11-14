@@ -6,7 +6,7 @@
     <situation>
       <name>A Mole Discovered</name>
       <description>Someone in the force is feeding information to the mob.</description>
-      <immediate>Police Corrutpion +2</immediate>
+      <immediate>Police Corruption +2</immediate>
       <ongoing>Police Corruption +1</ongoing>
       <cost>5</cost>
       <smartsmod>1.5</smartsmod>
@@ -173,7 +173,7 @@
     </situation>
     <situation>
       <name>Jack Rabbit</name>
-      <description>A steet racer is running for the mob, and they are fast.</description>
+      <description>A street racer is running for the mob, and they are fast.</description>
       <immediate>Chaos +2</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>3</cost>
@@ -221,7 +221,7 @@
     </situation>
     <situation>
       <name>Get Out of Jail Free</name>
-      <description>A plea bargain means a mobster is getting away scotfree, but his information was priceless.</description>
+      <description>A plea bargain means a mobster is getting away scot free, but his information was priceless.</description>
       <immediate>Police Corruption +2, Chaos -2, Resolve this Situation</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
@@ -377,7 +377,7 @@
     </situation>
     <situation>
       <name>Serial Crime</name>
-      <description>Murders are increaseing throughout the city...</description>
+      <description>Murders are increasing throughout the city...</description>
       <immediate>No Immediate Effect</immediate>
       <ongoing>Chaos +2</ongoing>
       <cost>9</cost>

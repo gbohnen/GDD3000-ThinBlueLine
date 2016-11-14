@@ -90,7 +90,7 @@ public class ResolveSituationCard : MonoBehaviour {
         moxieRes.text = (moxieSlider.value * situation.MoxieModifier).ToString();
 
         muscleInp.text = muscleSlider.value.ToString();
-        muscleMod.text = "x " + situation.MoxieModifier.ToString();
+        muscleMod.text = "x " + situation.MuscleModifier.ToString();
         muscleRes.text = (muscleSlider.value * situation.MuscleModifier).ToString();
 
         futureCost.text = "New Cost: " + (situation.Cost - CostReduction()).ToString();
