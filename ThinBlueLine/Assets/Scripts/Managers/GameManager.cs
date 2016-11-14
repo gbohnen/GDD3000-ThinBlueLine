@@ -25,30 +25,7 @@ public class GameManager : MonoBehaviour
     MobBossScript mobBoss;
     PoliceChiefScript policeChief;
 
-    #region UI
-
-    // player UI fields
-    public Text playerWName;
-    public Text playerWSma;
-    public Text playerWMox;
-    public Text playerWMus;
-
-    public Text playerXName;
-    public Text playerXSma;
-    public Text playerXMox;
-    public Text playerXMus;
-
-    public Text playerYName;
-    public Text playerYSma;
-    public Text playerYMox;
-    public Text playerYMus;
-
-    public Text playerZName;
-    public Text playerZSma;
-    public Text playerZMox;
-    public Text playerZMus;
-
-    #endregion
+    bool firstAction;
 
     #endregion
 
@@ -66,12 +43,6 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Public Methods
-
-    /// <summary>
-    /// Gets or sets the audio manager
-    /// </summary>
-    public AudioManager Audio
-    { get; private set; }
 
     // Use this for initialization
     void Start()
@@ -91,7 +62,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        UIManager.instance.AddSituation(GameLibrary.instance.SituationList[3]);
+        firstAction = false;
         UIManager.instance.UpdateUI();
     }
 
@@ -103,24 +74,6 @@ public class GameManager : MonoBehaviour
 
         UIManager.instance.UpdateUI();
     }
-
-    /// <summary>
-    /// Passes the current turn to the next player
-    /// </summary>
-    public void PassTurn()
-    { }
-
-    /// <summary>
-    /// Loads the save game, if it exists
-    /// </summary>
-    public void LoadGame()
-    { }
-
-    /// <summary>
-    /// Ends the game
-    /// </summary>
-    public void EndGame()
-    { }
 
     public void ClickDrawSituation()
     {
@@ -135,6 +88,40 @@ public class GameManager : MonoBehaviour
     public void ClickSpecialAbility()
     {
         UIManager.instance.SpecialAbility();
+    }
+
+    public void LogAction(string action)
+    {
+        if (!firstAction)
+        {
+            UIManager.instance.PushPlayerAction(action);
+            UIManager.instance.UpdateUI();
+            firstAction = true;
+        }
+        else
+        {
+            UIManager.instance.PushPlayerAction(action);
+
+            Invoke("ResetTurn", 1f);
+        }
+    }
+
+    public void ResetTurn()
+    {
+        // set next player
+        switch (currentPlayer)
+        {
+            case Players.Player4:
+                currentPlayer = Players.Player1;
+                break;
+            default:
+                currentPlayer++;
+                break;
+        }
+
+        UIManager.instance.UpdateUI();
+        firstAction = false;
+        UIManager.instance.WipeActions();
     }
 
     #endregion

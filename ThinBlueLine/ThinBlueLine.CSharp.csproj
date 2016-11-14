@@ -74,7 +74,6 @@
     <Compile Include="Assets\Scripts\Cards\PoliceChiefScript.cs" />
     <Compile Include="Assets\Scripts\Cards\SituationScript.cs" />
     <Compile Include="Assets\Scripts\Constants.cs" />
-    <Compile Include="Assets\Scripts\DrawSituationCard.cs" />
     <Compile Include="Assets\Scripts\ErrorButton.cs" />
     <Compile Include="Assets\Scripts\GameLibrary.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
@@ -88,12 +87,13 @@
     <Compile Include="Assets\Scripts\ParticleButton.cs" />
     <Compile Include="Assets\Scripts\PlayerSelect.cs" />
     <Compile Include="Assets\Scripts\RaycastMask.cs" />
-    <Compile Include="Assets\Scripts\ResolveSituationCard.cs" />
-    <Compile Include="Assets\Scripts\SituationButton.cs" />
     <Compile Include="Assets\Scripts\StoryStructure.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TimerFinishedEvent.cs" />
     <Compile Include="Assets\Scripts\ToolTipScript.cs" />
+    <Compile Include="Assets\Scripts\UI Management\DrawSituationCard.cs" />
+    <Compile Include="Assets\Scripts\UI Management\ResolveSituationCard.cs" />
+    <Compile Include="Assets\Scripts\UI Management\SituationButton.cs" />
     <Compile Include="Assets\Scripts\XML Tools\LoadGameData.cs" />
   </ItemGroup>
   <ItemGroup>

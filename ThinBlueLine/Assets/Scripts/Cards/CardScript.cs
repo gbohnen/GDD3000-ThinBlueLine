@@ -65,6 +65,40 @@ namespace Assets.Scripts
             gameObject = Resources.Load<GameObject>(Constants.CARD_FOLDER_NAME);
         }
 
+        public void ParseMethod(string command)
+        {
+            do
+            {
+                int cIndex = command.IndexOf(';');
+                string method;
+
+                // grab first method
+                if (cIndex > 0)
+                {
+                    method = command.Substring(0, cIndex);
+                    command.Remove(0, cIndex);
+                }
+                // other wise just grab base method
+                else
+                    method = command;
+
+                // parse out parameters
+                do
+                {
+                    int pIndex = method.IndexOf(':');
+
+
+
+
+
+
+                } while (method.IndexOf(':') > 0);
+
+
+
+            } while (command.IndexOf(';') > 0);
+        }
+
         // TODO: Animation
 
         #endregion

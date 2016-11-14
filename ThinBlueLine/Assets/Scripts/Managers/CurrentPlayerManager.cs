@@ -11,6 +11,8 @@ public class CurrentPlayerManager : MonoBehaviour {
     public Text firstAction;
     public Text secondAction;
 
+    bool firstFlag = false;
+
     public void UpdateUI()
     {
         playerName.text = GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Name;
@@ -19,13 +21,22 @@ public class CurrentPlayerManager : MonoBehaviour {
         muscle.text = GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Strength.ToString();
     }
 
-    public void UpdateFirstAction()
+    public void UpdateActions(string action)
     {
-
+        if (!firstFlag)
+        {
+            firstAction.text = "1: " + action;
+            firstFlag = true;
+        }
+        else
+            secondAction.text = "2: " + action;
     }
 
-    public void UpdateSecondAction()
+    public void WipeActions()
     {
+        firstAction.text = "1:";
+        secondAction.text = "2:";
 
+        firstFlag = false;
     }
 }

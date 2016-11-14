@@ -104,4 +104,14 @@ public class UIManager : MonoBehaviour {
     {
         currentSituation.GetComponent<SituationButton>().UpdateCost(i);
     }
+
+    public void PushPlayerAction(string action)
+    {
+        currentPlayerManager.UpdateActions(action);
+    }
+
+    public void WipeActions()
+    {
+        currentPlayerManager.WipeActions();
+    }
 }
