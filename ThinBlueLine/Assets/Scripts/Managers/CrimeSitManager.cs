@@ -11,7 +11,8 @@ namespace Assets.Scripts
     {
         // gameobject management fields
         public Animator drawerAnimator;
-        
+        public Animator buttonAnimator;
+
         // situation list fields
         public Transform situationScrollPanel;              // parent that the prefab goes in
         public GameObject situationPrefab;                  // prefab that we want to spawn
@@ -53,17 +54,35 @@ namespace Assets.Scripts
             newButton.transform.SetParent(situationScrollPanel);
         }
 
-        public void OpenSituations()
+        //public void OpenSituations()
+        //{
+        //    if (drawerAnimator.GetBool("Open"))
+        //        CloseDrawer();
+        //    else
+        //    {
+        //        drawerAnimator.SetBool("Open", true);
+        //        buttonAnimator.SetBool("Open", true);
+        //    }
+        //}
+
+        //public void CloseDrawer()
+        //{
+        //    drawerAnimator.SetBool("Open", false);
+        //    buttonAnimator.SetBool("Open", false);
+        //}
+
+        public void ToggleDrawer()
         {
             if (drawerAnimator.GetBool("Open"))
-                CloseDrawer();
+            {
+                drawerAnimator.SetBool("Open", false);
+                buttonAnimator.SetBool("Open", false);
+            }
             else
+            {
                 drawerAnimator.SetBool("Open", true);
-        }
-
-        public void CloseDrawer()
-        {
-            drawerAnimator.SetBool("Open", false);
+                buttonAnimator.SetBool("Open", true);
+            }
         }
     }
 }
