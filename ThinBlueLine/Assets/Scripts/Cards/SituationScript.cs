@@ -10,7 +10,7 @@
         string description;
         string immEffect;
         string ongEffect;
-        int cost;
+        float cost;
         float smartsModifier;
         float muscleModifier;
         float moxieModifier;
@@ -48,7 +48,7 @@
         /// <summary>
         /// Gets the costs
         /// </summary>
-        public int Cost
+        public float Cost
         {
             get { return cost; }
             set { cost = value; }

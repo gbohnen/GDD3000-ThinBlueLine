@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using Assets.Scripts;
+using System.Collections.Generic;
 
 namespace Assets.Scripts
 {
@@ -14,10 +15,14 @@ namespace Assets.Scripts
         // situation list fields
         public Transform situationScrollPanel;              // parent that the prefab goes in
         public GameObject situationPrefab;                  // prefab that we want to spawn
-        
+
+        public static Dictionary<string, GameObject> ActiveSituations;
+
         void Start()
         {
             drawerAnimator = GetComponent<Animator>();
+
+            ActiveSituations = new Dictionary<string, GameObject>();
         }
 
         // called by gamemanager when we draw a new situation
@@ -26,6 +31,8 @@ namespace Assets.Scripts
             // instantiate a prefab. load the script attached to it
             GameObject newButton = Instantiate(situationPrefab) as GameObject;
             SituationButton button = newButton.GetComponent<SituationButton>();
+
+            ActiveSituations.Add(sitch.Name, newButton);
 
             // set all ui fields based on the situation we were given
             button.situationName.text   = sitch.Name;

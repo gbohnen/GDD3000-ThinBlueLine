@@ -95,34 +95,13 @@ public class GameManager : MonoBehaviour
         UIManager.instance.UpdateUI();
     }
 
-    /// <summary>
-    /// Updates the UI
-    /// </summary>
-    public void UpdateUI()
+    public void SituationResolved(float smarts, float moxie, float muscle)
     {
-        // player one
-        playerWName.text = GameLibrary.instance.Players[Players.Player1].Name;
-        playerWSma.text = GameLibrary.instance.Players[Players.Player1].Smarts.ToString();
-        playerWMox.text = GameLibrary.instance.Players[Players.Player1].Moxie.ToString();
-        playerWMus.text = GameLibrary.instance.Players[Players.Player1].Strength.ToString();
+        GameLibrary.instance.Players[currentPlayer].Smarts -= (int)smarts;
+        GameLibrary.instance.Players[currentPlayer].Moxie -= (int)moxie;
+        GameLibrary.instance.Players[currentPlayer].Strength -= (int)muscle;
 
-        // player two
-        playerXName.text = GameLibrary.instance.Players[Players.Player2].Name;
-        playerXSma.text = GameLibrary.instance.Players[Players.Player2].Smarts.ToString();
-        playerXMox.text = GameLibrary.instance.Players[Players.Player2].Moxie.ToString();
-        playerXMus.text = GameLibrary.instance.Players[Players.Player2].Strength.ToString();
-
-        // player three
-        playerYName.text = GameLibrary.instance.Players[Players.Player3].Name;
-        playerYSma.text = GameLibrary.instance.Players[Players.Player3].Smarts.ToString();
-        playerYMox.text = GameLibrary.instance.Players[Players.Player3].Moxie.ToString();
-        playerYMus.text = GameLibrary.instance.Players[Players.Player3].Strength.ToString();
-
-        // player four
-        playerZName.text = GameLibrary.instance.Players[Players.Player4].Name;
-        playerZSma.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
-        playerZMox.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
-        playerZMus.text = GameLibrary.instance.Players[Players.Player4].Strength.ToString();
+        UIManager.instance.UpdateUI();
     }
 
     /// <summary>

@@ -30,6 +30,7 @@ namespace Assets.Scripts
         public int Moxie
         {
             get { return moxie; }
+            set { moxie = value; }
         }
 
         /// <summary>
@@ -38,6 +39,7 @@ namespace Assets.Scripts
         public int Strength
         {
             get { return muscles; }
+            set { muscles = value; }
         }
 
         /// <summary>
@@ -46,6 +48,7 @@ namespace Assets.Scripts
         public int Smarts
         {
             get { return smarts; }
+            set { smarts = value; }
         }
 
         /// <summary>

@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour {
     // singleton Instance
     public static UIManager instance;
 
+    public GameObject currentSituation;
+
     void Awake()
     {
         if (instance == null)
@@ -82,6 +84,8 @@ public class UIManager : MonoBehaviour {
 
     public void ResolveSituation(SituationScript sitch)
     {
+        currentSituation = CrimeSitManager.ActiveSituations[sitch.Name];
+
         resolveSituationWindow.SetActive(true);
         resolveSituationWindow.GetComponent<ResolveSituationCard>().LoadSituation(sitch);
         resolveSituationWindow.transform.SetAsLastSibling();
@@ -94,5 +98,10 @@ public class UIManager : MonoBehaviour {
         {
             obj.SetActive(false);
         }
+    }
+
+    public void ReduceSituation(float i)
+    {
+        currentSituation.GetComponent<SituationButton>().UpdateCost(i);
     }
 }

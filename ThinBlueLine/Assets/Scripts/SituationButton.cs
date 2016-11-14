@@ -34,9 +34,15 @@ public class SituationButton : MonoBehaviour {
         UIManager.instance.ResolveSituation(situation);
     }
 
-    public void UpdateCost(int i)
+    public void UpdateCost(float i)
     {
-        cost.text = "Cost:           " + i;
-        situation.Cost = i;
+        cost.text = "Cost:           " + (situation.Cost - i).ToString();
+        situation.Cost -= i;
+
+        if (situation.Cost <= 0)
+        {
+            situation.TriggerPosOutcome();
+            Destroy(gameObject);
+        }
     }
 }

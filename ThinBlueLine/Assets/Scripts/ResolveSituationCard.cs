@@ -39,12 +39,12 @@ public class ResolveSituationCard : MonoBehaviour {
         moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + arrow + GameManager.Instance.CurrentPlayerObj.Moxie.ToString();
         muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + arrow + GameManager.Instance.CurrentPlayerObj.Strength.ToString();
 
-        UpdateCalculations();
+        ResetButton();
     }
 
     public void SmartsSliderChanged()
     {
-        if (SliderSum > totalThreshold)
+        if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Smarts < smartsSlider.value)
             smartsSlider.value--;
 
         smartsText.text = GameManager.Instance.CurrentPlayerObj.Smarts.ToString() + arrow + (GameManager.Instance.CurrentPlayerObj.Smarts - smartsSlider.value).ToString();
@@ -54,7 +54,7 @@ public class ResolveSituationCard : MonoBehaviour {
 
     public void MoxieSliderChanged()
     {
-        if (SliderSum > totalThreshold)
+        if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Moxie < moxieSlider.value)
             moxieSlider.value--;
 
         moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + arrow + (GameManager.Instance.CurrentPlayerObj.Moxie - moxieSlider.value).ToString();
@@ -64,7 +64,7 @@ public class ResolveSituationCard : MonoBehaviour {
 
     public void StrengthSliderChanged()
     {
-        if (SliderSum > totalThreshold)
+        if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Strength < muscleSlider.value)
             muscleSlider.value--;
 
         muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + arrow + (GameManager.Instance.CurrentPlayerObj.Strength - muscleSlider.value).ToString();
@@ -113,5 +113,16 @@ public class ResolveSituationCard : MonoBehaviour {
         muscleSlider.value = 0;
 
         UpdateCalculations();
+    }
+
+    public void CommitChanges()
+    {
+        if (SliderSum <= totalThreshold)
+        {
+            GameManager.Instance.SituationResolved(smartsSlider.value, moxieSlider.value, muscleSlider.value);
+
+            UIManager.instance.ReduceSituation(CostReduction());
+            UIManager.instance.CloseWindows();
+        }
     }
 }
