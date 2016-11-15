@@ -102,7 +102,6 @@
         /// Constructor
         /// </summary>
         public SituationScript(LoadGameData.Situation data) 
-            : base()
         {
             cardName = data.name;
             description = data.desc;

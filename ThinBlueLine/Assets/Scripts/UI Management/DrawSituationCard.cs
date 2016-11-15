@@ -18,6 +18,12 @@ namespace Assets.Scripts
         public Text immEffect;
         public Text ongEffect;
 
+        public Slider smartsSlider;
+        public Slider moxieSlider;
+        public Slider muscleSlider;
+
+        float totalThreshold = 3.0f;
+
         public void Initialize(SituationScript sitch)
         {
             // set all ui fields based on the situation we were given
@@ -33,6 +39,39 @@ namespace Assets.Scripts
             ongEffect.text = sitch.OngoingEffect;
 
             GameManager.Instance.LogAction("Situation Drawn");
+        }
+
+        private float SliderSum
+        {
+            get { return smartsSlider.value + moxieSlider.value + muscleSlider.value; }
+        }
+
+        public void SmartsSliderChanged()
+        {
+            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Smarts < smartsSlider.value)
+                smartsSlider.value--;
+        }
+
+        public void MoxieSliderChanged()
+        {
+            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Moxie < moxieSlider.value)
+                moxieSlider.value--;
+        }
+
+        public void StrengthSliderChanged()
+        {
+            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Strength < muscleSlider.value)
+                muscleSlider.value--;
+        }
+
+        public void ConfirmSituationDraw()
+        {
+            if (smartsSlider.value + moxieSlider.value + muscleSlider.value == totalThreshold)
+            {
+                GameManager.Instance.SituationDrawn(smartsSlider.value, moxieSlider.value, muscleSlider.value);
+
+                UIManager.instance.CloseWindows();
+            }
         }
     }
 }

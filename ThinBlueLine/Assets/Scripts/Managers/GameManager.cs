@@ -141,6 +141,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SituationDrawn(float sma, float mox, float mus)
+    {
+        GameLibrary.instance.Players[currentPlayer].Smarts += (int)sma;
+        GameLibrary.instance.Players[currentPlayer].Moxie += (int)mox;
+        GameLibrary.instance.Players[currentPlayer].Strength += (int)mus;
+
+        UIManager.instance.UpdateUI();
+    }
+
     public void ResetTurn()
     {
         // set next player
