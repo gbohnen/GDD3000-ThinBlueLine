@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\GameLibrary.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\CityInfoManager.cs" />
     <Compile Include="Assets\Scripts\Managers\CrimeSitManager.cs" />
     <Compile Include="Assets\Scripts\Managers\CurrentPlayerManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
