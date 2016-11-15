@@ -62,7 +62,7 @@ public class GameLibrary : MonoBehaviour {
         //Debug.Log(playerLib.Count);
         //Debug.Log(situationLib.Count);
         //Debug.Log(mobBossLib.Count);
-        Debug.Log(tutorialLib.Count);
+        //Debug.Log(tutorialLib.Count);
     }
 
     public List<PlayerScript> GetPlayerChoices()
