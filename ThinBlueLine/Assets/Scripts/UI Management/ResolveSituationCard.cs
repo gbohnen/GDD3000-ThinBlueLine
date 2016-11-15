@@ -117,7 +117,7 @@ public class ResolveSituationCard : MonoBehaviour {
 
     public void CommitChanges()
     {
-        if (SliderSum <= totalThreshold)
+        if (SliderSum <= totalThreshold && SliderSum > 0)
         {
             GameManager.Instance.SituationResolved(smartsSlider.value, moxieSlider.value, muscleSlider.value);
 
