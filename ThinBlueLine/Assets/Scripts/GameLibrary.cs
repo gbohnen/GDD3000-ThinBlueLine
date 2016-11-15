@@ -11,6 +11,8 @@ public class GameLibrary : MonoBehaviour {
     List<PlayerScript> playerLib = new List<PlayerScript>();
     List<SituationScript> situationLib = new List<SituationScript>();
     List<MobBossScript> mobBossLib = new List<MobBossScript>();
+    List<TutorialScript> tutorialLib = new List<TutorialScript>();
+
 
     private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
     
@@ -51,9 +53,16 @@ public class GameLibrary : MonoBehaviour {
             mobBossLib.Add(new MobBossScript(mobBoss));
         }
 
+        List<LoadGameData.Tutorial> tutorial = LoadGameData.LoadTutorial();
+        foreach (LoadGameData.Tutorial tut in tutorial)
+        {
+            tutorialLib.Add(new TutorialScript(tut));
+        }
+
         //Debug.Log(playerLib.Count);
         //Debug.Log(situationLib.Count);
         //Debug.Log(mobBossLib.Count);
+        Debug.Log(tutorialLib.Count);
     }
 
     public List<PlayerScript> GetPlayerChoices()
@@ -97,5 +106,10 @@ public class GameLibrary : MonoBehaviour {
     public List<SituationScript> SituationList
     {
         get { return situationLib; }
+    }
+
+    public List<TutorialScript> TutorialList
+    {
+        get { return tutorialLib; }
     }
 }

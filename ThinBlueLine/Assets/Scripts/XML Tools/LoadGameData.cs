@@ -66,7 +66,16 @@ public static class LoadGameData
     /// </summary>
     public struct Tutorial
     {
-
+        public string page0;
+        public string page1;
+        public string page2;
+        public string page3;
+        public string page4;
+        public string page5;
+        public string page6;
+        public string page7;
+        public string page8;
+        public string page9;
     }
 
     /// <summary>
@@ -292,8 +301,31 @@ public static class LoadGameData
         // iterate all "tutorial" tags
         foreach (XmlNode node in tutorialList)
         {
+            // make a list of all child node (this is where the tutorial data is stored)
+            XmlNodeList tutorialData = node.ChildNodes;
+
             // empty tutorial
             Tutorial tut = new Tutorial();
+
+            // iterate those nodes
+            foreach (XmlNode childNode in tutorialData)
+            {
+                // load data into tutorial based on child tag
+                switch (childNode.Name)
+                {
+                    case "page0": tut.page0 = childNode.InnerText; break;
+                    case "page1": tut.page1 = childNode.InnerText; break;
+                    case "page2": tut.page2 = childNode.InnerText; break;
+                    case "page3": tut.page3 = childNode.InnerText; break;
+                    case "page4": tut.page4 = childNode.InnerText; break;
+                    case "page5": tut.page5 = childNode.InnerText; break;
+                    case "page6": tut.page6 = childNode.InnerText; break;
+                    case "page7": tut.page7 = childNode.InnerText; break;
+                    case "page8": tut.page8 = childNode.InnerText; break;
+                    case "page9": tut.page9 = childNode.InnerText; break;
+                    default: break;
+                }
+            }
 
             // add child to the list
             tutorial.Add(tut);
