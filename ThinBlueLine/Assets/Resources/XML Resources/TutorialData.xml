@@ -3,8 +3,51 @@
 <root>
   <!-- content of XML goes 'here'  -->
   <tutorialpages>
-    <page>Put Your Text here</page>
-    <page>Put The next Text here</page>
-    <page></page>
+    <page>"Welcome to Bower City. I'm Police Chief Bob Walsh. Bower City is a 
+    metropolis with 5 main districts; Downtown, Portside, The Boxes, Suburbia, 
+    and Stony Gate. Bower City is the most peaceful town anyone could ask for."</page>
+    
+    <page>"At least, that's what I wish I could tell you."</page>
+    
+    <page>"Unfortunately, I can't. We, at the Bower City Police Department have 
+    our work cut out for us. Crime is at an all-time high. We have crimes 
+    ranging from bank heists to car chases to alcohol and cargo smuggling."</page>
+    
+    <page>"We know that the mafia controls most of the crime here, some of the
+    other crimes are just low-lifes being low-lifes. We don't really know who's 
+    the head honcho though, the main guy pulling all the strings, or even 
+    why he's doing it."</page>
+
+    <page>"This is where you come in. We need you and your team of fellow 
+    coppers to pound the streets. This means selecting the crimes you wish get 
+    involved in, learning about the cases, and getting the job done."</page>
+
+    <page>"Now, getting the job done may be different than what you are used to,
+    or even what you've seen. Here at Bower City, everything is turned based; 
+    hey, I didn't make up these rules. Anyway, during your turn you have several
+    different choices: Lower Crime, Change Neighborhood, Draw Situation, 
+    Resolve Situation, and Player Special Action."</page>
+
+    <page>"Lowering Crime costs a stat or resource you may or may not have. 
+    Changing Neighborhoods is what it seems to be; you change what neighborhood 
+    you are in, it can really matter. Drawing a situation card means finding a 
+    new crime to pursue, good things and bad things could happen from this. 
+    Resolve a situation; this one is a little like Lowering crime; it costs 
+    stats that you may or may not have in your possession. Player Special 
+    Action; this is a favorite of some of the other coppers down at the station; 
+    each person has a special that can be used to help with various scenarios.
+    Player Special Actions are different for everyone here, make sure you know
+    what your special is."</page>
+
+    <page>"Be warned, using a Player Special Action could be the difference of 
+    life and death; that door swings both ways by the way. Oh, I almost forgot, 
+    Situations and Lowering crime will most likely cost more stats than one 
+    officer possesses and may take more than one turn to do so, your fellow 
+    officers here with you could help out."</page>
+    
+    <page>“With a little luck we -meaning you- might find clues as to who the 
+    big mastermind of this whole crime syndicate is.”</page>
+
+    <page>"I will check up on you later. Good luck out there."</page>
   </tutorialpages>
 </root>
