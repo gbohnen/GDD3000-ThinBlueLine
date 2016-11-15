@@ -17,6 +17,7 @@ namespace Assets.Scripts
         public const string SITUATIONS_FILE_NAME = @"XML Resources/SituationData";
         public const string MOB_BOSS_FILE_NAME = @"XML Resources/MobBossData";
         public const string MAJOR_CRIMES_FILE_NAME = @"XML Resources/MajorCrimesData";
+        public const string TUTORIAL_FILE_NAME = @"XML Resources/TutorialData";
 
         #endregion
 
