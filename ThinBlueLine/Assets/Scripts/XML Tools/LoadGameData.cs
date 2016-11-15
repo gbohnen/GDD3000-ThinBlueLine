@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using System.Xml;
-using System;
 using System.Collections.Generic;
 using Assets.Scripts;
 
+/// <summary>
+/// Class which handles Loading Game Data from XMLs
+/// </summary>
 public static class LoadGameData
 {
+    /// <summary>
+    /// Struct for the Player XML
+    /// </summary>
     public struct Player
     {
         public string name;
@@ -18,6 +23,9 @@ public static class LoadGameData
         public string avatPath;
     }
 
+    /// <summary>
+    /// Struct for the Situation XML
+    /// </summary>
     public struct Situation
     {
         public string name;
@@ -32,6 +40,9 @@ public static class LoadGameData
         public string negOut;
     }
 
+    /// <summary>
+    /// Struct for the Mob Boss XML
+    /// </summary>
     public struct MobBoss
     {
         public string name;
@@ -41,10 +52,21 @@ public static class LoadGameData
         public string story;
     }
 
+    /// <summary>
+    /// Struct for the Major Crime XML
+    /// </summary>
     public struct MajorCrime
     {
         public string name;
         public string mobBoss;
+    }
+
+    /// <summary>
+    /// Struct for the tutorial XML
+    /// </summary>
+    public struct Tutorial
+    {
+
     }
 
     /// <summary>
@@ -79,9 +101,9 @@ public static class LoadGameData
                 {
                     case "name":    player.name = childNode.InnerText; break;
                     case "desc":    player.desc = childNode.InnerText; break;
-                    case "muscle":  player.muscle = Int32.Parse(childNode.InnerText); break;
-                    case "smarts":  player.smarts = Int32.Parse(childNode.InnerText); break;
-                    case "moxie":   player.moxie = Int32.Parse(childNode.InnerText); break;
+                    case "muscle":  player.muscle = int.Parse(childNode.InnerText); break;
+                    case "smarts":  player.smarts = int.Parse(childNode.InnerText); break;
+                    case "moxie":   player.moxie = int.Parse(childNode.InnerText); break;
                     case "special": player.special = childNode.InnerText; break;
                     case "story":   player.story = childNode.InnerText; break;
                     case "profpic": player.avatPath = childNode.InnerText; break;
@@ -131,7 +153,7 @@ public static class LoadGameData
                     case "description": situation.desc = childNode.InnerText; break;
                     case "immediate": situation.immEff = childNode.InnerText; break;
                     case "ongoing": situation.ongEff = childNode.InnerText; break;
-                    case "cost": situation.cost = Int32.Parse(childNode.InnerText); break;
+                    case "cost": situation.cost = int.Parse(childNode.InnerText); break;
                     case "smartsmod": situation.smMod = float.Parse(childNode.InnerText); break;
                     case "musclemod": situation.musMod = float.Parse(childNode.InnerText); break;
                     case "moxiemod": situation.moxMod = float.Parse(childNode.InnerText); break;
@@ -250,5 +272,34 @@ public static class LoadGameData
 
         // return list of all major crimes
         return majorCrimes;
+    }
+
+    /// <summary>
+    /// Loads in the tutorial from the XML
+    /// </summary>
+    /// <returns>the tutorial</returns>
+    public static  List<Tutorial> LoadTutorial()
+    {
+        TextAsset tutorialFile = (TextAsset)Resources.Load(Constants.TUTORIAL_FILE_NAME);
+
+        // instantiate necessary components
+        XmlDocument tutorialDoc = new XmlDocument();                                           // blank xml doc
+        tutorialDoc.LoadXml(tutorialFile.text);                                                // load tutorial file
+        XmlNodeList tutorialList = tutorialDoc.GetElementsByTagName("tutorial");               // get all tags labeled tutorial
+
+        List<Tutorial> tutorial = new List<Tutorial>();                                        // list of tutorial info
+
+        // iterate all "tutorial" tags
+        foreach (XmlNode node in tutorialList)
+        {
+            // empty tutorial
+            Tutorial tut = new Tutorial();
+
+            // add child to the list
+            tutorial.Add(tut);
+        }
+
+        // return list of tutorial info
+        return tutorial;
     }
 }
