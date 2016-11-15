@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour {
     public PlayerManager playerManager;
     public CurrentPlayerManager currentPlayerManager;
     //public NeighborHoodManager neighborhoodManager;
+    public CityInfoManager cityInfoManager;
 
     // fields for popup window gameobjects
     public GameObject drawSituationWindow;
@@ -55,6 +56,7 @@ public class UIManager : MonoBehaviour {
         playerManager.UpdateUI();
         playerManager.UpdateIndicator();
         currentPlayerManager.UpdateUI();
+        cityInfoManager.UpdateUI();
     }
 
     public void AddSituation(SituationScript sitch)

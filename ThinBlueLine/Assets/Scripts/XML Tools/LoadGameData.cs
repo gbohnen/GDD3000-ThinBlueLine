@@ -285,7 +285,7 @@ public static class LoadGameData
         // instantiate necessary components
         XmlDocument tutorialDoc = new XmlDocument();                                           // blank xml doc
         tutorialDoc.LoadXml(tutorialFile.text);                                                // load tutorial file
-        XmlNodeList tutorialList = tutorialDoc.GetElementsByTagName("tutorial");               // get all tags labeled tutorial
+        XmlNodeList tutorialList = tutorialDoc.GetElementsByTagName("tutorialpages");          // get all tags labeled tutorial
 
         List<Tutorial> tutorial = new List<Tutorial>();                                        // list of tutorial info
 

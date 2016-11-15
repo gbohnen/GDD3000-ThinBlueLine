@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
 
     bool firstAction;
 
+    // set the initial crime categories
+    public int initPC = 0;
+    public int initCH = 0;
+    public int initMP = 0;
+
     #endregion
 
     #region Properties
@@ -37,9 +42,39 @@ public class GameManager : MonoBehaviour
     public PlayerScript CurrentPlayerObj
     { get { return GameLibrary.instance.Players[currentPlayer]; } }
 
-
+    /// <summary>
+    /// Gets the current player
+    /// </summary>
     public Players CurrentPlayer
     { get { return currentPlayer; } }
+
+    /// <summary>
+    /// Gets or sets the current police corruption
+    /// </summary>
+    public int CurrentPC
+    {
+        get { return initPC; }
+        set { initPC = value; }
+    }
+
+    /// <summary>
+    /// Gets or sets the current chaos
+    /// </summary>
+    public int CurrentCH
+    {
+        get { return initCH; }
+        set { initCH = value; }
+    }
+
+    /// <summary>
+    /// Gets or sets the current mafia presence
+    /// </summary>
+    public int CurrentMP
+    {
+        get { return initMP; }
+        set { initMP = value; }
+    }
+
     #endregion
 
     #region Public Methods
