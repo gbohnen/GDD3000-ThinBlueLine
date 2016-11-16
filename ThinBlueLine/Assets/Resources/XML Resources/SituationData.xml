@@ -43,7 +43,7 @@
       <name>Car Chase</name>
       <description>A high speed chase has developed in the neighborhood.</description>
       <immediate>ChangeCurrentChaos:2</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>3</cost>
       <smartsmod>1</smartsmod>
       <musclemod>0.75</musclemod>
@@ -91,13 +91,13 @@
       <name>Loan Shark</name>
       <description>The mob is funding a loan shark in the city that's bringing desperate people to even worse situations.</description>
       <immediate>ChangeCurrentMafiaPresence:1</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>3</cost>
       <smartsmod>1.5</smartsmod>
       <musclemod>1.5</musclemod>
       <moxiemod>-0.5</moxiemod>
       <positive>ChangeCurrentPlayerMoxie:3</positive>
-      <negative>Current Player Random Stat -5</negative>
+      <negative>ChangeRandomCurrentPlayerStats:-5</negative>
     </situation>
     <situation>
       <name>Unlawful Gains</name>
@@ -139,7 +139,7 @@
       <name>Witness Protection Program</name>
       <description>A witness provided a massive amount of information in exchange for protection.</description>
       <immediate>Choose One: Either All Players Smarts +4, All Players Moxie +2, OR All Crime Categories -1, Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -169,13 +169,13 @@
       <musclemod>2</musclemod>
       <moxiemod>1</moxiemod>
       <positive>ChangeCurrentChaos:-2</positive>
-      <negative>Chaos +2</negative>
+      <negative>ChangeCurrentChaos:2</negative>
     </situation>
     <situation>
       <name>Jack Rabbit</name>
       <description>A street racer is running for the mob, and they are fast.</description>
       <immediate>ChangeCurrentChaos:2</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>3</cost>
       <smartsmod>0.75</smartsmod>
       <musclemod>0</musclemod>
@@ -223,7 +223,7 @@
       <name>Get Out of Jail Free</name>
       <description>A plea bargain means a mobster is getting away scot free, but his information was priceless.</description>
       <immediate>ChangeCurrentPoliceCorruption:2;ChangeCurrentChaos:-2,Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -235,7 +235,7 @@
       <name>Prosecutor</name>
       <description>The prosecutor did their job today.</description>
       <immediate>ChangeCurrentChaos:-2;ChangeCurrentMafiaPresence:-1,Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -277,7 +277,7 @@
       <musclemod>2</musclemod>
       <moxiemod>-0.5</moxiemod>
       <positive>ChangeCurrentChaos:-1</positive>
-      <negative>All Neighborhood Chaos +1</negative>
+      <negative>ChangeAllNeighborhoodChaos:1</negative>
     </situation>
     <situation>
       <name>Street Races</name>
@@ -318,7 +318,7 @@
     <situation>
       <name>Arson</name>
       <description>Fires are being intentionally set around the city.</description>
-      <immediate>None</immediate>
+      <immediate>No Immediate Effect</immediate>
       <ongoing>Chaos +2</ongoing>
       <cost>5</cost>
       <smartsmod>1.5</smartsmod>
@@ -385,7 +385,7 @@
       <musclemod>1.5</musclemod>
       <moxiemod>-1</moxiemod>
       <positive>ChangeAllPlayersStats:1</positive>
-      <negative>All Players Random Stat -4</negative>
+      <negative>ChangeAllPlayersRandomStats:-4</negative>
     </situation>
     <situation>
       <name>Born to Steal</name>
@@ -415,7 +415,7 @@
       <name>Major Find!</name>
       <description>You found some major intel about the heist that was left behind during a raid.</description>
       <immediate>ChangeAllPlayersStats:2,Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -439,7 +439,7 @@
       <name>Newspaper Sluggers</name>
       <description>Newspaper stands are selling publications owned by the mafia.</description>
       <immediate>ChangeCurrentChaos:2,Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -499,7 +499,7 @@
       <name>Candy Store</name>
       <description>Mafia assassins busted in a candy shop.</description>
       <immediate>ChangeCurrentMafiaPresence:-3,Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -511,7 +511,7 @@
       <name>Political Influence</name>
       <description>The mafia has garnered massive influence over the voters in the city.</description>
       <immediate>ChangeCityCrimes:1;ChangeMajorCrimeProgress:2,Then remove this card from play</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -583,7 +583,7 @@
       <name>Poisoner Caught</name>
       <description>The culprit responsible for several poisonings in the city has been apprehended.</description>
       <immediate>ChangeAllPlayersStats:5</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -601,13 +601,13 @@
       <musclemod>-0.5</musclemod>
       <moxiemod>1.5</moxiemod>
       <positive>ChangeCurrentPoliceCorruption:-2;ChangeCurrentMafiaPresence:-2</positive>
-      <negative>Chaos +2</negative>
+      <negative>ChangeCurrentChaos:2</negative>
     </situation>
     <situation>
       <name>Liquor Bust</name>
       <description>A large warehouse holding illegal liquor was busted by the police.</description>
       <immediate>Mafia Presence -3, OR Police Corruption -3, Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -619,7 +619,7 @@
       <name>Godfather's Dinner</name>
       <description>The Don seems to be having a meal with important figures.</description>
       <immediate>ChangeCurrentPoliceCorruption:2;ChangeCurrentMafiaPresence:1,Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
