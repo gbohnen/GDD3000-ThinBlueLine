@@ -287,7 +287,7 @@ public static class LoadGameData
     /// Loads in the tutorial from the XML
     /// </summary>
     /// <returns>the tutorial</returns>
-    public static  List<Tutorial> LoadTutorial()
+    public static  List<string> LoadTutorial()
     {
         TextAsset tutorialFile = (TextAsset)Resources.Load(Constants.TUTORIAL_FILE_NAME);
 
@@ -296,7 +296,7 @@ public static class LoadGameData
         tutorialDoc.LoadXml(tutorialFile.text);                                                // load tutorial file
         XmlNodeList tutorialList = tutorialDoc.GetElementsByTagName("tutorialpages");          // get all tags labeled tutorial
 
-        List<Tutorial> tutorial = new List<Tutorial>();                                        // list of tutorial info
+        List<string> tutorial = new List<string>();                                        // list of tutorial info
 
         // iterate all "tutorial" tags
         foreach (XmlNode node in tutorialList)
@@ -304,31 +304,13 @@ public static class LoadGameData
             // make a list of all child node (this is where the tutorial data is stored)
             XmlNodeList tutorialData = node.ChildNodes;
 
-            // empty tutorial
-            Tutorial tut = new Tutorial();
-
             // iterate those nodes
             foreach (XmlNode childNode in tutorialData)
             {
-                // load data into tutorial based on child tag
-                switch (childNode.Name)
-                {
-                    case "page0": tut.page0 = childNode.InnerText; break;
-                    case "page1": tut.page1 = childNode.InnerText; break;
-                    case "page2": tut.page2 = childNode.InnerText; break;
-                    case "page3": tut.page3 = childNode.InnerText; break;
-                    case "page4": tut.page4 = childNode.InnerText; break;
-                    case "page5": tut.page5 = childNode.InnerText; break;
-                    case "page6": tut.page6 = childNode.InnerText; break;
-                    case "page7": tut.page7 = childNode.InnerText; break;
-                    case "page8": tut.page8 = childNode.InnerText; break;
-                    case "page9": tut.page9 = childNode.InnerText; break;
-                    default: break;
-                }
+				if (childNode.Name == "page") {
+					tutorial.Add(childNode.InnerText);
+				}
             }
-
-            // add child to the list
-            tutorial.Add(tut);
         }
 
         // return list of tutorial info

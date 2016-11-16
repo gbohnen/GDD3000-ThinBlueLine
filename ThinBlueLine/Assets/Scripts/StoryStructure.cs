@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Collections.Generic;
 using Assets.Scripts;
 
 public class StoryStructure : MonoBehaviour
@@ -13,7 +14,6 @@ public class StoryStructure : MonoBehaviour
 
     static int totalPages;                  		// total pages in current level
     public static int currentPage;                  // currently displayed page
-
 
     public Text headerText;                         // element that displays the current character
     public Text activeText;                         // element that displays the current story
@@ -31,6 +31,8 @@ public class StoryStructure : MonoBehaviour
     public Sprite newBackground;
     //public Sprite newChar;
 
+	List<string> tutorialText;
+
     void Start()
     {
         if (Instance == null)
@@ -38,11 +40,14 @@ public class StoryStructure : MonoBehaviour
         else
             Destroy(gameObject);
 
-        totalPages = 23;
-
-        PlayerPrefs.SetInt("currentPage", 1);
+        PlayerPrefs.SetInt("currentPage", 0);
         if (currentPage == 0)
             currentPage = PlayerPrefs.GetInt("currentPage");
+
+		tutorialText = LoadGameData.LoadTutorial ();
+		totalPages = tutorialText.Count;
+
+		headerText.text = "Chief Walsh";
 
         UpdateStoryPanel();
     }
@@ -52,52 +57,11 @@ public class StoryStructure : MonoBehaviour
     /// </summary>
     public void UpdateStoryPanel()
     {
-        // add each dialogue option in a case below. additional cases are easily added. 
-        // use the format described in case 1
-        switch (currentPage)
-        {
-            case 1:
-                headerText.text = "Chief Bob Walsh";
-                activeText.text = GameLibrary.instance.TutorialList[0].Page0;
-                break;
-            case 2:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page1;
-                break;
-            case 3:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page2;
-                background.sprite = newBackground;
-                break;
-            case 4:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page3;
-                break;
-            case 5:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page4;
-                break;
-            case 6:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page5;
-                break;
-            case 7:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page6;
-                break;
-            case 8:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page7;
-                break;
-            case 9:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page8;
-                break;
-            case 10:
-                activeText.text = GameLibrary.instance.TutorialList[0].Page9;
-                break;
-            case 11:
-                SceneManager.LoadScene(Constants.PLAYER_SELECTION_SCENE);
-                break;
-            default:
-                headerText.GetComponent<Text>().text = "";
-                activeText.GetComponent<Text>().text = "";
-                currentPage = 0;
-                SceneManager.LoadScene(0);
-                break;
-        }
+		if (currentPage >= tutorialText.Count) {
+			SceneManager.LoadScene (Constants.PLAYER_SELECTION_SCENE);
+		}
+
+		activeText.GetComponent<Text>().text = tutorialText [currentPage];
 
         PlayerPrefs.SetInt("currentPage", currentPage);
     }

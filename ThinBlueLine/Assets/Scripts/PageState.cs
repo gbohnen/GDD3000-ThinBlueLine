@@ -7,7 +7,7 @@ public class PageState : MonoBehaviour {
 
 	public static PageState Instance = null;
 	
-	public int currentPage = 1;
+	public int currentPage = 0;
 	
 	void Awake()
 	{
@@ -16,7 +16,7 @@ public class PageState : MonoBehaviour {
 		{
 			Instance = this;
 		
-			currentPage = 1;
+			currentPage = 0;
 		}
 		else
 			Destroy(gameObject);

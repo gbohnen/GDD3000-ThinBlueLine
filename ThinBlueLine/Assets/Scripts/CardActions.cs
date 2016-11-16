@@ -1,34 +1,47 @@
-﻿using System;
+﻿using UnityEngine;
+using System.Collections.Generic;
+using Assets.Scripts;
 
 public static class CardActions
 {
 	public static void ChangeRandomPlayerMoxie(int val)
     {
         //Get random player, modify their moxie by val
+		GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Moxie += val;
     }
     public static void ChangeRandomPlayerMuscle(int val)
     {
         //Get random player, modify their muscle by val
+		GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Strength += val;
     }
     public static void ChangeRandomPlayerSmarts(int val)
     {
         //get random player, modify their smarts by val
+		GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Smarts += val;
     }
     public static void ChangeRandomPlayerStats(int val)
     {
         // get random player, modify their stats by val
+		int i = Random.Range(0, 4);
+
+		GameLibrary.instance.Players[(Players)i].Moxie += val;
+		GameLibrary.instance.Players[(Players)i].Moxie += val;
+		GameLibrary.instance.Players[(Players)i].Moxie += val;
     }
     public static void ChangeCurrentPlayerMoxie(int val)
     {
         //get current player, modify their moxie by val
+		GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Moxie += val;
     }
     public static void ChangeCurrentPlayerMuscle(int val)
     {
-        //get current player, modify their muscle by val
+		//get current player, modify their muscle by val
+		GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Strength += val;
     }
     public static void ChangeCurrentPlayerSmarts(int val)
     {
-        //get current player, modify their smarts by val
+		//get current player, modify their smarts by val
+		GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Smarts += val;
     }
     public static void ChangeRandomCurrentPlayerStats(int val)
     {
@@ -37,18 +50,32 @@ public static class CardActions
     public static void ChangeAllPlayersMoxie(int val)
     {
         //modify all players moxie pool by val
+		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
+			player.Value.Moxie += val;
+		}
     }
     public static void ChangeAllPlayersMuscle(int val)
     {
-        //modify all players muscle pool by val
+		//modify all players muscle pool by val
+		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
+			player.Value.Strength += val;
+		}
     }
     public static void ChangeAllPlayersSmarts(int val)
     {
-        //modify all players Smarts pools by val
+		//modify all players Smarts pools by val
+		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
+			player.Value.Smarts += val;
+		}
     }
     public static void ChangeAllPlayersStats(int val)
     {
-        //modify all stat pools of all players by val
+		//modify all stat pools of all players by val
+		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
+			player.Value.Strength += val;
+			player.Value.Moxie += val;
+			player.Value.Strength += val;
+		}
     }
     public static void ChangeAllPlayersRandomStats(int val)
     {
