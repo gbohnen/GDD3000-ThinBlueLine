@@ -137,6 +137,9 @@ public class GameManager : MonoBehaviour
 
     public void LogAction(string action)
     {
+		if (action == "No action taken")
+			firstAction = true;
+
         if (!firstAction)
         {
             UIManager.instance.PushPlayerAction(action);

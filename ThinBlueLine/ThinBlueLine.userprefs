@@ -1,15 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Cards\SituationScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Managers\GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="125" Column="65" />
-      <File FileName="Assets\Resources\XML Resources\TutorialData.xml" Line="34" Column="12" />
-      <File FileName="Assets\Scripts\UI Management\CityInfoManager.cs" Line="45" Column="23" />
-      <File FileName="Assets\Scripts\GameLibrary.cs" Line="72" Column="37" />
-      <File FileName="Assets\Scripts\Cards\SituationScript.cs" Line="159" Column="4" />
-      <File FileName="Assets\Scripts\XML Tools\LoadGameData.cs" Line="174" Column="6" />
-      <File FileName="Assets\Scripts\Cards\CardScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CardActions.cs" Line="7" Column="2" />
+      <File FileName="Assets\Scripts\CardActions.cs" Line="207" Column="51" />
+      <File FileName="Assets\Scripts\UI Management\DrawSituationCard.cs" Line="82" Column="6" />
+      <File FileName="Assets\Scripts\Managers\UIManager.cs" Line="70" Column="67" />
+      <File FileName="Assets\Scripts\UI Management\CrimeSitManager.cs" Line="112" Column="14" />
+      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="141" Column="23" />
+      <File FileName="Assets\Scripts\GameLibrary.cs" Line="124" Column="2" />
+      <File FileName="Assets\Scripts\Cards\SituationScript.cs" Line="160" Column="5" />
+      <File FileName="Assets\Scripts\UI Management\NeighborhoodManager.cs" Line="27" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

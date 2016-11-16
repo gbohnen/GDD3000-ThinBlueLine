@@ -110,11 +110,6 @@ namespace Assets.Scripts
                     newButton.transform.SetParent(docksContent.transform);
                     break;
             }
-            
-            // set the parent transform. in this case, this is the scrollable list of sitchs
-            //newButton.transform.SetParent(situationScrollPanel);
-
-            
         }
 
         public void ToggleDrawer()
