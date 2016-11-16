@@ -1,15 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PageState.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\XML Resources\TutorialData.xml">
     <Files>
       <File FileName="Assets\Scripts\CardActions.cs" Line="77" Column="25" />
-      <File FileName="Assets\Scripts\Cards\SituationScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerSelect.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PageState.cs" Line="19" Column="19" />
-      <File FileName="Assets\Scripts\StoryStructure.cs" Line="43" Column="44" />
+      <File FileName="Assets\Scripts\StoryStructure.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GameLibrary.cs" Line="27" Column="13" />
-      <File FileName="Assets\Scripts\XML Tools\LoadGameData.cs" Line="296" Column="1" />
-      <File FileName="Assets\Resources\XML Resources\TutorialData.xml" Line="6" Column="61" />
+      <File FileName="Assets\Scripts\XML Tools\LoadGameData.cs" Line="62" Column="6" />
+      <File FileName="Assets\Scripts\Managers\GameManager.cs" Line="25" Column="1" />
+      <File FileName="Assets\Resources\XML Resources\TutorialData.xml" Line="34" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

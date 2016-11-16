@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     public Neighborhood activeNeighborhood;
 
+	//Dictionary<Neighborhood, NeighborhoodData> neighborhoodData;
+
     // store the crimes & situations
     //MajorCrimeScript majorCrime;
     //List<SituationScript> situations;

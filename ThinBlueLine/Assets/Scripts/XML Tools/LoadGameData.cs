@@ -62,23 +62,6 @@ public static class LoadGameData
     }
 
     /// <summary>
-    /// Struct for the tutorial XML
-    /// </summary>
-    public struct Tutorial
-    {
-        public string page0;
-        public string page1;
-        public string page2;
-        public string page3;
-        public string page4;
-        public string page5;
-        public string page6;
-        public string page7;
-        public string page8;
-        public string page9;
-    }
-
-    /// <summary>
     /// Loads in the players from the XML
     /// </summary>
     /// <returns>the players</returns>

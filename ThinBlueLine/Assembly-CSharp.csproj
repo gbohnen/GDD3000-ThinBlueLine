@@ -3,8 +3,9 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
+    <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{28C79EA7-980A-7282-934B-197CA5CCC4F1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -33,58 +34,58 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.XML" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>E:\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>E:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>E:\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+      <HintPath>E:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CardActions.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
-    <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
-    <Compile Include="Assets\Scripts\Cards\MobBossScript.cs" />
-    <Compile Include="Assets\Scripts\Cards\PlayerScript.cs" />
-    <Compile Include="Assets\Scripts\Cards\PoliceChiefScript.cs" />
-    <Compile Include="Assets\Scripts\Cards\SituationScript.cs" />
-    <Compile Include="Assets\Scripts\Constants.cs" />
-    <Compile Include="Assets\Scripts\ErrorButton.cs" />
-    <Compile Include="Assets\Scripts\GameLibrary.cs" />
-    <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
-    <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
-    <Compile Include="Assets\Scripts\ParticleButton.cs" />
-    <Compile Include="Assets\Scripts\PlayerSelect.cs" />
-    <Compile Include="Assets\Scripts\RaycastMask.cs" />
-    <Compile Include="Assets\Scripts\StoryStructure.cs" />
-    <Compile Include="Assets\Scripts\Timer.cs" />
-    <Compile Include="Assets\Scripts\TimerFinishedEvent.cs" />
-    <Compile Include="Assets\Scripts\ToolTipScript.cs" />
-    <Compile Include="Assets\Scripts\UI Management\CityInfoManager.cs" />
-    <Compile Include="Assets\Scripts\UI Management\CrimeSitManager.cs" />
-    <Compile Include="Assets\Scripts\UI Management\CurrentPlayerManager.cs" />
-    <Compile Include="Assets\Scripts\UI Management\DrawSituationCard.cs" />
-    <Compile Include="Assets\Scripts\UI Management\NeighborhoodManager.cs" />
-    <Compile Include="Assets\Scripts\UI Management\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\UI Management\ResolveSituationCard.cs" />
-    <Compile Include="Assets\Scripts\UI Management\SituationButton.cs" />
-    <Compile Include="Assets\Scripts\XML Tools\LoadGameData.cs" />
-    <None Include="Assets\Resources\XML Resources\TutorialData.xml" />
-    <None Include="Assets\Resources\XML Resources\MajorCrimesData.xml" />
-    <None Include="Assets\Resources\XML Resources\AvatarData.xml" />
-    <None Include="Assets\Resources\XML Resources\MobBossData.xml" />
-    <None Include="Assets\Resources\XML Resources\SituationData.xml" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>E:\Unity\Editor\Data\UnityExtensions\Unity\GUISystem\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>E:\Unity\Editor\Data\UnityExtensions\Unity\Networking\UnityEngine.Networking.dll</HintPath>
-    </Reference>
+     <Compile Include="Assets\Scripts\CardActions.cs" />
+     <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
+     <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
+     <Compile Include="Assets\Scripts\Cards\MobBossScript.cs" />
+     <Compile Include="Assets\Scripts\Cards\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\Cards\PoliceChiefScript.cs" />
+     <Compile Include="Assets\Scripts\Cards\SituationScript.cs" />
+     <Compile Include="Assets\Scripts\Constants.cs" />
+     <Compile Include="Assets\Scripts\ErrorButton.cs" />
+     <Compile Include="Assets\Scripts\GameLibrary.cs" />
+     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
+     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
+     <Compile Include="Assets\Scripts\ParticleButton.cs" />
+     <Compile Include="Assets\Scripts\PlayerSelect.cs" />
+     <Compile Include="Assets\Scripts\RaycastMask.cs" />
+     <Compile Include="Assets\Scripts\StoryStructure.cs" />
+     <Compile Include="Assets\Scripts\Timer.cs" />
+     <Compile Include="Assets\Scripts\TimerFinishedEvent.cs" />
+     <Compile Include="Assets\Scripts\ToolTipScript.cs" />
+     <Compile Include="Assets\Scripts\UI Management\CityInfoManager.cs" />
+     <Compile Include="Assets\Scripts\UI Management\CrimeSitManager.cs" />
+     <Compile Include="Assets\Scripts\UI Management\CurrentPlayerManager.cs" />
+     <Compile Include="Assets\Scripts\UI Management\DrawSituationCard.cs" />
+     <Compile Include="Assets\Scripts\UI Management\NeighborhoodManager.cs" />
+     <Compile Include="Assets\Scripts\UI Management\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\UI Management\ResolveSituationCard.cs" />
+     <Compile Include="Assets\Scripts\UI Management\SituationButton.cs" />
+     <Compile Include="Assets\Scripts\XML Tools\LoadGameData.cs" />
+     <None Include="Assets\Resources\XML Resources\TutorialData.xml" />
+     <None Include="Assets\Resources\XML Resources\MajorCrimesData.xml" />
+     <None Include="Assets\Resources\XML Resources\AvatarData.xml" />
+     <None Include="Assets\Resources\XML Resources\MobBossData.xml" />
+     <None Include="Assets\Resources\XML Resources\SituationData.xml" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>E:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -94,4 +95,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>
