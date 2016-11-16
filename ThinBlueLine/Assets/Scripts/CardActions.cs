@@ -14,6 +14,10 @@ public static class CardActions
     {
         //get random player, modify their smarts by val
     }
+    public static void ChangeRandomPlayerStats(int val)
+    {
+        // get random player, modify their stats by val
+    }
     public static void ChangeCurrentPlayerMoxie(int val)
     {
         //get current player, modify their moxie by val
