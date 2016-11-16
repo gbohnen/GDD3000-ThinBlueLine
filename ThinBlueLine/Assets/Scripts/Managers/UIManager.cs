@@ -115,6 +115,7 @@ public class UIManager : MonoBehaviour {
     public void WipeActions()
     {
         currentPlayerManager.WipeActions();
+		situationManager.ToggleDrawer ();
     }
 
 	public void CloseSituation(string name)

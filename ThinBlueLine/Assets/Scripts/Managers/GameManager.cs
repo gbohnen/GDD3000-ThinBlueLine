@@ -165,20 +165,22 @@ public class GameManager : MonoBehaviour
 
     public void ResetTurn()
     {
-        // set next player
-        switch (currentPlayer)
-        {
-            case Players.Player4:
-                currentPlayer = Players.Player1;
-                break;
-            default:
-                currentPlayer++;
-                break;
-        }
+		if (!IsInvoking ()) 
+		{
+			// set next player
+			switch (currentPlayer) {
+			case Players.Player4:
+				currentPlayer = Players.Player1;
+				break;
+			default:
+				currentPlayer++;
+				break;
+			}
 
-        UIManager.instance.UpdateUI();
-        firstAction = false;
-        UIManager.instance.WipeActions();
+			UIManager.instance.UpdateUI ();
+			firstAction = false;
+			UIManager.instance.WipeActions ();
+		}
     }
 
     #endregion
