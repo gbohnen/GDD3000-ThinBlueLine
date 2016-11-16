@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 using Assets.Scripts;
 using System.Collections.Generic;
+using System;
 
 namespace Assets.Scripts
 {
@@ -19,11 +21,48 @@ namespace Assets.Scripts
 
         public static Dictionary<string, GameObject> ActiveSituations;
 
+        public GameObject stonyGateContent;
+        public GameObject suburbiaContent;
+        public GameObject downtownContent;
+        public GameObject boxesContent;
+        public GameObject docksContent;
+
+        public GameObject stonyGateButton;
+        public GameObject suburbiaButton;
+        public GameObject downtownButton;
+        public GameObject boxesButton;
+        public GameObject docksButton;
+
+        public ScrollRect scrollRect;
+        public Scrollbar scrollBar;
+
+        public List<GameObject> buttons;
+
+        Dictionary<Neighborhood, GameObject> neighborhoodPanels;
+
+        Color activeButton;
+        Color inactiveButton = Color.white;
+
         void Start()
         {
             drawerAnimator = GetComponent<Animator>();
 
             ActiveSituations = new Dictionary<string, GameObject>();
+
+            buttons = new List<GameObject>();
+            buttons.Add(stonyGateButton);
+            buttons.Add(suburbiaButton);
+            buttons.Add(downtownButton);
+            buttons.Add(boxesButton);
+            buttons.Add(docksButton);
+
+            neighborhoodPanels.Add(Neighborhood.StonyGate, stonyGateContent);
+            neighborhoodPanels.Add(Neighborhood.Suburbia, suburbiaContent);
+            neighborhoodPanels.Add(Neighborhood.Downtown, downtownContent);
+            neighborhoodPanels.Add(Neighborhood.TheBoxes, boxesContent);
+            neighborhoodPanels.Add(Neighborhood.TheDocks, docksContent);
+
+            activeButton = new Color(1, .1f, .1f, .5f);
         }
 
         // called by gamemanager when we draw a new situation
@@ -50,8 +89,12 @@ namespace Assets.Scripts
             // hand off the situation
             button.situation = sitch;
 
+            // add a switch statement to set to the correct neighborhood
+            
             // set the parent transform. in this case, this is the scrollable list of sitchs
             newButton.transform.SetParent(situationScrollPanel);
+
+            
         }
 
         //public void OpenSituations()
@@ -83,6 +126,49 @@ namespace Assets.Scripts
                 drawerAnimator.SetBool("Open", true);
                 buttonAnimator.SetBool("Open", true);
             }
+        }
+
+        public void ClearButtons(Button button)
+        {
+            foreach(GameObject mubutton in buttons)
+            {
+                mubutton.GetComponent<Image>().color = inactiveButton;
+            }
+
+            button.GetComponent<Image>().color = activeButton;
+
+            SetActive(button.name);
+        }
+
+        public void SetActive(string name)
+        {
+            switch (name)
+            {
+                case "StonyGate":
+                    stonyGateContent.transform.SetAsLastSibling();
+                    scrollRect.content = stonyGateContent.GetComponent<RectTransform>();
+                    break;
+                case "Suburbia":
+                    suburbiaContent.transform.SetAsLastSibling();
+                    scrollRect.content = suburbiaContent.GetComponent<RectTransform>();
+                    break;
+                case "Downtown":
+                    downtownContent.transform.SetAsLastSibling();
+                    scrollRect.content = downtownContent.GetComponent<RectTransform>();
+                    break;
+                case "TheBoxes":
+                    boxesContent.transform.SetAsLastSibling();
+                    scrollRect.content = boxesContent.GetComponent<RectTransform>();
+                    break;
+                case "TheDocks":
+                    docksContent.transform.SetAsLastSibling();
+                    scrollRect.content = docksContent.GetComponent<RectTransform>();
+                    break;
+                default:
+                    break;
+            }
+
+            scrollBar.value = 1;
         }
     }
 }

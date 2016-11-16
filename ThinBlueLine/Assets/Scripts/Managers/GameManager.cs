@@ -7,6 +7,9 @@ using System.Collections.Generic;
 /// <summary>
 /// Singleton class which manages the state of the game
 /// </summary>
+/// 
+public enum Neighborhood { StonyGate, Suburbia, Downtown, TheBoxes, TheDocks }
+
 public class GameManager : MonoBehaviour
 {
     #region Fields    
@@ -17,9 +20,11 @@ public class GameManager : MonoBehaviour
     // store the players
     Players currentPlayer;
 
+    public Neighborhood activeNeighborhood;
+
     // store the crimes & situations
-    MajorCrimeScript majorCrime;
-    List<SituationScript> situations;
+    //MajorCrimeScript majorCrime;
+    //List<SituationScript> situations;
 
     // store the mob boss & police chief
     MobBossScript mobBoss;
