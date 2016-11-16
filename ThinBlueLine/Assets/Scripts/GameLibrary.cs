@@ -4,99 +4,149 @@ using Assets.Scripts;
 
 public enum Players { Player1 = 0, Player2 = 1, Player3 = 2, Player4 = 3 }
 
+public class NeighborhoodData
+{
+	float chaos;
+	float corruption;
+	float mafiaPresence;
+	public Dictionary<Players, float> Reputations;
+
+	public float Chaos
+	{
+		get { return chaos; }
+		set { chaos = value; }
+	}
+
+	public float Corruption
+	{
+		get { return corruption; }
+		set { corruption = value; }
+	}
+
+	public float MafiaPresence
+	{
+		get { return mafiaPresence; }
+		set { mafiaPresence = value; }
+	}
+}
+
 public class GameLibrary : MonoBehaviour {
 
-    public static GameLibrary instance;
+	public static GameLibrary instance;
 
-    List<PlayerScript> playerLib = new List<PlayerScript>();
-    List<SituationScript> situationLib = new List<SituationScript>();
-    List<MobBossScript> mobBossLib = new List<MobBossScript>();
+	List<PlayerScript> playerLib = new List<PlayerScript>();
+	List<SituationScript> situationLib = new List<SituationScript>();
+	List<MobBossScript> mobBossLib = new List<MobBossScript>();
+	private Dictionary<Neighborhood, NeighborhoodData> neighborhoods = new Dictionary<Neighborhood, NeighborhoodData>();
 
-    private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
-    
-    //private List<Situation> situationDeck;
-    //private List<MajorCrimes> crimeDeck;
-    // etc.
+	private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
 
-    void Awake()
-    {
-        Initialize();
+	//private List<Situation> situationDeck;
+	//private List<MajorCrimes> crimeDeck;
+	// etc.
 
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
-        
-        DontDestroyOnLoad(gameObject);
-    }
+	void Awake()
+	{
+		Initialize();
 
-    public void Initialize()
-    {
-        // load players
-        List<LoadGameData.Player> avatars = LoadGameData.LoadPlayers();
-        foreach (LoadGameData.Player play in avatars)
-        {
-            playerLib.Add(new PlayerScript(play));
-        }
+		if (instance == null)
+			instance = this;
+		else
+			Destroy(gameObject);
 
-        List<LoadGameData.Situation> situations = LoadGameData.LoadSituations();
-        foreach (LoadGameData.Situation sit in situations)
-        {
-            situationLib.Add(new SituationScript(sit));
-        }
+		DontDestroyOnLoad(gameObject);
+	}
 
-        List<LoadGameData.MobBoss> mobBosses = LoadGameData.LoadMobBosses();
-        foreach (LoadGameData.MobBoss mobBoss in mobBosses)
-        {
-            mobBossLib.Add(new MobBossScript(mobBoss));
-        }
+	public void Initialize()
+	{
+		// load players
+		List<LoadGameData.Player> avatars = LoadGameData.LoadPlayers();
+		foreach (LoadGameData.Player play in avatars)
+		{
+			playerLib.Add(new PlayerScript(play));
+		}
 
-        //Debug.Log(playerLib.Count);
-        //Debug.Log(situationLib.Count);
-        //Debug.Log(mobBossLib.Count);
-        //Debug.Log(tutorialLib.Count);
-    }
+		List<LoadGameData.Situation> situations = LoadGameData.LoadSituations();
+		foreach (LoadGameData.Situation sit in situations)
+		{
+			situationLib.Add(new SituationScript(sit));
+		}
 
-    public List<PlayerScript> GetPlayerChoices()
-    {
-        List<PlayerScript> choices = new List<PlayerScript>();
+		List<LoadGameData.MobBoss> mobBosses = LoadGameData.LoadMobBosses();
+		foreach (LoadGameData.MobBoss mobBoss in mobBosses)
+		{
+			mobBossLib.Add(new MobBossScript(mobBoss));
+		}
 
-        int index;
+		neighborhoods = new Dictionary<Neighborhood, NeighborhoodData>();
 
-        for (int i = 0; i < 3; i++)
-        {
-            do
-            {
-                index = Random.Range(0, playerLib.Count);                
-            } while (choices.Contains(playerLib[index]) || players.ContainsValue(playerLib[index]));
+		InitNeighborhoods();
+	}
 
-            choices.Add(playerLib[index]);
-        }
+	public void InitNeighborhoods()
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			NeighborhoodData data = new NeighborhoodData();
+			data.Chaos = 0;
+			data.Corruption = 0;
+			data.MafiaPresence = 0;
+			data.Reputations = new Dictionary<Players, float>();
 
-        return choices;
-    }
+			for (int j = 0; j < 4; j++)
+			{
+				data.Reputations.Add((Players)j, 0);
+			}
 
-    public SituationScript GetNewSituation()
-    {
-        int i = Random.Range(0, situationLib.Count);
-        SituationScript sitch = situationLib[i];
-        situationLib.RemoveAt(i);
+			neighborhoods.Add((Neighborhood)i, data);
+		}
+	}
 
-        return sitch;
-    }
+	public List<PlayerScript> GetPlayerChoices()
+	{
+		List<PlayerScript> choices = new List<PlayerScript>();
 
-    public List<PlayerScript> PlayerLib
-    {
-        get { return playerLib; }
-    }
+		int index;
 
-    public Dictionary<Players, PlayerScript> Players
-    {
-        get { return players; }
-    }
+		for (int i = 0; i < 3; i++)
+		{
+			do
+			{
+				index = Random.Range(0, playerLib.Count);                
+			} while (choices.Contains(playerLib[index]) || players.ContainsValue(playerLib[index]));
 
-    public List<SituationScript> SituationList
-    {
-        get { return situationLib; }
-    }
+			choices.Add(playerLib[index]);
+		}
+
+		return choices;
+	}
+
+	public SituationScript GetNewSituation()
+	{
+		int i = Random.Range(0, situationLib.Count);
+		SituationScript sitch = situationLib[i];
+		situationLib.RemoveAt(i);
+
+		return sitch;
+	}
+
+	public List<PlayerScript> PlayerLib
+	{
+		get { return playerLib; }
+	}
+
+	public Dictionary<Players, PlayerScript> Players
+	{
+		get { return players; }
+	}
+
+	public Dictionary<Neighborhood, NeighborhoodData> Neighborhoods
+	{
+		get { return neighborhoods; }
+	}
+
+	public List<SituationScript> SituationList
+	{
+		get { return situationLib; }
+	}
 }

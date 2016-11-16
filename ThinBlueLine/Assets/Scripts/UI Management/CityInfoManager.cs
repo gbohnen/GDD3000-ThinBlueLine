@@ -44,29 +44,29 @@ public class CityInfoManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        overallPC.text = GameManager.Instance.CurrentPC.ToString();
-        overallCH.text = GameManager.Instance.CurrentCH.ToString();
-        overallMP.text = GameManager.Instance.CurrentMP.ToString();
+		overallPC.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption.ToString();
+		overallCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos.ToString();
+		overallMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence.ToString();
 
-        stonyGatePC.text = "0";
-        stonyGateCH.text = "0";
-        stonyGateMP.text = "0";
+		stonyGatePC.text = GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate].Corruption.ToString();
+		stonyGateCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate].Chaos.ToString();
+		stonyGateMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate].MafiaPresence.ToString();
 
-        suburbiaPC.text = "0";
-        suburbiaCH.text = "0";
-        suburbiaMP.text = "0";
+		suburbiaPC.text = GameLibrary.instance.Neighborhoods[Neighborhood.Suburbia].Corruption.ToString();
+		suburbiaCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.Suburbia].Chaos.ToString();
+		suburbiaMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.Suburbia].MafiaPresence.ToString();
 
-        downtownPC.text = "0";
-        downtownCH.text = "0";
-        downtownMP.text = "0";
+		downtownPC.text = GameLibrary.instance.Neighborhoods[Neighborhood.Downtown].Corruption.ToString();
+		downtownCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.Downtown].Chaos.ToString();
+		downtownMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.Downtown].MafiaPresence.ToString();
 
-        boxesPC.text = "0";
-        boxesCH.text = "0";
-        boxesMP.text = "0";
+		boxesPC.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes].Corruption.ToString();
+		boxesCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes].Chaos.ToString();
+		boxesMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes].MafiaPresence.ToString();
 
-        portsidePC.text = "0";
-        portsideCH.text = "0";
-        portsideMP.text = "0";
+		portsidePC.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheDocks].Corruption.ToString();
+		portsideCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheDocks].Chaos.ToString();
+		portsideMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheDocks].MafiaPresence.ToString();
     }
 
     #endregion

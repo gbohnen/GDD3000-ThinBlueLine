@@ -1,4 +1,9 @@
-﻿namespace Assets.Scripts
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using UnityEngine;
+
+namespace Assets.Scripts
 {
     /// <summary>
     /// Script which handles the situations in the game
@@ -16,6 +21,11 @@
         float moxieModifier;
         string positiveOutcome;
         string negativeOutcome;
+
+		string immEffectMeth;
+		string ongEffectMeth;
+		string posEffectMeth;
+		string negEffectMeth;
 
         #endregion
 
@@ -115,8 +125,49 @@
 
             positiveOutcome = data.posOut;
             negativeOutcome = data.negOut;
+
+			immEffectMeth = data.immEffMeth;
+			ongEffectMeth = data.ongEffMeth;
+			posEffectMeth = data.posEffMeth;
+			negEffectMeth = data.negEffMeth;
         }
 
         #endregion
+
+		#region Methods
+		public void TriggerImmediate()
+		{
+			ParseCommand (immEffectMeth);
+		}
+
+		public void TriggerOngoing()
+		{
+			ParseCommand (ongEffectMeth);
+		}
+
+		public void TriggerPositive()
+		{
+			ParseCommand (posEffectMeth);
+		}
+
+		public void TriggerNegative()
+		{
+			ParseCommand (negEffectMeth);
+		}
+
+		private void ParseCommand(string effectString)
+		{
+			string[] commands = effectString.Split(new char[] {';'});
+
+			foreach (string str in commands) 
+			{
+				string[] command = str.Split (new char[] { ':' });
+				MethodInfo method = typeof(CardActions).GetMethod (command[0]);
+
+				method.Invoke (this, new object[]{command [1]});
+			}
+		}
+
+		#endregion
     }
 }

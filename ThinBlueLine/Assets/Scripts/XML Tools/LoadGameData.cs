@@ -38,6 +38,10 @@ public static class LoadGameData
         public float moxMod;
         public string posOut;
         public string negOut;
+		public string immEffMeth;
+		public string ongEffMeth;
+		public string posEffMeth;
+		public string negEffMeth;
     }
 
     /// <summary>
@@ -141,19 +145,33 @@ public static class LoadGameData
                 // load data into situation based on child tag
                 switch (childNode.Name)
                 {
-                    case "name": situation.name = childNode.InnerText; break;
-                    case "description": situation.desc = childNode.InnerText; break;
-                    case "immediate": situation.immEff = childNode.InnerText; break;
-                    case "ongoing": situation.ongEff = childNode.InnerText; break;
-                    case "cost": situation.cost = int.Parse(childNode.InnerText); break;
-                    case "smartsmod": situation.smMod = float.Parse(childNode.InnerText); break;
-                    case "musclemod": situation.musMod = float.Parse(childNode.InnerText); break;
-                    case "moxiemod": situation.moxMod = float.Parse(childNode.InnerText); break;
-                    case "positive": situation.posOut = childNode.InnerText; break;
-                    case "negative": situation.negOut = childNode.InnerText; break;
+                    case "name": 			situation.name = childNode.InnerText; break;
+                    case "description": 	situation.desc = childNode.InnerText; break;
+                    case "immediate": 		situation.immEff = childNode.InnerText; break;
+                    case "ongoing": 		situation.ongEff = childNode.InnerText; break;
+                    case "cost": 			situation.cost = int.Parse(childNode.InnerText); break;
+                    case "smartsmod": 		situation.smMod = float.Parse(childNode.InnerText); break;
+                    case "musclemod": 		situation.musMod = float.Parse(childNode.InnerText); break;
+                    case "moxiemod": 		situation.moxMod = float.Parse(childNode.InnerText); break;
+                    case "positive": 		situation.posOut = childNode.InnerText; break;
+                    case "negative": 		situation.negOut = childNode.InnerText; break;
+				case "immediateeffectmethod":
+					situation.immEffMeth = childNode.InnerText;
+					break;
+				case "ongoingeffectmethod":
+					situation.ongEffMeth = childNode.InnerText;
+					break;
+				case "positiveoutcomemethod":
+					situation.posEffMeth = childNode.InnerText;
+					break;
+				case "negativeoutcomemethod":
+					situation.negEffMeth = childNode.InnerText;
+					break;
                     default: break;
                 }
             }
+
+			//situation.immEffMeth = "DebugLine:" + situation.name;
 
             // add child to the list
             situations.Add(situation);

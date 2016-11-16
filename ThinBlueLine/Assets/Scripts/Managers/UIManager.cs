@@ -116,4 +116,10 @@ public class UIManager : MonoBehaviour {
     {
         currentPlayerManager.WipeActions();
     }
+
+	public void CloseSituation(string name)
+	{
+		currentSituation = CrimeSitManager.ActiveSituations[name];
+		currentSituation.GetComponent<SituationButton>().UpdateCost(300);
+	}
 }

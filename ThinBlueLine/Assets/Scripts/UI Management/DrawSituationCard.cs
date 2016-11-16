@@ -22,6 +22,8 @@ namespace Assets.Scripts
         public Slider moxieSlider;
         public Slider muscleSlider;
 
+		SituationScript situation;
+
         float totalThreshold = 3.0f;
 
         public void Initialize(SituationScript sitch)
@@ -37,6 +39,8 @@ namespace Assets.Scripts
             desc.text = sitch.Description;
             immEffect.text = sitch.ImmediateEffect;
             ongEffect.text = sitch.OngoingEffect;
+
+			situation = sitch;
 
             GameManager.Instance.LogAction("Situation Drawn");
         }
@@ -73,6 +77,13 @@ namespace Assets.Scripts
                 smartsSlider.value = 0;
                 moxieSlider.value = 0;
                 muscleSlider.value = 0;
+
+				if (situation.Cost <= 0) 
+				{
+					UIManager.instance.CloseSituation (situation.Name);
+				}
+
+				situation.TriggerImmediate ();
 
                 UIManager.instance.CloseWindows();
             }
