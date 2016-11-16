@@ -158,7 +158,7 @@ public class PlayerSelect : MonoBehaviour
 
     private void NextScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(Constants.GAMEPLAY_SCENE);
     }
 
     private void SetPlayer(PlayerScript choice)
