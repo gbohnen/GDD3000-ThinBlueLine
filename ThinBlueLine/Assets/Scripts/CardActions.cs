@@ -14,6 +14,10 @@ public static class CardActions
     {
         //get random player, modify their smarts by val
     }
+    public static void ChangeRandomPlayerStats(int val)
+    {
+        // get random player, modify their stats by val
+    }
     public static void ChangeCurrentPlayerMoxie(int val)
     {
         //get current player, modify their moxie by val
@@ -25,6 +29,10 @@ public static class CardActions
     public static void ChangeCurrentPlayerSmarts(int val)
     {
         //get current player, modify their smarts by val
+    }
+    public static void ChangeRandomCurrentPlayerStats(int val)
+    {
+        // get current player, change random stats by val
     }
     public static void ChangeAllPlayersMoxie(int val)
     {
@@ -41,6 +49,10 @@ public static class CardActions
     public static void ChangeAllPlayersStats(int val)
     {
         //modify all stat pools of all players by val
+    }
+    public static void ChangeAllPlayersRandomStats(int val)
+    {
+        // modify all players stats at random by val
     }
     public static void ChangeCurrentMafiaPresence(int val)
     {

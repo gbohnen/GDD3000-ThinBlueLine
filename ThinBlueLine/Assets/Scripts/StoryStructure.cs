@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Assets.Scripts;
 
 public class StoryStructure : MonoBehaviour
 {
@@ -88,7 +89,7 @@ public class StoryStructure : MonoBehaviour
                 activeText.text = GameLibrary.instance.TutorialList[0].Page9;
                 break;
             case 11:
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(Constants.PLAYER_SELECTION_SCENE);
                 break;
             default:
                 headerText.GetComponent<Text>().text = "";

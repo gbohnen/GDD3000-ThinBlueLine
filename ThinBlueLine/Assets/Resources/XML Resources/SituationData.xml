@@ -6,56 +6,56 @@
     <situation>
       <name>A Mole Discovered</name>
       <description>Someone in the force is feeding information to the mob.</description>
-      <immediate>Police Corruption +2</immediate>
-      <ongoing>Police Corruption +1</ongoing>
+      <immediate>ChangeCurrentPoliceCorruption:2</immediate>
+      <ongoing>ChangeCurrentPoliceCorruption:1</ongoing>
       <cost>5</cost>
       <smartsmod>1.5</smartsmod>
       <musclemod>0.75</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Mafia Presence -2</positive>
+      <positive>ChangeCurrentMafiaPresence:-2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Informant Gone Wrong</name>
       <description>One of the force's informants has been missing for a few days...</description>
-      <immediate>Mafia Presence +2</immediate>
-      <ongoing>Random Crime Category +1</ongoing>
+      <immediate>ChangeCurrentMafiaPresence:2</immediate>
+      <ongoing>ChangeCurrentRandomCrime:1</ongoing>
       <cost>4</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Police Corruption -2</positive>
+      <positive>ChangeCurrentPoliceCorruption:-2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Territorial Monopoly</name>
       <description>The mafia is becoming violent and influential</description>
-      <immediate>Mafia Presence +2, Chaos +1</immediate>
-      <ongoing>Mafia Presence +1</ongoing>
+      <immediate>ChangeCurrentChaos:1;ChangeCurrentMafiaPresence:2</immediate>
+      <ongoing>ChangeCurrentMafiaPresence:1</ongoing>
       <cost>5</cost>
       <smartsmod>0.5</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Chaos -1</positive>
+      <positive>ChangeCurrentChaos:-1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Car Chase</name>
       <description>A high speed chase has developed in the neighborhood.</description>
-      <immediate>Chaos +2</immediate>
-      <ongoing>None</ongoing>
+      <immediate>ChangeCurrentChaos:2</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>3</cost>
       <smartsmod>1</smartsmod>
       <musclemod>0.75</musclemod>
       <moxiemod>0.75</moxiemod>
-      <positive>Chaos -2</positive>
+      <positive>ChangeCurrentChaos:-2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Thug Brawls</name>
       <description>Thugs from various mob families have been getting in fights...</description>
-      <immediate>Chaos +1, Mafia Presence +1</immediate>
-      <ongoing>Major Crime Progress -2</ongoing>
+      <immediate>ChangeCurrentChaos:1;ChangeCurrentMafiaPresence:1</immediate>
+      <ongoing>ChangeMajorCrimeProgress:-2</ongoing>
       <cost>3</cost>
       <smartsmod>0.5</smartsmod>
       <musclemod>1.5</musclemod>
@@ -66,20 +66,20 @@
     <situation>
       <name>Gambling</name>
       <description>The mafia is running several casinos and the populace is partaking.</description>
-      <immediate>Mafia Presence +1, Police Corruption +2</immediate>
-      <ongoing>Random Player Moxie -1</ongoing>
+      <immediate>ChangeCurrentPoliceCorruption:2;ChangeCurrentMafiaPresence:1</immediate>
+      <ongoing>ChangeRandomPlayerMoxie:-1</ongoing>
       <cost>4</cost>
       <smartsmod>0.75</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1.5</moxiemod>
-      <positive>Current Player Moxie +4</positive>
+      <positive>ChangeCurrentPlayerMoxie:4</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Violence</name>
       <description>Mob violence is escalating across the land</description>
-      <immediate>Chaos +3</immediate>
-      <ongoing>Current Player Muscle -1</ongoing>
+      <immediate>ChangeCurrentChaos:3</immediate>
+      <ongoing>ChangeCurrentPlayerMuscle:-1</ongoing>
       <cost>3</cost>
       <smartsmod>0.5</smartsmod>
       <musclemod>2</musclemod>
@@ -90,56 +90,56 @@
     <situation>
       <name>Loan Shark</name>
       <description>The mob is funding a loan shark in the city that's bringing desperate people to even worse situations.</description>
-      <immediate>Mafia Presence +1</immediate>
-      <ongoing>No Ongoing Effects</ongoing>
+      <immediate>ChangeCurrentMafiaPresence:1</immediate>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>3</cost>
       <smartsmod>1.5</smartsmod>
       <musclemod>1.5</musclemod>
       <moxiemod>-0.5</moxiemod>
-      <positive>Current Player Moxie +3</positive>
-      <negative>Current Player Random Stat -5</negative>
+      <positive>ChangeCurrentPlayerMoxie:3</positive>
+      <negative>ChangeRandomCurrentPlayerStats:-5</negative>
     </situation>
     <situation>
       <name>Unlawful Gains</name>
       <description>There's a serious fraud problem in the city.</description>
-      <immediate>Mafia Presence +1, Police Corruption +1</immediate>
-      <ongoing>Random Player Stat -1</ongoing>
+      <immediate>ChangeCurrentPoliceCorruption:1;ChangeCurrentMafiaPresence:1</immediate>
+      <ongoing>ChangeRandomPlayerStats:-1</ongoing>
       <cost>6</cost>
       <smartsmod>2</smartsmod>
       <musclemod>0.75</musclemod>
       <moxiemod>1.5</moxiemod>
-      <positive>Police Corruption -1, Mafia Presence -1</positive>
+      <positive>ChangeCurrentPoliceCorruption:-1;ChangeCurrentMafiaPresence:-1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Liquor Trade</name>
       <description>The Mafia is moving large amounts of booze across the city.</description>
-      <immediate>Mafia Presence +2</immediate>
-      <ongoing>Chaos +3</ongoing>
+      <immediate>ChangeCurrentMafiaPresence:2</immediate>
+      <ongoing>ChangeCurrentChaos:3</ongoing>
       <cost>2</cost>
       <smartsmod>1</smartsmod>
       <musclemod>0.5</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Chaos -1</positive>
+      <positive>ChangeCurrentChaos:-1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Bribery</name>
       <description>Turns out several city officials have been taking bribes from the mob.</description>
-      <immediate>Police Corruption +2</immediate>
+      <immediate>ChangeCurrentPoliceCorruption:2</immediate>
       <ongoing>Randomly: Police Corruption +2 OR Chaos +1, Mafia Presence +1</ongoing>
       <cost>5</cost>
       <smartsmod>1</smartsmod>
       <musclemod>0.75</musclemod>
       <moxiemod>1.5</moxiemod>
-      <positive>All City Crime -1</positive>
+      <positive>ChangeCityCrimes:-1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Witness Protection Program</name>
       <description>A witness provided a massive amount of information in exchange for protection.</description>
       <immediate>Choose One: Either All Players Smarts +4, All Players Moxie +2, OR All Crime Categories -1, Resolve this Situation</immediate>
-      <ongoing>None</ongoing>
+      <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
       <musclemod>0</musclemod>
@@ -150,8 +150,8 @@
     <situation>
       <name>Recruiting Grounds</name>
       <description>The Mafia is actively recruiting from this area.</description>
-      <immediate>Mafia Presence +2</immediate>
-      <ongoing>Mafia Presence +1</ongoing>
+      <immediate>ChangeCurrentMafiaPresence:2</immediate>
+      <ongoing>ChangeCityMafiaPresence:1</ongoing>
       <cost>4</cost>
       <smartsmod>0.75</smartsmod>
       <musclemod>1.25</musclemod>
@@ -162,67 +162,67 @@
     <situation>
       <name>Right to Bear Arms</name>
       <description>Firearms are missing from the armory and showing up in the hands of mob enforcers.</description>
-      <immediate>Mafia Presence +1, Police Corruption +2</immediate>
-      <ongoing>Chaos +1</ongoing>
+      <immediate>ChangeCurrentPoliceCorruption:2;ChangeCurrentMafiaPresence:1</immediate>
+      <ongoing>ChangeCurrentChaos:1</ongoing>
       <cost>6</cost>
       <smartsmod>-1</smartsmod>
       <musclemod>2</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Chaos -2</positive>
-      <negative>Chaos +2</negative>
+      <positive>ChangeCurrentChaos:-2</positive>
+      <negative>ChangeCurrentChaos:2</negative>
     </situation>
     <situation>
       <name>Jack Rabbit</name>
       <description>A street racer is running for the mob, and they are fast.</description>
-      <immediate>Chaos +2</immediate>
+      <immediate>ChangeCurrentChaos:2</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>3</cost>
       <smartsmod>0.75</smartsmod>
       <musclemod>0</musclemod>
       <moxiemod>1.5</moxiemod>
-      <positive>All Smarts +1</positive>
+      <positive>ChangeAllPlayersSmarts:1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Loss of Evidence</name>
       <description>Vital evidence has been misplaced... or taken.</description>
-      <immediate>Police Corruption +3</immediate>
-      <ongoing>All Smarts -1</ongoing>
+      <immediate>ChangeCurrentPoliceCorruption:3</immediate>
+      <ongoing>ChangeAllPlayersSmarts:-1</ongoing>
       <cost>6</cost>
       <smartsmod>2</smartsmod>
       <musclemod>0.5</musclemod>
       <moxiemod>0.75</moxiemod>
-      <positive>All Players Stats +1</positive>
+      <positive>ChangeAllPlayersStats:1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Service Loss</name>
       <description>Surveillance is down across the Neighborhood.</description>
       <immediate>No Immediate Effect</immediate>
-      <ongoing>All Players Moxie -1</ongoing>
+      <ongoing>ChangeAllPlayersMoxie:-1</ongoing>
       <cost>4</cost>
       <smartsmod>1</smartsmod>
       <musclemod>0.75</musclemod>
       <moxiemod>0.75</moxiemod>
-      <positive>All Players Stats +1</positive>
+      <positive>ChangeAllPlayersStats:1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Prison Break</name>
       <description>Several members of the mafia organized a prison break.</description>
-      <immediate>Police Corruption +4, Chaos +2</immediate>
-      <ongoing>Mafia Presence +2</ongoing>
+      <immediate>ChangeCurrentPoliceCorruption:4;ChangeCurrentChaos:2</immediate>
+      <ongoing>ChangeCurrentMafiaPresence:2</ongoing>
       <cost>10</cost>
       <smartsmod>1.5</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1.25</moxiemod>
-      <positive>All Players Stats +2, Current Neighborhood All City Crimes -5</positive>
+      <positive>ChangeAllPlayersStats:2;ChangeCurrentCrimes:-5</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Get Out of Jail Free</name>
       <description>A plea bargain means a mobster is getting away scot free, but his information was priceless.</description>
-      <immediate>Police Corruption +2, Chaos -2, Resolve this Situation</immediate>
+      <immediate>ChangeCurrentPoliceCorruption:2;ChangeCurrentChaos:-2,Resolve this Situation</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
@@ -234,7 +234,7 @@
     <situation>
       <name>Prosecutor</name>
       <description>The prosecutor did their job today.</description>
-      <immediate>Chaos -2, Mafia Presence -1, Resolve this Situation</immediate>
+      <immediate>ChangeCurrentChaos:-2;ChangeCurrentMafiaPresence:-1,Resolve this Situation</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
@@ -246,13 +246,13 @@
     <situation>
       <name>Recruiter</name>
       <description>The Police are looking for new recruits to boost their manpower.</description>
-      <immediate>All Players Stats -2</immediate>
-      <ongoing>Police Corruption +1</ongoing>
+      <immediate>ChangeAllPlayersStats:-2</immediate>
+      <ongoing>ChangeCurrentPoliceCorruption:1</ongoing>
       <cost>6</cost>
       <smartsmod>1</smartsmod>
       <musclemod>0.5</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>All Players Stats +1</positive>
+      <positive>ChangeAllPlayersStats:1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
@@ -270,14 +270,14 @@
     <situation>
       <name>Shootout</name>
       <description>Police and Mafia forces have turned this area into a warzone.</description>
-      <immediate>Chaos +3</immediate>
-      <ongoing>Chaos +1</ongoing>
+      <immediate>ChangeCurrentChaos:3</immediate>
+      <ongoing>ChangeCurrentChaos:1</ongoing>
       <cost>5</cost>
       <smartsmod>-1</smartsmod>
       <musclemod>2</musclemod>
       <moxiemod>-0.5</moxiemod>
-      <positive>Chaos -1</positive>
-      <negative>All Neighborhood Chaos +1</negative>
+      <positive>ChangeCurrentChaos:-1</positive>
+      <negative>ChangeAllNeighborhoodChaos:1</negative>
     </situation>
     <situation>
       <name>Street Races</name>
@@ -288,7 +288,7 @@
       <smartsmod>1.5</smartsmod>
       <musclemod>0.5</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Chaos -1, Mafia Presence -1</positive>
+      <positive>ChangeCurrentChaos:-1;ChangeCurrentMafiaPresence:-1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
@@ -300,19 +300,19 @@
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>All Crime Categories -1</positive>
+      <positive>ChangeCityCrimes:-1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Drug Den</name>
       <description>A mafia run drug dun is being investigated by the police.</description>
-      <immediate>Police Corruption +2</immediate>
-      <ongoing>Mafia Presence +1</ongoing>
+      <immediate>ChangeCurrentPoliceCorruption:2</immediate>
+      <ongoing>ChangeCurrentMafiaPresence:1</ongoing>
       <cost>10</cost>
       <smartsmod>1.5</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1.5</moxiemod>
-      <positive>Current Player All Stats +2</positive>
+      <positive>ChangeCurrentPlayerMoxie:2;ChangeCurrentPlayerMuscle:2;ChangeCurrentPlayerSmarts:2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
@@ -324,50 +324,50 @@
       <smartsmod>1.5</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1.5</moxiemod>
-      <positive>All Players Random Stat +3</positive>
+      <positive>ChangeAllPlayersStats:3</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Power Grab - Mafia</name>
       <description>There seem to be power squabbles going on within the mafia.</description>
-      <immediate>Mafia Presence -3</immediate>
-      <ongoing>Chaos +1</ongoing>
+      <immediate>ChangeCurrentMafiaPresence:-3</immediate>
+      <ongoing>ChangeCurrentChaos:1</ongoing>
       <cost>10</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>All Players Random Stat +5</positive>
+      <positive>ChangeAllPlayersStats:5</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Power Grab</name>
       <description>There seems to be a power struggle in the department right now.</description>
-      <immediate>Police Corruption +3</immediate>
-      <ongoing>Chaos +1</ongoing>
+      <immediate>ChangeCurrentPoliceCorruption:3</immediate>
+      <ongoing>ChangeCurrentChaos:1</ongoing>
       <cost>7</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>All Players All Stats +2</positive>
+      <positive>ChangeAllPlayersStats:2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Robbery</name>
       <description>Small personal banks are being robbed by the mafia.</description>
       <immediate>No Immediate Effect</immediate>
-      <ongoing>Major Crime Progress -2</ongoing>
+      <ongoing>ChangeMajorCrimeProgress:-2</ongoing>
       <cost>7</cost>
       <smartsmod>0.5</smartsmod>
       <musclemod>1.5</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Major Crime Progress +5</positive>
+      <positive>ChangeMajorCrimeProgress:5</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Major Loss</name>
       <description>An officer lost their life to the mafia today.</description>
-      <immediate>All City Crime +2, All Players Stats +2</immediate>
-      <ongoing>Random City Crime +1</ongoing>
+      <immediate>ChangeCityCrimes:2;ChangeAllPlayersStats:2</immediate>
+      <ongoing>ChangeCityRandomCrime:1</ongoing>
       <cost>6</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
@@ -379,42 +379,42 @@
       <name>Serial Crime</name>
       <description>Murders are increasing throughout the city...</description>
       <immediate>No Immediate Effect</immediate>
-      <ongoing>Chaos +2</ongoing>
+      <ongoing>ChangeCurrentChaos:2</ongoing>
       <cost>9</cost>
       <smartsmod>1.5</smartsmod>
       <musclemod>1.5</musclemod>
       <moxiemod>-1</moxiemod>
-      <positive>Current Player All Stats +1</positive>
-      <negative>All Players Random Stat -4</negative>
+      <positive>ChangeAllPlayersStats:1</positive>
+      <negative>ChangeAllPlayersRandomStats:-4</negative>
     </situation>
     <situation>
       <name>Born to Steal</name>
       <description>Wealthy families have become the target of skilled thieves.</description>
-      <immediate>Chaos +2</immediate>
-      <ongoing>Major Crime Progress -2</ongoing>
+      <immediate>ChangeCurrentChaos:2</immediate>
+      <ongoing>ChangeMajorCrimeProgress:-2</ongoing>
       <cost>4</cost>
       <smartsmod>1</smartsmod>
       <musclemod>0.75</musclemod>
       <moxiemod>1.25</moxiemod>
-      <positive>All Players All Stats +1</positive>
+      <positive>ChangeAllPlayersStats:1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Closing Up Shop</name>
       <description>Many small shops are controlled by the mafia now.</description>
       <immediate>No Immediate Effect</immediate>
-      <ongoing>Mafia Presence +2</ongoing>
+      <ongoing>ChangeCurrentMafiaPresence:2</ongoing>
       <cost>6</cost>
       <smartsmod>0.5</smartsmod>
       <musclemod>0.5</musclemod>
       <moxiemod>1.75</moxiemod>
-      <positive>Mafia Presence -2</positive>
+      <positive>ChangeCurrentMafiaPresence:-2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Major Find!</name>
       <description>You found some major intel about the heist that was left behind during a raid.</description>
-      <immediate>All Players Stats +2, Resolve this Situation</immediate>
+      <immediate>ChangeAllPlayersStats:2,Resolve this Situation</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
@@ -427,18 +427,18 @@
       <name>Skimming</name>
       <description>The Mafia is funneling money from casinos across the area.</description>
       <immediate>No Immediate Effect</immediate>
-      <ongoing>Major Crime Progress -2</ongoing>
+      <ongoing>ChangeMajorCrimeProgress:-2</ongoing>
       <cost>5</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1.5</moxiemod>
-      <positive>All Players Stats +1</positive>
+      <positive>ChangeAllPlayersStats:1</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Newspaper Sluggers</name>
       <description>Newspaper stands are selling publications owned by the mafia.</description>
-      <immediate>Chaos +2, Resolve this Situation</immediate>
+      <immediate>ChangeCurrentChaos:2,Resolve this Situation</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
@@ -450,20 +450,20 @@
     <situation>
       <name>Car Bombing</name>
       <description>Many people are hurt within the city from improvised explosions.</description>
-      <immediate>Chaos +4</immediate>
-      <ongoing>Chaos +2</ongoing>
+      <immediate>ChangeCurrentChaos:4</immediate>
+      <ongoing>ChangeCurrentChaos:2</ongoing>
       <cost>6</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>All Players Stats +2</positive>
+      <positive>ChangeAllPlayersStats:2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Union Scheme</name>
       <description>The mafia have found their way into the unions.</description>
-      <immediate>Mafia Presence +1</immediate>
-      <ongoing>Mafia Presence +1, Chaos +1</ongoing>
+      <immediate>ChangeCurrentMafiaPresence:1</immediate>
+      <ongoing>ChangeCurrentMafiaPresence:1;ChangeCurrentChaos:1</ongoing>
       <cost>8</cost>
       <smartsmod>0.5</smartsmod>
       <musclemod>1.25</musclemod>
@@ -474,31 +474,31 @@
     <situation>
       <name>Cracked the Code</name>
       <description>The Mafia have figured out how to crack safes incredibly quickly.</description>
-      <immediate>Mafia Presence +2</immediate>
-      <ongoing>Mafia Presence +1</ongoing>
+      <immediate>ChangeCurrentMafiaPresence:2</immediate>
+      <ongoing>ChangeCurrentMafiaPresence:1</ongoing>
       <cost>3</cost>
       <smartsmod>2</smartsmod>
       <musclemod>0.5</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Mafia Presence -2</positive>
+      <positive>ChangeCurrentMafiaPresence:-2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Hijacker</name>
       <description>One of our squad cars was stolen...</description>
-      <immediate>Mafia Presence +1, Chaos +2</immediate>
-      <ongoing>Chaos +1</ongoing>
+      <immediate>ChangeCurrentChaos:2;ChangeCurrentMafiaPresence:1</immediate>
+      <ongoing>ChangeCurrentChaos:1</ongoing>
       <cost>6</cost>
       <smartsmod>1.5</smartsmod>
       <musclemod>0.5</musclemod>
       <moxiemod>1</moxiemod>
-      <positive>Chaos -2</positive>
+      <positive>ChangeCurrentChaos:-2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Candy Store</name>
       <description>Mafia assassins busted in a candy shop.</description>
-      <immediate>Mafia Presence -3, Resolve this Situation</immediate>
+      <immediate>ChangeCurrentMafiaPresence:-3,Resolve this Situation</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
@@ -510,7 +510,7 @@
     <situation>
       <name>Political Influence</name>
       <description>The mafia has garnered massive influence over the voters in the city.</description>
-      <immediate>All City Crime +1, Major Crime -2, Then remove this card from play</immediate>
+      <immediate>ChangeCityCrimes:1;ChangeMajorCrimeProgress:2,Then remove this card from play</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
@@ -523,7 +523,7 @@
       <name>Bust-out</name>
       <description>The mob has caused a bank to go bankrupt...</description>
       <immediate>No Immediate Effect</immediate>
-      <ongoing>Chaos +2</ongoing>
+      <ongoing>ChangeCurrentChaos:2</ongoing>
       <cost>8</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
@@ -534,20 +534,20 @@
     <situation>
       <name>Drug Trends</name>
       <description>Drug dealers are spreading many illicit substances throughout the city.</description>
-      <immediate>All City Crime +1</immediate>
-      <ongoing>Random City Crime +1</ongoing>
+      <immediate>ChangeCityCrimes:1</immediate>
+      <ongoing>ChangeCityRandomCrime:1</ongoing>
       <cost>4</cost>
       <smartsmod>0.7</smartsmod>
       <musclemod>0.75</musclemod>
       <moxiemod>1.25</moxiemod>
-      <positive>City Crime -2</positive>
+      <positive>ChangeCityCrimes:-2</positive>
       <negative>No Negative Outcome</negative>
     </situation>
     <situation>
       <name>Gun Runner Drive-by</name>
       <description>A hit and run by gun runners leaves several injured.</description>
-      <immediate>Chaos +1</immediate>
-      <ongoing>Major Crime Progress -2</ongoing>
+      <immediate>ChangeCurrentChaos:1</immediate>
+      <ongoing>ChangeMajorCrimeProgress:-2</ongoing>
       <cost>4</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
@@ -558,7 +558,7 @@
     <situation>
       <name>Poisoned Chief</name>
       <description>The Police Chief has been poisoned by some unknown party.</description>
-      <immediate>Chaos +1, Police Corruption +1</immediate>
+      <immediate>ChangeCurrentPoliceCorruption:1;ChangeCurrentChaos:1</immediate>
       <ongoing>The Chief does not act until this card is dealt with</ongoing>
       <cost>8</cost>
       <smartsmod>1</smartsmod>
@@ -570,8 +570,8 @@
     <situation>
       <name>Ill Politicians</name>
       <description>A number of politicians are turning up with mysterious symptoms...</description>
-      <immediate>Chaos +2</immediate>
-      <ongoing>Chaos +1</ongoing>
+      <immediate>ChangeCurrentChaos:2</immediate>
+      <ongoing>ChangeCurrentChaos:1</ongoing>
       <cost>6</cost>
       <smartsmod>1</smartsmod>
       <musclemod>1</musclemod>
@@ -582,7 +582,7 @@
     <situation>
       <name>Poisoner Caught</name>
       <description>The culprit responsible for several poisonings in the city has been apprehended.</description>
-      <immediate>Stat Points +5</immediate>
+      <immediate>ChangeAllPlayersStats:5</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>
@@ -594,14 +594,14 @@
     <situation>
       <name>Speakeasies Established</name>
       <description>The mob is running illegal bars...</description>
-      <immediate>Police Corruption +1, Mafia Presence +2</immediate>
+      <immediate>ChangeCurrentPoliceCorruption:1;ChangeCurrentMafiaPresence:2</immediate>
       <ongoing>Police Corruption +1, OR Mafia Presence +1</ongoing>
       <cost>8</cost>
       <smartsmod>1.5</smartsmod>
       <musclemod>-0.5</musclemod>
       <moxiemod>1.5</moxiemod>
-      <positive>Police Corruption -2, Mafia Presence -2</positive>
-      <negative>Chaos +2</negative>
+      <positive>ChangeCurrentPoliceCorruption:-2;ChangeCurrentMafiaPresence:-2</positive>
+      <negative>ChangeCurrentChaos:2</negative>
     </situation>
     <situation>
       <name>Liquor Bust</name>
@@ -618,7 +618,7 @@
     <situation>
       <name>Godfather's Dinner</name>
       <description>The Don seems to be having a meal with important figures.</description>
-      <immediate>Police Corruption +2, Mafia Presence +1, Resolve this Situation</immediate>
+      <immediate>ChangeCurrentPoliceCorruption:2;ChangeCurrentMafiaPresence:1,Resolve this Situation</immediate>
       <ongoing>No Ongoing Effect</ongoing>
       <cost>0</cost>
       <smartsmod>0</smartsmod>

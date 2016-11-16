@@ -21,6 +21,16 @@ namespace Assets.Scripts
 
         #endregion
 
+        #region Scene Names
+
+        public const string MAIN_MENU_SCENE = "MainMenu";
+        public const string GAMEPLAY_SCENE = "gameplay";
+        public const string TUTORIAL_SCENE = "pageDemo";
+        public const string PLAYER_SELECTION_SCENE = "PlayerSelect";
+        public const string TESTING_SCENE = "testingGround";
+
+        #endregion
+
         #region Tool Tips
 
         public const string TOOL_TIP_PREFAB = "";

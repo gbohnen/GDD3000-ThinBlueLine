@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using Assets.Scripts;
 
 public class MainMenuButtons : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class MainMenuButtons : MonoBehaviour
     /// </summary>
 	public void PlayButton()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Constants.TUTORIAL_SCENE);
     }
 
     /// <summary>
