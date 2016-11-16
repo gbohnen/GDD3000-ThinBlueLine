@@ -41,8 +41,6 @@ namespace Assets.Scripts
             ongEffect.text = sitch.OngoingEffect;
 
 			situation = sitch;
-
-            GameManager.Instance.LogAction("Situation Drawn");
         }
 
         private float SliderSum
@@ -82,6 +80,8 @@ namespace Assets.Scripts
 				{
 					UIManager.instance.CloseSituation (situation.Name);
 				}
+
+				GameManager.Instance.LogAction("Situation Drawn");
 
 				situation.TriggerImmediate ();
 

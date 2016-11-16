@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Reflection;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts;
@@ -9,18 +10,24 @@ public class CardActions
     {
         //Get random player, modify their moxie by val
 		GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Moxie += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeRandomPlayerMuscle(int val)
     {
         //Get random player, modify their muscle by val
 		GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Strength += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeRandomPlayerSmarts(int val)
     {
         //get random player, modify their smarts by val
 		GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Smarts += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeRandomPlayerStats(int val)
@@ -31,24 +38,32 @@ public class CardActions
 		GameLibrary.instance.Players[(Players)i].Moxie += val;
 		GameLibrary.instance.Players[(Players)i].Moxie += val;
 		GameLibrary.instance.Players[(Players)i].Moxie += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 		
     public static void ChangeCurrentPlayerMoxie(int val)
     {
         //get current player, modify their moxie by val
 		GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Moxie += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeCurrentPlayerMuscle(int val)
     {
 		//get current player, modify their muscle by val
 		GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Strength += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeCurrentPlayerSmarts(int val)
     {
 		//get current player, modify their smarts by val
 		GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Smarts += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeRandomCurrentPlayerStats(int val)
@@ -62,6 +77,8 @@ public class CardActions
 		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
 			player.Value.Moxie += val;
 		}
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeAllPlayersMuscle(int val)
@@ -70,6 +87,8 @@ public class CardActions
 		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
 			player.Value.Strength += val;
 		}
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeAllPlayersSmarts(int val)
@@ -78,6 +97,8 @@ public class CardActions
 		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
 			player.Value.Smarts += val;
 		}
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeAllPlayersStats(int val)
@@ -88,6 +109,8 @@ public class CardActions
 			player.Value.Moxie += val;
 			player.Value.Strength += val;
 		}
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeAllPlayersRandomStats(int val)
@@ -99,17 +122,23 @@ public class CardActions
     {
         //modify the current Neighborhoods Mafia Presence by val
 		GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
     public static void ChangeCurrentPoliceCorruption(int val)
     {
         //modify the current Neighborhoods Police Corruption by val
 		GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeCurrentChaos(int val)
     {
         //modify the current neighborhoods Chaos by val
 		GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Chaos += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeCurrentCrimes(int val)
@@ -121,17 +150,23 @@ public class CardActions
     {
         //modify the City's Mafia Presence
 		GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
     public static void ChangeCityPoliceCorruption(int val)
     {
 		//modify the city's police corruption
 		GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeCityChaos(int val)
     {
 		//modify the city's chaos
 		GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos += val;
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeCityCrimes(int val)
@@ -146,6 +181,8 @@ public class CardActions
 			if (neighborhood.Key != Neighborhood.Overall)
 				GameLibrary.instance.Neighborhoods[neighborhood.Key].MafiaPresence += val;		
 		}
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeAllNeighborhoodPoliceCorruption(int val)
@@ -155,6 +192,8 @@ public class CardActions
 			if (neighborhood.Key != Neighborhood.Overall)
 				GameLibrary.instance.Neighborhoods[neighborhood.Key].Corruption += val;		
 		}
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeAllNeighborhoodChaos(int val)
@@ -164,6 +203,8 @@ public class CardActions
 			if (neighborhood.Key != Neighborhood.Overall)
 				GameLibrary.instance.Neighborhoods[neighborhood.Key].Chaos += val;		
 		}
+
+		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
 
     public static void ChangeAllNeighborhoodCrimes(int val)

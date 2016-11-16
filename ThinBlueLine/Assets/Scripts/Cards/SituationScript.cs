@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using System;
 
 namespace Assets.Scripts
 {
@@ -137,34 +138,49 @@ namespace Assets.Scripts
 		#region Methods
 		public void TriggerImmediate()
 		{
-			ParseCommand (immEffectMeth);
+			if (immEffectMeth != null)
+				ParseCommand (immEffectMeth);
 		}
 
 		public void TriggerOngoing()
 		{
-			ParseCommand (ongEffectMeth);
+			if (ongEffectMeth != null)
+				ParseCommand (ongEffectMeth);
 		}
 
 		public void TriggerPositive()
 		{
-			ParseCommand (posEffectMeth);
+			if (posEffectMeth != null)
+				ParseCommand (posEffectMeth);
 		}
 
 		public void TriggerNegative()
 		{
-			ParseCommand (negEffectMeth);
+			if (negEffectMeth != null)
+				ParseCommand (negEffectMeth);
 		}
 
 		private void ParseCommand(string effectString)
 		{
-			string[] commands = effectString.Split(new char[] {';'});
 
-			foreach (string str in commands) 
+			try
 			{
-				string[] command = str.Split (new char[] { ':' });
-				MethodInfo method = typeof(CardActions).GetMethod (command[0]);
+				string[] commands = effectString.Split (new char[] { ';' });
 
-				method.Invoke (this, new object[]{command [1]});
+				foreach (string str in commands) 
+				{
+					string[] command = str.Split (new char[] { ':' });
+					MethodInfo method = typeof(CardActions).GetMethod (command [0]);
+
+					if (command.Length > 1)
+						method.Invoke (this, new object[]{ Int32.Parse (command [1]) });
+					else 
+						method.Invoke (this, new object[]{});
+				}
+			}
+			catch (NullReferenceException)
+			{
+
 			}
 		}
 

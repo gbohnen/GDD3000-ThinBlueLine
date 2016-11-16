@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         }
 
         activeNeighborhood = (Neighborhood)Random.Range(0, 5);
-        NeighborhoodManager.instance.indicator.SetInteger("CurrNeigh", (int)activeNeighborhood);
+        NeighborhoodManager.instance.indicator.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
 
         firstAction = false;
         UIManager.instance.UpdateUI();
