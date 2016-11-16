@@ -4,6 +4,14 @@ using Assets.Scripts;
 
 public enum Players { Player1 = 0, Player2 = 1, Player3 = 2, Player4 = 3 }
 
+public struct NeighborhoodData
+{
+    public float Chaos;
+    public float Corruption;
+    public float MafiaPresence;
+    public Dictionary<Players, float> Reputations;
+}
+
 public class GameLibrary : MonoBehaviour {
 
     public static GameLibrary instance;
@@ -11,6 +19,7 @@ public class GameLibrary : MonoBehaviour {
     List<PlayerScript> playerLib = new List<PlayerScript>();
     List<SituationScript> situationLib = new List<SituationScript>();
     List<MobBossScript> mobBossLib = new List<MobBossScript>();
+    Dictionary<Neighborhood, NeighborhoodData> neighborhoods;
 
     private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
     
@@ -51,9 +60,33 @@ public class GameLibrary : MonoBehaviour {
             mobBossLib.Add(new MobBossScript(mobBoss));
         }
 
-        //Debug.Log(playerLib.Count);
-        //Debug.Log(situationLib.Count);
-        //Debug.Log(mobBossLib.Count);
+        neighborhoods = new Dictionary<Neighborhood, NeighborhoodData>();
+
+        InitNeighborhoods();
+    }
+
+    public Dictionary<Neighborhood, NeighborhoodData> Neighborhoods
+    {
+        get { return neighborhoods; }
+    }
+
+    public void InitNeighborhoods()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            NeighborhoodData data;
+            data.Chaos = 0;
+            data.Corruption = 0;
+            data.MafiaPresence = 0;
+            data.Reputations = new Dictionary<Players, float>();
+
+            for (int j = 0; j < 4; j++)
+            {
+                data.Reputations.Add((Players)j, 0);
+            }
+
+            neighborhoods.Add((Neighborhood)i, data);
+        }
     }
 
     public List<PlayerScript> GetPlayerChoices()

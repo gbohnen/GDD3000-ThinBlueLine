@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
+    <Compile Include="Assets\Scripts\NeighborhoodManager.cs" />
     <Compile Include="Assets\Scripts\PageState.cs" />
     <Compile Include="Assets\Scripts\ParticleButton.cs" />
     <Compile Include="Assets\Scripts\PlayerSelect.cs" />

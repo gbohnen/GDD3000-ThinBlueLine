@@ -8,7 +8,7 @@ using System.Collections.Generic;
 /// Singleton class which manages the state of the game
 /// </summary>
 /// 
-public enum Neighborhood { StonyGate, Suburbia, Downtown, TheBoxes, TheDocks }
+public enum Neighborhood { StonyGate = 0, Suburbia = 1, Downtown = 2, TheBoxes = 3, TheDocks = 4, Overall = 5 }
 
 public class GameManager : MonoBehaviour
 {
@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
     //MajorCrimeScript majorCrime;
     //List<SituationScript> situations;
 
-    // store the mob boss & police chief
-    MobBossScript mobBoss;
-    PoliceChiefScript policeChief;
+    //// store the mob boss & police chief
+    //MobBossScript mobBoss;
+    //PoliceChiefScript policeChief;
 
     bool firstAction;
 
@@ -101,6 +101,9 @@ public class GameManager : MonoBehaviour
                 GameLibrary.instance.Players.Add((Players)i, GameLibrary.instance.PlayerLib[Random.Range(0, 12)]);
             }
         }
+
+        activeNeighborhood = (Neighborhood)Random.Range(0, 5);
+        NeighborhoodManager.instance.indicator.SetInteger("CurrNeigh", (int)activeNeighborhood);
 
         firstAction = false;
         UIManager.instance.UpdateUI();

@@ -49,6 +49,8 @@ namespace Assets.Scripts
 
             ActiveSituations = new Dictionary<string, GameObject>();
 
+            neighborhoodPanels = new Dictionary<Neighborhood, GameObject>();
+
             buttons = new List<GameObject>();
             buttons.Add(stonyGateButton);
             buttons.Add(suburbiaButton);
@@ -90,29 +92,30 @@ namespace Assets.Scripts
             button.situation = sitch;
 
             // add a switch statement to set to the correct neighborhood
+            switch (GameManager.Instance.activeNeighborhood)
+            {
+                case Neighborhood.StonyGate:
+                    newButton.transform.SetParent(stonyGateContent.transform);
+                    break;
+                case Neighborhood.Suburbia:
+                    newButton.transform.SetParent(suburbiaContent.transform);
+                    break;
+                case Neighborhood.Downtown:
+                    newButton.transform.SetParent(downtownContent.transform);
+                    break;
+                case Neighborhood.TheBoxes:
+                    newButton.transform.SetParent(boxesContent.transform);
+                    break;
+                case Neighborhood.TheDocks:
+                    newButton.transform.SetParent(docksContent.transform);
+                    break;
+            }
             
             // set the parent transform. in this case, this is the scrollable list of sitchs
-            newButton.transform.SetParent(situationScrollPanel);
+            //newButton.transform.SetParent(situationScrollPanel);
 
             
         }
-
-        //public void OpenSituations()
-        //{
-        //    if (drawerAnimator.GetBool("Open"))
-        //        CloseDrawer();
-        //    else
-        //    {
-        //        drawerAnimator.SetBool("Open", true);
-        //        buttonAnimator.SetBool("Open", true);
-        //    }
-        //}
-
-        //public void CloseDrawer()
-        //{
-        //    drawerAnimator.SetBool("Open", false);
-        //    buttonAnimator.SetBool("Open", false);
-        //}
 
         public void ToggleDrawer()
         {
@@ -125,19 +128,56 @@ namespace Assets.Scripts
             {
                 drawerAnimator.SetBool("Open", true);
                 buttonAnimator.SetBool("Open", true);
+
+                SetActive(GameManager.Instance.activeNeighborhood.ToString());
             }
+
+            SetCurrentButtonColor();
         }
 
         public void ClearButtons(Button button)
         {
-            foreach(GameObject mubutton in buttons)
-            {
-                mubutton.GetComponent<Image>().color = inactiveButton;
-            }
+            ReallyClearButtons();
 
             button.GetComponent<Image>().color = activeButton;
 
+            SetCurrentButtonColor();
+
             SetActive(button.name);
+        }
+
+        public void ReallyClearButtons()
+        {
+            foreach (GameObject mubutton in buttons)
+            {
+                mubutton.GetComponent<Image>().color = inactiveButton;
+            }
+        }
+
+        private void SetCurrentButtonColor()
+        {
+            ReallyClearButtons();
+
+            switch (GameManager.Instance.activeNeighborhood)
+            {
+                case Neighborhood.StonyGate:
+                    stonyGateButton.GetComponent<Image>().color = Color.cyan;
+                    break;
+                case Neighborhood.Suburbia:
+                    suburbiaButton.GetComponent<Image>().color = Color.cyan;
+                    break;
+                case Neighborhood.Downtown:
+                    downtownButton.GetComponent<Image>().color = Color.cyan;
+                    break;
+                case Neighborhood.TheBoxes:
+                    boxesButton.GetComponent<Image>().color = Color.cyan;
+                    break;
+                case Neighborhood.TheDocks:
+                    docksButton.GetComponent<Image>().color = Color.cyan;
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void SetActive(string name)

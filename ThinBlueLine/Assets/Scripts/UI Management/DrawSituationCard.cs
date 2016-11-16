@@ -48,19 +48,19 @@ namespace Assets.Scripts
 
         public void SmartsSliderChanged()
         {
-            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Smarts < smartsSlider.value)
+            if (SliderSum > totalThreshold)
                 smartsSlider.value--;
         }
 
         public void MoxieSliderChanged()
         {
-            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Moxie < moxieSlider.value)
+            if (SliderSum > totalThreshold)
                 moxieSlider.value--;
         }
 
         public void StrengthSliderChanged()
         {
-            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Strength < muscleSlider.value)
+            if (SliderSum > totalThreshold)
                 muscleSlider.value--;
         }
 
@@ -69,6 +69,10 @@ namespace Assets.Scripts
             if (smartsSlider.value + moxieSlider.value + muscleSlider.value == totalThreshold)
             {
                 GameManager.Instance.SituationDrawn(smartsSlider.value, moxieSlider.value, muscleSlider.value);
+
+                smartsSlider.value = 0;
+                moxieSlider.value = 0;
+                muscleSlider.value = 0;
 
                 UIManager.instance.CloseWindows();
             }
