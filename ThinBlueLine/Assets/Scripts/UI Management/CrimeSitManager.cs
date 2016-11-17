@@ -14,6 +14,7 @@ namespace Assets.Scripts
         // gameobject management fields
         public Animator drawerAnimator;
         public Animator buttonAnimator;
+        public Animator containerSlide;
 
         // situation list fields
         public Transform situationScrollPanel;              // parent that the prefab goes in
@@ -130,6 +131,38 @@ namespace Assets.Scripts
             SetCurrentButtonColor();
         }
 
+        public void CloseDrawer()
+        {
+            drawerAnimator.SetBool("Open", false);
+            buttonAnimator.SetBool("Open", false);
+        }
+
+        public void OpenDrawer()
+        {
+            drawerAnimator.SetBool("Open", true);
+            buttonAnimator.SetBool("Open", true);
+
+            SetActive(GameManager.Instance.activeNeighborhood.ToString());
+        }
+
+        public void SituationClicked()
+        {
+            OpenDrawer();
+
+            // set animator to slide to situation
+            containerSlide.SetBool("Left", true);
+        }
+        public void MajorCrimesClicked()
+        {
+            OpenDrawer();
+
+            //Set animator to slide to major crimes
+            containerSlide.SetBool("Left", false);
+        }
+
+
+        #region Situation Methods
+
         public void ClearButtons(Button button)
         {
             ReallyClearButtons();
@@ -205,5 +238,7 @@ namespace Assets.Scripts
 
             scrollBar.value = 1;
         }
+
+        #endregion
     }
 }
