@@ -110,6 +110,7 @@ public class UIManager : MonoBehaviour {
     public void PushPlayerAction(string action)
     {
         currentPlayerManager.UpdateActions(action);
+        UpdateUI();
     }
 
     public void WipeActions()
