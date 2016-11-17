@@ -1,7 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{8E72A06D-5FB8-1E6C-5F61-4027F50F653E}") = "ThinBlueLine", "Assembly-CSharp.csproj", "{28C79EA7-980A-7282-934B-197CA5CCC4F1}"
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThinBlueLine.CSharp", "ThinBlueLine.CSharp.csproj", "{26EF3363-15DC-DE15-0952-92E15E044A1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{28C79EA7-980A-7282-934B-197CA5CCC4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28C79EA7-980A-7282-934B-197CA5CCC4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28C79EA7-980A-7282-934B-197CA5CCC4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28C79EA7-980A-7282-934B-197CA5CCC4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26EF3363-15DC-DE15-0952-92E15E044A1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26EF3363-15DC-DE15-0952-92E15E044A1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26EF3363-15DC-DE15-0952-92E15E044A1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26EF3363-15DC-DE15-0952-92E15E044A1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

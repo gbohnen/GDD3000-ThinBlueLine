@@ -77,8 +77,6 @@
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
-    <Compile Include="Assets\Scripts\NeighborhoodManager.cs" />
-    <Compile Include="Assets\Scripts\PageState.cs" />
     <Compile Include="Assets\Scripts\ParticleButton.cs" />
     <Compile Include="Assets\Scripts\PlayerSelect.cs" />
     <Compile Include="Assets\Scripts\RaycastMask.cs" />
@@ -90,6 +88,7 @@
     <Compile Include="Assets\Scripts\UI Management\CrimeSitManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\CurrentPlayerManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\DrawSituationCard.cs" />
+    <Compile Include="Assets\Scripts\UI Management\NeighborhoodManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\ResolveSituationCard.cs" />
     <Compile Include="Assets\Scripts\UI Management\SituationButton.cs" />
