@@ -232,6 +232,55 @@ public class CardActions
         //modify a random crime category in all neighborhoods
     }
 
+    public static void CrusherSpecial()
+    {
+        //Do Crusher special here... And so on for the other Specials.
+    }
+    public static void DetectiveSpecial()
+    {
+
+    }
+    public static void FedSpecial()
+    {
+
+    }
+    public static void InformantSpecial()
+    {
+
+    }
+    public static void RookieSpecial()
+    {
+
+    }
+    public static void PowerLusterSpecial()
+    {
+
+    }
+    public static void OldDogSpecial()
+    {
+
+    }
+    public static void PISpecial()
+    {
+
+    }
+    public static void UndercoverSpecial()
+    {
+
+    }
+    public static void DriverSpecial()
+    {
+
+    }
+    public static void WardenSpecial()
+    {
+
+    }
+    public static void BookieSpecial()
+    {
+
+    }
+
 	public static void DebugLine(string str)
 	{
 		Debug.Log(str);
