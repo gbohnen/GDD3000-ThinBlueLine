@@ -27,7 +27,6 @@ public class ResolveSituationCard : MonoBehaviour {
     public Text futureCost;
 
     float totalThreshold = 3.0f;
-    string arrow = " -> ";
 
     SituationScript situation;
 
@@ -35,9 +34,9 @@ public class ResolveSituationCard : MonoBehaviour {
     {
         situation = sitch;
 
-        smartsText.text = GameManager.Instance.CurrentPlayerObj.Smarts.ToString() + arrow + GameManager.Instance.CurrentPlayerObj.Smarts.ToString();
-        moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + arrow + GameManager.Instance.CurrentPlayerObj.Moxie.ToString();
-        muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + arrow + GameManager.Instance.CurrentPlayerObj.Strength.ToString();
+        smartsText.text = GameManager.Instance.CurrentPlayerObj.Smarts.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Smarts.ToString();
+        moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Moxie.ToString();
+        muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Strength.ToString();
 
         ResetButton();
     }
@@ -47,7 +46,7 @@ public class ResolveSituationCard : MonoBehaviour {
         if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Smarts < smartsSlider.value)
             smartsSlider.value--;
 
-        smartsText.text = GameManager.Instance.CurrentPlayerObj.Smarts.ToString() + arrow + (GameManager.Instance.CurrentPlayerObj.Smarts - smartsSlider.value).ToString();
+        smartsText.text = GameManager.Instance.CurrentPlayerObj.Smarts.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Smarts - smartsSlider.value).ToString();
 
         UpdateCalculations();
     }
@@ -57,7 +56,7 @@ public class ResolveSituationCard : MonoBehaviour {
         if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Moxie < moxieSlider.value)
             moxieSlider.value--;
 
-        moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + arrow + (GameManager.Instance.CurrentPlayerObj.Moxie - moxieSlider.value).ToString();
+        moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Moxie - moxieSlider.value).ToString();
 
         UpdateCalculations();
     }
@@ -67,7 +66,7 @@ public class ResolveSituationCard : MonoBehaviour {
         if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Strength < muscleSlider.value)
             muscleSlider.value--;
 
-        muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + arrow + (GameManager.Instance.CurrentPlayerObj.Strength - muscleSlider.value).ToString();
+        muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Strength - muscleSlider.value).ToString();
 
         UpdateCalculations();
     }
