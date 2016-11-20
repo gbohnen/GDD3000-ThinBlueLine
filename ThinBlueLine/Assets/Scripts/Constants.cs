@@ -9,6 +9,7 @@ namespace Assets.Scripts
     {
         public static Color32 ACTIVE = new Color32(50, 194, 255, 255);
         public static Color32 INACTIVE = new Color32(255, 255, 255, 100);
+        public const string ARROW = " -> ";
 
         #region Folder Names
 

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using Assets.Scripts;
 using System.Collections.Generic;
+using Assets.Scripts.UI_Management;
 
 public class UIManager : MonoBehaviour {
 
@@ -75,6 +76,7 @@ public class UIManager : MonoBehaviour {
     public void LowerCrime()
     {
         lowerCrimeWindow.SetActive(true);
+        lowerCrimeWindow.GetComponent<LowerNeighborhoodCrime>().Load();
         lowerCrimeWindow.transform.SetAsLastSibling();
     }
 

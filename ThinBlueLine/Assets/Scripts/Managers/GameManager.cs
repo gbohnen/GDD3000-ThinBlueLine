@@ -120,6 +120,21 @@ public class GameManager : MonoBehaviour
         UIManager.instance.UpdateUI();
     }
 
+    /// <summary>
+    /// Lowers the crime by the given amount
+    /// </summary>
+    /// <param name="smarts">smarts amount</param>
+    /// <param name="moxie">moxie amount</param>
+    /// <param name="muscle">muscle amount</param>
+    public void LowerCrime(float smarts, float moxie, float muscle)
+    {
+        GameLibrary.instance.Neighborhoods[activeNeighborhood].Corruption -= (int)smarts;
+        GameLibrary.instance.Neighborhoods[activeNeighborhood].Chaos -= (int)moxie;
+        GameLibrary.instance.Neighborhoods[activeNeighborhood].MafiaPresence -= (int)muscle;
+
+        UIManager.instance.UpdateUI();
+    }
+
     public void ClickDrawSituation()
     {
         UIManager.instance.DrawSituation(GameLibrary.instance.GetNewSituation());
