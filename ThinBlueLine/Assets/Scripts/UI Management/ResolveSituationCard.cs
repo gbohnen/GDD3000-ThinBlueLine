@@ -36,7 +36,7 @@ public class ResolveSituationCard : MonoBehaviour {
 
         smartsText.text = GameManager.Instance.CurrentPlayerObj.Smarts.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Smarts.ToString();
         moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Moxie.ToString();
-        muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Strength.ToString();
+        muscleText.text = GameManager.Instance.CurrentPlayerObj.Muscle.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Muscle.ToString();
 
         ResetButton();
     }
@@ -63,10 +63,10 @@ public class ResolveSituationCard : MonoBehaviour {
 
     public void StrengthSliderChanged()
     {
-        if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Strength < muscleSlider.value)
+        if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Muscle < muscleSlider.value)
             muscleSlider.value--;
 
-        muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Strength - muscleSlider.value).ToString();
+        muscleText.text = GameManager.Instance.CurrentPlayerObj.Muscle.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Muscle - muscleSlider.value).ToString();
 
         UpdateCalculations();
     }

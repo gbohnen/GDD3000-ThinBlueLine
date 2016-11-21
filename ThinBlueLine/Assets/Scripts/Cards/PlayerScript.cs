@@ -36,7 +36,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Gets the players strength
         /// </summary>
-        public int Strength
+        public int Muscle
         {
             get { return muscles; }
             set { muscles = value; }

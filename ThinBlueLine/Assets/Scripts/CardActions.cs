@@ -17,7 +17,7 @@ public class CardActions
     public static void ChangeRandomPlayerMuscle(int val)
     {
         //Get random player, modify their muscle by val
-		GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Strength += val;
+		GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Muscle += val;
 
 		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
@@ -53,7 +53,7 @@ public class CardActions
     public static void ChangeCurrentPlayerMuscle(int val)
     {
 		//get current player, modify their muscle by val
-		GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Strength += val;
+		GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Muscle += val;
 
 		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
@@ -85,7 +85,7 @@ public class CardActions
     {
 		//modify all players muscle pool by val
 		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
-			player.Value.Strength += val;
+			player.Value.Muscle += val;
 		}
 
 		Debug.Log (MethodBase.GetCurrentMethod ().Name);
@@ -105,9 +105,9 @@ public class CardActions
     {
 		//modify all stat pools of all players by val
 		foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players) {
-			player.Value.Strength += val;
+			player.Value.Muscle += val;
 			player.Value.Moxie += val;
-			player.Value.Strength += val;
+			player.Value.Muscle += val;
 		}
 
 		Debug.Log (MethodBase.GetCurrentMethod ().Name);

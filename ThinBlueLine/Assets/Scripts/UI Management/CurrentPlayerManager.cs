@@ -18,7 +18,7 @@ public class CurrentPlayerManager : MonoBehaviour {
         playerName.text = GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Name;
         smarts.text = GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Smarts.ToString();
         moxie.text = GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Moxie.ToString();
-        muscle.text = GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Strength.ToString();
+        muscle.text = GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Muscle.ToString();
     }
 
     public void UpdateActions(string action)

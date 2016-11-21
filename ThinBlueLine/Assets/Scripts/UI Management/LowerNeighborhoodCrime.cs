@@ -47,7 +47,7 @@ namespace Assets.Scripts.UI_Management
             // set the players stats
             smartsText.text = GameManager.Instance.CurrentPlayerObj.Smarts.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Smarts.ToString();
             moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Moxie.ToString();
-            muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Strength.ToString();
+            muscleText.text = GameManager.Instance.CurrentPlayerObj.Muscle.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Muscle.ToString();
 
             // set the neighborhood stats
             policeCorrText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption.ToString() + 
@@ -99,12 +99,12 @@ namespace Assets.Scripts.UI_Management
         public void MuscleSliderChanged()
         {
             // checks the total threshold, player strength & current neighborhood mafia presence 
-            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Strength < muscleSlider.value 
+            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Muscle < muscleSlider.value 
                 && GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence < muscleSlider.value)
             { muscleSlider.value--; }
 
             // resets player & neighborhood stats
-            muscleText.text = GameManager.Instance.CurrentPlayerObj.Strength.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Strength - muscleSlider.value).ToString();
+            muscleText.text = GameManager.Instance.CurrentPlayerObj.Muscle.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Muscle - muscleSlider.value).ToString();
             mafiaPresText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence.ToString() + Constants.ARROW + 
                                  (GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence - muscleSlider.value).ToString();
         }

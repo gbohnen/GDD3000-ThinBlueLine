@@ -63,7 +63,7 @@ namespace Assets.Scripts
             neighborhoodPanels.Add(Neighborhood.Suburbia, suburbiaContent);
             neighborhoodPanels.Add(Neighborhood.Downtown, downtownContent);
             neighborhoodPanels.Add(Neighborhood.TheBoxes, boxesContent);
-            neighborhoodPanels.Add(Neighborhood.TheDocks, docksContent);
+            neighborhoodPanels.Add(Neighborhood.Portside, docksContent);
 
             activeButton = new Color(1, .1f, .1f, .5f);
         }
@@ -107,7 +107,7 @@ namespace Assets.Scripts
                 case Neighborhood.TheBoxes:
                     newButton.transform.SetParent(boxesContent.transform);
                     break;
-                case Neighborhood.TheDocks:
+                case Neighborhood.Portside:
                     newButton.transform.SetParent(docksContent.transform);
                     break;
             }
@@ -200,7 +200,7 @@ namespace Assets.Scripts
                 case Neighborhood.TheBoxes:
                     boxesButton.GetComponent<Image>().color = Color.cyan;
                     break;
-                case Neighborhood.TheDocks:
+                case Neighborhood.Portside:
                     docksButton.GetComponent<Image>().color = Color.cyan;
                     break;
                 default:

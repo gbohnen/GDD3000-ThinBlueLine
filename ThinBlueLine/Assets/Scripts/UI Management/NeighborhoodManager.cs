@@ -46,7 +46,7 @@ public class NeighborhoodManager : MonoBehaviour {
     }
     public void ChangeDocks()
     {
-        GameManager.Instance.activeNeighborhood = Neighborhood.TheDocks;
+        GameManager.Instance.activeNeighborhood = Neighborhood.Portside;
         GameManager.Instance.LogAction("Neighborhood Changed");
         indicator.SetInteger("CurrNeigh", 5);
     }
