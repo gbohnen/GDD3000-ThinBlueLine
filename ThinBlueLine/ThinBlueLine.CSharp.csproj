@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Constants.cs" />
     <Compile Include="Assets\Scripts\ErrorButton.cs" />
     <Compile Include="Assets\Scripts\GameLibrary.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\MainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\Scripts\UI Management\CrimeSitManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\CurrentPlayerManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\DrawSituationCard.cs" />
+    <Compile Include="Assets\Scripts\UI Management\LowerNeighborhoodCrime.cs" />
     <Compile Include="Assets\Scripts\UI Management\NeighborhoodManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\ResolveSituationCard.cs" />
