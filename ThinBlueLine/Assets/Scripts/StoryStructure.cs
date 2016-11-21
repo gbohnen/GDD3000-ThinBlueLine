@@ -57,7 +57,8 @@ public class StoryStructure : MonoBehaviour
     /// </summary>
     public void UpdateStoryPanel()
     {
-		if (currentPage >= tutorialText.Count) {
+		if (currentPage >= tutorialText.Count)
+        {
 			SceneManager.LoadScene (Constants.PLAYER_SELECTION_SCENE);
 		}
 

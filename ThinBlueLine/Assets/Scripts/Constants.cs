@@ -29,6 +29,7 @@ namespace Assets.Scripts
         public const string TUTORIAL_SCENE = "pageDemo";
         public const string PLAYER_SELECTION_SCENE = "PlayerSelect";
         public const string TESTING_SCENE = "testingGround";
+        public const string GAME_OVER_SCENE = "EndGame";
 
         #endregion
 

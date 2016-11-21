@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.Scripts;
 
 /// <summary>
 /// Script which handles the City Info UI
@@ -64,9 +65,9 @@ public class CityInfoManager : MonoBehaviour
 		boxesCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes].Chaos.ToString();
 		boxesMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes].MafiaPresence.ToString();
 
-		portsidePC.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheDocks].Corruption.ToString();
-		portsideCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheDocks].Chaos.ToString();
-		portsideMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.TheDocks].MafiaPresence.ToString();
+		portsidePC.text = GameLibrary.instance.Neighborhoods[Neighborhood.Portside].Corruption.ToString();
+		portsideCH.text = GameLibrary.instance.Neighborhoods[Neighborhood.Portside].Chaos.ToString();
+		portsideMP.text = GameLibrary.instance.Neighborhoods[Neighborhood.Portside].MafiaPresence.ToString();
     }
 
     #endregion

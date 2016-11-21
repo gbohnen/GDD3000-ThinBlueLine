@@ -8,7 +8,7 @@ using System.Collections.Generic;
 /// Singleton class which manages the state of the game
 /// </summary>
 /// 
-public enum Neighborhood { StonyGate = 0, Suburbia = 1, Downtown = 2, TheBoxes = 3, TheDocks = 4, Overall = 5 }
+public enum Neighborhood { StonyGate = 0, Suburbia = 1, Downtown = 2, TheBoxes = 3, Portside = 4, Overall = 5 }
 
 public class GameManager : MonoBehaviour
 {
@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
     {
         GameLibrary.instance.Players[currentPlayer].Smarts -= (int)smarts;
         GameLibrary.instance.Players[currentPlayer].Moxie -= (int)moxie;
-        GameLibrary.instance.Players[currentPlayer].Strength -= (int)muscle;
+        GameLibrary.instance.Players[currentPlayer].Muscle -= (int)muscle;
 
         UIManager.instance.UpdateUI();
     }
@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
     {
         GameLibrary.instance.Players[currentPlayer].Smarts += (int)sma;
         GameLibrary.instance.Players[currentPlayer].Moxie += (int)mox;
-        GameLibrary.instance.Players[currentPlayer].Strength += (int)mus;
+        GameLibrary.instance.Players[currentPlayer].Muscle += (int)mus;
 
         UIManager.instance.UpdateUI();
     }

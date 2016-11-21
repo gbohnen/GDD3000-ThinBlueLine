@@ -113,7 +113,7 @@ public class PlayerSelect : MonoBehaviour
         section1Bio.text = trio[0].Bio;
         section1Smarts.text = trio[0].Smarts.ToString();
         section1Moxie.text = trio[0].Moxie.ToString();
-        section1Strength.text = trio[0].Strength.ToString();
+        section1Strength.text = trio[0].Muscle.ToString();
         section1Avat.sprite = trio[0].Avatar;
         section1Player = trio[0];
 
@@ -123,7 +123,7 @@ public class PlayerSelect : MonoBehaviour
         section2Bio.text = trio[1].Bio;
         section2Smarts.text = trio[1].Smarts.ToString();
         section2Moxie.text = trio[1].Moxie.ToString();
-        section2Strength.text = trio[1].Strength.ToString();
+        section2Strength.text = trio[1].Muscle.ToString();
         section2Avat.sprite = trio[1].Avatar;
         section2Player = trio[1];
 
@@ -133,7 +133,7 @@ public class PlayerSelect : MonoBehaviour
         section3Bio.text = trio[2].Bio;
         section3Smarts.text = trio[2].Smarts.ToString();
         section3Moxie.text = trio[2].Moxie.ToString();
-        section3Strength.text = trio[2].Strength.ToString();
+        section3Strength.text = trio[2].Muscle.ToString();
         section3Avat.sprite = trio[2].Avatar;
         section3Player = trio[2];
     }
@@ -170,7 +170,7 @@ public class PlayerSelect : MonoBehaviour
                 playerWName.text = choice.Name;
                 playerWSma.text = choice.Smarts.ToString();
                 playerWMox.text = choice.Moxie.ToString();
-                playerWMus.text = choice.Strength.ToString();
+                playerWMus.text = choice.Muscle.ToString();
                 indicatorAnimator.SetInteger("Phase", 1);
                 break;
 
@@ -179,7 +179,7 @@ public class PlayerSelect : MonoBehaviour
                 playerXName.text = choice.Name;
                 playerXSma.text = choice.Smarts.ToString();
                 playerXMox.text = choice.Moxie.ToString();
-                playerXMus.text = choice.Strength.ToString();
+                playerXMus.text = choice.Muscle.ToString();
                 indicatorAnimator.SetInteger("Phase", 2);
                 break;
 
@@ -188,7 +188,7 @@ public class PlayerSelect : MonoBehaviour
                 playerYName.text = choice.Name;
                 playerYSma.text = choice.Smarts.ToString();
                 playerYMox.text = choice.Moxie.ToString();
-                playerYMus.text = choice.Strength.ToString();
+                playerYMus.text = choice.Muscle.ToString();
                 indicatorAnimator.SetInteger("Phase", 3);
                 break;
 
@@ -197,7 +197,7 @@ public class PlayerSelect : MonoBehaviour
                 playerZName.text = choice.Name;
                 playerZSma.text = choice.Smarts.ToString();
                 playerZMox.text = choice.Moxie.ToString();
-                playerZMus.text = choice.Strength.ToString();
+                playerZMus.text = choice.Muscle.ToString();
 
                 PlayMeOut();
                 break;
