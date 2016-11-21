@@ -11,6 +11,14 @@ namespace Assets.Scripts
         public static Color32 INACTIVE = new Color32(255, 255, 255, 100);
         public const string ARROW = " -> ";
 
+        public const int MAX_CITY_POLICE_CORR = 10;
+        public const int MAX_CITY_CHAOS = 10;
+        public const int MAX_CITY_MAFIA_PRES = 10;
+
+        public const int MAX_NEIGHBORHOOD_POLICE_CORR = 5;
+        public const int MAX_NEIGHBORHOOD_CHAOS = 5;
+        public const int MAX_NEIGHBORHOOD_MAFIA_PRES = 5;
+
         #region Folder Names
 
         public const string CARD_FOLDER_NAME = "";
