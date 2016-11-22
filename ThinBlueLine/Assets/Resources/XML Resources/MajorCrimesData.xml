@@ -2,146 +2,146 @@
 <!-- Created by XML:Wrench -->
 <root>
   <!-- content of XML goes 'here'  -->
-  <majorCrimes>
-           <majorCrime>
+  <majorcrimes>
+           <majorcrime>
                    <name>Bank Heist</name>
-                   <mobBoss>Ricky Veers</mobBoss>
-                   <tierOne>
-                     <crimeEffect>No crime effect.</crimeEffect>
-                     <choiceOne>Amp up Security: 6 Muscle -> Move to Tier Two and Add 4 to Chaos</choiceOne>
-                     <choiceTwo>Establish Surveillance: 3 Smarts + 3 Moxie -> Move to Tier Two and Add 4 to Mafia Presence.</choiceTwo>
-                   </tierOne>
-                    <tierTwo>
-                     <crimeEffect>Chaos goes up by one every turn.</crimeEffect>
-                     <choiceOne>Shake Down Informants: 6 Muscle + 5 Moxie -> Move to Tier Three and Add 4 to Police Corruption.</choiceOne>
-                     <choiceTwo>Piece Together Evidence: 7 Smarts + 4 Moxie -> Move to Tier Three. Add 1 to each Crime Category.</choiceTwo>
-                   </tierTwo>
-                   <tierThree>
-                     <crimeEffect>Heist countdown begins, 15 turns until it reaches zero, if it does, the players lose.</crimeEffect>
-                     <choiceOne>Heist in Progress! Rush the bank!: 8 Muscle + 5 Moxie. -> Move to tier four. Add 4 to chaos.</choiceOne>
-                     <choiceTwo>Heist in Progress! Set up a perimeter!: 10 Smarts. -> Move to tier four. Add 5 to Mafia Presence.</choiceTwo>
-                   </tierThree>
-                   <tierFour>
-                     <crimeEffect>Countdown gains three counts (if the countdown was at 4 it’s now at 7) but continues down, and if it reaches zero the players lose. Each category goes up by one every turn.</crimeEffect>
-                     <choiceOne>Hostage Situation! Call in a negotiator: 7 Smarts + 5 Moxie. -> Move to tier five. Add 6 to Police Corruption.</choiceOne>
-                     <choiceTwo>Hostage Situation! Take the shot: 9 Moxie + 4 Muscle. -> Move to tier five. Add 6 to Chaos.</choiceTwo>
-                   </tierFour>
-                   <tierFive>
-                     <crimeEffect>Countdown gains five counts, but still continues to countdown. Each category goes up by two each turn.</crimeEffect>
-                     <choiceFinal>Stop the Getaway!: 30 points total from the stat pools. -> Players win.</choiceFinal>
-                   </tierFive>
-           </majorCrime>
-           <majorCrime>
+                   <mobboss>Ricky Veers</mobboss>
+                   <tierone>
+                     <crimeeffect>No crime effect.</crimeeffect>
+                     <choiceone>Amp up Security: cost 6 Muscle: Move to Tier Two and Chaos +4</choiceone>
+                     <choicetwo>Establish Surveillance: cost 3 Smarts and 3 Moxie: Move to Tier Two and Mafia Presence +4.</choicetwo>
+                   </tierone>
+                    <tiertwo>
+                     <crimeeffect>Chaos goes up by one every turn.</crimeeffect>
+                     <choiceone>Shake Down Informants: cost 6 Muscle and 5 Moxie: Move to Tier Three and Police Corruption +4.</choiceone>
+                     <choicetwo>Piece Together Evidence: cost 7 Smarts and 4 Moxie: Move to Tier Three. +1 to all.</choicetwo>
+                   </tiertwo>
+                   <tierthree>
+                     <crimeeffect>Heist countdown begins, 15 turns until it reaches zero, if it does, the players lose.</crimeeffect>
+                     <choiceone>Heist in Progress! Rush the bank!: cost 8 Muscle and 5 Moxie.: Move to tier four. Chaos +4.</choiceone>
+                     <choicetwo>Heist in Progress! Set up a perimeter!: cost 10 Smarts.: Move to tier four. Mafia Presence +5.</choicetwo>
+                   </tierthree>
+                   <tierfour>
+                     <crimeeffect>Countdown gains three counts (if the countdown was at 4 it's now at 7) but continues down, and if it reaches zero the players lose. +1 to all every turn.</crimeeffect>
+                     <choiceone>Hostage Situation! Call in a negotiator: cost 7 Smarts and 5 Moxie.: Move to tier five. Police Corruption +6.</choiceone>
+                     <choicetwo>Hostage Situation! Take the shot: 9 Moxie + 4 Muscle.: Move to tier five. Add 6 to Chaos.</choicetwo>
+                   </tierfour>
+                   <tierfive>
+                     <crimeeffect>Countdown gains five counts, but still continues to countdown. Each category goes up by two each turn.</crimeeffect>
+                     <choicefinal>Stop the Getaway!: 30 points total from the stat pools.: Players win.</choicefinal>
+                   </tierfive>
+           </majorcrime>
+           <majorcrime>
                    <name>Anarchy Hit List</name>
-                   <mobBoss>Jon Biers</mobBoss>
-                   <tierOne>
-                     <crimeEffect>Add 3 to chaos.</crimeEffect>
-                     <choiceOne>Bombs strapped to support pillars! Evacuate!: 2 Muscle + 2 Moxie -> Move to Tier Two and Add 2 to Chaos</choiceOne>
-                     <choiceTwo>Bombs strapped to support pillars! Diffuse!: 6 Smarts -> Move to Tier Two and subtract 1 to Chaos.</choiceTwo>
-                   </tierOne>
-                    <tierTwo>
-                     <crimeEffect>Add 4 to Chaos.</crimeEffect>
-                     <choiceOne>Downtown Under Attack! Rush in!: 7 Muscle + 6 Moxie -> Move to Tier Three and Add 1 to Chaos.</choiceOne>
-                     <choiceTwo>Downtown Under Attack! Keep a level head, secure a perimeter: 10 Smarts + 5 Moxie -> Move to Tier Three. Subtract 2 to Chaos.</choiceTwo>
-                   </tierTwo>
-                   <tierThree>
-                     <crimeEffect>Lasts three turns, Chaos increases by 1 every turn. Can only pick one of the two choices once over the period of the three turns.</crimeEffect>
-                     <choiceOne>Calm before the storm. Investigate Biers: 8 Smarts + 3 Moxie. -> Decrease cost of tier four choices by 3 Moxie.</choiceOne>
-                     <choiceTwo>Calm Before the Storm. Prepare: 5 Smarts + 2 Muscle. -> Subtract 2 to Chaos.</choiceTwo>
-                   </tierThree>
-                   <tierFour>
-                     <crimeEffect>Chaos increases by 3. Chaos increases by 1 every turn.</crimeEffect>
-                     <choiceOne>Siege on Stony Gate! Sneak in: 10 Smarts + 7 Moxie. -> Move to tier five. Add 2 to Chaos.</choiceOne>
-                     <choiceTwo>Siege on Stony Gate! Guns Blazing!: 6 Moxie + 4 Muscle. -> Move to tier five. Add 5 to Chaos.</choiceTwo>
-                   </tierFour>
-                   <tierFive>
-                     <crimeEffect>Chaos increases by 2 every turn.</crimeEffect>
-                     <choiceFinal>Stop the Assassination!: 15 total of Muscle and/or Smarts + 15 Moxie. -> Players win.</choiceFinal>
-                   </tierFive>
-           </majorCrime>
-           <majorCrime>
-                   <name>Devil’s Recruiting</name>
-                   <mobBoss>Sergei Rostislav</mobBoss>
-                   <tierOne>
-                     <crimeEffect>No Crime Effect</crimeEffect>
-                     <choiceOne>There’s something happening here… Investigate nearby housing: 4 Smarts -> Move to Tier Two. Add 2 Police Corruption.</choiceOne>
-                     <choiceTwo>There’s something happening here... Investigate rumors circulating among the populace: 2 Smarts + 2 Moxie -> Move to Tier Two and Add 4 to Mafia Presence.</choiceTwo>
-                   </tierOne>
-                    <tierTwo>
-                     <crimeEffect>Mafia presence increases by 2.</crimeEffect>
-                     <choiceOne>What it is ain’t exactly clear... Get a warrant to search certain suspects: 6 Moxie + 4 Smarts -> Move to Tier Three and Add 2 Mafia Presence.</choiceOne>
-                     <choiceTwo>What it is ain’t exactly clear...Capture new recruits: 10 Muscle + 2 Moxie -> Move to Tier Three. Subtract 1 to Mafia Presence, add 2 to Police Corruption.</choiceTwo>
-                   </tierTwo>
-                   <tierThree>
-                     <crimeEffect>Mafia presence increases by 3.</crimeEffect>
-                     <choiceOne>There’s a man with a gun over there... Storm the compounds: 12 Muscle. -> Move to tier four. Add 4 to chaos and subtract 3 from mafia presence.</choiceOne>
-                     <choiceTwo>There’s a man with a gun over there… Send in a double agent: 5 Smarts and 5 Moxie. -> Move to tier four. Add 2 to Mafia Presence.</choiceTwo>
-                   </tierThree>
-                   <tierFour>
-                     <crimeEffect>Mafia presence increases by 1 every turn.</crimeEffect>
-                     <choiceOne>Telling me I got to beware... Firefight: 8 Moxie + 8 Muscle. -> Move to tier five. Add 2 to Chaos subtract 3 from mafia presence.</choiceOne>
-                     <choiceTwo>Telling me I got to beware... Gather evidence: 6 Moxie + 5 Smarts. -> Move to tier five. Add 3 to Mafia presence but for the final choice you can spend 15 Muscle instead of twenty.</choiceTwo>
-                   </tierFour>
-                   <tierFive>
-                     <crimeEffect>Mafia presence and chaos increases by 1 every turn.</crimeEffect>
-                     <choiceFinal>Stop! Hey! What’s that sound!: 20 (15 if choice two was picked for tier four) Muscle total from the stat pools. -> Players win.</choiceFinal>
-                   </tierFive>
-           </majorCrime>
-           <majorCrime>
+                   <mobboss>Jon Biers</mobboss>
+                   <tierone>
+                     <crimeeffect>Add 3 to chaos.</crimeeffect>
+                     <choiceone>Bombs strapped to support pillars! Evacuate!: 2 Muscle + 2 Moxie: Move to Tier Two and Add 2 to Chaos</choiceone>
+                     <choicetwo>Bombs strapped to support pillars! Diffuse!: 6 Smarts: Move to Tier Two and subtract 1 to Chaos.</choicetwo>
+                   </tierone>
+                    <tiertwo>
+                     <crimeeffect>Add 4 to Chaos.</crimeeffect>
+                     <choiceone>Downtown Under Attack! Rush in!: 7 Muscle + 6 Moxie: Move to Tier Three and Add 1 to Chaos.</choiceone>
+                     <choicetwo>Downtown Under Attack! Keep a level head, secure a perimeter: 10 Smarts + 5 Moxie: Move to Tier Three. Subtract 2 to Chaos.</choicetwo>
+                   </tiertwo>
+                   <tierthree>
+                     <crimeeffect>Lasts three turns, Chaos increases by 1 every turn. Can only pick one of the two choices once over the period of the three turns.</crimeeffect>
+                     <choiceone>Calm before the storm. Investigate Biers: 8 Smarts + 3 Moxie.: Decrease cost of tier four choices by 3 Moxie.</choiceone>
+                     <choicetwo>Calm Before the Storm. Prepare: 5 Smarts + 2 Muscle.: Subtract 2 to Chaos.</choicetwo>
+                   </tierthree>
+                   <tierfour>
+                     <crimeeffect>Chaos increases by 3. Chaos increases by 1 every turn.</crimeeffect>
+                     <choiceone>Siege on Stony Gate! Sneak in: 10 Smarts + 7 Moxie.: Move to tier five. Add 2 to Chaos.</choiceone>
+                     <choicetwo>Siege on Stony Gate! Guns Blazing!: 6 Moxie + 4 Muscle.: Move to tier five. Add 5 to Chaos.</choicetwo>
+                   </tierfour>
+                   <tierfive>
+                     <crimeeffect>Chaos increases by 2 every turn.</crimeeffect>
+                     <choicefinal>Stop the Assassination!: 15 total of Muscle and/or Smarts + 15 Moxie.: Players win.</choicefinal>
+                   </tierfive>
+           </majorcrime>
+           <majorcrime>
+                   <name>Devil's Recruiting</name>
+                   <mobboss>Sergei Rostislav</mobboss>
+                   <tierone>
+                     <crimeeffect>No Crime Effect</crimeeffect>
+                     <choiceone>There's something happening here… Investigate nearby housing: 4 Smarts: Move to Tier Two. Add 2 Police Corruption.</choiceone>
+                     <choicetwo>There's something happening here... Investigate rumors circulating among the populace: 2 Smarts + 2 Moxie: Move to Tier Two and Add 4 to Mafia Presence.</choicetwo>
+                   </tierone>
+                    <tiertwo>
+                     <crimeeffect>Mafia presence increases by 2.</crimeeffect>
+                     <choiceone>What it is ain't exactly clear... Get a warrant to search certain suspects: 6 Moxie + 4 Smarts: Move to Tier Three and Add 2 Mafia Presence.</choiceone>
+                     <choicetwo>What it is ain't exactly clear...Capture new recruits: 10 Muscle + 2 Moxie: Move to Tier Three. Subtract 1 to Mafia Presence, add 2 to Police Corruption.</choicetwo>
+                   </tiertwo>
+                   <tierthree>
+                     <crimeeffect>Mafia presence increases by 3.</crimeeffect>
+                     <choiceone>There's a man with a gun over there... Storm the compounds: 12 Muscle.: Move to tier four. Add 4 to chaos and subtract 3 from mafia presence.</choiceone>
+                     <choicetwo>There's a man with a gun over there… Send in a double agent: 5 Smarts and 5 Moxie.: Move to tier four. Add 2 to Mafia Presence.</choicetwo>
+                   </tierthree>
+                   <tierfour>
+                     <crimeeffect>Mafia presence increases by 1 every turn.</crimeeffect>
+                     <choiceone>Telling me I got to beware... Firefight: 8 Moxie + 8 Muscle.: Move to tier five. Add 2 to Chaos subtract 3 from mafia presence.</choiceone>
+                     <choicetwo>Telling me I got to beware... Gather evidence: 6 Moxie + 5 Smarts.: Move to tier five. Add 3 to Mafia presence but for the final choice you can spend 15 Muscle instead of twenty.</choicetwo>
+                   </tierfour>
+                   <tierfive>
+                     <crimeeffect>Mafia presence and chaos increases by 1 every turn.</crimeeffect>
+                     <choicefinal>Stop! Hey! What's that sound!: 20 (15 if choice two was picked for tier four) Muscle total from the stat pools.: Players win.</choicefinal>
+                   </tierfive>
+           </majorcrime>
+           <majorcrime>
                    <name>Bad Blood</name>
-                   <mobBoss>Giovanni Morietti</mobBoss>
-                   <tierOne>
-                     <crimeEffect>No Crime Effect</crimeEffect>
-                     <choiceOne>Patrol the streets - 4 Moxie -> Move to Tier Two. Add 3 to Chaos</choiceOne>
-                     <choiceTwo>Pay off informants - 6 Smarts -> Move to Tier Two. Add 3 to Corruption, but have 5 turns where tier two’s effect doesn’t take place.</choiceTwo>
-                   </tierOne>
-                    <tierTwo>
-                     <crimeEffect>Corruption goes up by one every turn.</crimeEffect>
-                     <choiceOne>Investigate “protected” stores - 8 Smarts  + 3 Moxie -> Move to Tier Three. Lower Corruption by 2.</choiceOne>
-                     <choiceTwo>“Talk” to some more unsavory types - 6 Muscle + 1 Moxie -> Move to Tier Three. Add 2 to Corruption.</choiceTwo>
-                   </tierTwo>
-                   <tierThree>
-                     <crimeEffect>Corruption of officials begins, corruption stat is locked in place and cannot be lowered or raised (unless specified with an * below). Depending on the corruption level, the lieutenants will add to an overall corruption of officials. </crimeEffect>
-                     <choiceOne>Gather dirt on the officials. - 10 Smarts + 5 Moxie. -> Move to tier four. Subtract police corruption by 1*, but increase official corruption by 1 turn. Adjust official corruption gain for tier four.</choiceOne>
-                     <choiceTwo>Arrest a lieutenant! - 12 Muscle. -> Move to tier four. Official corruption gain is now subtracted by 1/3 of what it once was, but police corruption is raised by 1*.</choiceTwo>
-                   </tierThree>
-                   <tierFour>
-                     <crimeEffect>Official corruption continues as adjusted by the previous tier’s choice. Every 4 turns police corruption is raised by 1*. Official corruption adjusts accordingly.</crimeEffect>
-                     <choiceOne>Arrest an official. - 10 Moxie -> Move to tier five. Official corruption gain is now subtracted by 1/3 of what it once was, but police corruption is raised by 2*.</choiceOne>
-                     <choiceTwo>Storm a mob base! - 15 Muscle + 5 Moxie. -> Move to tier five. Official corruption gain is now subtracted by 2/3 of what it once was, police corruption is lowered by 2*, but Chaos is raised by 7.</choiceTwo>
-                   </tierFour>
-                   <tierFive>
-                     <crimeEffect>Official corruption continues as adjusted by the previous tier’s choice. Every 2 turns police corruption is raised by 2*. Official corruption adjusts accordingly.</crimeEffect>
-                     <choiceFinal>Arrest Giovanni! - 20 Smarts  + 10 Moxie total from the stat pool. -> Players win.</choiceFinal>
-                   </tierFive>
-           </majorCrime>
-           <majorCrime>
+                   <mobboss>Giovanni Morietti</mobboss>
+                   <tierone>
+                     <crimeeffect>No Crime Effect</crimeeffect>
+                     <choiceone>Patrol the streets - 4 Moxie: Move to Tier Two. Add 3 to Chaos</choiceone>
+                     <choicetwo>Pay off informants - 6 Smarts: Move to Tier Two. Add 3 to Corruption, but have 5 turns where tier two's effect doesn't take place.</choicetwo>
+                   </tierone>
+                    <tiertwo>
+                     <crimeeffect>Corruption goes up by one every turn.</crimeeffect>
+                     <choiceone>Investigate “protected” stores - 8 Smarts  + 3 Moxie: Move to Tier Three. Lower Corruption by 2.</choiceone>
+                     <choicetwo>“Talk” to some more unsavory types - 6 Muscle + 1 Moxie: Move to Tier Three. Add 2 to Corruption.</choicetwo>
+                   </tiertwo>
+                   <tierthree>
+                     <crimeeffect>Corruption of officials begins, corruption stat is locked in place and cannot be lowered or raised (unless specified with an * below). Depending on the corruption level, the lieutenants will add to an overall corruption of officials. </crimeeffect>
+                     <choiceone>Gather dirt on the officials. - 10 Smarts + 5 Moxie.: Move to tier four. Subtract police corruption by 1*, but increase official corruption by 1 turn. Adjust official corruption gain for tier four.</choiceone>
+                     <choicetwo>Arrest a lieutenant! - 12 Muscle.: Move to tier four. Official corruption gain is now subtracted by 1/3 of what it once was, but police corruption is raised by 1*.</choicetwo>
+                   </tierthree>
+                   <tierfour>
+                     <crimeeffect>Official corruption continues as adjusted by the previous tier's choice. Every 4 turns police corruption is raised by 1*. Official corruption adjusts accordingly.</crimeeffect>
+                     <choiceone>Arrest an official. - 10 Moxie: Move to tier five. Official corruption gain is now subtracted by 1/3 of what it once was, but police corruption is raised by 2*.</choiceone>
+                     <choicetwo>Storm a mob base! - 15 Muscle + 5 Moxie.: Move to tier five. Official corruption gain is now subtracted by 2/3 of what it once was, police corruption is lowered by 2*, but Chaos is raised by 7.</choicetwo>
+                   </tierfour>
+                   <tierfive>
+                     <crimeeffect>Official corruption continues as adjusted by the previous tier's choice. Every 2 turns police corruption is raised by 2*. Official corruption adjusts accordingly.</crimeeffect>
+                     <choicefinal>Arrest Giovanni! - 20 Smarts  + 10 Moxie total from the stat pool.: Players win.</choicefinal>
+                   </tierfive>
+           </majorcrime>
+           <majorcrime>
                    <name>Redneck Moonshine Tycoon</name>
-                   <mobBoss>Beau Wilkins</mobBoss>
-                   <tierOne>
-                     <crimeEffect>No Crime Effect</crimeEffect>
-                     <choiceOne>“Question” the locals - 3 Muscle -> Move to Tier Two. Add 1 to Mafia Presence and add 2 to Police Corruption.</choiceOne>
-                     <choiceTwo>Case the speakeasies - 4 Smarts + 4 Moxie -> Move to Tier Two. Add 2 to Mafia Presence.</choiceTwo>
-                   </tierOne>
-                    <tierTwo>
-                     <crimeEffect>Revenue from the stills starts. Each turn revenue will be added from the four stills spread throughout the city, starting from tier 2 to tier 5, each tier will be its own situation card representing a still that will be in a random section of the city. Once a still is dealt with, the revenue-per-turn will go down, but other tiers will introduce new effects based on choices. </crimeEffect>
-                     <choiceOne>Infiltrate and sabotage the still. - 8 Moxie + 5 Muscle -> Move to Tier Three. Revenue-per-turn is subtracted by a 1/4, but Mafia Presence goes up by 4.</choiceOne>
-                     <choiceTwo>Attack the still - 10 Muscle + 5 Moxie -> Move to Tier Three. Revenue-per-turn is subtracted by a 1/4, but Chaos goes up by 4.</choiceTwo>
-                   </tierTwo>
-                   <tierThree>
-                     <crimeEffect>Revenue-per-turn is now at 3/4. Mafia presence increases by 1 every 2 turns. </crimeEffect>
-                     <choiceOne>Cordon a still and cut them off - 8 Muscle + 6 Moxie. -> Move to tier four. Revenue-per-turn is subtracted by a 1/4, but Chaos goes up by 2.</choiceOne>
-                     <choiceTwo>Steal the funds from the still - 10 Smarts + 6 Moxie. -> Move to tier four. Revenue-per-turn is subtracted by a 1/4, total revenue loses a 1/6 of its progress, but Mafia Presence goes up by 4.</choiceTwo>
-                   </tierThree>
-                   <tierFour>
-                     <crimeEffect>Revenue-per-turn is now at 1/2. Mafia presence increases by 2 every 2 turns, and Chaos increases by 1 every 2 turns.</crimeEffect>
-                     <choiceOne>Negotiate with the staff of the still. - 10 Moxie + 6 Smarts. -> Move to tier five. Revenue-per-turn is subtracted by a 1/4, but Police Corruption goes up by 3.</choiceOne>
-                     <choiceTwo>Call in the Feds! - 7 Muscle + 5 Moxie. -> Move to tier five. Revenue-per-turn is subtracted by a 1/4, but Chaos goes up by 4.</choiceTwo>
-                   </tierFour>
-                   <tierFive>
-                     <crimeEffect>Revenue-per-turn is now at 1/4. Mafia presence increases by 2 every 2 turns, and Chaos increases by 2 every 2 turns.</crimeEffect>
-                     <choiceFinal>Capture the last still! - 30 points total from the stat pools. -> Players win.</choiceFinal>
-                   </tierFive>
-           </majorCrime>
-   </majorCrimes>
+                   <mobboss>Beau Wilkins</mobboss>
+                   <tierone>
+                     <crimeeffect>No Crime Effect</crimeeffect>
+                     <choiceone>“Question” the locals - 3 Muscle: Move to Tier Two. Add 1 to Mafia Presence and add 2 to Police Corruption.</choiceone>
+                     <choicetwo>Case the speakeasies - 4 Smarts + 4 Moxie: Move to Tier Two. Add 2 to Mafia Presence.</choicetwo>
+                   </tierone>
+                    <tiertwo>
+                     <crimeeffect>Revenue from the stills starts. Each turn revenue will be added from the four stills spread throughout the city, starting from tier 2 to tier 5, each tier will be its own situation card representing a still that will be in a random section of the city. Once a still is dealt with, the revenue-per-turn will go down, but other tiers will introduce new effects based on choices. </crimeeffect>
+                     <choiceone>Infiltrate and sabotage the still. - 8 Moxie + 5 Muscle: Move to Tier Three. Revenue-per-turn is subtracted by a 1/4, but Mafia Presence goes up by 4.</choiceone>
+                     <choicetwo>Attack the still - 10 Muscle + 5 Moxie: Move to Tier Three. Revenue-per-turn is subtracted by a 1/4, but Chaos goes up by 4.</choicetwo>
+                   </tiertwo>
+                   <tierthree>
+                     <crimeeffect>Revenue-per-turn is now at 3/4. Mafia presence increases by 1 every 2 turns. </crimeeffect>
+                     <choiceone>Cordon a still and cut them off - 8 Muscle + 6 Moxie.: Move to tier four. Revenue-per-turn is subtracted by a 1/4, but Chaos goes up by 2.</choiceone>
+                     <choicetwo>Steal the funds from the still - 10 Smarts + 6 Moxie.: Move to tier four. Revenue-per-turn is subtracted by a 1/4, total revenue loses a 1/6 of its progress, but Mafia Presence goes up by 4.</choicetwo>
+                   </tierthree>
+                   <tierfour>
+                     <crimeeffect>Revenue-per-turn is now at 1/2. Mafia presence increases by 2 every 2 turns, and Chaos increases by 1 every 2 turns.</crimeeffect>
+                     <choiceone>Negotiate with the staff of the still. - 10 Moxie + 6 Smarts.: Move to tier five. Revenue-per-turn is subtracted by a 1/4, but Police Corruption goes up by 3.</choiceone>
+                     <choicetwo>Call in the Feds! - 7 Muscle + 5 Moxie.: Move to tier five. Revenue-per-turn is subtracted by a 1/4, but Chaos goes up by 4.</choicetwo>
+                   </tierfour>
+                   <tierfive>
+                     <crimeeffect>Revenue-per-turn is now at 1/4. Mafia presence increases by 2 every 2 turns, and Chaos increases by 2 every 2 turns.</crimeeffect>
+                     <choicefinal>Capture the last still! - 30 points total from the stat pools.: Players win.</choicefinal>
+                   </tierfive>
+           </majorcrime>
+   </majorcrimes>
 </root>
