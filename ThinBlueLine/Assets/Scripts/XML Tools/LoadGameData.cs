@@ -238,7 +238,7 @@ public static class LoadGameData
         // instantiate necessary components
         XmlDocument majorCrimeDoc = new XmlDocument();                                           // blank xml doc
         majorCrimeDoc.LoadXml(majorCrimeFile.text);                                              // load major crime file
-        XmlNodeList majorCrimeList = majorCrimeDoc.GetElementsByTagName("majorCrime");           // get all tags labeled major crime
+        XmlNodeList majorCrimeList = majorCrimeDoc.GetElementsByTagName("majorcrime");           // get all tags labeled major crime
 
         MajorCrimeScript majorCrime = new MajorCrimeScript();
 
@@ -251,7 +251,7 @@ public static class LoadGameData
             switch (node.Name)
             {
                 case "name":        majorCrime.Name = node.InnerText; break;
-                case "mobBoss":     majorCrime.MobBoss = node.InnerText; break;
+                case "mobboss":     majorCrime.MobBoss = node.InnerText; break;
                 default:
                     MajorCrimeTier tier = new MajorCrimeTier();
                     XmlNodeList childList = node.ChildNodes;
@@ -259,10 +259,10 @@ public static class LoadGameData
                     {
                         switch (childNode.Name)
                         {
-                            case "crimeEffect":     tier.CrimeEffectText = childNode.InnerText; break;
-                            case "choiceOne":       tier.OptionOneText = childNode.InnerText; break;
+                            case "crimeeffect":     tier.CrimeEffectText = childNode.InnerText; break;
+                            case "choiceone":       tier.OptionOneText = childNode.InnerText; break;
                             //case "choiceOneStats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
-                            case "choiceTwo":       tier.OptionTwoText = childNode.InnerText; break;
+                            case "choicetwo":       tier.OptionTwoText = childNode.InnerText; break;
                             //case "choiceTwoStats":  tier.OptionOneCosts = ParseStats(childNode.InnerText); break;
                         }
                     }
