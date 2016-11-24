@@ -111,7 +111,11 @@ public class GameManager : MonoBehaviour
         majorCrime = LoadGameData.LoadMajorCrimes();
 
         Debug.Log(majorCrime.Name);
-        Debug.Log(majorCrime.CrimeTiers.Count);
+        Debug.Log(majorCrime.MobBoss);
+        foreach (MajorCrimeTier tier in majorCrime.CrimeTiers)
+        {
+            Debug.Log(tier.CrimeEffectText);
+        }
 
         firstAction = false;
         UIManager.instance.UpdateUI();
