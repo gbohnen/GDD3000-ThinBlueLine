@@ -12,7 +12,7 @@ namespace Assets.Scripts
     public class SituationScript : MajorCrimeScript
     {
         #region Fields
-
+        
         string description;
         string immEffect;
         string ongEffect;

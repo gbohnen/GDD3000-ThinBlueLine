@@ -28,7 +28,7 @@
                    </tierFour>
                    <tierFive>
                      <crimeEffect>Countdown gains five counts, but still continues to countdown. Each category goes up by two each turn.</crimeEffect>
-                     <choiceFinal>Stop the Getaway!: 30 points total from the stat pools. -> Players win.</choiceFinal>
+                     <choiceOne>Stop the Getaway!: 30 points total from the stat pools. -> Players win.</choiceOne>
                    </tierFive>
            </majorCrime>
            <majorCrime>
@@ -56,7 +56,7 @@
                    </tierFour>
                    <tierFive>
                      <crimeEffect>Chaos increases by 2 every turn.</crimeEffect>
-                     <choiceFinal>Stop the Assassination!: 15 total of Muscle and/or Smarts + 15 Moxie. -> Players win.</choiceFinal>
+                     <choiceOne>Stop the Assassination!: 15 total of Muscle and/or Smarts + 15 Moxie. -> Players win.</choiceOne>
                    </tierFive>
            </majorCrime>
            <majorCrime>
@@ -84,7 +84,7 @@
                    </tierFour>
                    <tierFive>
                      <crimeEffect>Mafia presence and chaos increases by 1 every turn.</crimeEffect>
-                     <choiceFinal>Stop! Hey! What’s that sound!: 20 (15 if choice two was picked for tier four) Muscle total from the stat pools. -> Players win.</choiceFinal>
+                     <choiceOne>Stop! Hey! What’s that sound!: 20 (15 if choice two was picked for tier four) Muscle total from the stat pools. -> Players win.</choiceOne>
                    </tierFive>
            </majorCrime>
            <majorCrime>
@@ -112,7 +112,7 @@
                    </tierFour>
                    <tierFive>
                      <crimeEffect>Official corruption continues as adjusted by the previous tier’s choice. Every 2 turns police corruption is raised by 2*. Official corruption adjusts accordingly.</crimeEffect>
-                     <choiceFinal>Arrest Giovanni! - 20 Smarts  + 10 Moxie total from the stat pool. -> Players win.</choiceFinal>
+                     <choiceOne>Arrest Giovanni! - 20 Smarts  + 10 Moxie total from the stat pool. -> Players win.</choiceOne>
                    </tierFive>
            </majorCrime>
            <majorCrime>
@@ -140,7 +140,7 @@
                    </tierFour>
                    <tierFive>
                      <crimeEffect>Revenue-per-turn is now at 1/4. Mafia presence increases by 2 every 2 turns, and Chaos increases by 2 every 2 turns.</crimeEffect>
-                     <choiceFinal>Capture the last still! - 30 points total from the stat pools. -> Players win.</choiceFinal>
+                     <choiceOne>Capture the last still! - 30 points total from the stat pools. -> Players win.</choiceOne>
                    </tierFive>
            </majorCrime>
    </majorCrimes>

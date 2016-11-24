@@ -41,7 +41,7 @@ public class SituationButton : MonoBehaviour {
 
         if (situation.Cost <= 0)
         {
-            situation.TriggerPosOutcome();
+            situation.TriggerPositive();
             Destroy(gameObject);
         }
     }
