@@ -231,7 +231,7 @@ public static class LoadGameData
     /// Loads in the Major Crimes from the XML
     /// </summary>
     /// <returns>the major crimes</returns>
-    public static List<MajorCrime> LoadMajorCrimes()
+    public static MajorCrimeScript LoadMajorCrimes()
     {
         TextAsset majorCrimeFile = (TextAsset)Resources.Load(Constants.MAJOR_CRIMES_FILE_NAME);
 
@@ -240,48 +240,41 @@ public static class LoadGameData
         majorCrimeDoc.LoadXml(majorCrimeFile.text);                                              // load major crime file
         XmlNodeList majorCrimeList = majorCrimeDoc.GetElementsByTagName("majorCrime");           // get all tags labeled major crime
 
-        List<MajorCrime> majorCrimes = new List<MajorCrime>();                                   // list of major crimes
+        MajorCrimeScript majorCrime = new MajorCrimeScript();
 
-        // iterate all "mob boss" tags
-        foreach (XmlNode node in majorCrimeList)
+        Debug.Log(majorCrime.Name);
+
+        XmlNodeList nodeList = majorCrimeList[Random.Range(0, majorCrimeList.Count)].ChildNodes;
+
+        foreach (XmlNode node in nodeList)
         {
-            // make a list of all child node (this is where the major crime data is stored)
-            XmlNodeList majorCrimeData = node.ChildNodes;
-
-            // empty major crime
-            MajorCrime majorCrime = new MajorCrime();
-
-            // iterate those nodes
-            foreach (XmlNode childNode in majorCrimeData)
+            switch (node.Name)
             {
-                // make a list of all child node (this is where the major crime child data is stored)
-                XmlNodeList majorCrimeDataChild = childNode.ChildNodes;
-
-                // load data into major crime based on child tag
-                switch (childNode.Name)
-                {
-                    case "name": majorCrime.name = childNode.InnerText; break;
-                    case "mobBoss": majorCrime.mobBoss = childNode.InnerText; break;
-                    default: break;
-                }
-
-                //// 
-                //foreach (XmlNode childChildNode in majorCrimeDataChild)
-                //{
-                //    switch (childNode.Name)
-                //    {
-                //        default:
-                //            break;
-                //    }
-                //}
+                case "name":        majorCrime.Name = node.InnerText; break;
+                case "mobBoss":     majorCrime.MobBoss = node.InnerText; break;
+                default:
+                    MajorCrimeTier tier = new MajorCrimeTier();
+                    XmlNodeList childList = node.ChildNodes;
+                    foreach (XmlNode childNode in childList)
+                    {
+                        switch (childNode.Name)
+                        {
+                            case "crimeEffect":     tier.CrimeEffectText = childNode.InnerText; break;
+                            case "choiceOne":       tier.OptionOneText = childNode.InnerText; break;
+                            //case "choiceOneStats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
+                            case "choiceTwo":       tier.OptionTwoText = childNode.InnerText; break;
+                            //case "choiceTwoStats":  tier.OptionOneCosts = ParseStats(childNode.InnerText); break;
+                        }
+                    }
+                    majorCrime.CrimeTiers.Add(tier);
+                    break;
             }
-
-            // add child to the list
-            majorCrimes.Add(majorCrime);
         }
 
+        Debug.Log(majorCrime.Name);
+
         // return list of all major crimes
-        return majorCrimes;
+        return majorCrime;
     }
 
     /// <summary>
@@ -317,4 +310,11 @@ public static class LoadGameData
         // return list of tutorial info
         return tutorial;
     }
+
+    //public static Vector3 ParseStats(string str)
+    //{
+    //    Vector3 vect = new Vector3();
+
+    //    return vect;
+    //}
 }

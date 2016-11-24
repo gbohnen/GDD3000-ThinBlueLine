@@ -25,7 +25,8 @@ public class GameManager : MonoBehaviour
 	Dictionary<Neighborhood, NeighborhoodData> neighborhoodData;
 
     // store the crimes & situations
-    //MajorCrimeScript majorCrime;
+    public MajorCrimeScript majorCrime;
+
     //List<SituationScript> situations;
 
     //// store the mob boss & police chief
@@ -106,6 +107,15 @@ public class GameManager : MonoBehaviour
 
         activeNeighborhood = (Neighborhood)Random.Range(0, 5);
         NeighborhoodManager.instance.indicator.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
+
+        majorCrime = LoadGameData.LoadMajorCrimes();
+
+        Debug.Log(majorCrime.Name);
+        Debug.Log(majorCrime.MobBoss);
+        foreach (MajorCrimeTier tier in majorCrime.CrimeTiers)
+        {
+            Debug.Log(tier.CrimeEffectText);
+        }
 
         firstAction = false;
         UIManager.instance.UpdateUI();
