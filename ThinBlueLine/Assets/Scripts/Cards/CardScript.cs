@@ -6,7 +6,7 @@ namespace Assets.Scripts
     /// <summary>
     /// Base class script which handles the cards in the game
     /// </summary>
-    public abstract class CardScript : MonoBehaviour
+    public abstract class CardScript
     {
         #region Fields
 

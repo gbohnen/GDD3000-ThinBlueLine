@@ -23,7 +23,7 @@
                    </tierthree>
                    <tierfour>
                      <crimeeffect>Countdown gains three counts (if the countdown was at 4 it's now at 7) but continues down, and if it reaches zero the players lose. +1 to all every turn.</crimeeffect>
-                     <choiceone>Hostage Situation! Call in a negotiator: cost 7 Smarts and 5 Moxie.: Move to tier five. Police Corruption +6.</choiceone>
+                     <choiceone>Hostage Situation! Call in a negotiator: cost 7 Smarts and 5 Moxie.:s Move to tier five. Police Corruption +6.</choiceone>
                      <choicetwo>Hostage Situation! Take the shot: 9 Moxie + 4 Muscle.: Move to tier five. Add 6 to Chaos.</choicetwo>
                    </tierfour>
                    <tierfive>

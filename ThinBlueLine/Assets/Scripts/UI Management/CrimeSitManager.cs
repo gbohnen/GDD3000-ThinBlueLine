@@ -16,6 +16,8 @@ namespace Assets.Scripts
         public Animator buttonAnimator;
         public Animator containerSlide;
 
+        #region Situation Manager Fields
+
         // situation list fields
         public Transform situationScrollPanel;              // parent that the prefab goes in
         public GameObject situationPrefab;                  // prefab that we want to spawn
@@ -44,14 +46,27 @@ namespace Assets.Scripts
         Color activeButton;
         Color inactiveButton = Color.white;
 
+        #endregion
+
+        #region Major Crime Manager Fields
+
+        public GameObject tierOne;
+        public GameObject tierTwo;
+        public GameObject tierThree;
+        public GameObject tierFour;
+        public GameObject tierFive;
+
+        List<GameObject> tierObjectList;
+
+        #endregion
+
         void Start()
         {
             drawerAnimator = GetComponent<Animator>();
 
+            // set up situations
             ActiveSituations = new Dictionary<string, GameObject>();
-
             neighborhoodPanels = new Dictionary<Neighborhood, GameObject>();
-
             buttons = new List<GameObject>();
             buttons.Add(stonyGateButton);
             buttons.Add(suburbiaButton);
@@ -66,6 +81,15 @@ namespace Assets.Scripts
             neighborhoodPanels.Add(Neighborhood.Portside, docksContent);
 
             activeButton = new Color(1, .1f, .1f, .5f);
+
+            // set up crimes
+            tierObjectList.Add(tierOne);
+            //tierObjectList.Add(tierTwo);
+            //tierObjectList.Add(tierThree);
+            //tierObjectList.Add(tierFour);
+            //tierObjectList.Add(tierFive);
+
+            UpdateMajorCrimeDisplay();
         }
 
         // called by gamemanager when we draw a new situation
@@ -78,16 +102,16 @@ namespace Assets.Scripts
             ActiveSituations.Add(sitch.Name, newButton);
 
             // set all ui fields based on the situation we were given
-            button.situationName.text   = sitch.Name;
-            button.cost.text            = "Cost:           " + sitch.Cost.ToString();
-            button.smartsMod.text       = "x " + sitch.SmartsModifier.ToString();
-            button.moxieMod.text        = "x " + sitch.MoxieModifier.ToString();
-            button.musclesMod.text      = "x " + sitch.MuscleModifier.ToString();
-            button.posResolution.text   = sitch.PositiveOutcome;
-            button.negResolution.text   = sitch.NegativeOutcome;
-            button.desc.text            = sitch.Description;
-            button.immEffect.text       = sitch.ImmediateEffect;
-            button.ongEffect.text       = sitch.OngoingEffect;
+            button.situationName.text = sitch.Name;
+            button.cost.text = "Cost:           " + sitch.Cost.ToString();
+            button.smartsMod.text = "x " + sitch.SmartsModifier.ToString();
+            button.moxieMod.text = "x " + sitch.MoxieModifier.ToString();
+            button.musclesMod.text = "x " + sitch.MuscleModifier.ToString();
+            button.posResolution.text = sitch.PositiveOutcome;
+            button.negResolution.text = sitch.NegativeOutcome;
+            button.desc.text = sitch.Description;
+            button.immEffect.text = sitch.ImmediateEffect;
+            button.ongEffect.text = sitch.OngoingEffect;
 
             // hand off the situation
             button.situation = sitch;
@@ -112,6 +136,8 @@ namespace Assets.Scripts
                     break;
             }
         }
+
+        #region Animation Methods
 
         public void ToggleDrawer()
         {
@@ -147,19 +173,27 @@ namespace Assets.Scripts
 
         public void SituationClicked()
         {
-            OpenDrawer();
+            if (drawerAnimator.GetBool("Open"))
+                CloseDrawer();
+            else
+                OpenDrawer();
 
             // set animator to slide to situation
             containerSlide.SetBool("Left", true);
         }
+
         public void MajorCrimesClicked()
         {
-            OpenDrawer();
+            if (drawerAnimator.GetBool("Open"))
+                CloseDrawer();
+            else
+                OpenDrawer();
 
             //Set animator to slide to major crimes
             containerSlide.SetBool("Left", false);
         }
 
+        #endregion
 
         #region Situation Methods
 
@@ -237,6 +271,20 @@ namespace Assets.Scripts
             }
 
             scrollBar.value = 1;
+        }
+
+        #endregion
+
+        #region MajorCrimes Methods
+
+        public void UpdateMajorCrimeDisplay()
+        {
+
+        }
+        
+        public void LoadSituationTier(MajorCrimeTier tier, GameObject button)
+        {
+
         }
 
         #endregion
