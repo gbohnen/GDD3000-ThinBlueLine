@@ -50,6 +50,8 @@ namespace Assets.Scripts
 
         #region Major Crime Manager Fields
 
+        public Text majorCrimeName;
+
         public GameObject tierOne;
         public GameObject tierTwo;
         public GameObject tierThree;
@@ -281,6 +283,8 @@ namespace Assets.Scripts
 
         public void UpdateMajorCrimeDisplay()
         {
+            majorCrimeName.text = GameManager.Instance.majorCrime.Name;
+
             for (int i = 0; i < tierObjectList.Count; i++)
             {
                 tierObjectList[i].GetComponent<TierObject>().LoadTier(GameManager.Instance.majorCrime.CrimeTiers[i]);

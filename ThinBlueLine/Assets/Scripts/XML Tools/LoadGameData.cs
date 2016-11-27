@@ -6,7 +6,7 @@ using Assets.Scripts;
 /// <summary>
 /// Class which handles Loading Game Data from XMLs
 /// </summary>
-public static class LoadGameData
+public class LoadGameData
 {
     /// <summary>
     /// Struct for the Player XML
@@ -259,11 +259,12 @@ public static class LoadGameData
                     {
                         switch (childNode.Name)
                         {
+                            case "tiername":        tier.TierName = childNode.InnerText; break;
                             case "crimeeffect":     tier.CrimeEffectText = childNode.InnerText; break;
                             case "choiceone":       tier.OptionOneText = childNode.InnerText; break;
-                            //case "choiceOneStats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
+                            case "choiceonestats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
                             case "choicetwo":       tier.OptionTwoText = childNode.InnerText; break;
-                            //case "choiceTwoStats":  tier.OptionOneCosts = ParseStats(childNode.InnerText); break;
+                            case "choicetwostats":  tier.OptionOneCosts = ParseStats(childNode.InnerText); break;
                         }
                     }
                     majorCrime.CrimeTiers.Add(tier);
@@ -311,10 +312,12 @@ public static class LoadGameData
         return tutorial;
     }
 
-    //public static Vector3 ParseStats(string str)
-    //{
-    //    Vector3 vect = new Vector3();
+    public static Vector3 ParseStats(string str)
+    {
+        string[] stats = str.Split(new char[] { ':' });
 
-    //    return vect;
-    //}
+        Vector3 vect = new Vector3(int.Parse(stats[0]), int.Parse(stats[1]), int.Parse(stats[2]));
+
+        return vect;
+    }
 }

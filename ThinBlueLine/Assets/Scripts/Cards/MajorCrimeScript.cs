@@ -5,6 +5,8 @@ namespace Assets.Scripts
 {
     public struct MajorCrimeTier
     {
+        public string TierName;
+        public string TierDescription;
         public string CrimeEffectText;
         public string CrimeEffectMethod;
         public string OptionOneText;

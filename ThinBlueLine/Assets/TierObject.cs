@@ -17,14 +17,19 @@ public class TierObject : MonoBehaviour {
 
     public void LoadTier(MajorCrimeTier data)
     {
-        // header = data.header
+        if (data.TierName != null)
+            header.text = data.TierName;
         immediateEffect.text = data.CrimeEffectText;
-        // optionOne = data.
-        //optionOneCost.text = new string();
-        optionOneDesc.text = data.OptionOneText;
-        // optionTwo = data.
-        //optionTwoCost.text = new string();
-        optionTwoDesc.text = data.OptionTwoText;
+
+        optionOneCost.text = "<color=#3232ffff>" + data.OptionOneCosts.x + "</color> - <color=#327e15ff>" + data.OptionOneCosts.y + "</color> - <color=#c13232ff>" + data.OptionOneCosts.z + "</color>";
+        string[] option1 = data.OptionOneText.Split(new char[] { ':' });
+        optionOne.text = option1[0];
+        optionOneDesc.text = option1[1];
+
+        optionTwoCost.text = "<color=#3232ffff>" + data.OptionTwoCosts.x + "</color> - <color=#327e15ff>" + data.OptionTwoCosts.y + "</color> - <color=#c13232ff>" + data.OptionTwoCosts.z + "</color>";
+        string[] option2 = data.OptionTwoText.Split(new char[] { ':' });
+        optionTwo.text = option2[0];
+        optionTwoDesc.text = option2[1];
     }
 
 }
