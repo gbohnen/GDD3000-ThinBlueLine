@@ -83,11 +83,13 @@ namespace Assets.Scripts
             activeButton = new Color(1, .1f, .1f, .5f);
 
             // set up crimes
+            tierObjectList = new List<GameObject>();
+
             tierObjectList.Add(tierOne);
-            //tierObjectList.Add(tierTwo);
-            //tierObjectList.Add(tierThree);
-            //tierObjectList.Add(tierFour);
-            //tierObjectList.Add(tierFive);
+            tierObjectList.Add(tierTwo);
+            tierObjectList.Add(tierThree);
+            tierObjectList.Add(tierFour);
+            tierObjectList.Add(tierFive);
 
             UpdateMajorCrimeDisplay();
         }
@@ -173,7 +175,7 @@ namespace Assets.Scripts
 
         public void SituationClicked()
         {
-            if (drawerAnimator.GetBool("Open"))
+            if (drawerAnimator.GetBool("Open") && containerSlide.GetBool("Left"))
                 CloseDrawer();
             else
                 OpenDrawer();
@@ -184,7 +186,7 @@ namespace Assets.Scripts
 
         public void MajorCrimesClicked()
         {
-            if (drawerAnimator.GetBool("Open"))
+            if (drawerAnimator.GetBool("Open") && !containerSlide.GetBool("Left"))
                 CloseDrawer();
             else
                 OpenDrawer();
@@ -279,7 +281,10 @@ namespace Assets.Scripts
 
         public void UpdateMajorCrimeDisplay()
         {
-
+            for (int i = 0; i < tierObjectList.Count; i++)
+            {
+                tierObjectList[i].GetComponent<TierObject>().LoadTier(GameManager.Instance.majorCrime.CrimeTiers[i]);
+            }
         }
         
         public void LoadSituationTier(MajorCrimeTier tier, GameObject button)
