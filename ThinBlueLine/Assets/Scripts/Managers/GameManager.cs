@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
     // store the crimes & situations
     public MajorCrimeScript majorCrime;
 
-    //List<SituationScript> situations;
-
     //// store the mob boss & police chief
     //MobBossScript mobBoss;
     //PoliceChiefScript policeChief;

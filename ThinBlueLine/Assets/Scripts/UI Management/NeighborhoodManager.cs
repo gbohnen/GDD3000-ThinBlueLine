@@ -32,6 +32,16 @@ public class NeighborhoodManager : MonoBehaviour {
         animators.Add(Players.Player4, indicator4);
     }
 
+    public void ChangeNeighborhood(Neighborhood curr)
+    {
+        if (GameManager.Instance.CurrentPlayerObj.Neighborhood != curr)
+        {
+            GameManager.Instance.CurrentPlayerObj.Neighborhood = curr;
+            GameManager.Instance.LogAction("Neighborhood Changed");
+            animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", (int)curr + 1);
+        }
+    }
+
 	public void ChangeStonyGate()
     {
         if (GameManager.Instance.CurrentPlayerObj.Neighborhood != Neighborhood.StonyGate)
