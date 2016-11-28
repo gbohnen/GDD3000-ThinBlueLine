@@ -57,15 +57,6 @@ public class LoadGameData
     }
 
     /// <summary>
-    /// Struct for the Major Crime XML
-    /// </summary>
-    public struct MajorCrime
-    {
-        public string name;
-        public string mobBoss;
-    }
-
-    /// <summary>
     /// Loads in the players from the XML
     /// </summary>
     /// <returns>the players</returns>
@@ -171,8 +162,6 @@ public class LoadGameData
                 }
             }
 
-			//situation.immEffMeth = "DebugLine:" + situation.name;
-
             // add child to the list
             situations.Add(situation);
         }
@@ -241,9 +230,6 @@ public class LoadGameData
         XmlNodeList majorCrimeList = majorCrimeDoc.GetElementsByTagName("majorcrime");           // get all tags labeled major crime
 
         MajorCrimeScript majorCrime = new MajorCrimeScript();
-
-        Debug.Log(majorCrime.Name);
-
         XmlNodeList nodeList = majorCrimeList[Random.Range(0, majorCrimeList.Count)].ChildNodes;
 
         foreach (XmlNode node in nodeList)
@@ -252,6 +238,21 @@ public class LoadGameData
             {
                 case "name":        majorCrime.Name = node.InnerText; break;
                 case "mobboss":     majorCrime.MobBoss = node.InnerText; break;
+                case "tierfive":
+                    MajorCrimeTier tierFive = new MajorCrimeTier();
+                    XmlNodeList childList1 = node.ChildNodes;
+                    foreach (XmlNode childNode in childList1)
+                    {
+                        switch (childNode.Name)
+                        {
+                            case "tiername": tierFive.TierName = childNode.InnerText; break;
+                            case "crimeeffect": tierFive.CrimeEffectText = childNode.InnerText; break;
+                            case "choicefinal": tierFive.OptionOneText = childNode.InnerText; break;
+                            case "choicefinalcost": tierFive.OptionOneCosts = ParseStats(childNode.InnerText); break;
+                        }
+                    }
+                    majorCrime.CrimeTiers.Add(tierFive);
+                    break;
                 default:
                     MajorCrimeTier tier = new MajorCrimeTier();
                     XmlNodeList childList = node.ChildNodes;
@@ -271,8 +272,6 @@ public class LoadGameData
                     break;
             }
         }
-
-        Debug.Log(majorCrime.Name);
 
         // return list of all major crimes
         return majorCrime;
