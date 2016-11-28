@@ -9,6 +9,7 @@
                    <tierone>
                      <tiername>Bank Hesit Tip-Off</tiername>
                      <crimeeffect>No crime effect.</crimeeffect>
+                     <tieronestorydescription></tieronestorydescription>
                      <choiceone>Amp up Security:Move to Tier Two and Chaos +4</choiceone>
                      <choiceonestats>0:0:6</choiceonestats>
                      <choicetwo>Establish Surveillance:Move to Tier Two and Mafia Presence +4.</choicetwo>
@@ -17,6 +18,7 @@
                     <tiertwo>
                      <tiername>Get Some Info</tiername>
                      <crimeeffect>Chaos goes +1 every turn.</crimeeffect>
+                     <tiertwostorydescription></tiertwostorydescription>
                      <choiceone>Shake Down Informants:Move to Tier Three and Police Corruption +4.</choiceone>
                      <choiceonestats>0:5:6</choiceonestats>
                      <choicetwo>Piece Together Evidence:Move to Tier Three. +1 to all.</choicetwo>
@@ -25,6 +27,7 @@
                    <tierthree>
                      <tiername>Heist in Progress!</tiername>
                      <crimeeffect>Heist countdown begins, 15 turns until it reaches zero, if it does, the players lose.</crimeeffect>
+                     <tierthreestorydescription></tierthreestorydescription>
                      <choiceone>Rush the bank!:Move to Tier Four. Chaos +4.</choiceone>
                      <choiceonestats>0:5:8</choiceonestats>
                      <choicetwo>Set up a perimeter!:Move to Tier Four. Mafia Presence +5.</choicetwo>
@@ -33,6 +36,7 @@
                    <tierfour>
                      <tiername>Hostage Situation!</tiername>
                      <crimeeffect>Countdown gains 3 counts (if the countdown was at 4 it's now at 7) but continues down, and if it reaches 0 the players lose. +1 to all every turn.</crimeeffect>
+                     <tierfourstorydescription></tierfourstorydescription>
                      <choiceone>Call in a negotiator:Move to Tier Five. Police Corruption +6.</choiceone>
                      <choiceonestats>7:5:0</choiceonestats>
                      <choicetwo>Take the shot:Move to Tier Five. Chaos +6.</choicetwo>
@@ -41,6 +45,7 @@
                    <tierfive>
                      <tiername>Stop the Getaway!</tiername>
                      <crimeeffect>Countdown gains 5 counts, but still continues to countdown. Each category +2 each turn.</crimeeffect>
+                     <tierfivestorydescription></tierfivestorydescription>
                      <choicefinal>Catch Veers:30 points total from the stat pools.: Players win.</choicefinal>
                    </tierfive>
            </majorcrime>
@@ -50,6 +55,7 @@
                    <tierone>
                      <tiername>Bombs Strapped to Support Pillars!</tiername>
                      <crimeeffect>+3 to Chaos.</crimeeffect>
+                     <tieronestorydescription></tieronestorydescription>
                      <choiceone>Evacuate!:Move to Tier Two and Chaos +2</choiceone>
                      <choiceonestats>0:2:2</choiceonestats>
                      <choicetwo>Diffuse!:Move to Tier Two and Chaos -1.</choicetwo>
@@ -58,6 +64,7 @@
                     <tiertwo>
                      <tiername>Downtown Under Attack!</tiername>
                      <crimeeffect>+4 to Chaos.</crimeeffect>
+                     <tiertwostorydescription></tiertwostorydescription>
                      <choiceone>Rush in!:Move to Tier Three and Chaos + 1.</choiceone>
                      <choiceonestats>0:6:7</choiceonestats>
                      <choicetwo>Keep a level head, secure a perimeter:Move to Tier Three. Chaos -2</choicetwo>
@@ -66,14 +73,16 @@
                    <tierthree>
                      <tiername>Calm Before the Storm</tiername>
                      <crimeeffect>Lasts 3 turns, Chaos +1 every turn. Can only pick one of the two choices once over the period of the 3 turns.</crimeeffect>
+                     <tierthreestorydescription></tierthreestorydescription>
                      <choiceone>Investigate Biers:Decrease cost of Tier Four choices by 3 Moxie.</choiceone>
-                      <choiceonestats>8:3:0</choiceonestats>
+                     <choiceonestats>8:3:0</choiceonestats>
                      <choicetwo>Prepare:Chaos -2</choicetwo>
                      <choicetwostats>5:0:2</choicetwostats>
                    </tierthree>
                    <tierfour>
                      <tiername>Siege on Stony Gate!</tiername>
                      <crimeeffect>Chaos +3. Chaos +1 every turn.</crimeeffect>
+                     <tierfourstorydescription></tierfourstorydescription>
                      <choiceone>Sneak in:Move to Tier Five. Chaos +2</choiceone>
                      <choiceonestats>10:7:0</choiceonestats>
                      <choicetwo>Guns Blazing!:Move to Tier Five. Chaos +5</choicetwo>
@@ -82,6 +91,7 @@
                    <tierfive>
                      <tiername>Stop the Assassination!</tiername>
                      <crimeeffect>Chaos +2 every turn.</crimeeffect>
+                     <tierfivestorydescription></tierfivestorydescription>
                      <choicefinal>Capture Biers:15 total of Muscle and/or Smarts + 15 Moxie.: Players win.</choicefinal>
                    </tierfive>
            </majorcrime>
@@ -91,6 +101,7 @@
                    <tierone>
                      <tiername>There's something happening here...</tiername>
                      <crimeeffect>No Crime Effect</crimeeffect>
+                     <tieronestorydescription></tieronestorydescription>
                      <choiceone>Investigate nearby housing:Move to Tier Two. Police Corruption +2</choiceone>
                      <choiceonestats>4:0:0</choiceonestats>
                      <choicetwo>Investigate rumors circulating among the populace:Move to Tier Two and Mafia Presence +4</choicetwo>
@@ -99,8 +110,9 @@
                     <tiertwo>
                      <tiername>What it is ain't exactly clear...</tiername>
                      <crimeeffect>Mafia presence increases by 2</crimeeffect>
+                     <tiertwostorydescription></tiertwostorydescription>
                      <choiceone>Get a warrant to search certain suspects:Move to Tier Three and Mafia Presence +2</choiceone>
-                      <choiceonestats>4:6:0</choiceonestats>
+                     <choiceonestats>4:6:0</choiceonestats>
                      <choicetwo>Capture new recruits:Move to Tier Three. Mafia Presence -1, Police Corruption +2</choicetwo>
                      <choicetwostats>0:2:10</choicetwostats>
                    </tiertwo>
@@ -108,6 +120,7 @@
                      <tiername>There's a man with a gun over there...</tiername>
                      <crimeeffect>Mafia Presence +3</crimeeffect>
                      <choiceone>Storm the compounds:Move to Tier Four. Chaos +4, Mafia Presence -3</choiceone>
+                     <tierthreestorydescription></tierthreestorydescription>
                      <choiceonestats>0:0:12</choiceonestats>
                      <choicetwo>Send in a double agent:Move to Tier Four. Mafia Presence +2</choicetwo>
                      <choicetwostats>5:5:0</choicetwostats>
@@ -115,14 +128,16 @@
                    <tierfour>
                      <tiername>Telling me I got to beware...</tiername>
                      <crimeeffect>Mafia presence +1 every turn</crimeeffect>
+                     <tierfourstorydescription></tierfourstorydescription>
                      <choiceone>Firefight:Move to Tier Five. Chaos +2, Mafia Presence -3</choiceone>
                      <choiceonestats>0:8:8</choiceonestats>
                      <choicetwo>Gather evidence:Move to Tier Five. Mafia Presence +3, but for the final choice you can spend 15 Muscle instead of twenty</choicetwo>
                      <choicetwostats>5:6:0</choicetwostats>
                    </tierfour>
                    <tierfive>
-                     <tiername>Stop! Hey! What's that sound!</tiername>
+                     <tiername>Stop! Hey! What's that sound?!</tiername>
                      <crimeeffect>Mafia Presence and Chaos +1 every turn.</crimeeffect>
+                     <tierfivestorydescription></tierfivestorydescription>
                      <choicefinal>Stop Sergei:20 (15 if choice two was picked for tier four) Muscle total from the stat pools.: Players win.</choicefinal>
                    </tierfive>
            </majorcrime>
@@ -132,6 +147,7 @@
                    <tierone>
                      <tiername>Unsettling Peace...</tiername>
                      <crimeeffect>No Crime Effect</crimeeffect>
+                     <tieronestorydescription></tieronestorydescription>
                      <choiceone>Patrol the streets:Move to Tier Two. Chaos +3</choiceone>
                      <choiceonestats>0:4:0</choiceonestats>
                      <choicetwo>Pay off informants:Move to Tier Two. Corruption +3, but have 5 turns where Tier Two's effect doesn't take place</choicetwo>
@@ -141,13 +157,15 @@
                      <tiername>A Whiff of Something Rotten...</tiername>
                      <crimeeffect>Corruption +1 every turn.</crimeeffect>
                      <choiceone>Investigate “protected” stores:Move to Tier Three. Corruption -2</choiceone>
-                      <choiceonestats>8:3:0</choiceonestats>
+                     <tiertwostorydescription></tiertwostorydescription>
+                     <choiceonestats>8:3:0</choiceonestats>
                      <choicetwo>“Talk” to some more unsavory types:Move to Tier Three. Corruption +2</choicetwo>
                      <choicetwostats>0:1:6</choicetwostats>
                    </tiertwo>
                    <tierthree>
                      <tiername>Dirty Deeds...</tiername>
                      <crimeeffect>Corruption of officials begins, Police Corruption is locked in place and cannot be lowered or raised (unless specified with an * below). Depending on the Police Corruption level, the lieutenants will add to an overall Oficial Corruption (they are corrupting city officials). </crimeeffect>
+                     <tierthreestorydescription></tierthreestorydescription>
                      <choiceone>Gather dirt on the officials:Move to Tier Four. Police Corruption -1*, but official corruption +1 every turn. Adjust Official Corruption gain for Tier Four.</choiceone>
                      <choiceonestats>10:5:0</choiceonestats>
                      <choicetwo>Arrest a lieutenant!:Move to Tier Four. Official Corruption gain is now -1/3 of what it once was, but Police Corruption +1*.</choicetwo>
@@ -156,6 +174,7 @@
                    <tierfour>
                      <tiername>Pull the Weeds</tiername>
                      <crimeeffect>Official Corruption continues as adjusted by the previous Tier's choice. Every 4 turns Police Corruption +1*. Official Corruption adjusts accordingly.</crimeeffect>
+                     <tierfourstorydescription></tierfourstorydescription>
                      <choiceone>Arrest an official:Move to Tier Five. Official Corruption gain is now -1/3 of what it once was, but Police Corruption +2*.</choiceone>
                      <choiceonestats>0:10:0</choiceonestats>
                      <choicetwo>Storm a mob base!:Move to Tier Five. Official Corruption gain is now -2/3 of what it once was, Police Corruption -2*, but Chaos +7.</choicetwo>
@@ -164,6 +183,7 @@
                    <tierfive>
                      <tiername>Kill the Root</tiername>
                      <crimeeffect>Official Corruption continues as adjusted by the previous Tier's choice. Every 2 turns Police Corruption +2*. Official Corruption adjusts accordingly.</crimeeffect>
+                     <tierfivestorydescription></tierfivestorydescription>
                      <choicefinal>Arrest Giovanni:20 Smarts  + 10 Moxie total from the stat pool.: Players win.</choicefinal>
                    </tierfive>
            </majorcrime>
@@ -173,6 +193,7 @@
                    <tierone>
                      <tiername>Prohibition That's the Name</tiername>
                      <crimeeffect>No Crime Effect</crimeeffect>
+                     <tieronestorydescription></tieronestorydescription>
                      <choiceone>“Question” the locals:Move to Tier Two. Mafia Presence +1, Police Corruption +2</choiceone>
                      <choiceonestats>0:0:3</choiceonestats>
                      <choicetwo>Case the speakeasies:Move to Tier Two. Mafia Presence +2</choicetwo>
@@ -181,14 +202,16 @@
                     <tiertwo>
                      <tiername>Prohibition Drives me Insane</tiername>
                      <crimeeffect>Revenue from the stills starts. Each turn revenue will be added from the 4 stills spread throughout the city, starting from Tier Two to Tier Five, each Tier will be its own situation card representing a still that will be in a random section of the city. Once a still is dealt with, the revenue-per-turn will go down, but other Tiers will introduce new effects based on choices. </crimeeffect>
+                     <tiertwostorydescription></tiertwostorydescription>
                      <choiceone>Infiltrate and sabotage the still:Move to Tier Three. Revenue-per-turn -1/4, but Mafia Presence +4</choiceone>
-                      <choiceonestats>0:8:5</choiceonestats>
+                     <choiceonestats>0:8:5</choiceonestats>
                      <choicetwo>Attack the still:Move to Tier Three. Revenue-per-turn -1/4, but Chaos +4</choicetwo>
                      <choicetwostats>0:5:10</choicetwostats>
                    </tiertwo>
                    <tierthree>
                      <tiername>I'm so Thirsty, Soon I'll Die</tiername>
                      <crimeeffect>Revenue-per-turn is now at 3/4. Mafia Presence +1 every 2 turns. </crimeeffect>
+                     <tierthreestorydescription></tierthreestorydescription>
                      <choiceone>Cordon a still and cut them off:Move to Tier Four. Revenue-per-turn -1/4, but Chaos +2</choiceone>
                      <choiceonestats>0:6:8</choiceonestats>
                      <choicetwo>Steal the funds from the still:Move to Tier Four. Revenue-per-turn -1/4, total revenue -1/6 of its progress, but Mafia Presence +4</choicetwo>
@@ -197,6 +220,7 @@
                    <tierfour>
                      <tiername>I'm Simply Goin' to Evaporate</tiername>
                      <crimeeffect>Revenue-per-turn is now at 1/2. Mafia Presence +2 every 2 turns, and Chaos +1 every 2 turns.</crimeeffect>
+                     <tierfourstorydescription></tierfourstorydescription>
                      <choiceone>Negotiate with the staff of the still:Move to Tier Five. Revenue-per-turn -1/4, but Police Corruption +3</choiceone>
                      <choiceonestats>6:10:0</choiceonestats>
                      <choicetwo>Call in the Feds!:Move to Tier Five. Revenue-per-turn -1/4, but Chaos +4</choicetwo>
@@ -205,6 +229,7 @@
                    <tierfive>
                      <tiername>I'm Just that Dry!</tiername>
                      <crimeeffect>Revenue-per-turn is now at 1/4. Mafia Presence +2 every 2 turns, and Chaos +2 every 2 turns.</crimeeffect>
+                     <tierfivestorydescription></tierfivestorydescription>
                      <choicefinal>Capture Wilkins and the last still:30 points total from the stat pools.: Players win.</choicefinal>
                    </tierfive>
            </majorcrime>
