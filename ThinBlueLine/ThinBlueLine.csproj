@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NewNeighborhoodCard.cs" />
     <Compile Include="Assets\Scripts\CardActions.cs" />
     <Compile Include="Assets\Scripts\Cards\CardScript.cs" />
     <Compile Include="Assets\Scripts\Cards\MajorCrimeScript.cs" />
@@ -92,6 +91,7 @@
     <Compile Include="Assets\Scripts\UI Management\DrawSituationCard.cs" />
     <Compile Include="Assets\Scripts\UI Management\LowerNeighborhoodCrime.cs" />
     <Compile Include="Assets\Scripts\UI Management\NeighborhoodManager.cs" />
+    <Compile Include="Assets\Scripts\UI Management\NewNeighborhoodCard.cs" />
     <Compile Include="Assets\Scripts\UI Management\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\ResolveSituationCard.cs" />
     <Compile Include="Assets\Scripts\UI Management\SituationButton.cs" />

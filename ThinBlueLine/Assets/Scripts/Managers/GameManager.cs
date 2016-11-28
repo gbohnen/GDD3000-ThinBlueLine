@@ -44,7 +44,9 @@ public class GameManager : MonoBehaviour
     /// Gets the current player
     /// </summary>
     public PlayerScript CurrentPlayerObj
-    { get { return GameLibrary.instance.Players[currentPlayer]; } }
+    {
+        get { return GameLibrary.instance.Players[currentPlayer]; }
+    }
 
     /// <summary>
     /// Gets the current player
@@ -101,12 +103,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        foreach (PlayerScript player in GameLibrary.instance.Players.Values)
+        foreach (Players player in GameLibrary.instance.Players.Keys)
         {
-            player.Neighborhood = Neighborhood.Downtown;
+            GameLibrary.instance.Players[player].Neighborhood = Neighborhood.Downtown;
+            Debug.Log(GameLibrary.instance.Players[player].Neighborhood);
         }
-
-
+        
         NeighborhoodManager.instance.indicator1.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
         NeighborhoodManager.instance.indicator2.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
         NeighborhoodManager.instance.indicator3.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
@@ -193,6 +195,10 @@ public class GameManager : MonoBehaviour
 			switch (currentPlayer) {
 			case Players.Player4:
 				currentPlayer = Players.Player1;
+                foreach (GameObject sitch in CrimeSitManager.ActiveSituations.Values)
+                {
+                    sitch.GetComponent<SituationButton>().situation.TriggerOngoing();
+                }
 				break;
 			default:
 				currentPlayer++;
