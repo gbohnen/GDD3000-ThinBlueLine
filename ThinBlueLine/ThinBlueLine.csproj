@@ -94,8 +94,8 @@
     <Compile Include="Assets\Scripts\UI Management\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\ResolveSituationCard.cs" />
     <Compile Include="Assets\Scripts\UI Management\SituationButton.cs" />
+    <Compile Include="Assets\Scripts\UI Management\TierObject.cs" />
     <Compile Include="Assets\Scripts\XML Tools\LoadGameData.cs" />
-    <Compile Include="Assets\TierObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\XML Resources\AvatarData.xml" />

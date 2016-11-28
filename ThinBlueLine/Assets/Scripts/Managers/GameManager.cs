@@ -106,7 +106,10 @@ public class GameManager : MonoBehaviour
         }
 
         activeNeighborhood = (Neighborhood)Random.Range(0, 5);
-        NeighborhoodManager.instance.indicator.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
+        NeighborhoodManager.instance.indicator1.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
+        NeighborhoodManager.instance.indicator2.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
+        NeighborhoodManager.instance.indicator3.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
+        NeighborhoodManager.instance.indicator4.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
 
         majorCrime = LoadGameData.LoadMajorCrimes();
 
