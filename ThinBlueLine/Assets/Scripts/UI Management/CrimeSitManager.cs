@@ -121,7 +121,7 @@ namespace Assets.Scripts
             button.situation = sitch;
 
             // add a switch statement to set to the correct neighborhood
-            switch (GameManager.Instance.activeNeighborhood)
+            switch (GameManager.Instance.CurrentPlayerObj.Neighborhood)
             {
                 case Neighborhood.StonyGate:
                     newButton.transform.SetParent(stonyGateContent.transform);
@@ -155,7 +155,7 @@ namespace Assets.Scripts
                 drawerAnimator.SetBool("Open", true);
                 buttonAnimator.SetBool("Open", true);
 
-                SetActive(GameManager.Instance.activeNeighborhood.ToString());
+                SetActive(GameManager.Instance.CurrentPlayerObj.Neighborhood.ToString());
             }
 
             SetCurrentButtonColor();
@@ -172,7 +172,7 @@ namespace Assets.Scripts
             drawerAnimator.SetBool("Open", true);
             buttonAnimator.SetBool("Open", true);
 
-            SetActive(GameManager.Instance.activeNeighborhood.ToString());
+            SetActive(GameManager.Instance.CurrentPlayerObj.Neighborhood.ToString());
         }
 
         public void SituationClicked()
@@ -224,7 +224,7 @@ namespace Assets.Scripts
         {
             ReallyClearButtons();
 
-            switch (GameManager.Instance.activeNeighborhood)
+            switch (GameManager.Instance.CurrentPlayerObj.Neighborhood)
             {
                 case Neighborhood.StonyGate:
                     stonyGateButton.GetComponent<Image>().color = Color.cyan;

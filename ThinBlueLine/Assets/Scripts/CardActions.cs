@@ -121,14 +121,14 @@ public class CardActions
     public static void ChangeCurrentMafiaPresence(int val)
     {
         //modify the current Neighborhoods Mafia Presence by val
-		GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence += val;
+		GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence += val;
 
 		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
     public static void ChangeCurrentPoliceCorruption(int val)
     {
         //modify the current Neighborhoods Police Corruption by val
-		GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption += val;
+		GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption += val;
 
 		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }
@@ -136,7 +136,7 @@ public class CardActions
     public static void ChangeCurrentChaos(int val)
     {
         //modify the current neighborhoods Chaos by val
-		GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Chaos += val;
+		GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Chaos += val;
 
 		Debug.Log (MethodBase.GetCurrentMethod ().Name);
     }

@@ -19,10 +19,17 @@ namespace Assets.Scripts
         Sprite avat;
         string bio;
         string special;
+        Neighborhood activeNeighborhood;
 
         #endregion
 
         #region Properties
+
+        public Neighborhood Neighborhood
+        {
+            get { return activeNeighborhood; }
+            set { activeNeighborhood = value; }
+        }
 
         /// <summary>
         /// Gets the players moxie

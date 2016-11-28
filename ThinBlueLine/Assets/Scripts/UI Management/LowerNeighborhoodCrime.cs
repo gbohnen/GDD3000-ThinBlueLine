@@ -50,12 +50,12 @@ namespace Assets.Scripts.UI_Management
             muscleText.text = GameManager.Instance.CurrentPlayerObj.Muscle.ToString() + Constants.ARROW + GameManager.Instance.CurrentPlayerObj.Muscle.ToString();
 
             // set the neighborhood stats
-            policeCorrText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption.ToString() + 
-                                  Constants.ARROW + GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption.ToString();
-            chaosText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Chaos.ToString() +
-                             Constants.ARROW + GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Chaos.ToString();
-            mafiaPresText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence.ToString() + 
-                                 Constants.ARROW + GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence.ToString();
+            policeCorrText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption.ToString() + 
+                                  Constants.ARROW + GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption.ToString();
+            chaosText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Chaos.ToString() +
+                             Constants.ARROW + GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Chaos.ToString();
+            mafiaPresText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence.ToString() + 
+                                 Constants.ARROW + GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence.ToString();
 
             // resets the buttons
             ResetButton();
@@ -68,13 +68,13 @@ namespace Assets.Scripts.UI_Management
         {
             // checks for total theshold, player smarts & neighborhood corruption
             if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Smarts < smartsSlider.value 
-                && GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption < smartsSlider.value)
+                && GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption < smartsSlider.value)
             { smartsSlider.value--; }
 
             // resets player & neighborhood stats
             smartsText.text = GameManager.Instance.CurrentPlayerObj.Smarts.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Smarts - smartsSlider.value).ToString();
-            policeCorrText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption.ToString() + Constants.ARROW + 
-                                  (GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption - smartsSlider.value).ToString();
+            policeCorrText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption.ToString() + Constants.ARROW + 
+                                  (GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption - smartsSlider.value).ToString();
         }
 
         /// <summary>
@@ -84,13 +84,13 @@ namespace Assets.Scripts.UI_Management
         {
             // checks the total threshold, player moxie & current neighborhood chaos
             if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Moxie < moxieSlider.value 
-                && GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Corruption < moxieSlider.value)
+                && GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption < moxieSlider.value)
             { moxieSlider.value--; }
 
             // resets player & neighborhood stats
             moxieText.text = GameManager.Instance.CurrentPlayerObj.Moxie.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Moxie - moxieSlider.value).ToString();
-            chaosText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Chaos.ToString() + Constants.ARROW + 
-                             (GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].Chaos - moxieSlider.value).ToString();
+            chaosText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Chaos.ToString() + Constants.ARROW + 
+                             (GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Chaos - moxieSlider.value).ToString();
         }
 
         /// <summary>
@@ -100,13 +100,13 @@ namespace Assets.Scripts.UI_Management
         {
             // checks the total threshold, player strength & current neighborhood mafia presence 
             if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Muscle < muscleSlider.value 
-                && GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence < muscleSlider.value)
+                && GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence < muscleSlider.value)
             { muscleSlider.value--; }
 
             // resets player & neighborhood stats
             muscleText.text = GameManager.Instance.CurrentPlayerObj.Muscle.ToString() + Constants.ARROW + (GameManager.Instance.CurrentPlayerObj.Muscle - muscleSlider.value).ToString();
-            mafiaPresText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence.ToString() + Constants.ARROW + 
-                                 (GameLibrary.instance.Neighborhoods[GameManager.Instance.activeNeighborhood].MafiaPresence - muscleSlider.value).ToString();
+            mafiaPresText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence.ToString() + Constants.ARROW + 
+                                 (GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence - muscleSlider.value).ToString();
         }
 
         /// <summary>

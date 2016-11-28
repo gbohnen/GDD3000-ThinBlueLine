@@ -34,31 +34,31 @@ public class NeighborhoodManager : MonoBehaviour {
 
 	public void ChangeStonyGate()
     {
-        GameManager.Instance.activeNeighborhood = Neighborhood.StonyGate;
+        GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.StonyGate;
         GameManager.Instance.LogAction("Neighborhood Changed");
         animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 1);
     }
     public void ChangeSuburbia()
     {
-        GameManager.Instance.activeNeighborhood = Neighborhood.Suburbia;
+        GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.Suburbia;
         GameManager.Instance.LogAction("Neighborhood Changed");
         animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 2);
     }
     public void ChangeDowntown()
     {
-        GameManager.Instance.activeNeighborhood = Neighborhood.Downtown;
+        GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.Downtown;
         GameManager.Instance.LogAction("Neighborhood Changed");
         animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 3);
     }
     public void ChangeBoxes()
     {
-        GameManager.Instance.activeNeighborhood = Neighborhood.TheBoxes;
+        GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.TheBoxes;
         GameManager.Instance.LogAction("Neighborhood Changed");
         animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 4);
     }
     public void ChangeDocks()
     {
-        GameManager.Instance.activeNeighborhood = Neighborhood.Portside;
+        GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.Portside;
         GameManager.Instance.LogAction("Neighborhood Changed");
         animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 5);
     }

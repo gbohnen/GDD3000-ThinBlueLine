@@ -19,9 +19,7 @@ public class GameManager : MonoBehaviour
 
     // store the players
     Players currentPlayer;
-
-    public Neighborhood activeNeighborhood;
-
+   
 	Dictionary<Neighborhood, NeighborhoodData> neighborhoodData;
 
     // store the crimes & situations
@@ -105,11 +103,16 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        activeNeighborhood = (Neighborhood)Random.Range(0, 5);
-        NeighborhoodManager.instance.indicator1.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
-        NeighborhoodManager.instance.indicator2.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
-        NeighborhoodManager.instance.indicator3.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
-        NeighborhoodManager.instance.indicator4.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
+        foreach (PlayerScript player in GameLibrary.instance.Players.Values)
+        {
+            player.Neighborhood = Neighborhood.Downtown;
+        }
+
+
+        NeighborhoodManager.instance.indicator1.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
+        NeighborhoodManager.instance.indicator2.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
+        NeighborhoodManager.instance.indicator3.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
+        NeighborhoodManager.instance.indicator4.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
 
         majorCrime = LoadGameData.LoadMajorCrimes();
 
@@ -141,9 +144,9 @@ public class GameManager : MonoBehaviour
     /// <param name="muscle">muscle amount</param>
     public void LowerCrime(float smarts, float moxie, float muscle)
     {
-        GameLibrary.instance.Neighborhoods[activeNeighborhood].Corruption -= (int)smarts;
-        GameLibrary.instance.Neighborhoods[activeNeighborhood].Chaos -= (int)moxie;
-        GameLibrary.instance.Neighborhoods[activeNeighborhood].MafiaPresence -= (int)muscle;
+        GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].Corruption -= (int)smarts;
+        GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].Chaos -= (int)moxie;
+        GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].MafiaPresence -= (int)muscle;
 
         UIManager.instance.UpdateUI();
     }
