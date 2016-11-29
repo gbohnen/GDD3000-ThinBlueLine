@@ -53,7 +53,7 @@ public class CardActions
     public static void ChangeRandomPlayerStats(int amt)
     {
         // Get random player, modify their stats by amt
-        int i = Random.Range(0, 4);
+        int i = Random.Range(0, Constants.MAX_PLAYER_COUNT);
 
         GameLibrary.instance.Players[(Players)i].Moxie += amt;
         GameLibrary.instance.Players[(Players)i].Moxie += amt;
@@ -137,7 +137,7 @@ public class CardActions
     /// <param name="amt">the amount to change</param>
     public static void ChangeAllPlayersMuscle(int amt)
     {
-        //for each player in the game library, modify muscle pool by amt
+        // for each player in the game library, modify muscle pool by amt
         foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players)
         { player.Value.Muscle += amt; }
 
@@ -163,7 +163,7 @@ public class CardActions
     /// <param name="amt">the amount to change</param>
     public static void ChangeAllPlayersStats(int amt)
     {
-        //for each player in the game library, modify all stat pools by amt
+        // for each player in the game library, modify all stat pools by amt
         foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players)
         {
             player.Value.Muscle += amt;
@@ -180,7 +180,7 @@ public class CardActions
     /// <param name="amt"></param>
     public static void ChangeAllPlayersRandomStats(int amt)
     {
-        //for each player in the game library, modify all players stats at random by amt
+        // for each player in the game library, modify all players stats at random by amt
         foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players)
         { player.Value.RandomStat += amt; }
 
@@ -239,7 +239,6 @@ public class CardActions
         GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence += amt;
 
         Debug.Log(MethodBase.GetCurrentMethod().Name);
-
     }
 
     /// <summary>
@@ -248,11 +247,10 @@ public class CardActions
     /// <param name="amt">the amount to change</param>
     public static void ChangeCurrentRandomCrime(int amt)
     {
-        //modify a Random Crime Category in the current neighborhood
+        // Modify a Random Crime Category in the current neighborhood
         GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].RandomCrimeCategory += amt;
 
         Debug.Log(MethodBase.GetCurrentMethod().Name);
-
     }
 
     #endregion
@@ -428,99 +426,113 @@ public class CardActions
     #region Player Specials
 
     /// <summary>
-    /// 
+    /// The Crushers special, which allows substitution of stats for Muscle
+    /// Setback: Chaos +1
     /// </summary>
     public static void CrusherSpecial()
     {
-
+        // Once every three turns the Crusher can substitute Smarts or Moxie with Muscle in a situation. 
+        // When using this ability chaos goes up by 1.
     }
 
     /// <summary>
-    /// 
+    /// The Detectives special, which allows nullification of ongoing effects
     /// </summary>
     public static void DetectiveSpecial()
     {
-
+        // By spending five smarts to commence an investigation, the detective is able to nullify a negative 
+        // ongoing effect for either 1 to 2 turns (number is randomly assigned).
     }
 
     /// <summary>
-    /// 
+    /// The Feds special, which allows extra stat spendage
+    /// Setback: Mafia Presence +3 & Draw Situation w/ no stats
     /// </summary>
     public static void FedSpecial()
     {
-
+        // Once every five turns, can “call in backup”; is allowed to spend up to five stat points, but raises 
+        // mafia presence by 3, and draws a situation with no addition to stats.
     }
 
     /// <summary>
-    /// 
+    /// The Informants special, which allows more stat points to be spent
+    /// Setback: Draws two Situations w/ no stats
     /// </summary>
     public static void InformantSpecial()
     {
-
+        // Once every five turns, can lower either mafia presence or chaos by 6 points, but requires the drawing
+        // of two situation cards with no addition to stats.
     }
 
     /// <summary>
-    /// 
+    /// The Rookies special, which allows extra stats when adding a Situation
     /// </summary>
     public static void RookieSpecial()
     {
-
+        // The Rookie receives 4 points when drawing a Situation card instead of 3.
     }
 
     /// <summary>
-    /// 
+    /// The Power Lusters special, which raises the crime stats
     /// </summary>
     public static void PowerLusterSpecial()
     {
-
+        // If the Power Luster is in play, begin the game at 3 Police Corruption and 3 Mafia Presence.
     }
 
     /// <summary>
-    /// 
+    /// The Old Dogs special, which allows the use of extra stat points
+    /// Setback: Chaos + 2
     /// </summary>
     public static void OldDogSpecial()
     {
-
+        // After drawing a situation you can spend 4 points of moxie to half the effects of said situation, 
+        // but will also raise chaos by 2 points. This ability has a 3 turn cooldown. 
     }
 
     /// <summary>
-    /// 
+    /// The PIs special, which allows seeing into the future
     /// </summary>
     public static void PISpecial()
     {
-
+        // Once every 3 turns can spend 3 moxie to see what the next situation card is (through his contacts), 
+        // following that, can spend another 2 smarts to have that card moved to the bottom of the deck.
     }
 
     /// <summary>
-    /// 
+    /// The Undercovers special, which lowers the crime stats
     /// </summary>
     public static void UndercoverSpecial()
     {
-
+        // If the Under Cover is in play, begin the game at 2 Chaos and 2 Mafia Presence. 
     }
 
     /// <summary>
-    /// 
+    /// The Drivers special, which allows 'free' movement between neighborhoods
     /// </summary>
     public static void DriverSpecial()
     {
-
+        // At the cost of 6 of any stat point, can carry himself and any other willing player to another 
+        // neighborhood without the cost of an action point.
     }
 
     /// <summary>
-    /// 
+    /// The Wardens special, which allows eavesdropping
     /// </summary>
     public static void WardenSpecial()
     {
-
+        // By spending 3 smarts point can listen in on conversations, and see what the next situation card is. 
+        // Alternatively, can spend 8 moxie to see who the mob boss is, or (if he’s already been revealed) spend 10 
+        // moxie and lessen the ongoing effect of said mob boss, both of these actions will increase chaos by 3.
     }
 
     /// <summary>
-    /// 
+    /// The Bookies special, which allows an initiation of a positive ongoing effect
     /// </summary>
     public static void BookieSpecial()
     {
-
+        // Once every three turns can spend up to 3 point of smarts to initiate a random positive ongoing effect, 
+        // that lasts a number of turns based on how many points of smarts was used.
     }
 
     #endregion
