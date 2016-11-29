@@ -39,16 +39,7 @@ public class CityInfoManager : MonoBehaviour
     #endregion
 
     #region Public Methods
-
-    /// <summary>
-    /// Updates the city info
-    /// </summary>
-    public void Update()
-    {
-        // check the neighborhoods stats
-        CheckStats();
-    }
-
+    
     /// <summary>
     /// Updates the city info UI
     /// </summary>

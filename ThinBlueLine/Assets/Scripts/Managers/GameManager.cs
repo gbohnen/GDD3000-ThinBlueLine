@@ -19,14 +19,11 @@ public class GameManager : MonoBehaviour
 
     // store the players
     Players currentPlayer;
-
-    public Neighborhood activeNeighborhood;
-
+   
 	Dictionary<Neighborhood, NeighborhoodData> neighborhoodData;
 
     // store the crimes & situations
-    //MajorCrimeScript majorCrime;
-    //List<SituationScript> situations;
+    public MajorCrimeScript majorCrime;
 
     //// store the mob boss & police chief
     //MobBossScript mobBoss;
@@ -47,7 +44,9 @@ public class GameManager : MonoBehaviour
     /// Gets the current player
     /// </summary>
     public PlayerScript CurrentPlayerObj
-    { get { return GameLibrary.instance.Players[currentPlayer]; } }
+    {
+        get { return GameLibrary.instance.Players[currentPlayer]; }
+    }
 
     /// <summary>
     /// Gets the current player
@@ -104,8 +103,18 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        activeNeighborhood = (Neighborhood)Random.Range(0, 5);
-        NeighborhoodManager.instance.indicator.SetInteger("CurrNeigh", (int)activeNeighborhood + 1);
+        foreach (Players player in GameLibrary.instance.Players.Keys)
+        {
+            GameLibrary.instance.Players[player].Neighborhood = Neighborhood.Downtown;
+            Debug.Log(GameLibrary.instance.Players[player].Neighborhood);
+        }
+        
+        NeighborhoodManager.instance.indicator1.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
+        NeighborhoodManager.instance.indicator2.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
+        NeighborhoodManager.instance.indicator3.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
+        NeighborhoodManager.instance.indicator4.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
+
+        majorCrime = LoadGameData.LoadMajorCrimes();
 
         firstAction = false;
         UIManager.instance.UpdateUI();
@@ -128,9 +137,9 @@ public class GameManager : MonoBehaviour
     /// <param name="muscle">muscle amount</param>
     public void LowerCrime(float smarts, float moxie, float muscle)
     {
-        GameLibrary.instance.Neighborhoods[activeNeighborhood].Corruption -= (int)smarts;
-        GameLibrary.instance.Neighborhoods[activeNeighborhood].Chaos -= (int)moxie;
-        GameLibrary.instance.Neighborhoods[activeNeighborhood].MafiaPresence -= (int)muscle;
+        GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].Corruption -= (int)smarts;
+        GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].Chaos -= (int)moxie;
+        GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].MafiaPresence -= (int)muscle;
 
         UIManager.instance.UpdateUI();
     }
@@ -186,6 +195,10 @@ public class GameManager : MonoBehaviour
 			switch (currentPlayer) {
 			case Players.Player4:
 				currentPlayer = Players.Player1;
+                foreach (GameObject sitch in CrimeSitManager.ActiveSituations.Values)
+                {
+                    sitch.GetComponent<SituationButton>().situation.TriggerOngoing();
+                }
 				break;
 			default:
 				currentPlayer++;

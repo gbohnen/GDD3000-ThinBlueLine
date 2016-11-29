@@ -4,6 +4,7 @@ using System.Collections;
 using Assets.Scripts;
 using System.Collections.Generic;
 using Assets.Scripts.UI_Management;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour {
 
@@ -11,7 +12,7 @@ public class UIManager : MonoBehaviour {
     public CrimeSitManager situationManager;
     public PlayerManager playerManager;
     public CurrentPlayerManager currentPlayerManager;
-    //public NeighborHoodManager neighborhoodManager;
+    public NeighborhoodManager neighborhoodManager;
     public CityInfoManager cityInfoManager;
 
     // fields for popup window gameobjects
@@ -95,6 +96,14 @@ public class UIManager : MonoBehaviour {
         resolveSituationWindow.transform.SetAsLastSibling();
     }
 
+    public void ChangeNeighborhood()
+    {
+        Neighborhood curr = (Neighborhood)int.Parse(EventSystem.current.currentSelectedGameObject.name.Substring(0,1));
+
+        changeNeighborhoodWindow.SetActive(true);
+        changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().Initialize(curr);
+    }
+
     public void CloseWindows()
     {
         // set all popup windows to inactive
@@ -102,6 +111,12 @@ public class UIManager : MonoBehaviour {
         {
             obj.SetActive(false);
         }
+    }
+
+    public void ChangeNeighborhoodCommit()
+    {
+        neighborhoodManager.ChangeNeighborhood(changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().CurrentNeighborhood);
+        CloseWindows();
     }
 
     public void ReduceSituation(float i)

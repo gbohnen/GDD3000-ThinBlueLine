@@ -41,21 +41,17 @@ public class GameLibrary : MonoBehaviour {
 
 	private Dictionary<Players, PlayerScript> players = new Dictionary<Players, PlayerScript>();
 
-	//private List<Situation> situationDeck;
-	//private List<MajorCrimes> crimeDeck;
-	// etc.
-
 	void Awake()
 	{
-		Initialize();
-
 		if (instance == null)
 			instance = this;
 		else
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
-	}
+
+        Initialize();
+    }
 
 	public void Initialize()
 	{

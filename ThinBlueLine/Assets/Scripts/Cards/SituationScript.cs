@@ -9,10 +9,11 @@ namespace Assets.Scripts
     /// <summary>
     /// Script which handles the situations in the game
     /// </summary>
-    public class SituationScript : MajorCrimeScript
+    public class SituationScript
     {
         #region Fields
 
+        string cardName;
         string description;
         string immEffect;
         string ongEffect;
@@ -31,6 +32,12 @@ namespace Assets.Scripts
         #endregion
 
         #region Properties
+
+        public string Name
+        {
+            get { return cardName; }
+            set { cardName = value; }
+        }
 
         /// <summary>
         /// Gets the description
@@ -162,6 +169,7 @@ namespace Assets.Scripts
 
 		private void ParseCommand(string effectString)
 		{
+            Debug.Log(effectString);
 
 			try
 			{
@@ -180,8 +188,10 @@ namespace Assets.Scripts
 			}
 			catch (NullReferenceException)
 			{
-
+                Debug.Log("Method not found: " + effectString);
 			}
+
+            UIManager.instance.UpdateUI();
 		}
 
 		#endregion

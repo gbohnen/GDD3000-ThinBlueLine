@@ -6,7 +6,7 @@ using Assets.Scripts;
 /// <summary>
 /// Class which handles Loading Game Data from XMLs
 /// </summary>
-public static class LoadGameData
+public class LoadGameData
 {
     /// <summary>
     /// Struct for the Player XML
@@ -54,15 +54,6 @@ public static class LoadGameData
         public string ongEff;
         public string mod;
         public string story;
-    }
-
-    /// <summary>
-    /// Struct for the Major Crime XML
-    /// </summary>
-    public struct MajorCrime
-    {
-        public string name;
-        public string mobBoss;
     }
 
     /// <summary>
@@ -171,8 +162,6 @@ public static class LoadGameData
                 }
             }
 
-			//situation.immEffMeth = "DebugLine:" + situation.name;
-
             // add child to the list
             situations.Add(situation);
         }
@@ -231,57 +220,61 @@ public static class LoadGameData
     /// Loads in the Major Crimes from the XML
     /// </summary>
     /// <returns>the major crimes</returns>
-    public static List<MajorCrime> LoadMajorCrimes()
+    public static MajorCrimeScript LoadMajorCrimes()
     {
         TextAsset majorCrimeFile = (TextAsset)Resources.Load(Constants.MAJOR_CRIMES_FILE_NAME);
 
         // instantiate necessary components
         XmlDocument majorCrimeDoc = new XmlDocument();                                           // blank xml doc
         majorCrimeDoc.LoadXml(majorCrimeFile.text);                                              // load major crime file
-        XmlNodeList majorCrimeList = majorCrimeDoc.GetElementsByTagName("majorCrime");           // get all tags labeled major crime
+        XmlNodeList majorCrimeList = majorCrimeDoc.GetElementsByTagName("majorcrime");           // get all tags labeled major crime
 
-        List<MajorCrime> majorCrimes = new List<MajorCrime>();                                   // list of major crimes
+        MajorCrimeScript majorCrime = new MajorCrimeScript();
+        XmlNodeList nodeList = majorCrimeList[Random.Range(0, majorCrimeList.Count)].ChildNodes;
 
-        // iterate all "mob boss" tags
-        foreach (XmlNode node in majorCrimeList)
+        foreach (XmlNode node in nodeList)
         {
-            // make a list of all child node (this is where the major crime data is stored)
-            XmlNodeList majorCrimeData = node.ChildNodes;
-
-            // empty major crime
-            MajorCrime majorCrime = new MajorCrime();
-
-            // iterate those nodes
-            foreach (XmlNode childNode in majorCrimeData)
+            switch (node.Name)
             {
-                // make a list of all child node (this is where the major crime child data is stored)
-                XmlNodeList majorCrimeDataChild = childNode.ChildNodes;
-
-                // load data into major crime based on child tag
-                switch (childNode.Name)
-                {
-                    case "name": majorCrime.name = childNode.InnerText; break;
-                    case "mobBoss": majorCrime.mobBoss = childNode.InnerText; break;
-                    default: break;
-                }
-
-                //// 
-                //foreach (XmlNode childChildNode in majorCrimeDataChild)
-                //{
-                //    switch (childNode.Name)
-                //    {
-                //        default:
-                //            break;
-                //    }
-                //}
+                case "name":        majorCrime.Name = node.InnerText; break;
+                case "mobboss":     majorCrime.MobBoss = node.InnerText; break;
+                case "tierfive":
+                    MajorCrimeTier tierFive = new MajorCrimeTier();
+                    XmlNodeList childList1 = node.ChildNodes;
+                    foreach (XmlNode childNode in childList1)
+                    {
+                        switch (childNode.Name)
+                        {
+                            case "tiername": tierFive.TierName = childNode.InnerText; break;
+                            case "crimeeffect": tierFive.CrimeEffectText = childNode.InnerText; break;
+                            case "choicefinal": tierFive.OptionOneText = childNode.InnerText; break;
+                            case "choicefinalcost": tierFive.OptionOneCosts = ParseStats(childNode.InnerText); break;
+                        }
+                    }
+                    majorCrime.CrimeTiers.Add(tierFive);
+                    break;
+                default:
+                    MajorCrimeTier tier = new MajorCrimeTier();
+                    XmlNodeList childList = node.ChildNodes;
+                    foreach (XmlNode childNode in childList)
+                    {
+                        switch (childNode.Name)
+                        {
+                            case "tiername":        tier.TierName = childNode.InnerText; break;
+                            case "crimeeffect":     tier.CrimeEffectText = childNode.InnerText; break;
+                            case "choiceone":       tier.OptionOneText = childNode.InnerText; break;
+                            case "choiceonestats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
+                            case "choicetwo":       tier.OptionTwoText = childNode.InnerText; break;
+                            case "choicetwostats":  tier.OptionOneCosts = ParseStats(childNode.InnerText); break;
+                        }
+                    }
+                    majorCrime.CrimeTiers.Add(tier);
+                    break;
             }
-
-            // add child to the list
-            majorCrimes.Add(majorCrime);
         }
 
         // return list of all major crimes
-        return majorCrimes;
+        return majorCrime;
     }
 
     /// <summary>
@@ -316,5 +309,14 @@ public static class LoadGameData
 
         // return list of tutorial info
         return tutorial;
+    }
+
+    public static Vector3 ParseStats(string str)
+    {
+        string[] stats = str.Split(new char[] { ':' });
+
+        Vector3 vect = new Vector3(int.Parse(stats[0]), int.Parse(stats[1]), int.Parse(stats[2]));
+
+        return vect;
     }
 }
