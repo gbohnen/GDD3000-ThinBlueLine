@@ -19,6 +19,8 @@ namespace Assets.Scripts
         public const int MAX_NEIGHBORHOOD_CHAOS = 5;
         public const int MAX_NEIGHBORHOOD_MAFIA_PRES = 5;
 
+        public const int MAX_PLAYER_COUNT = 4;
+
         #region Folder Names
 
         public const string CARD_FOLDER_NAME = "";
