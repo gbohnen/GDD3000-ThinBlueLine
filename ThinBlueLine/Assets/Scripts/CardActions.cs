@@ -17,7 +17,7 @@ public class CardActions
     public static void ChangeRandomPlayerMoxie(int amt)
     {
         // Get random player, modify their moxie by amt
-        GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Moxie += amt;
+        GameLibrary.instance.Players[(Players)Random.Range(0, Constants.MAX_PLAYER_COUNT)].Moxie += amt;
 
         Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
@@ -29,7 +29,7 @@ public class CardActions
     public static void ChangeRandomPlayerMuscle(int amt)
     {
         // Get random player, modify their muscle by amt
-        GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Muscle += amt;
+        GameLibrary.instance.Players[(Players)Random.Range(0, Constants.MAX_PLAYER_COUNT)].Muscle += amt;
 
         Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
@@ -41,7 +41,7 @@ public class CardActions
     public static void ChangeRandomPlayerSmarts(int amt)
     {
         // Get random player, modify their smarts by amt
-        GameLibrary.instance.Players[(Players)Random.Range(0, 4)].Smarts += amt;
+        GameLibrary.instance.Players[(Players)Random.Range(0, Constants.MAX_PLAYER_COUNT)].Smarts += amt;
 
         Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
@@ -109,6 +109,9 @@ public class CardActions
     public static void ChangeRandomCurrentPlayerStats(int amt)
     {
         // Get current player, change random stats by amt
+        GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].RandomStat += amt;
+
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
 
     #endregion Stats 
@@ -177,8 +180,11 @@ public class CardActions
     /// <param name="amt"></param>
     public static void ChangeAllPlayersRandomStats(int amt)
     {
-        // modify all players stats at random by amt
+        //for each player in the game library, modify all players stats at random by amt
+        foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players)
+        { player.Value.RandomStat += amt; }
 
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
 
     #endregion
@@ -228,15 +234,25 @@ public class CardActions
     public static void ChangeCurrentCrimes(int amt)
     {
         // Modify all crime categories in the current neighborhood by amt
+        GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption += amt;
+        GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Chaos += amt;
+        GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence += amt;
+
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
+
     }
 
     /// <summary>
-    /// Changes a random crime category in the curren neighborhood by the given amount
+    /// Changes a random crime category in the current neighborhood by the given amount
     /// </summary>
     /// <param name="amt">the amount to change</param>
     public static void ChangeCurrentRandomCrime(int amt)
     {
         //modify a Random Crime Category in the current neighborhood
+        GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].RandomCrimeCategory += amt;
+
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
+
     }
 
     #endregion
@@ -300,7 +316,19 @@ public class CardActions
     /// <param name="amt"></param>
     public static void ChangeAllNeighborhoodCrimes(int amt)
     {
-        // modify all crimes of all neighborhoods
+        // for each neighborhood in the game library
+        foreach (KeyValuePair<Neighborhood, NeighborhoodData> neighborhood in GameLibrary.instance.Neighborhoods)
+        {
+            // if the neighborhood is not the overall city, modify all crimes of all neighborhoods
+            if (neighborhood.Key != Neighborhood.Overall)
+            {
+                GameLibrary.instance.Neighborhoods[neighborhood.Key].Chaos += amt;
+                GameLibrary.instance.Neighborhoods[neighborhood.Key].Corruption += amt;
+                GameLibrary.instance.Neighborhoods[neighborhood.Key].MafiaPresence += amt;
+            }
+        }
+
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
 
     /// <summary>
@@ -309,7 +337,15 @@ public class CardActions
     /// <param name="amt"></param>
     public static void ChangeAllNeighborhoodRandomCrime(int amt)
     {
-        // modify a random crime category in all neighborhoods
+        // for each neighborhood in the game library
+        foreach (KeyValuePair<Neighborhood, NeighborhoodData> neighborhood in GameLibrary.instance.Neighborhoods)
+        {
+            // if the neighborhood is not the overall city, modify a random crime category in all neighborhoods
+            if (neighborhood.Key != Neighborhood.Overall)
+            { GameLibrary.instance.Neighborhoods[neighborhood.Key].RandomCrimeCategory += amt; }
+        }
+
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
 
     /// <summary>
@@ -368,6 +404,11 @@ public class CardActions
     public static void ChangeCityCrimes(int amt)
     {
         // Modify all crime categories in the city by amt
+        GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos += amt;
+        GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption += amt;
+        GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence += amt;
+
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
 
     /// <summary>
@@ -376,7 +417,10 @@ public class CardActions
     /// <param name="amt">the amount to change</param>
     public static void ChangeCityRandomCrime(int amt)
     {
-        //modify a Random Crime Category in the city
+        // modify a Random Crime Category in the city
+        GameLibrary.instance.Neighborhoods[Neighborhood.Overall].RandomCrimeCategory += amt;
+
+        Debug.Log(MethodBase.GetCurrentMethod().Name);
     }
 
     #endregion
@@ -388,7 +432,7 @@ public class CardActions
     /// </summary>
     public static void CrusherSpecial()
     {
-        //Do Crusher special here... And so on for the other Specials.
+
     }
 
     /// <summary>

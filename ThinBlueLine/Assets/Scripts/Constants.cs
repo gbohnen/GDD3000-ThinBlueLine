@@ -21,6 +21,11 @@ namespace Assets.Scripts
 
         public const int MAX_PLAYER_COUNT = 4;
 
+        public const float MOXIE_THRESHOLD = 0.2f;
+        public const float MUSCLE_THRESHOLD = 0.5f;
+        public const float CHAOS_THESHOLD = 0.2f;
+        public const float CORRUPTION_THRESHOLD = 0.5f;
+
         #region Folder Names
 
         public const string CARD_FOLDER_NAME = "";
