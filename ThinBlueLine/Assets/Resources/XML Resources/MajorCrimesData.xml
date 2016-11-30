@@ -64,53 +64,53 @@
                    <tierone>
                      <tiername>Bombs Strapped to Support Pillars!</tiername>
                      <crimeeffect>+3 to Chaos.</crimeeffect>
-                     <tieronestorydescription></tieronestorydescription>
+                     <tieronestorydescription>The day started off fine enough, at least after you had your fill of coffee at the precinct, you felt today would be nice and quiet. And then some nutjob somehow snuck explosives into the downtown district. To be more precise, he placed them on the supports of a skyscaper... then hijacked a radio station and told the whole city. We don't have the time to go after whoever this sicko is, right now we have to deal with those bombs!</tieronestorydescription>
                      <choiceone>Evacuate!:Move to Tier Two and Chaos +2</choiceone>
-                     <choiceonestorydescription></choiceonestorydescription>
+                     <choiceonestorydescription>With no time left, you began to evacuate any civilians still near the supposed bomb site, you barely had enough time to get everyone to safety before the bombs detonated. miraculously, no one was injuired, but the collateral damage caused by this whole event will leave the city reeling.</choiceonestorydescription>
                      <choiceonestats>0:2:2</choiceonestats>
                      <choicetwo>Diffuse!:Move to Tier Two and Chaos -1.</choicetwo>
-                     <choicetwostorydescription></choicetwostorydescription>
+                     <choicetwostorydescription>Through your combined wits, you were able to defuse the bomb seconds before its detonation, sure some may criticize you for making such a rash decision, but the city has let loose a collective sigh of relief, so all in all, a job well done.</choicetwostorydescription>
                      <choicetwostats>6:0:0</choicetwostats>
                    </tierone>
                     <tiertwo>
                      <tiername>Downtown Under Attack!</tiername>
                      <crimeeffect>+4 to Chaos.</crimeeffect>
-                     <tiertwostorydescription></tiertwostorydescription>
+                     <tiertwostorydescription>As soon as the bomb was dealt with, a storm of people flooded into the downtown district, looting many of the establishments, and inciting a riot. The bomb was a diversion, to allow time for this hidden army to attack. We must act swiftly!</tiertwostorydescription>
                      <choiceone>Rush in!:Move to Tier Three and Chaos + 1.</choiceone>
-                     <choiceonestorydescription></choiceonestorydescription>
+                     <choiceonestorydescription>You rallied the remaining officers on location, and led a charge into the mob, not the most elegant of solutions, but at least you prevented the mob from gaining momentum. It's too bad that downtown is practically in shambles now.</choiceonestorydescription>
                      <choiceonestats>0:6:7</choiceonestats>
                      <choicetwo>Keep a level head, secure a perimeter:Move to Tier Three. Chaos -2</choicetwo>
-                     <choicetwostorydescription></choicetwostorydescription>
+                     <choicetwostorydescription>You began to direct your fellow oficers to encircle the rioters, and to slowly move in. While slow going at first, you were able to keep casualties to a minimum, and ultimatley limit property damage.</choicetwostorydescription>
                      <choicetwostats>10:5:2</choicetwostats>
                    </tiertwo>
                    <tierthree>
                      <tiername>Calm Before the Storm</tiername>
                      <crimeeffect>Lasts 3 turns, Chaos +1 every turn. Can only pick one of the two choices once over the period of the 3 turns.</crimeeffect>
-                     <tierthreestorydescription></tierthreestorydescription>
+                     <tierthreestorydescription>With the arrest of the rioters, you began to learn who exactly was behind all of this anarchy. An unknown man going by the name of Jon Biers, and how little anyone really knew of him. Strange, due to each of the rioters attesting that he had spoken to each and everyone of them one-on-one at some point. You know that this Jon Biers fellow isn' going to stop here, though, no. He's just run out of momentum, or maybe the riot was all a setup for another much more horrid scheme. But you have time now, and questions that need answers, but is it really worth it when you can instead prepare fo Biers's next attack?</tierthreestorydescription>
                      <choiceone>Investigate Biers:Decrease cost of Tier Four choices by 3 Moxie.</choiceone>
-                     <choiceonestorydescription></choiceonestorydescription>
+                     <choiceonestorydescription>You knew that interrogating the rioters for any bit of information on Biers would take time, and there was a chanve that nothing would come of it as well, but you had a feeling that something was off about this guy, and boy were you right. Talking to each of the rioters, you found that Biers approached each one of them individually, particualrly when they were at their lowest. He'd promise them to make things right, to lead them against the city that wronged them... now how he planned to do that, was quite varied. Where one person wanted Z, another wanted A, three more wanted Q, and a fourth of them wanted 3. Biers had promised what each and every person wanted to hear, even when their wants directly conflicted with each other, and yet he kept them all wrapped around his finger. But what was his reason for all of this? Looking at it all, the best you could surmise was that there really wasn't a reason for him, but rather the act itself. And knowing that, you probably aren't going to figure out what he's going to do next, but rather how.</choiceonestorydescription>
                      <choiceonestats>8:3:0</choiceonestats>
                      <choicetwo>Prepare:Chaos -2</choicetwo>
-                     <choicetwostorydescription></choicetwostorydescription>
+                     <choicetwostorydescription>You all decide that the best course of action is to get the city back under some semblance of control, to pave over the cracks that Biers had made with his stunts, and for now it's working, people are calming down and not flying off the handle, doing things that would make the situation worse. But the question is, how long will you be able to keep it that way?</choicetwostorydescription>
                      <choicetwostats>5:0:2</choicetwostats>
                    </tierthree>
                    <tierfour>
                      <tiername>Siege on Stony Gate!</tiername>
                      <crimeeffect>Chaos +3. Chaos +1 every turn.</crimeeffect>
-                     <tierfourstorydescription></tierfourstorydescription>
+                     <tierfourstorydescription>Reports are flooding in of another group of rioters attacking the Stony Gate district, Biers is mostly likely behind it. Who knows what he's planning, all you can really do is try to stop it.</tierfourstorydescription>
                      <choiceone>Sneak in:Move to Tier Five. Chaos +2</choiceone>
-                     <choiceonestorydescription></choiceonestorydescription>
+                     <choiceonestorydescription>Instead of using force, you're able to take a more roundabout entrance, to perhaps catch Biers by surprise.</choiceonestorydescription>
                      <choiceonestats>10:7:0</choiceonestats>
                      <choicetwo>Guns Blazing!:Move to Tier Five. Chaos +5</choicetwo>
-                     <choicetwostorydescription></choicetwostorydescription>
+                     <choicetwostorydescription>You and as many other officers you can muster push through the assaulting mob, thinning their numbers while going after Biers. Of course, the damage done from all of the fighting is astronomical, and you lose a good deal of men along the way, but at leastt you can start putting this riot down.</choicetwostorydescription>
                      <choicetwostats>0:6:4</choicetwostats>
                    </tierfour>
                    <tierfive>
                      <tiername>Stop the Assassination!</tiername>
                      <crimeeffect>Chaos +2 every turn.</crimeeffect>
-                     <tierfivestorydescription></tierfivestorydescription>
-                     <choicefinal>Capture Biers:15 total of Muscle and/or Smarts + 15 Moxie.: Players win.</choicefinal>
-                     <choicefinalstorydescription></choicefinalstorydescription>
+                     <tierfivestorydescription>Biers plan is now coming to light! He plans to take out most of the officials of Bower city to leave it in a state of confusion and perpetual anarchy. You must stop him at all costs!</tierfivestorydescription>
+                     <choicefinal>Save the Officials!:15 total of Muscle and/or Smarts + 15 Moxie.: Players win.</choicefinal>
+                     <choicefinalstorydescription>It was close, but in the end you were able to stop Biers from plunging the city into chaos, by preventing the deaths of the city officials. The only bad news is that Biers escaped. To where, nobody knows, hopefully he'll never raise his head around these parts again, though.</choicefinalstorydescription>
                    </tierfive>
            </majorcrime>
            <majorcrime>
@@ -119,53 +119,53 @@
                    <tierone>
                      <tiername>There's something happening here...</tiername>
                      <crimeeffect>No Crime Effect</crimeeffect>
-                     <tieronestorydescription></tieronestorydescription>
+                     <tieronestorydescription>You're getting a little worried. Specifically because certain troblemakers on the streets haven't been rearing their ugly heads as much as they should. Most would take this as a well appreciated reprieve, but something just doesn't sit right with you, best to look into it rather than let it simmer.</tieronestorydescription>
                      <choiceone>Investigate nearby housing:Move to Tier Two. Police Corruption +2</choiceone>
-                     <choiceonestorydescription></choiceonestorydescription>
+                     <choiceonestorydescription>You may have done some more unsavory things to grease the hands of a certain judge to get some rather specific warrants, but in the end, you know it'll help you get to the bottom of this.</choiceonestorydescription>
                      <choiceonestats>4:0:0</choiceonestats>
                      <choicetwo>Investigate rumors circulating among the populace:Move to Tier Two and Mafia Presence +4</choicetwo>
-                     <choicetwostorydescription></choicetwostorydescription>
+                     <choicetwostorydescription>It might take more time, but at least you'll still get some reliable information without having to call in any "favors".</choicetwostorydescription>
                      <choicetwostats>2:2:0</choicetwostats>
                    </tierone>
                     <tiertwo>
                      <tiername>What it is ain't exactly clear...</tiername>
                      <crimeeffect>Mafia presence increases by 2</crimeeffect>
-                     <tiertwostorydescription></tiertwostorydescription>
+                     <tiertwostorydescription>There have been some rumblings that seemed to have gone unnoticed by most, rumors of a new group aggresively recruiting from the criminal element have been circulating amongst the underground. But what exactly this group is no one really seems to know.</tiertwostorydescription>
                      <choiceone>Get a warrant to search certain suspects:Move to Tier Three and Mafia Presence +2</choiceone>
-                     <choiceonestorydescription></choiceonestorydescription>
+                     <choiceonestorydescription>You're able to finangle a warrant out of a judge in order to investigate likely suspects who may know a bit more than their letting on, however, the bureaucracy bogged you down, and you may have lost precious time to whatever this looming threat is.</choiceonestorydescription>
                      <choiceonestats>4:6:0</choiceonestats>
                      <choicetwo>Capture new recruits:Move to Tier Three. Mafia Presence -1, Police Corruption +2</choicetwo>
-                     <choicetwostorydescription></choicetwostorydescription>
+                     <choicetwostorydescription>You were able to get ahold of a rumor of group of new recruits meeting soon that may know a little more as to what exactly you're going up against. You were luckily able to get ahold of those recruits themselves as well, depriving this mysterious organization new blood... some just wouldn't approve of how much red-tape you just cut through to get it though.</choicetwostorydescription>
                      <choicetwostats>0:2:10</choicetwostats>
                    </tiertwo>
                    <tierthree>
                      <tiername>There's a man with a gun over there...</tiername>
                      <crimeeffect>Mafia Presence +3</crimeeffect>
-                     <tierthreestorydescription></tierthreestorydescription>
+                     <tierthreestorydescription>It's bad. Apparently the new boys in town are a Russian outfit looking to replace lost bodies with our own local ne'er do wells to simultaneously gain ground and power in Bower. The Ruskies are bad enough as a criminal element, but the guy leading them? One Sergei Rostislav. Apparently the coldest boss this side of the Mississippi, you don't cross him unless you expect your friends, family, and your second cousin's dog dead. What this man wants, he gets. The one thing we have going for us is that they haven't built up enouh of a powerbase to affect the city, this will give us time to act, and nip this thing in the bud. Before it's too late.</tierthreestorydescription>
                      <choiceone>Storm the compounds:Move to Tier Four. Chaos +4, Mafia Presence -3</choiceone>
-                     <choiceonestorydescription></choiceonestorydescription>
+                     <choiceonestorydescription>You were able to find the locations of some of the more recent compounds, and decided that the best course of action was to shut them down. Permanently. Sure, the city is louder now because of it, but that's sort of what you wanted in the end, a nice and loud message, meant specifically for Sergei.</choiceonestorydescription>
                      <choiceonestats>0:0:12</choiceonestats>
                      <choicetwo>Send in a double agent:Move to Tier Four. Mafia Presence +2</choicetwo>
-                     <choicetwostorydescription></choicetwostorydescription>
+                     <choicetwostorydescription>As much as it is tempting to close these compounds down and deny Sergei the soldiers he needs, it's probably best not to tip your hand too soon. So it was decided a mole would be sent in, to try and get a better picture of Rostislav's operations. While this lets Sergei continue to expand, it is the safer option.</choicetwostorydescription>
                      <choicetwostats>5:5:0</choicetwostats>
                    </tierthree>
                    <tierfour>
                      <tiername>Telling me I got to beware...</tiername>
                      <crimeeffect>Mafia presence +1 every turn</crimeeffect>
-                     <tierfourstorydescription></tierfourstorydescription>
+                     <tierfourstorydescription>Sergei knows we're after him, and he's stepping up recruiting so he can dig his roots into Bowers. If we don't hurry, he may become impossible to get rid of.</tierfourstorydescription>
                      <choiceone>Firefight:Move to Tier Five. Chaos +2, Mafia Presence -3</choiceone>
-                     <choiceonestorydescription></choiceonestorydescription>
+                     <choiceonestorydescription>It's decided that a direct attack against Sergei's forces would be the most prefferable option, depleting his men while weakening his growing power. The citizens of the city will of course be worried from the direct confrontation, but we cannot allow Rostislav's army to grow.</choiceonestorydescription>
                      <choiceonestats>0:8:8</choiceonestats>
                      <choicetwo>Gather evidence:Move to Tier Five. Mafia Presence +3, but for the final choice you can spend 15 Muscle instead of twenty</choicetwo>
-                     <choicetwostorydescription></choicetwostorydescription>
+                     <choicetwostorydescription>With the investigations you've carried out in this case, you've gathered enough evidence to strike at Sergei directly, meaning it'll be easier to call in back-up when the final showdown arrives, but putting all the evidence together will take time. Time that Rostislav will no doubt put to good use.</choicetwostorydescription>
                      <choicetwostats>5:6:0</choicetwostats>
                    </tierfour>
                    <tierfive>
                      <tiername>Stop! Hey! What's that sound?!</tiername>
                      <crimeeffect>Mafia Presence and Chaos +1 every turn.</crimeeffect>
-                     <tierfivestorydescription></tierfivestorydescription>
+                     <tierfivestorydescription>Sergei's pulling out all the stops, he's aggresively pushing his men forward while continuously churning out new men to carve in a foothold within Bower. He needs to be stopped now, or we'll never see him gone.</tierfivestorydescription>
                      <choicefinal>Stop Sergei:20 (15 if choice two was picked for tier four) Muscle total from the stat pools.: Players win.</choicefinal>
-                     <choicefinalstorydescription></choicefinalstorydescription>
+                     <choicefinalstorydescription>Through a show of might, you're able to halt Sergei's army, cut through their ranks, and arrest the man in charge. Bower will be safe from this man's clutches. You just hope that with the way he's looking at you, your loved ones will be as well.</choicefinalstorydescription>
                    </tierfive>
            </majorcrime>
            <majorcrime>
