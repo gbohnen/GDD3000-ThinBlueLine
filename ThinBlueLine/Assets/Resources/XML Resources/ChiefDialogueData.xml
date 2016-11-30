@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<!-- Created by XML:Wrench -->
+<root>
+  <!-- use @ to indicate the value changing -->
+  <!-- use % to indicate the neighborhood affected -->
+  <happy>
+           <positive>  </positive>
+           <neutral>@ seems to be on the rise, you might wanna check into it before it gets out of hand.</neutral>
+           <negative>  </negative>
+  </happy>
+  <mad>
+
+  </mad>
+</root>
