@@ -3,12 +3,28 @@
 <root>
   <!-- use @ to indicate the value changing -->
   <!-- use % to indicate the neighborhood affected -->
+  <drasticchange>
+           <negative>Dammit! @ in % has drastically gone up!  </negative>
+           <positive>Great job out there! @ has dropped!  </positive>
+  </drasticchange>
   <happy>
-           <positive>  </positive>
+           <positive>Everything seems to be swell, good work out there, that's what I'm talking about!</positive>
            <neutral>@ seems to be on the rise, you might wanna check into it before it gets out of hand.</neutral>
-           <negative>  </negative>
+           <negative>@ looks like it's getting out of hand! Get it back under control, you've proven your worth before.</negative>
   </happy>
-  <mad>
-
-  </mad>
+  <angry>
+           <positive>Hey, look at that! You did something right for a change, @ is going down.</positive>
+           <neutral>What did you do?! @ has gone up, I didn't come to you so you could screw things up.</neutral>
+           <negative>You've completely screwed the pooch! @ is going to completely run us out of town.</negative>
+  </angry>
+  <worried>
+           <positive>I don't know how you did it, but things seem to be doing alright.</positive>
+           <neutral>I'm concerned about @. You'd better get a head start on fixing this.</neutral>
+           <negative>@ is on the rise. If you don't fix things soon all Hell might break loose.</negative>
+  </worried>
+  <suspicious>
+           <positive>I know things seem to be good here, but I still need you to stay on your toes.</positive>
+           <neutral>@ is getting out of hand, get ahold of it before it's too late.</neutral>
+           <negative>I had figured this would happen! @ is completely out of control. Try to keep it together.</negative>
+  </suspicious>
 </root>
