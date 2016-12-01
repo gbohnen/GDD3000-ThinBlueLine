@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using Assets.Scripts.Managers;
 using Assets.Scripts;
 using System.Collections.Generic;
 
 /// <summary>
-/// Singleton class which manages the state of the game
+/// Enumeration for the different neighborhoods
 /// </summary>
-/// 
 public enum Neighborhood { StonyGate = 0, Suburbia = 1, Downtown = 2, TheBoxes = 3, Portside = 4, Overall = 5 }
 
+/// <summary>
+/// Singleton class which manages the state of the game
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     #region Fields    
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     //MobBossScript mobBoss;
     //PoliceChiefScript policeChief;
 
+    // first action flag
     bool firstAction;
 
     // set the initial crime categories
@@ -88,44 +89,64 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // check for instance of the GameManager
         if (Instance == null)
-            Instance = this;
+        { Instance = this; }
         else
-            Destroy(gameObject);
+        { Destroy(gameObject); }
 
+        // set current player to the firs player
         currentPlayer = Players.Player1;
 
+        // if there are no players given
         if (GameLibrary.instance.Players.Count == 0)
         {
-            for (int i = 0; i < 4; i++)
+            // check the player count
+            for (int i = 0; i < Constants.MAX_PLAYER_COUNT; i++)
             {
+                // add 4 random players to the scene
                 GameLibrary.instance.Players.Add((Players)i, GameLibrary.instance.PlayerLib[Random.Range(0, 12)]);
             }
         }
 
+        // for each player
         foreach (Players player in GameLibrary.instance.Players.Keys)
         {
+            // set the current neighborhood
             GameLibrary.instance.Players[player].Neighborhood = Neighborhood.Downtown;
             Debug.Log(GameLibrary.instance.Players[player].Neighborhood);
         }
         
+        // set neighborhood indicators
         NeighborhoodManager.instance.indicator1.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
         NeighborhoodManager.instance.indicator2.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
         NeighborhoodManager.instance.indicator3.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
         NeighborhoodManager.instance.indicator4.SetInteger("CurrNeigh", (int)Neighborhood.Downtown + 1);
 
+        // loads the major crimes in
         majorCrime = LoadGameData.LoadMajorCrimes();
 
+        // clear the first action
         firstAction = false;
+
+        // updates the UI
         UIManager.instance.UpdateUI();
     }
 
+    /// <summary>
+    /// Handled when a situation is resolved
+    /// </summary>
+    /// <param name="smarts">smarts amount</param>
+    /// <param name="moxie">moxie amount</param>
+    /// <param name="muscle">muscle amount</param>
     public void SituationResolved(float smarts, float moxie, float muscle)
     {
+        // set the current players stats
         GameLibrary.instance.Players[currentPlayer].Smarts -= (int)smarts;
         GameLibrary.instance.Players[currentPlayer].Moxie -= (int)moxie;
         GameLibrary.instance.Players[currentPlayer].Muscle -= (int)muscle;
 
+        // updates the UI
         UIManager.instance.UpdateUI();
     }
 
@@ -137,33 +158,44 @@ public class GameManager : MonoBehaviour
     /// <param name="muscle">muscle amount</param>
     public void LowerCrime(float smarts, float moxie, float muscle)
     {
+        // set the curren neighborhoods stats
         GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].Corruption -= (int)smarts;
         GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].Chaos -= (int)moxie;
         GameLibrary.instance.Neighborhoods[CurrentPlayerObj.Neighborhood].MafiaPresence -= (int)muscle;
 
+        // updates the UI
         UIManager.instance.UpdateUI();
     }
 
+    /// <summary>
+    /// Handled when the player clicks draw situation
+    /// </summary>
     public void ClickDrawSituation()
-    {
-        UIManager.instance.DrawSituation(GameLibrary.instance.GetNewSituation());
-    }
+    { UIManager.instance.DrawSituation(GameLibrary.instance.GetNewSituation()); }
 
+    /// <summary>
+    /// Handled when the player clicks lower crime
+    /// </summary>
     public void ClickLowerCrime()
-    {
-        UIManager.instance.LowerCrime();
-    }
+    {  UIManager.instance.LowerCrime(); }
 
+    /// <summary>
+    /// Handled when the player clicks special ability
+    /// </summary>
     public void ClickSpecialAbility()
-    {
-        UIManager.instance.SpecialAbility();
-    }
+    { UIManager.instance.SpecialAbility(); }
 
+    /// <summary>
+    /// Logs the given action
+    /// </summary>
+    /// <param name="action"></param>
     public void LogAction(string action)
     {
+        // check for no action
 		if (action == "No action taken")
 			firstAction = true;
 
+        // check for second action
         if (!firstAction)
         {
             UIManager.instance.PushPlayerAction(action);
@@ -173,43 +205,63 @@ public class GameManager : MonoBehaviour
         else
         {
             UIManager.instance.PushPlayerAction(action);
-
             Invoke("ResetTurn", 1f);
         }
     }
 
+    /// <summary>
+    /// Handled when a situation is drawn
+    /// </summary>
+    /// <param name="sma">smarts amount</param>
+    /// <param name="mox">moxie amount</param>
+    /// <param name="mus">muscle amount</param>
     public void SituationDrawn(float sma, float mox, float mus)
     {
+        // set the current players stats
         GameLibrary.instance.Players[currentPlayer].Smarts += (int)sma;
         GameLibrary.instance.Players[currentPlayer].Moxie += (int)mox;
         GameLibrary.instance.Players[currentPlayer].Muscle += (int)mus;
 
+        // updates the UI
         UIManager.instance.UpdateUI();
     }
 
+    /// <summary>
+    /// Resets the players turn
+    /// </summary>
     public void ResetTurn()
     {
 		if (!IsInvoking ()) 
 		{
-			// set next player
-			switch (currentPlayer) {
-			case Players.Player4:
-				currentPlayer = Players.Player1;
-                foreach (GameObject sitch in CrimeSitManager.ActiveSituations.Values)
-                {
-                    sitch.GetComponent<SituationButton>().situation.TriggerOngoing();
-                }
-				break;
-			default:
-				currentPlayer++;
-				break;
-			}
-
+            // set next player
+            switch (currentPlayer)
+            {
+                case Players.Player4:
+                    currentPlayer = Players.Player1;
+                    foreach (GameObject sitch in CrimeSitManager.ActiveSituations.Values)
+                    { sitch.GetComponent<SituationButton>().situation.TriggerOngoing(); }
+                    break;
+                default:
+                    currentPlayer++;
+                    break;
+            }
+            // updates the UI
 			UIManager.instance.UpdateUI ();
+
+            // set first action to false
 			firstAction = false;
+
+            // wipe player actions
 			UIManager.instance.WipeActions ();
 		}
     }
+
+    /// <summary>
+    /// Logs the given string
+    /// </summary>
+    /// <param name="str">the string</param>
+    public static void DebugLine(string str)
+    { Debug.Log(str); }
 
     #endregion
 }

@@ -21,6 +21,8 @@ namespace Assets.Scripts
         string special;
         Neighborhood activeNeighborhood;
 
+        float randStat = Random.value;
+
         #endregion
 
         #region Properties
@@ -57,6 +59,38 @@ namespace Assets.Scripts
             get { return smarts; }
             set { smarts = value; }
         }
+
+        /// <summary>
+        /// Gets or sets a random stat from the player
+        /// </summary>
+        public int RandomStat
+        {
+            get
+            {
+                // return moxie
+                if (randStat < Constants.MOXIE_THRESHOLD)
+                { return moxie; }
+                // return muscles
+                else if (randStat < Constants.MUSCLE_THRESHOLD)
+                { return muscles; }
+                // return smarts
+                else
+                { return smarts; }
+            }
+            set
+            {
+                // set moxie
+                if (randStat < Constants.MOXIE_THRESHOLD)
+                { moxie = value; }
+                // set muscles
+                else if (randStat < Constants.MUSCLE_THRESHOLD)
+                { muscles = value; }
+                // set smarts
+                else
+                { smarts = value; }
+            }
+        }
+
 
         /// <summary>
         /// Gets the players special

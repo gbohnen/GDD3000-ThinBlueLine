@@ -6,28 +6,61 @@ public enum Players { Player1 = 0, Player2 = 1, Player3 = 2, Player4 = 3 }
 
 public class NeighborhoodData
 {
-	float chaos;
-	float corruption;
-	float mafiaPresence;
-	public Dictionary<Players, float> Reputations;
+    float chaos;
+    float corruption;
+    float mafiaPresence;
+    public Dictionary<Players, float> Reputations;
 
-	public float Chaos
-	{
-		get { return chaos; }
-		set { chaos = value; }
-	}
+    float randCrimeCat = Random.value;
 
-	public float Corruption
-	{
-		get { return corruption; }
-		set { corruption = value; }
-	}
+    public float Chaos
+    {
+        get { return chaos; }
+        set { chaos = value; }
+    }
 
-	public float MafiaPresence
-	{
-		get { return mafiaPresence; }
-		set { mafiaPresence = value; }
-	}
+    public float Corruption
+    {
+        get { return corruption; }
+        set { corruption = value; }
+    }
+
+    public float MafiaPresence
+    {
+        get { return mafiaPresence; }
+        set { mafiaPresence = value; }
+    }
+
+    /// <summary>
+    /// Gets or sets a random crime category
+    /// </summary>
+    public float RandomCrimeCategory
+    {
+        get
+        {
+            // return chaos
+            if (randCrimeCat < Constants.CHAOS_THESHOLD)
+            { return chaos; }
+            // return corruption
+            else if (randCrimeCat < Constants.CORRUPTION_THRESHOLD)
+            { return corruption; }
+            // return mafia presence
+            else
+            { return mafiaPresence; }
+        }
+        set
+        {
+            // set chaos
+            if (randCrimeCat < Constants.CHAOS_THESHOLD)
+            { chaos = value; }
+            // set corruption
+            else if (randCrimeCat < Constants.CORRUPTION_THRESHOLD)
+            { corruption = value; }
+            // set mafia presence
+            else
+            { mafiaPresence = value; }
+        }
+    }
 }
 
 public class GameLibrary : MonoBehaviour {
