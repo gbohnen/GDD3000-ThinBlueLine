@@ -536,4 +536,19 @@ public class CardActions
     }
 
     #endregion
+
+    #region Major Crime Specials
+    public static void AddStillToRandomNeighborhood()
+    {
+        //TODO: Add a still to a random neighborhood.
+    }
+    public static void AddRevenueFromStills()
+    {
+        //Not entirely sure what this looks like.
+    }
+    public static void ChangeRevenue(int i)
+    {
+        //change revenue by some amount as detailed by i
+    }
+    #endregion
 }
