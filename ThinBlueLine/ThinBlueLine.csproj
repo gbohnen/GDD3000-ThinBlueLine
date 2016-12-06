@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\XML Resources\AvatarData.xml" />
+    <None Include="Assets\Resources\XML Resources\ChiefDialogueData.xml" />
     <None Include="Assets\Resources\XML Resources\MajorCrimesData.xml" />
     <None Include="Assets\Resources\XML Resources\MobBossData.xml" />
     <None Include="Assets\Resources\XML Resources\SituationData.xml" />
