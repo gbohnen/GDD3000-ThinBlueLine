@@ -21,6 +21,7 @@ public class SituationButton : MonoBehaviour {
     public Text ongEffect;
 
     public SituationScript situation;           // pointer to the situation
+    public Neighborhood neighborhood;
 
     void Awake()
     {
@@ -30,6 +31,7 @@ public class SituationButton : MonoBehaviour {
     // pulls up the resolve situation menu
     public void ClickSituation()
     {
+        if (GameManager.Instance.CurrentPlayerObj.Neighborhood == neighborhood)
         // tell ui manager to spawn a resolve situation panel with this situation;
         UIManager.instance.ResolveSituation(situation);
     }
