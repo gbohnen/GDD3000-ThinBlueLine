@@ -98,6 +98,13 @@ public class UIManager : MonoBehaviour {
                 }
             }
         }
+        
+
+        // check loss condition
+        if (GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence >= 15)
+        {
+
+        }
     }
 
     public void AddSituation(SituationScript sitch)

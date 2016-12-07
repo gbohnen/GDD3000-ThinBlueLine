@@ -61,7 +61,7 @@ namespace Assets.Scripts
 
         public void Awake()
         {
-            //SetMajorCrimeInfo();
+            SetMajorCrimeInfo();
             SetCityInfo();
             SetPlayerInfo();
         }
@@ -71,9 +71,9 @@ namespace Assets.Scripts
         /// </summary>
         public void SetMajorCrimeInfo()
         {
-            majorCrimeName.text = "";
-            majorCrimeDescr.text = "";
-            majorCrimeTier.text = "";
+            majorCrimeName.text = GameManager.Instance.majorCrime.Name;
+            majorCrimeDescr.text = GameManager.Instance.majorCrime.Description;
+            majorCrimeTier.text = "3";
             smartsSpent.text = "";
             moxieSpent.text = "";
             muscleSpent.text = "";
@@ -90,8 +90,8 @@ namespace Assets.Scripts
             cityMafiaPres.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence.ToString();
 
             // TODO: store and get the # of situations open & resolved
-            //sitOpen.text = "";
-            //sitResolved.text = "";
+            sitOpen.text = GameLibrary.instance.SituationList.Count.ToString();
+            sitResolved.text = "";
 
             //// TODO: store and get the status of each neighborhood, dependent on their stats
             //sgStatus.text = "";
@@ -99,7 +99,7 @@ namespace Assets.Scripts
             //dtStatus.text = "";
             //tbStatus.text = "";
             //ptStatus.text = "";
-    }
+        }
 
         /// <summary>
         /// Sets the players information

@@ -94,6 +94,8 @@ namespace Assets.Scripts
             tierObjectList.Add(tierFive);
 
             UpdateMajorCrimeDisplay();
+
+            SetCurrentButtonColor();
         }
 
         // called by gamemanager when we draw a new situation
