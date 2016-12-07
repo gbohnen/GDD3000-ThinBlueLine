@@ -10,11 +10,14 @@
                      <tiername>Bank Heist Tip-Off</tiername>
                      <crimeeffect>No crime effect.</crimeeffect>
                      <tieronestorydescription>The air feels charged. At least that's what you and your fellow officers have been feeling for the past few months. You all had been able to place what had been causing this feeling, this foreboding sense of dread. It's only when a tip off of the street finally came in did it all come together. Ricky Veers, most know him in the department, a carreer criminal for some years now, his rise to power has been a blemish on the department for a good ammount of time. But it seems that Ricky is planning something to set himself up for life, a bank heist. Lucky for you and your own, you can finally use this to put him behind bars, at least if you catch him. Which shouldn't be a problem, you're all prepared this time... You just wish the rest of the city didn't feel like it was holding its breath...</tieronestorydescription>
+                     <tierstory></tierstory>
                      <choiceone>Amp up Security:Move to Tier Two and Chaos +4</choiceone>
                      <choiceonestorydescription>Having decided to increase your manpower around the bank, you all feel more secure in apprehending Veers and his gang. The drawback is that there is now less men to go around partrolling the city, as well as worrying the people with an increase of force.</choiceonestorydescription>
+                     <choiceoneresult></choiceoneresult>
                      <choiceonestats>0:0:6</choiceonestats>
                      <choicetwo>Establish Surveillance:Move to Tier Two and Mafia Presence +4.</choicetwo>
                      <choicetwostorydescription>Taking a less blunt measure, you all decide to keep your eyes on the bank, ready to deploy at any time. However, with the increase of focus on the bank itself, you know Veers is going to use this opportunity to bolster his gang with fresh numbers.</choicetwostorydescription>
+                     <choicetworesult></choicetworesult>
                      <choicetwostats>3:3:0</choicetwostats>
                    </tierone>
                     <tiertwo>
