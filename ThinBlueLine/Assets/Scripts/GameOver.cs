@@ -91,7 +91,7 @@ namespace Assets.Scripts
 
             // TODO: store and get the # of situations open & resolved
             sitOpen.text = GameLibrary.instance.SituationList.Count.ToString();
-            sitResolved.text = GameManager.Instance.SituationsCleared;
+            sitResolved.text = GameManager.Instance.SituationsCleared.ToString();
 
             // TODO: store and get the status of each neighborhood, dependent on their stats
             sgStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate]);
