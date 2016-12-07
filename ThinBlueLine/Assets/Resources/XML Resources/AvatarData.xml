@@ -10,7 +10,10 @@
       <muscle>9</muscle>
       <smarts>2</smarts>
       <moxie>2</moxie>
+      <specialtitle>Musclehead</specialtitle>
       <special>Once every three turns the Crusher can substitute Smarts or Moxie with Muscle in a situation. When using this ability chaos goes up by 1.</special>
+      <simplespecialtitle>Buff Up</simplespecialtitle>
+      <simplespecial>When drawing a situation, the Crusher can choose to gain 4 muscle instead of 3 of whatever stats he wants.</simplespecial>
       <story>You've had a hard-knock life growing up, at least that's what people would say to you. You found that you only agreed when referring to how many fights you've been in. You grew up on the streets, running around with your friends as you rough-housed with each other. Sure, the many hits to the head you've taken probably weren't healthy, but they sure did build character. And by character, you mean your fists. Despite being surrounded by the more unsavoury elements of society, you've managed to not be swayed by their temptations, mostly due to the camaraderie found in your friends. You've come to the decision that your brawn would be best put to use on the force, cleaning up the streets you were raised on. Even if you have to tear down the whole mob with your fists. And you have big fists.</story>
       <specialmethod>CrusherSpecial</specialmethod>
     </avatar>
@@ -21,7 +24,10 @@
       <muscle>4</muscle>
       <smarts>7</smarts>
       <moxie>2</moxie>
+      <specialtitle>Investigate</specialtitle>
       <special>By spending five Smarts to commence an investigation, the detective is able to nullify a negative ongoing effect for 1 to 2 turns (random).</special>
+      <simplespecialtitle>Sleuth</simplespecialtitle>
+      <simplespecial>Can spend up to 4 points to lower crime.</simplespecial>
       <story>It's really all the same wherever you go. A different city, the same dirt and grime all around. No matter where you go, it's there, just beneath the surface, growing, yet contained. And it's your job to bathe in it all. You dig through it to get the truth, the facts, to find what it, what they, don't want you to see. Has it made you cynical? Sure, not like that's special or nothin'. But it's sharpened you as well, made you able to see things more clearly, things that you might not have seen before. The only drawback... You can never look away.</story>
       <specialmethod>DetectiveSpecial</specialmethod>
     </avatar>
@@ -32,7 +38,10 @@
       <muscle>2</muscle>
       <smarts>4</smarts>
       <moxie>7</moxie>
-      <special>Once every five turns, the Fed may call in backup. This allows the Fed to spend five stat points but raises mafia presence by 3 and draws a Situation with no addition to stats.</special>
+      <specialtitle>Call in Backup</specialtitle>
+      <special>Once every 5 turns, the Fed may call in backup. This allows the Fed to spend 5 stat points but raises mafia presence by 3 and draws a Situation with no addition to stats.</special>
+      <simplespecialtitle>Federal Jurisdiction</simplespecialtitle>
+      <simplespecial>The Fed has 3 actions they can take a turn as opposed to 2.</simplespecial>
       <story>You're the one they send in when shit hits the fan. When the locals find they just don't have the moxie and the grit to get the job done. Hell, the higher-ups will send you in, even when the yokels think they've got it covered. They never do. And they hate you for that. But hey, you're here to do a job. And damn anyone who gets in your way.</story>
       <specialmethod>FedSpecial</specialmethod>
     </avatar>
@@ -43,7 +52,10 @@
       <muscle>4</muscle>
       <smarts>5</smarts>
       <moxie>4</moxie>
-      <special>Once every five turns, the Informant can lower either the Mafia Presence or Chaos by 6 points, but requires drawing two Situations with no addition to stats.</special>
+      <specialtitle>Rat 'em Out</specialtitle>
+      <special>Once every 5 turns, the Informant can lower either the Mafia Presence or Chaos by 6 points, but requires drawing 2 Situations with no addition to stats.</special>
+      <simplespecialtitle>Weasel</simplespecialtitle>
+      <simplespecial>When drawing a situation, can choose to discard the situation drawn, then draw a new one.</simplespecial>
       <story>You're really not sure how you got here. You started off as any other slum rat off the streets, fighting for scraps. It was just your luck that when the mob spotted you and decided to put you to use. First it was the small things, running deliveries, messages, anything they asked really, it was better than going back to what you had before. It's only when you began moving up that things got... more unsavory. You've never had the best of spines, really your lack of one was what made you stand out to the mob to begin with. So, when they put a gun in your hand, you tried to find a way out. You guess it was a good thing that a recent raid saw you in the custody of the police. Now you just gotta ride this out as best you can, hopefully with your life intact at the end of it.</story>
       <specialmethod>InformantSpecial</specialmethod>
     </avatar>
@@ -54,6 +66,7 @@
       <muscle>3</muscle>
       <smarts>3</smarts>
       <moxie>3</moxie>
+      <specialtitle>Eager</specialtitle>
       <special>The Rookie receives 4 points when drawing a Situation instead of 3.</special>
       <story>You know you're going to fix all of this. Sure, you may not be the most experienced, hell, you don't particularly stand out in any way. Most of your peers see you as a liability, someone who's just going to get in the way, a waste of time better spent elsewhere rather than training you. But what you lack in ability you more than make up for in determination. You have an almost insatiable desire to grow, better yourself, to shape youreself into the person this city needs. You know. You're going to fix all of this.</story>
       <specialmethod>RookieSpecial</specialmethod>
@@ -65,6 +78,7 @@
       <muscle>5</muscle>
       <smarts>8</smarts>
       <moxie>6</moxie>
+      <specialtitle>Calculated Risk</specialtitle>
       <special>Begin the game at 3 Police Corruption and 3 Mafia Presence.</special>
       <story>Your family has been a part of this city for decades. In fact, for all intents and purposes, your family built this city, they own it too. So when these brutes, nay, troglodytes, began to infest your city, you knew you needed to act. You found that the police could provide an appropriate opening for certain amount of leeway to be applied effectively against this threat. Of course, in order to get into the right position, certain wheels needed to be greased. True, while this did dirty the city even more, and allowed these barbarians to gain more of a foothold, at least now you have all your pieces in place, and now, now you can act.</story>
       <specialmethod>PowerLusterSpecial</specialmethod>
@@ -76,7 +90,10 @@
       <muscle>1</muscle>
       <smarts>6</smarts>
       <moxie>6</moxie>
+      <specialtitle>Good Old Fashioned Crimefighting</specialtitle>
       <special>After drawing a Situation, you may spend 4 points of moxie to half the effects of that Situation, but will raise Chaos by 2. This ability has a 3 turn cooldown.</special>
+      <simplespecialtitle>Been Around the Block</simplespecialtitle>
+      <simplespecial>Can spend up to 4 points to resolve a situation.</simplespecial>
       <story>You know this town, you know these streets. You remember when everything was much smaller. Sometimes it boggles your mind how much everything has grown in such a small amount of time. Or how much everything has changed. The people especially. Back in the old days you knew the people you lived next to, the city was alive and connected through community. Now though, everyone's a stranger and a plague has fallen on your city, twisting and corrupting it. Maybe it's time to remind the people of their roots, and dispense some good old fashioned justice.</story>
       <specialmethod>OldDogSpecial</specialmethod>
     </avatar>
@@ -87,7 +104,10 @@
       <muscle>2</muscle>
       <smarts>6</smarts>
       <moxie>6</moxie>
+      <specialtitle>In the Know</specialtitle>
       <special>Once every 3 turns, The P.I. can spend 3 Moxie to see what the next Situation card is, following that, can spend 2 Smarts to have that Card moved to the bottom of the deck.</special>
+      <simplespecialtitle>Handsome Mug</simplespecialtitle>
+      <simplespecial>When drawing a situation, the P.I. can choose to gain 4 moxie instead of 3 of whatever stats he wants.</simplespecial>
       <story>You’re the guy they come to when the police just can’t get the facts straight, and let’s face it, that happens a lot more than they’re willing to let on. From getting just that right shot of the perp with his mistress, sleuthing out clues in the grimy alleyways of the city, to “collaborating” with the police when they can’t seem to fit in that last piece of the puzzle, you’ve done it all. But you know that something is rumbling just under the surface, already your contacts are warning you of big shifts in the mob, more… aggressive types coming to head. People a lot less subtle than the usual status-quo. Something big is going to go down, and you might be the only one who has the connections and know-how to stop it. You just hate working off-commission.</story>
       <specialmethod>PISpecial</specialmethod>
     </avatar>
@@ -98,6 +118,7 @@
       <muscle>5</muscle>
       <smarts>6</smarts>
       <moxie>7</moxie>
+      <specialtitle>There's a Rat</specialtitle>
       <special>If the Undercover is in play, begin the game at 2 Chaos and 2 Mafia Presence</special>
       <story>You’ve been undercover for 2 years now. You are closer to the mob than you are police now; however that doesn’t mean that you have forgotten your end goal. You’re very shifty when around other members of the police, because you never know if you’re being watched by the mob or not. Other members don’t fully trust you. Afterall you are always in your under cover role and may commit minor crimes. You can be more of a hinder than a help in many situations. You are proactive and get things done, but you do them YOUR way, damn the consequences. In that respect everyone trusts you.</story>
       <specialmethod>UndercoverSpecial</specialmethod>
@@ -109,7 +130,10 @@
       <muscle>3</muscle>
       <smarts>6</smarts>
       <moxie>5</moxie>
+      <specialtitle>Running in the 30's</specialtitle>
       <special>At the cost of 6 Stat points from any pool, the Driver and any other willing player can travel to another Neighborhood without costing an Action Point.</special>
+      <simplespecialtitle>Knows these Streets</simplespecialtitle>
+      <simplespecial>Moving to another district doesn’t drain an action point, but can only do it once.</simplespecial>
       <story>You are the patrol man. You spend all day, everyday, in the seat of your car, just driving around town. You’ve seen more crime than you care to admit, and stopped just as many in progress. You have guts, you know the streets, but you are not the tough guy. You can help anybody get around faster, because you know all of the shortcuts around town. But you may not be the best when it comes to a fight. You trust your car more than anything else in life. Your car is everything to you. Your car is any color that you want it to be, as long as it’s black.</story>
       <specialmethod>DriverSpecial</specialmethod>
     </avatar>
@@ -120,7 +144,10 @@
       <muscle>2</muscle>
       <smarts>6</smarts>
       <moxie>5</moxie>
+      <specialtitle>Prison Network</specialtitle>
       <special>By spending 3 Smarts points, you can see what the next Situation Card. Spend 8 points to see who the mob boss is, or spend 10 moxie to lessen the ongoing effect of said Mob Boss. Any of these actions increase Chaos by 3.</special>
+      <simplespecialtitle>A Criminal's Mind</simplespecialtitle>
+      <simplespecial>Can spend up to 4 points on the major crime.</simplespecial>
       <story>You are the warden of the town’s prison. You have seen your fair share of crime, where it comes from, and what it can create. You know inmates in the prison and have overheard many conversations that were not meant for your ears. Because of this, you know who to talk to about specific situations. That doesn’t mean they know you or trust you, it just means you know where to start looking for answers. Everyone knows who you are, so must of the time you do not interact with the “contacts”, because, who wants to talk to the warden. Therefore you must convince other members of the police force to do your dirty work for you.</story>
       <specialmethod>WardenSpecial</specialmethod>
     </avatar>
@@ -131,7 +158,10 @@
       <muscle>1</muscle>
       <smarts>9</smarts>
       <moxie>2</moxie>
-      <special>Once every three turns can spend up to 3 points of smarts to initiate a random positive ongoing effect. It lasts a number of turns based on how many points of smarts were spent.</special>
+      <specialtitle>Book Smart</specialtitle>
+      <special>Once every 3 turns can spend up to 3 points of Smarts to initiate a random positive ongoing effect. It lasts a number of turns based on how many points of Smarts were spent.</special>
+      <simplespecialtitle>Smart Cookie</simplespecialtitle>
+      <simplespecial>When drawing a situation, the Bookie can choose to gain 4 smarts instead of 3 of whatever stats he wants.</simplespecial>
       <story>Dad always wanted a baseball player, instead he got you. You can’t help it that you’re more inclined to a bookish nature, you just never had the coordination nor the physique for strenuous activities. So you holed yourself up inside and read your days away, learning about the world around you, and dipping your mind into the vast ocean of human knowledge.  Of course your social skills suffered from choosing not to interact with your fellow man, and you do have to admit that you don’t do well especially with confrontation, but at least you can understand it more than the simpletons around you. You found that along with your intellect you had a superb attention to detail. Combined with your organizational skills, you were able to find easy employment sorting the evidence and goods belonging to the police department, a more exciting position than your usual fare of working at the library, but one you felt you needed to add the tiniest bit of spice to your life. After all, there’s no way that you’ll end up regretting this.</story>
       <specialmethod>BookieSpecial</specialmethod>
     </avatar>
