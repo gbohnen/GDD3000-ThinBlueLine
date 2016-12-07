@@ -59,9 +59,12 @@ namespace Assets.Scripts
 
         #region Public Methods
 
+        /// <summary>
+        /// Use this for initialization 
+        /// </summary>
         public void Awake()
         {
-            //SetMajorCrimeInfo();
+            SetMajorCrimeInfo();
             SetCityInfo();
             SetPlayerInfo();
         }
@@ -71,12 +74,12 @@ namespace Assets.Scripts
         /// </summary>
         public void SetMajorCrimeInfo()
         {
-            majorCrimeName.text = "";
-            majorCrimeDescr.text = "";
-            majorCrimeTier.text = "";
-            smartsSpent.text = "";
-            moxieSpent.text = "";
-            muscleSpent.text = "";
+            majorCrimeName.text = GameManager.Instance.majorCrime.Name;
+            majorCrimeDescr.text = GameManager.Instance.majorCrime.CrimeTiers[3].TierDescription;
+            majorCrimeTier.text = "Tier: 3";
+            smartsSpent.text = "000";
+            moxieSpent.text = "000";
+            muscleSpent.text = "000";
     }
 
         /// <summary>
@@ -89,17 +92,17 @@ namespace Assets.Scripts
             cityChaos.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos.ToString();
             cityMafiaPres.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence.ToString();
 
-            // TODO: store and get the # of situations open & resolved
-            //sitOpen.text = "";
-            //sitResolved.text = "";
+            // store and get the # of situations open & resolved
+            sitOpen.text = GameLibrary.instance.SituationList.Count.ToString();
+            sitResolved.text = GameManager.Instance.SituationsCleared.ToString();
 
-            //// TODO: store and get the status of each neighborhood, dependent on their stats
-            //sgStatus.text = "";
-            //sStatus.text = "";
-            //dtStatus.text = "";
-            //tbStatus.text = "";
-            //ptStatus.text = "";
-    }
+            // TODO: store and get the status of each neighborhood, dependent on their stats
+            sgStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate]);
+            sStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.Suburbia]);
+            dtStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.Downtown]);
+            tbStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes]);
+            ptStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.Portside]);
+        }
 
         /// <summary>
         /// Sets the players information
@@ -125,12 +128,42 @@ namespace Assets.Scripts
             playerZSmartsAmt.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
             playerZMoxieAmt.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
             playerZMuscleAmt.text = GameLibrary.instance.Players[Players.Player4].Muscle.ToString();
+        }
 
-            // TODO: get players reputation
-            //playerWReputation.text = GameLibrary.instance.Players[Players.Player1].Repuation;
-            //playerXReputation.text = GameLibrary.instance.Players[Players.Player2].Reputation;
-            //playerYReputation.text = GameLibrary.instance.Players[Players.Player3].Reputation;
-            //playerZReputation.text = GameLibrary.instance.Players[Players.Player4].Reputation;
+        /// <summary>
+        /// Checks the status of the neighborhood
+        /// </summary>
+        /// <param name="data">the nieghborhood data</param>
+        /// <returns></returns>
+        public string CheckNeighborHoodStatus(NeighborhoodData data)
+        {
+            // store string
+            string status;
+
+            // store the stats
+            int i = (int)(data.Chaos + data.Corruption + data.MafiaPresence);
+
+            // Great
+            if (i <= 0)
+                status = "Perfick!";
+            // Good
+            else if (i <= 3)
+                status = "Pretty Solid!";
+            // Alright
+            else if (i <= 6)
+                status = "Eh...";
+            // Bad
+            else if (i <= 9)
+                status = "I wouldn't move there...";
+            else if (i <= 12)
+            // Worse
+                status = "Gross!";
+            // Horrible
+            else
+                status = "Abyssmal.";
+
+            // return the status
+            return status;
         }
 
         /// <summary>

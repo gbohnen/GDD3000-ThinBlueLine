@@ -10,9 +10,6 @@ namespace Assets.Scripts
     {
         #region Fields
 
-        // store the special move for this player
-        //delegate specialMove;
-
         int smarts;
         int moxie;
         int muscles;
@@ -21,10 +18,15 @@ namespace Assets.Scripts
         string special;
         Neighborhood activeNeighborhood;
 
+        float randStat = Random.value;
+
         #endregion
 
         #region Properties
 
+        /// <summary>
+        /// Gets the nieighborhood
+        /// </summary>
         public Neighborhood Neighborhood
         {
             get { return activeNeighborhood; }
@@ -59,6 +61,38 @@ namespace Assets.Scripts
         }
 
         /// <summary>
+        /// Gets or sets a random stat from the player
+        /// </summary>
+        public int RandomStat
+        {
+            get
+            {
+                // return moxie
+                if (randStat < Constants.MOXIE_THRESHOLD)
+                { return moxie; }
+                // return muscles
+                else if (randStat < Constants.MUSCLE_THRESHOLD)
+                { return muscles; }
+                // return smarts
+                else
+                { return smarts; }
+            }
+            set
+            {
+                // set moxie
+                if (randStat < Constants.MOXIE_THRESHOLD)
+                { moxie = value; }
+                // set muscles
+                else if (randStat < Constants.MUSCLE_THRESHOLD)
+                { muscles = value; }
+                // set smarts
+                else
+                { smarts = value; }
+            }
+        }
+
+
+        /// <summary>
         /// Gets the players special
         /// </summary>
         public string Special
@@ -74,6 +108,9 @@ namespace Assets.Scripts
             get { return bio; }
         }
 
+        /// <summary>
+        /// Gets the players avatar
+        /// </summary>
         public Sprite Avatar
         {
             get { return avat; }
@@ -100,46 +137,6 @@ namespace Assets.Scripts
 
             avat = Resources.Load<Sprite>(data.avatPath);
         }
-
-        #endregion
-
-        #region Public Methods
-
-        /// <summary>
-        /// Switch the current neighborhood that this player is in
-        /// </summary>
-        public void SwitchNeighborhood()
-        { }
-
-        /// <summary>
-        /// Spend certain amount of stats toward a situation
-        /// </summary>
-        public void SpendStatsSituation()
-        { }
-
-        /// <summary>
-        /// Spend certain ampunt of stats toward City Crime Level
-        /// </summary>
-        public void SpendStatsCrime()
-        { }
-
-        /// <summary>
-        /// Adds a situation to the current game
-        /// </summary>
-        public void AddSituation()
-        { }
-
-        /// <summary>
-        /// Lowers the City Crime Level
-        /// </summary>
-        public void LowerCrime()
-        { }
-
-        /// <summary>
-        /// Uses this players special
-        /// </summary>
-        public void UseSpecial()
-        { }
 
         #endregion
     }

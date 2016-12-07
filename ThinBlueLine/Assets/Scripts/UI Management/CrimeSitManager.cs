@@ -94,6 +94,8 @@ namespace Assets.Scripts
             tierObjectList.Add(tierFive);
 
             UpdateMajorCrimeDisplay();
+
+            SetCurrentButtonColor();
         }
 
         // called by gamemanager when we draw a new situation
@@ -116,6 +118,8 @@ namespace Assets.Scripts
             button.desc.text = sitch.Description;
             button.immEffect.text = sitch.ImmediateEffect;
             button.ongEffect.text = sitch.OngoingEffect;
+
+            button.neighborhood = GameManager.Instance.CurrentPlayerObj.Neighborhood;
 
             // hand off the situation
             button.situation = sitch;
