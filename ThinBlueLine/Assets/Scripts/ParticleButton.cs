@@ -9,7 +9,7 @@ public class ParticleButton : MonoBehaviour {
     Image buttonSprite;
 
     float tweenDuration = .2f;
-    float hoverAlpha = .3f;
+    float hoverAlpha = .5f;
 
     void Start()
     {

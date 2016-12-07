@@ -5,6 +5,7 @@ using Assets.Scripts;
 using System.Collections.Generic;
 using Assets.Scripts.UI_Management;
 using UnityEngine.EventSystems;
+using System;
 
 public class UIManager : MonoBehaviour {
 
@@ -21,6 +22,8 @@ public class UIManager : MonoBehaviour {
     public GameObject changeNeighborhoodWindow;
     public GameObject useSpecialActionWindow;
     public GameObject lowerCrimeWindow;
+
+    public Text specialAbilityText;
 
     // collection of windows
     List<GameObject> modalWindows;
@@ -55,10 +58,46 @@ public class UIManager : MonoBehaviour {
 
     public void UpdateUI()
     {
+        CheckOverflow();
+
         playerManager.UpdateUI();
         playerManager.UpdateIndicator();
         currentPlayerManager.UpdateUI();
         cityInfoManager.UpdateUI();
+    }
+
+    private void CheckOverflow()
+    {
+        foreach (KeyValuePair<Neighborhood, NeighborhoodData> neigh in GameLibrary.instance.Neighborhoods)
+        {
+            // floor each value
+            if (neigh.Value.Chaos < 0)
+                neigh.Value.Chaos = 0;
+            if (neigh.Value.Corruption < 0)
+                neigh.Value.Corruption = 0;
+            if (neigh.Value.MafiaPresence < 0)
+                neigh.Value.MafiaPresence = 0;
+
+            // ceiling each value
+            if (neigh.Key != Neighborhood.Overall)
+            {
+                if (neigh.Value.Chaos > 5)
+                {
+                    GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos += neigh.Value.Chaos - 5;
+                    neigh.Value.Chaos = 5;
+                }
+                if (neigh.Value.Corruption > 5)
+                {
+                    GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption += neigh.Value.Corruption - 5;
+                    neigh.Value.Corruption = 5;
+                }
+                if (neigh.Value.MafiaPresence > 5)
+                {
+                    GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence += neigh.Value.MafiaPresence - 5;
+                    neigh.Value.MafiaPresence = 5;
+                }
+            }
+        }
     }
 
     public void AddSituation(SituationScript sitch)
@@ -85,6 +124,8 @@ public class UIManager : MonoBehaviour {
     {
         useSpecialActionWindow.SetActive(true);
         useSpecialActionWindow.transform.SetAsLastSibling();
+
+        specialAbilityText.text = GameManager.Instance.CurrentPlayerObj.Special;
     }
 
     public void ResolveSituation(SituationScript sitch)
@@ -96,9 +137,9 @@ public class UIManager : MonoBehaviour {
         resolveSituationWindow.transform.SetAsLastSibling();
     }
 
-    public void ChangeNeighborhood()
+    public void ChangeNeighborhood(string neighborhood)
     {
-        Neighborhood curr = (Neighborhood)int.Parse(EventSystem.current.currentSelectedGameObject.name.Substring(0,1));
+        Neighborhood curr = (Neighborhood)Enum.Parse(typeof(Neighborhood), neighborhood);
 
         changeNeighborhoodWindow.SetActive(true);
         changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().Initialize(curr);
