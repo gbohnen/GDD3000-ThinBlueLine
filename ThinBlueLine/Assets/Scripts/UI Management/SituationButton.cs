@@ -44,6 +44,8 @@ public class SituationButton : MonoBehaviour {
         if (situation.Cost <= 0)
         {
             situation.TriggerPositive();
+            GameManager.Instance.SituationsCleared++;
+            GameLibrary.instance.SituationList.Remove(situation);
             Destroy(gameObject);
         }
     }

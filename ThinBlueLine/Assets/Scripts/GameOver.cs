@@ -61,7 +61,7 @@ namespace Assets.Scripts
 
         public void Awake()
         {
-            //SetMajorCrimeInfo();
+            SetMajorCrimeInfo();
             SetCityInfo();
             SetPlayerInfo();
         }
@@ -71,9 +71,9 @@ namespace Assets.Scripts
         /// </summary>
         public void SetMajorCrimeInfo()
         {
-            majorCrimeName.text = "";
-            majorCrimeDescr.text = "";
-            majorCrimeTier.text = "";
+            majorCrimeName.text = GameManager.Instance.majorCrime.Name;
+            majorCrimeDescr.text = GameManager.Instance.majorCrime.CrimeTiers[3].TierDescription;
+            majorCrimeTier.text = "3";
             smartsSpent.text = "";
             moxieSpent.text = "";
             muscleSpent.text = "";
@@ -90,16 +90,16 @@ namespace Assets.Scripts
             cityMafiaPres.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence.ToString();
 
             // TODO: store and get the # of situations open & resolved
-            //sitOpen.text = "";
-            //sitResolved.text = "";
+            sitOpen.text = GameLibrary.instance.SituationList.Count.ToString();
+            sitResolved.text = GameManager.Instance.SituationsCleared.ToString();
 
-            //// TODO: store and get the status of each neighborhood, dependent on their stats
-            //sgStatus.text = "";
-            //sStatus.text = "";
-            //dtStatus.text = "";
-            //tbStatus.text = "";
-            //ptStatus.text = "";
-    }
+            // TODO: store and get the status of each neighborhood, dependent on their stats
+            sgStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate]);
+            sStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.Suburbia]);
+            dtStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.Downtown]);
+            tbStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes]);
+            ptStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.Portside]);
+        }
 
         /// <summary>
         /// Sets the players information
@@ -125,12 +125,28 @@ namespace Assets.Scripts
             playerZSmartsAmt.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
             playerZMoxieAmt.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
             playerZMuscleAmt.text = GameLibrary.instance.Players[Players.Player4].Muscle.ToString();
+        }
 
-            // TODO: get players reputation
-            //playerWReputation.text = GameLibrary.instance.Players[Players.Player1].Repuation;
-            //playerXReputation.text = GameLibrary.instance.Players[Players.Player2].Reputation;
-            //playerYReputation.text = GameLibrary.instance.Players[Players.Player3].Reputation;
-            //playerZReputation.text = GameLibrary.instance.Players[Players.Player4].Reputation;
+        public string CheckNeighborHoodStatus(NeighborhoodData data)
+        {
+            string str;
+
+            int i = (int)(data.Chaos + data.Corruption + data.MafiaPresence);
+
+            if (i <= 0)
+                str = "Perfick!";
+            else if (i <= 3)
+                str = "Pretty Solid!";
+            else if (i <= 6)
+                str = "Eh...";
+            else if (i <= 9)
+                str = "I wouldn't move there...";
+            else if (i <= 12)
+                str = "Gross!";
+            else
+                str = "Abyssmal.";
+
+            return str;
         }
 
         /// <summary>
