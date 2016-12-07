@@ -59,6 +59,9 @@ namespace Assets.Scripts
 
         #region Public Methods
 
+        /// <summary>
+        /// Use this for initialization 
+        /// </summary>
         public void Awake()
         {
             SetMajorCrimeInfo();
@@ -73,10 +76,10 @@ namespace Assets.Scripts
         {
             majorCrimeName.text = GameManager.Instance.majorCrime.Name;
             majorCrimeDescr.text = GameManager.Instance.majorCrime.CrimeTiers[3].TierDescription;
-            majorCrimeTier.text = "3";
-            smartsSpent.text = "";
-            moxieSpent.text = "";
-            muscleSpent.text = "";
+            majorCrimeTier.text = "Tier: 3";
+            smartsSpent.text = "000";
+            moxieSpent.text = "000";
+            muscleSpent.text = "000";
     }
 
         /// <summary>
@@ -89,7 +92,7 @@ namespace Assets.Scripts
             cityChaos.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos.ToString();
             cityMafiaPres.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence.ToString();
 
-            // TODO: store and get the # of situations open & resolved
+            // store and get the # of situations open & resolved
             sitOpen.text = GameLibrary.instance.SituationList.Count.ToString();
             sitResolved.text = GameManager.Instance.SituationsCleared.ToString();
 
@@ -127,26 +130,40 @@ namespace Assets.Scripts
             playerZMuscleAmt.text = GameLibrary.instance.Players[Players.Player4].Muscle.ToString();
         }
 
+        /// <summary>
+        /// Checks the status of the neighborhood
+        /// </summary>
+        /// <param name="data">the nieghborhood data</param>
+        /// <returns></returns>
         public string CheckNeighborHoodStatus(NeighborhoodData data)
         {
-            string str;
+            // store string
+            string status;
 
+            // store the stats
             int i = (int)(data.Chaos + data.Corruption + data.MafiaPresence);
 
+            // Great
             if (i <= 0)
-                str = "Perfick!";
+                status = "Perfick!";
+            // Good
             else if (i <= 3)
-                str = "Pretty Solid!";
+                status = "Pretty Solid!";
+            // Alright
             else if (i <= 6)
-                str = "Eh...";
+                status = "Eh...";
+            // Bad
             else if (i <= 9)
-                str = "I wouldn't move there...";
+                status = "I wouldn't move there...";
             else if (i <= 12)
-                str = "Gross!";
+            // Worse
+                status = "Gross!";
+            // Horrible
             else
-                str = "Abyssmal.";
+                status = "Abyssmal.";
 
-            return str;
+            // return the status
+            return status;
         }
 
         /// <summary>
