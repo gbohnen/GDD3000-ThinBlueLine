@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
         set { initMP = value; }
     }
 
+    public int SituationsCleared
+    { get; set; }
+
     #endregion
 
     #region Public Methods
