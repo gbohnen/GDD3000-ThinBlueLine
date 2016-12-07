@@ -5,6 +5,7 @@ using Assets.Scripts;
 using System.Collections.Generic;
 using Assets.Scripts.UI_Management;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using System;
 
 public class UIManager : MonoBehaviour {
@@ -103,7 +104,7 @@ public class UIManager : MonoBehaviour {
         // check loss condition
         if (GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence >= 15)
         {
-
+            SceneManager.LoadScene(Constants.GAME_OVER_SCENE);
         }
     }
 
