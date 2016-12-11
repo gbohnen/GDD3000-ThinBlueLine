@@ -24,6 +24,13 @@ public class UIManager : MonoBehaviour {
     public GameObject useSpecialActionWindow;
     public GameObject lowerCrimeWindow;
 
+    public Image bubble1;
+    public Image bubble2;
+    public Image bubble3;
+    public Image bubble4;
+
+    Color blue = new Color32(0x00, 0x00, 0x8F, 0xFF);
+
     public Text specialAbilityText;
 
     // collection of windows
@@ -190,4 +197,28 @@ public class UIManager : MonoBehaviour {
 		currentSituation = CrimeSitManager.ActiveSituations[name];
 		currentSituation.GetComponent<SituationButton>().UpdateCost(300);
 	}
+
+    public void UpdatePlayerIndicator()
+    {
+        bubble1.color = blue;
+        bubble2.color = blue;
+        bubble3.color = blue;
+        bubble4.color = blue;
+
+        switch (GameManager.Instance.CurrentPlayer)
+        {
+            case Players.Player1:
+                bubble1.color = Color.Lerp(blue, Color.red, 1f);
+                break;
+            case Players.Player2:
+                bubble2.color = Color.Lerp(blue, Color.red, 1f);
+                break;
+            case Players.Player3:
+                bubble3.color = Color.Lerp(blue, Color.red, 1f);
+                break;
+            case Players.Player4:
+                bubble4.color = Color.Lerp(blue, Color.red, 1f);
+                break;
+        }
+    }
 }

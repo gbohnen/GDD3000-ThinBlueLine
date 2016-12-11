@@ -131,6 +131,9 @@ public class GameManager : MonoBehaviour
         // clear the first action
         firstAction = false;
 
+        // update indicators
+        UIManager.instance.UpdatePlayerIndicator();
+
         // updates the UI
         UIManager.instance.UpdateUI();
     }
@@ -240,8 +243,7 @@ public class GameManager : MonoBehaviour
             {
                 case Players.Player4:
                     currentPlayer = Players.Player1;
-                    foreach (GameObject sitch in CrimeSitManager.ActiveSituations.Values)
-                    { sitch.GetComponent<SituationButton>().situation.TriggerOngoing(); }
+                    EndTurnLogic();
                     break;
                 default:
                     currentPlayer++;
@@ -249,6 +251,9 @@ public class GameManager : MonoBehaviour
             }
             // updates the UI
 			UIManager.instance.UpdateUI ();
+
+            // updates player indicator
+            UIManager.instance.UpdatePlayerIndicator();
 
             // set first action to false
 			firstAction = false;
@@ -264,6 +269,14 @@ public class GameManager : MonoBehaviour
     /// <param name="str">the string</param>
     public static void DebugLine(string str)
     { Debug.Log(str); }
+
+    public void EndTurnLogic()
+    {
+        foreach (GameObject sitch in CrimeSitManager.ActiveSituations.Values)
+        {
+            sitch.GetComponent<SituationButton>().situation.TriggerOngoing();
+        }
+    }
 
     #endregion
 }
