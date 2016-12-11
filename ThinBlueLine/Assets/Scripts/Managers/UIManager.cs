@@ -159,8 +159,11 @@ public class UIManager : MonoBehaviour {
     {
         Neighborhood curr = (Neighborhood)Enum.Parse(typeof(Neighborhood), neighborhood);
 
-        changeNeighborhoodWindow.SetActive(true);
-        changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().Initialize(curr);
+        if (curr != GameManager.Instance.CurrentPlayerObj.Neighborhood)
+        {
+            changeNeighborhoodWindow.SetActive(true);
+            changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().Initialize(curr);
+        }
     }
 
     public void CloseWindows()
@@ -212,15 +215,19 @@ public class UIManager : MonoBehaviour {
         {
             case Players.Player1:
                 bubble1.color = Color.Lerp(blue, Color.red, 1f);
+                bubble1.gameObject.transform.SetAsLastSibling();
                 break;
             case Players.Player2:
                 bubble2.color = Color.Lerp(blue, Color.red, 1f);
+                bubble2.gameObject.transform.SetAsLastSibling();
                 break;
             case Players.Player3:
                 bubble3.color = Color.Lerp(blue, Color.red, 1f);
+                bubble3.gameObject.transform.SetAsLastSibling();
                 break;
             case Players.Player4:
                 bubble4.color = Color.Lerp(blue, Color.red, 1f);
+                bubble4.gameObject.transform.SetAsLastSibling();
                 break;
         }
     }
