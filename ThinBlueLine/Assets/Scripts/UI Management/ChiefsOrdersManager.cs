@@ -9,7 +9,7 @@ public class ChiefsOrdersManager : MonoBehaviour {
 
     public void Load(List<string> dialogue)
     {
-        string text;
+        string text = "";
 
         foreach (string str in dialogue)
         {
@@ -17,6 +17,6 @@ public class ChiefsOrdersManager : MonoBehaviour {
             text += "\\n";
         }
 
-        body = text;
+        body.text = text;
     }
 }

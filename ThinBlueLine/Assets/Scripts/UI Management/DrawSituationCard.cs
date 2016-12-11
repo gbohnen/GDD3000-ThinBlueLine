@@ -13,7 +13,7 @@ namespace Assets.Scripts
         public Text moxieMod;
         public Text musclesMod;
         public Text posResolution;
-        public Text negResolution;
+        //public Text negResolution;
         public Text desc;
         public Text immEffect;
         public Text ongEffect;
@@ -35,7 +35,7 @@ namespace Assets.Scripts
             moxieMod.text = "x " + sitch.MoxieModifier.ToString();
             musclesMod.text = "x " + sitch.MuscleModifier.ToString();
             posResolution.text = sitch.PositiveOutcome;
-            negResolution.text = sitch.NegativeOutcome;
+            //negResolution.text = sitch.NegativeOutcome;
             desc.text = sitch.Description;
             immEffect.text = sitch.ImmediateEffect;
             ongEffect.text = sitch.OngoingEffect;
