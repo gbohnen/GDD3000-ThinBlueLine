@@ -19,6 +19,8 @@ public class TierObject : MonoBehaviour {
     {
         if (data.TierName != null)
             header.text = data.TierName;
+        if (data.TierDescription != null)
+            blurb.text = data.TierDescription;
         immediateEffect.text = data.CrimeEffectText;
 
         optionOneCost.text = "<color=#3232ffff>" + data.OptionOneCosts.x + "</color> - <color=#327e15ff>" + data.OptionOneCosts.y + "</color> - <color=#c13232ff>" + data.OptionOneCosts.z + "</color>";

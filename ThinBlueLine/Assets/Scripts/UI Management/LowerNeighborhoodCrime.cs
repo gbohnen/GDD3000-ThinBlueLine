@@ -67,8 +67,9 @@ namespace Assets.Scripts.UI_Management
         public void SmartsSliderChanged()
         {
             // checks for total theshold, player smarts & neighborhood corruption
-            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Smarts < smartsSlider.value 
-                && GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption < smartsSlider.value)
+            if (SliderSum > totalThreshold 
+                || GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption < smartsSlider.value
+                || GameManager.Instance.CurrentPlayerObj.Smarts < smartsSlider.value)
             { smartsSlider.value--; }
 
             // resets player & neighborhood stats
@@ -83,8 +84,9 @@ namespace Assets.Scripts.UI_Management
         public void MoxieSliderChanged()
         {
             // checks the total threshold, player moxie & current neighborhood chaos
-            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Moxie < moxieSlider.value 
-                && GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Corruption < moxieSlider.value)
+            if (SliderSum > totalThreshold 
+                || GameManager.Instance.CurrentPlayerObj.Moxie < moxieSlider.value 
+                || GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].Chaos < moxieSlider.value)
             { moxieSlider.value--; }
 
             // resets player & neighborhood stats
@@ -99,8 +101,9 @@ namespace Assets.Scripts.UI_Management
         public void MuscleSliderChanged()
         {
             // checks the total threshold, player strength & current neighborhood mafia presence 
-            if (SliderSum > totalThreshold || GameManager.Instance.CurrentPlayerObj.Muscle < muscleSlider.value 
-                && GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence < muscleSlider.value)
+            if (SliderSum > totalThreshold 
+                || GameManager.Instance.CurrentPlayerObj.Muscle < muscleSlider.value 
+                || GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence < muscleSlider.value)
             { muscleSlider.value--; }
 
             // resets player & neighborhood stats

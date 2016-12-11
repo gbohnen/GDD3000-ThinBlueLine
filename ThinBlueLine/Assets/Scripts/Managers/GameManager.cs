@@ -117,7 +117,6 @@ public class GameManager : MonoBehaviour
         {
             // set the current neighborhood
             GameLibrary.instance.Players[player].Neighborhood = Neighborhood.Downtown;
-            Debug.Log(GameLibrary.instance.Players[player].Neighborhood);
         }
         
         // set neighborhood indicators

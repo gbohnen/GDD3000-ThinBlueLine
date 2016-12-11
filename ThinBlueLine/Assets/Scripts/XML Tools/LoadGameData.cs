@@ -261,7 +261,7 @@ public class LoadGameData
                         switch (childNode.Name)
                         {
                             case "tiername":        tier.TierName = childNode.InnerText; break;
-                            case "tierstory":                       break;
+                            case "tierstory":       tier.TierDescription = childNode.InnerText; break;
                             case "crimeeffect":     tier.CrimeEffectText = childNode.InnerText; break;
                             case "choiceone":       tier.OptionOneText = childNode.InnerText; break;
                             case "choiceonestats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
