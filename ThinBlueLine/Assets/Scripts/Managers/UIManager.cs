@@ -8,7 +8,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using System;
 
-public class UIManager : MonoBehaviour {
+public class UIManager : MonoBehaviour
+{
 
     // fields for other manager objects;
     public CrimeSitManager situationManager;
@@ -23,8 +24,10 @@ public class UIManager : MonoBehaviour {
     public GameObject changeNeighborhoodWindow;
     public GameObject useSpecialActionWindow;
     public GameObject lowerCrimeWindow;
+    public GameObject roundEndWindow;
 
     public Text specialAbilityText;
+    public Text roundEndText;
 
     // collection of windows
     List<GameObject> modalWindows;
@@ -55,6 +58,7 @@ public class UIManager : MonoBehaviour {
         modalWindows.Add(changeNeighborhoodWindow);
         modalWindows.Add(useSpecialActionWindow);
         modalWindows.Add(lowerCrimeWindow);
+        modalWindows.Add(roundEndWindow);
     }
 
     public void UpdateUI()
@@ -99,7 +103,6 @@ public class UIManager : MonoBehaviour {
                 }
             }
         }
-        
 
         // check loss condition
         if (GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence >= 15)
@@ -153,6 +156,23 @@ public class UIManager : MonoBehaviour {
         changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().Initialize(curr);
     }
 
+    public void CreateChiefMessage(List<string> dialogue)
+    {
+        roundEndWindow.SetActive(true);
+        roundEndWindow.transform.SetAsLastSibling();
+
+        string chiefAdvice = "";
+
+        foreach (string text in dialogue)
+        {
+            chiefAdvice += text;
+            chiefAdvice += "\\n";
+        }
+
+        roundEndText.text = chiefAdvice;
+    }
+
+
     public void CloseWindows()
     {
         // set all popup windows to inactive
@@ -182,12 +202,12 @@ public class UIManager : MonoBehaviour {
     public void WipeActions()
     {
         currentPlayerManager.WipeActions();
-		situationManager.CloseDrawer ();
+        situationManager.CloseDrawer();
     }
 
-	public void CloseSituation(string name)
-	{
-		currentSituation = CrimeSitManager.ActiveSituations[name];
-		currentSituation.GetComponent<SituationButton>().UpdateCost(300);
-	}
+    public void CloseSituation(string name)
+    {
+        currentSituation = CrimeSitManager.ActiveSituations[name];
+        currentSituation.GetComponent<SituationButton>().UpdateCost(300);
+    }
 }
