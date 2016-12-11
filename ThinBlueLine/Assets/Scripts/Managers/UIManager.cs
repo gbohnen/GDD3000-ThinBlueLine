@@ -211,23 +211,29 @@ public class UIManager : MonoBehaviour {
         bubble3.color = blue;
         bubble4.color = blue;
 
+        // default order 
+        bubble4.gameObject.transform.parent.transform.parent.transform.SetAsLastSibling();
+        bubble3.gameObject.transform.parent.transform.parent.transform.SetAsLastSibling();
+        bubble2.gameObject.transform.parent.transform.parent.transform.SetAsLastSibling();
+        bubble1.gameObject.transform.parent.transform.parent.transform.SetAsLastSibling();
+
         switch (GameManager.Instance.CurrentPlayer)
         {
             case Players.Player1:
                 bubble1.color = Color.Lerp(blue, Color.red, 1f);
-                bubble1.gameObject.transform.SetAsLastSibling();
+                bubble1.gameObject.transform.parent.transform.parent.transform.SetAsLastSibling();
                 break;
             case Players.Player2:
                 bubble2.color = Color.Lerp(blue, Color.red, 1f);
-                bubble2.gameObject.transform.SetAsLastSibling();
+                bubble2.gameObject.transform.parent.transform.parent.transform.SetAsLastSibling();
                 break;
             case Players.Player3:
                 bubble3.color = Color.Lerp(blue, Color.red, 1f);
-                bubble3.gameObject.transform.SetAsLastSibling();
+                bubble3.gameObject.transform.parent.transform.parent.transform.SetAsLastSibling();
                 break;
             case Players.Player4:
                 bubble4.color = Color.Lerp(blue, Color.red, 1f);
-                bubble4.gameObject.transform.SetAsLastSibling();
+                bubble4.gameObject.transform.parent.transform.parent.transform.SetAsLastSibling();
                 break;
         }
     }
