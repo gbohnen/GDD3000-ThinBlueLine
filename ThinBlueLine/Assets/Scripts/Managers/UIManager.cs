@@ -25,9 +25,11 @@ public class UIManager : MonoBehaviour
     public GameObject useSpecialActionWindow;
     public GameObject lowerCrimeWindow;
     public GameObject roundEndWindow;
+    public GameObject openingWindow;
 
     public Text specialAbilityText;
     public Text roundEndText;
+    public Text openingText;
 
     // collection of windows
     List<GameObject> modalWindows;
@@ -59,6 +61,9 @@ public class UIManager : MonoBehaviour
         modalWindows.Add(useSpecialActionWindow);
         modalWindows.Add(lowerCrimeWindow);
         modalWindows.Add(roundEndWindow);
+        modalWindows.Add(openingWindow);
+
+        openingText.text = Constants.OPENING_TEXT;
     }
 
     public void UpdateUI()
@@ -170,6 +175,11 @@ public class UIManager : MonoBehaviour
         }
 
         roundEndText.text = chiefAdvice;
+    }
+
+    public void OpeningMessage()
+    {
+        openingWindow.transform.SetAsLastSibling();
     }
 
 
