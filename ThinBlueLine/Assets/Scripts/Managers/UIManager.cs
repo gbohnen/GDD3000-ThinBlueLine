@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour {
     public CurrentPlayerManager currentPlayerManager;
     public NeighborhoodManager neighborhoodManager;
     public CityInfoManager cityInfoManager;
+    public ChiefsOrdersManager chiefsOrdersManager;
 
     // fields for popup window gameobjects
     public GameObject drawSituationWindow;
@@ -23,6 +24,7 @@ public class UIManager : MonoBehaviour {
     public GameObject changeNeighborhoodWindow;
     public GameObject useSpecialActionWindow;
     public GameObject lowerCrimeWindow;
+    public GameObject chiefsOrdersWindow;
 
     public Image bubble1;
     public Image bubble2;
@@ -62,6 +64,7 @@ public class UIManager : MonoBehaviour {
         modalWindows.Add(changeNeighborhoodWindow);
         modalWindows.Add(useSpecialActionWindow);
         modalWindows.Add(lowerCrimeWindow);
+        modalWindows.Add(chiefsOrdersWindow);
     }
 
     public void UpdateUI()
