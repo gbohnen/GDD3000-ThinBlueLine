@@ -114,7 +114,7 @@ namespace Assets.Scripts
             button.moxieMod.text = "x " + sitch.MoxieModifier.ToString();
             button.musclesMod.text = "x " + sitch.MuscleModifier.ToString();
             button.posResolution.text = sitch.PositiveOutcome;
-            button.negResolution.text = sitch.NegativeOutcome;
+            //button.negResolution.text = sitch.NegativeOutcome;
             button.desc.text = sitch.Description;
             button.immEffect.text = sitch.ImmediateEffect;
             button.ongEffect.text = sitch.OngoingEffect;

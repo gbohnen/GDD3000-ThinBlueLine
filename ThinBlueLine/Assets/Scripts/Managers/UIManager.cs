@@ -8,8 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using System;
 
-public class UIManager : MonoBehaviour
-{
+public class UIManager : MonoBehaviour {
 
     // fields for other manager objects;
     public CrimeSitManager situationManager;
@@ -24,12 +23,15 @@ public class UIManager : MonoBehaviour
     public GameObject changeNeighborhoodWindow;
     public GameObject useSpecialActionWindow;
     public GameObject lowerCrimeWindow;
-    public GameObject roundEndWindow;
-    public GameObject openingWindow;
+
+    public Image bubble1;
+    public Image bubble2;
+    public Image bubble3;
+    public Image bubble4;
+
+    Color blue = new Color32(0x00, 0x00, 0x8F, 0xFF);
 
     public Text specialAbilityText;
-    public Text roundEndText;
-    public Text openingText;
 
     // collection of windows
     List<GameObject> modalWindows;
@@ -60,10 +62,6 @@ public class UIManager : MonoBehaviour
         modalWindows.Add(changeNeighborhoodWindow);
         modalWindows.Add(useSpecialActionWindow);
         modalWindows.Add(lowerCrimeWindow);
-        modalWindows.Add(roundEndWindow);
-        modalWindows.Add(openingWindow);
-
-        openingText.text = Constants.OPENING_TEXT;
     }
 
     public void UpdateUI()
@@ -108,6 +106,7 @@ public class UIManager : MonoBehaviour
                 }
             }
         }
+        
 
         // check loss condition
         if (GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence >= 15)
@@ -161,28 +160,6 @@ public class UIManager : MonoBehaviour
         changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().Initialize(curr);
     }
 
-    public void CreateChiefMessage(List<string> dialogue)
-    {
-        roundEndWindow.SetActive(true);
-        roundEndWindow.transform.SetAsLastSibling();
-
-        string chiefAdvice = "";
-
-        foreach (string text in dialogue)
-        {
-            chiefAdvice += text;
-            chiefAdvice += "\\n";
-        }
-
-        roundEndText.text = chiefAdvice;
-    }
-
-    public void OpeningMessage()
-    {
-        openingWindow.transform.SetAsLastSibling();
-    }
-
-
     public void CloseWindows()
     {
         // set all popup windows to inactive
@@ -212,12 +189,36 @@ public class UIManager : MonoBehaviour
     public void WipeActions()
     {
         currentPlayerManager.WipeActions();
-        situationManager.CloseDrawer();
+		situationManager.CloseDrawer ();
     }
 
-    public void CloseSituation(string name)
+	public void CloseSituation(string name)
+	{
+		currentSituation = CrimeSitManager.ActiveSituations[name];
+		currentSituation.GetComponent<SituationButton>().UpdateCost(300);
+	}
+
+    public void UpdatePlayerIndicator()
     {
-        currentSituation = CrimeSitManager.ActiveSituations[name];
-        currentSituation.GetComponent<SituationButton>().UpdateCost(300);
+        bubble1.color = blue;
+        bubble2.color = blue;
+        bubble3.color = blue;
+        bubble4.color = blue;
+
+        switch (GameManager.Instance.CurrentPlayer)
+        {
+            case Players.Player1:
+                bubble1.color = Color.Lerp(blue, Color.red, 1f);
+                break;
+            case Players.Player2:
+                bubble2.color = Color.Lerp(blue, Color.red, 1f);
+                break;
+            case Players.Player3:
+                bubble3.color = Color.Lerp(blue, Color.red, 1f);
+                break;
+            case Players.Player4:
+                bubble4.color = Color.Lerp(blue, Color.red, 1f);
+                break;
+        }
     }
 }
