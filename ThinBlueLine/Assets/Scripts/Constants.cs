@@ -26,6 +26,8 @@ namespace Assets.Scripts
         public const float CHAOS_THESHOLD = 0.2f;
         public const float CORRUPTION_THRESHOLD = 0.5f;
 
+        public const string OPENING_TEXT = "Let's go over your duties one more time. Everybody can take two actions during their turn. Lowering Crime costs a stat you may or may not have. Changing Neighborhoods is what it seems to be; you change what neighborhood you are in. Drawing a situation card means finding a new crime to pursue. Resolve a situation; it costs stats that you may or may not have in your possession. Player Special Action; each person has a special that can be used to help with various scenarios. Good luck out there officers.";
+
         #region Folder Names
 
         public const string CARD_FOLDER_NAME = "";

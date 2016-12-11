@@ -13,9 +13,6 @@ public class MainMenuButtons : MonoBehaviour
     /// </summary>
     public void Awake()
     {
-        // set starting page
-        PlayerPrefs.SetInt("currentPage", 1);
-
         // disable credits panel
         creditsPanel.GetComponent<CanvasGroup>().interactable = false;
         creditsPanel.GetComponent<CanvasGroup>().alpha = 0;
