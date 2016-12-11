@@ -134,6 +134,14 @@ public class GameManager : MonoBehaviour
         // update indicators
         UIManager.instance.UpdatePlayerIndicator();
 
+        // for each neighborhood
+        foreach (KeyValuePair<Neighborhood, NeighborhoodData> data in GameLibrary.instance.Neighborhoods)
+        {
+            data.Value.Chaos += Random.Range(0, 4);
+            data.Value.Corruption += Random.Range(0, 4);
+            data.Value.MafiaPresence += Random.Range(0, 4);
+        }
+
         // updates the UI
         UIManager.instance.UpdateUI();
     }
