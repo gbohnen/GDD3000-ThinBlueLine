@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using Assets.Scripts;
 using System.Collections.Generic;
 
@@ -13,6 +14,8 @@ public enum Neighborhood { StonyGate = 0, Suburbia = 1, Downtown = 2, TheBoxes =
 public class GameManager : MonoBehaviour
 {
     #region Fields    
+
+    public CanvasGroup canvasBlock;
 
     // store an Instance of the game manager
     public static GameManager Instance;
@@ -218,7 +221,8 @@ public class GameManager : MonoBehaviour
         else
         {
             UIManager.instance.PushPlayerAction(action);
-            Invoke("ResetTurn", 1f);
+            canvasBlock.blocksRaycasts = true;
+            Invoke("ResetTurn", 1.5f);
         }
     }
 
@@ -268,7 +272,8 @@ public class GameManager : MonoBehaviour
 
             // wipe player actions
 			UIManager.instance.WipeActions ();
-		}
+            canvasBlock.blocksRaycasts = false;
+        }
     }
 
     /// <summary>
