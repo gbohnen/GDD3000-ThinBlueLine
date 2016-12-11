@@ -57,6 +57,8 @@ namespace Assets.Scripts.UI_Management
             mafiaPresText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence.ToString() + 
                                  Constants.ARROW + GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence.ToString();
 
+            Debug.Log(GameManager.Instance.CurrentPlayerObj.Neighborhood);
+
             // resets the buttons
             ResetButton();
         }

@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using Assets.Scripts;
 using System.Collections.Generic;
+using System;
+
+using random = UnityEngine.Random;
 
 /// <summary>
 /// Enumeration for the different neighborhoods
@@ -111,7 +114,7 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < Constants.MAX_PLAYER_COUNT; i++)
             {
                 // add 4 random players to the scene
-                GameLibrary.instance.Players.Add((Players)i, GameLibrary.instance.PlayerLib[Random.Range(0, 12)]);
+                GameLibrary.instance.Players.Add((Players)i, GameLibrary.instance.PlayerLib[random.Range(0, 12)]);
             }
         }
 
@@ -140,9 +143,9 @@ public class GameManager : MonoBehaviour
         // for each neighborhood
         foreach (KeyValuePair<Neighborhood, NeighborhoodData> data in GameLibrary.instance.Neighborhoods)
         {
-            data.Value.Chaos += Random.Range(0, 4);
-            data.Value.Corruption += Random.Range(0, 4);
-            data.Value.MafiaPresence += Random.Range(0, 4);
+            data.Value.Chaos += random.Range(0, 4);
+            data.Value.Corruption += random.Range(0, 4);
+            data.Value.MafiaPresence += random.Range(0, 4);
         }
 
         // updates the UI
@@ -285,9 +288,16 @@ public class GameManager : MonoBehaviour
 
     public void EndTurnLogic()
     {
-        foreach (GameObject sitch in CrimeSitManager.ActiveSituations.Values)
+        foreach (KeyValuePair<string, GameObject> sitch in CrimeSitManager.ActiveSituations)
         {
-            sitch.GetComponent<SituationButton>().situation.TriggerOngoing();
+            try
+            {
+                sitch.Value.GetComponent<SituationButton>().situation.TriggerOngoing();
+            }
+            catch (NullReferenceException e)
+            {
+                Debug.Log(sitch.Key);
+            }
         }
     }
 
