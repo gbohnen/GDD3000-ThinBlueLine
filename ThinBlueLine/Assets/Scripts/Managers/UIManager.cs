@@ -245,7 +245,7 @@ public class UIManager : MonoBehaviour {
         chiefsOrdersManager.Load(list);
     }
 
-    public void TriggetMajorCrimeResult(List<string> list)
+    public void TriggerMajorCrimeResult(List<string> list)
     {
         chiefsOrdersWindow.SetActive(true);
         chiefsOrdersWindow.transform.SetAsLastSibling();
