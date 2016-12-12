@@ -325,6 +325,7 @@ public class LoadGameData
         dialogueLines[CurrentMood.Happy] = new List<string>();
         dialogueLines[CurrentMood.Suspicious] = new List<string>();
         dialogueLines[CurrentMood.Worried] = new List<string>();
+        dialogueLines[CurrentMood.Drastic] = new List<string>();
 
         TextAsset chiefFile = (TextAsset)Resources.Load(Constants.CHIEF_DIALOGUE_FILE_NAME);
 
@@ -339,10 +340,11 @@ public class LoadGameData
         XmlNodeList worriedList = chiefDoc.GetElementsByTagName("worried");                                                                         // get all tags labeled tutorial
         XmlNodeList suspiciousList = chiefDoc.GetElementsByTagName("suspicious");                                                                      // get all tags labeled tutorial
 
-        //// drastic change
-        //foreach (XmlNode childNode in drasticList[0].ChildNodes)
-        //{
-        //}
+        // drastic change
+        foreach (XmlNode childNode in drasticList[0].ChildNodes)
+        {
+            dialogueLines[CurrentMood.Drastic].Add(childNode.InnerText);
+        }
 
         // happy
         foreach (XmlNode childNodes in happyList[0])
@@ -366,11 +368,6 @@ public class LoadGameData
         foreach (XmlNode childNodes in suspiciousList[0])
         {
             dialogueLines[CurrentMood.Suspicious].Add(childNodes.InnerText);
-        }
-
-        foreach (string str in dialogueLines[CurrentMood.Happy])
-        {
-            Debug.Log(str);
         }
 
         return dialogueLines;

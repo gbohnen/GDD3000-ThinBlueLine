@@ -5,7 +5,7 @@ namespace Assets.Scripts
     /// <summary>
     /// An enumeration for the different moods of the police chief
     /// </summary>
-    public enum CurrentMood { Angry, Happy, Worried, Suspicious }
+    public enum CurrentMood { Angry, Happy, Worried, Suspicious, Drastic }
 
     /// <summary>
     /// Script which handles the police chief
@@ -146,9 +146,9 @@ namespace Assets.Scripts
                 {
                     // choose line
                     int index = 0;
-                    if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 10)
+                    if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 9)
                         index = 2;
-                    else if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 5)
+                    else if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 4)
                         index = 1;
                     else
                         index = 0;

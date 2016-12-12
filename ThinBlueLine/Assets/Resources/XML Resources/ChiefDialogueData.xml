@@ -4,8 +4,8 @@
   <!-- use @ to indicate the value changing -->
   <!-- use % to indicate the neighborhood affected -->
   <drasticchange>
-           <negative>Dammit! @ in % has drastically gone up!  </negative>
            <positive>Great job out there! @ has dropped!  </positive>
+           <negative>Dammit! @ in % has drastically gone up!  </negative>
   </drasticchange>
   <happy>
            <positive>Everything seems to be swell, good work out there, that's what I'm talking about!</positive>
