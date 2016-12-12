@@ -8,16 +8,16 @@ namespace Assets.Scripts
     /// <summary>
     /// Class which handles all of the stats in the game
     /// </summary>
-    class StatTracker
+    static class StatTracker
     {
         #region Fields
 
-        int totalSpentTowardCrime = 0;
-        int nbrUnresolvedSit = 0;
-        int nbrResolvedSit = 0;
-        int nbrDrawnSit = 0;
-        int nbrLowerCrime = 0;
-        int nbrChangeNeigh = 0;
+        static int totalSpentTowardCrime = 0;
+        static int nbrUnresolvedSit = 0;
+        static int nbrResolvedSit = 0;
+        static int nbrDrawnSit = 0;
+        static int nbrLowerCrime = 0;
+        static int nbrChangeNeigh = 0;
 
         #endregion
 
@@ -26,7 +26,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Gets or sets the stats spent towards major crime
         /// </summary>
-        public int StatsToMajorCrime
+        public static int StatsToMajorCrime
         {
             get { return totalSpentTowardCrime; }
             set { totalSpentTowardCrime = value; }
@@ -35,7 +35,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Gets or sets the number or unresolved situations
         /// </summary>
-        public int UnresolvedSituations
+        public static int UnresolvedSituations
         {
             get { return nbrUnresolvedSit; }
             set { nbrUnresolvedSit = value; }
@@ -44,7 +44,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Gets or sets the number of resolved situations
         /// </summary>
-        public int ResolvedSituations
+        public static int ResolvedSituations
         {
             get { return nbrResolvedSit; }
             set { nbrResolvedSit = value; }
@@ -53,7 +53,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Gets or sets the number of drawn situations
         /// </summary>
-        public int DrawnSituations
+        public static int DrawnSituations
         {
             get { return nbrDrawnSit; }
             set { nbrDrawnSit = value; }
@@ -62,7 +62,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Gets or sets the number of times lowered crime
         /// </summary>
-        public int TimesLoweredCrime
+        public static int TimesLoweredCrime
         {
             get { return nbrLowerCrime; }
             set { nbrLowerCrime = value; }
@@ -71,7 +71,7 @@ namespace Assets.Scripts
         /// <summary>
         /// Sets the number of times changed neighborhood
         /// </summary>
-        public int TimesChangedNeigh
+        public static int TimesChangedNeigh
         {
             get { return nbrChangeNeigh; }
             set { nbrChangeNeigh = value; }
