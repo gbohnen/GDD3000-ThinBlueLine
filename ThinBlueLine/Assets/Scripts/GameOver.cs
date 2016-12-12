@@ -55,6 +55,35 @@ namespace Assets.Scripts
         public Text playerZMuscleAmt;
         public Text playerZReputation;
 
+        public Text player1Name;
+        public Text player2Name;
+        public Text player3Name;
+        public Text player4Name;
+
+        public Text player1majorcrimes;
+        public Text player1sitdrawn;
+        public Text player1sitresolved;
+        public Text player1crimelowered;
+        public Text player1neighborhoodchanges;
+
+        public Text player2majorcrimes;
+        public Text player2sitdrawn;
+        public Text player2sitresolved;
+        public Text player2crimelowered;
+        public Text player2neighborhoodchanges;
+
+        public Text player3majorcrimes;
+        public Text player3sitdrawn;
+        public Text player3sitresolved;
+        public Text player3crimelowered;
+        public Text player3neighborhoodchanges;
+
+        public Text player4majorcrimes;
+        public Text player4sitdrawn;
+        public Text player4sitresolved;
+        public Text player4crimelowered;
+        public Text player4neighborhoodchanges;
+
         #endregion
 
         #region Public Methods
@@ -94,7 +123,7 @@ namespace Assets.Scripts
 
             // store and get the # of situations open & resolved
             sitOpen.text = GameLibrary.instance.SituationList.Count.ToString();
-            sitResolved.text = GameManager.Instance.SituationsCleared.ToString();
+            sitResolved.text = StatTracker.ResolvedSituations.ToString();
 
             // TODO: store and get the status of each neighborhood, dependent on their stats
             sgStatus.text = CheckNeighborHoodStatus(GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate]);
