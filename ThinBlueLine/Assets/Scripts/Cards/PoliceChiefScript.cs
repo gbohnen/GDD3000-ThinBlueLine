@@ -182,12 +182,12 @@ namespace Assets.Scripts
             if (option == true)
             {
                 result.Add("Great choice! Lets take a look at the result: ");
-                temp = GameManager.Instance.majorCrime.CrimeTiers[currentMajorCrimeTier].OptionOneText;
+                temp = GameManager.Instance.majorCrime.CrimeTiers[currentMajorCrimeTier].OptionOneResult;
             }
             else
             {
                 result.Add("I like your style! Here's how it turned out: ");
-                temp = GameManager.Instance.majorCrime.CrimeTiers[currentMajorCrimeTier].OptionTwoText;
+                temp = GameManager.Instance.majorCrime.CrimeTiers[currentMajorCrimeTier].OptionTwoResult;
             }
 
             result.Add(temp);
