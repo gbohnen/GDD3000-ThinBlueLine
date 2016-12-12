@@ -12,6 +12,10 @@ namespace Assets.Scripts
     {
         #region Fields
 
+        public static int crimeSmartsSpent = 0;
+        public static int crimeMoxieSpent = 0;
+        public static int crimeStrengthSpent = 0;
+
         static int totalSpentTowardCrime = 0;
         static int nbrUnresolvedSit = 0;
         static int nbrResolvedSit = 0;
@@ -19,29 +23,29 @@ namespace Assets.Scripts
         static int nbrLowerCrime = 0;
         static int nbrChangeNeigh = 0;
 
-        public static int player1SituationsDrawn;
-        public static int player1SituationsClosed;
-        public static int player1CrimeLowered;
-        public static int player1ChangeNeighborhood;
-        public static int player1StatsSpentOnMajorCrime;
+        public static int player1SituationsDrawn = 0;
+        public static int player1SituationsClosed = 0;
+        public static int player1CrimeLowered = 0;
+        public static int player1ChangeNeighborhood = 0;
+        public static int player1StatsSpentOnMajorCrime = 0;
 
-        public static int player2SituationsDrawn;
-        public static int player2SituationsClosed;
-        public static int player2CrimeLowered;
-        public static int player2ChangeNeighborhood;
-        public static int player2StatsSpentOnMajorCrime;
+        public static int player2SituationsDrawn = 0;
+        public static int player2SituationsClosed = 0;
+        public static int player2CrimeLowered = 0;
+        public static int player2ChangeNeighborhood = 0;
+        public static int player2StatsSpentOnMajorCrime = 0;
 
-        public static int player3SituationsDrawn;
-        public static int player3SituationsClosed;
-        public static int player3CrimeLowered;
-        public static int player3ChangeNeighborhood;
-        public static int player3StatsSpentOnMajorCrime;
+        public static int player3SituationsDrawn = 0;
+        public static int player3SituationsClosed = 0;
+        public static int player3CrimeLowered = 0;
+        public static int player3ChangeNeighborhood = 0;
+        public static int player3StatsSpentOnMajorCrime = 0;
 
-        public static int player4SituationsDrawn;
-        public static int player4SituationsClosed;
-        public static int player4CrimeLowered;
-        public static int player4ChangeNeighborhood;
-        public static int player4StatsSpentOnMajorCrime;
+        public static int player4SituationsDrawn = 0;
+        public static int player4SituationsClosed = 0;
+        public static int player4CrimeLowered = 0;
+        public static int player4ChangeNeighborhood = 0;
+        public static int player4StatsSpentOnMajorCrime = 0;
         #endregion
 
         #region Properties

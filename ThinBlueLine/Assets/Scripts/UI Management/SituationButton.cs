@@ -46,6 +46,7 @@ public class SituationButton : MonoBehaviour {
             situation.TriggerPositive();
             StatTracker.ResolvedSituations++;
             GameLibrary.instance.SituationList.Remove(situation);
+            StatTracker.ResolvedSituations++;
             Destroy(gameObject);
         }
     }
