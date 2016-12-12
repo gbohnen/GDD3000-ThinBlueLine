@@ -66,9 +66,9 @@ namespace Assets.Scripts
             { angry--; }
 
             // SUSPISCIOUS
-            if (StatTracker.TimesChangedNeigh > StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
+            if (StatTracker.TimesChangedNeighborhood > StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
             { suspicious++; }
-            if (StatTracker.TimesChangedNeigh < StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
+            if (StatTracker.TimesChangedNeighborhood < StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
             { suspicious--; }
 
             // HAPPY
