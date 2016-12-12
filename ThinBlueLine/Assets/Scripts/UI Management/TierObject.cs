@@ -15,8 +15,15 @@ public class TierObject : MonoBehaviour {
     public Text optionTwoCost;
     public Text optionTwoDesc;
 
-    public void LoadTier(MajorCrimeTier data)
+    public MajorCrimeTier data;
+    public int level;
+
+    public void LoadTier(int i)
     {
+        data = GameManager.Instance.majorCrime.CrimeTiers[i];
+
+        level = i;
+
         if (data.TierName != null)
             header.text = data.TierName;
         if (data.TierDescription != null)
@@ -28,10 +35,18 @@ public class TierObject : MonoBehaviour {
         optionOne.text = option1[0];
         optionOneDesc.text = option1[1];
 
-        optionTwoCost.text = "<color=#3232ffff>" + data.OptionTwoCosts.x + "</color> - <color=#327e15ff>" + data.OptionTwoCosts.y + "</color> - <color=#c13232ff>" + data.OptionTwoCosts.z + "</color>";
-        string[] option2 = data.OptionTwoText.Split(new char[] { ':' });
-        optionTwo.text = option2[0];
-        optionTwoDesc.text = option2[1];
+        if (i < 4)
+        {
+            optionTwoCost.text = "<color=#3232ffff>" + data.OptionTwoCosts.x + "</color> - <color=#327e15ff>" + data.OptionTwoCosts.y + "</color> - <color=#c13232ff>" + data.OptionTwoCosts.z + "</color>";
+            string[] option2 = data.OptionTwoText.Split(new char[] { ':' });
+            optionTwo.text = option2[0];
+            optionTwoDesc.text = option2[1];
+        }
+    }
+
+    public void ClickTier()
+    {
+        UIManager.instance.ResolveTier(level);
     }
 
 }

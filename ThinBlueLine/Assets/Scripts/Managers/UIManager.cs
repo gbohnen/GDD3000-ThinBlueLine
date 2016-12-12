@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour {
     public GameObject useSpecialActionWindow;
     public GameObject lowerCrimeWindow;
     public GameObject chiefsOrdersWindow;
+    public GameObject fightMajorCrimeWindow;
 
     public Image bubble1;
     public Image bubble2;
@@ -63,6 +64,7 @@ public class UIManager : MonoBehaviour {
         modalWindows.Add(useSpecialActionWindow);
         modalWindows.Add(lowerCrimeWindow);
         modalWindows.Add(chiefsOrdersWindow);
+        modalWindows.Add(fightMajorCrimeWindow);
     }
 
     public void UpdateUI()
@@ -164,6 +166,13 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    public void ResolveTier(int level)
+    {
+        fightMajorCrimeWindow.SetActive(true);
+        fightMajorCrimeWindow.transform.SetAsLastSibling();
+        fightMajorCrimeWindow.GetComponent<FightMajorCrimeCard>().LoadCard(level);
+    }
+
     public void CloseWindows()
     {
         // set all popup windows to inactive
@@ -177,6 +186,13 @@ public class UIManager : MonoBehaviour {
     {
         neighborhoodManager.ChangeNeighborhood(changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().CurrentNeighborhood);
         CloseWindows();
+    }
+
+    public void ChangeMajorCrimeCommit(Vector3 change)
+    {
+        situationManager.ReduceCrime(GameManager.Instance.CurrentCrimeTier, change);
+        CloseWindows();
+        UpdateUI();
     }
 
     public void ReduceSituation(float i)

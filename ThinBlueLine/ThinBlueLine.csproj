@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\UI Management\CrimeSitManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\CurrentPlayerManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\DrawSituationCard.cs" />
+    <Compile Include="Assets\Scripts\UI Management\FightMajorCrimeCard.cs" />
     <Compile Include="Assets\Scripts\UI Management\LowerNeighborhoodCrime.cs" />
     <Compile Include="Assets\Scripts\UI Management\NeighborhoodManager.cs" />
     <Compile Include="Assets\Scripts\UI Management\NewNeighborhoodCard.cs" />

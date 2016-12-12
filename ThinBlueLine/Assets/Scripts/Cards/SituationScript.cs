@@ -169,11 +169,11 @@ namespace Assets.Scripts
 
 		private void ParseCommand(string effectString)
 		{
-            Debug.Log(effectString);
-
 			try
-			{
-				string[] commands = effectString.Split (new char[] { ';' });
+            {
+                Debug.Log(effectString);
+
+                string[] commands = effectString.Split (new char[] { ';' });
 
 				foreach (string str in commands) 
 				{

@@ -60,15 +60,15 @@ namespace Assets.Scripts
         {
             
             // ANGRY
-            if (StatTracker.DrawnSituations > 2 * (StatTracker.ResolvedSituations + 2))
+            if (StatTracker.DrawnSituations(0) > 2 * (StatTracker.ResolvedSituations + 2))
             { angry++; }
-            if (StatTracker.DrawnSituations == StatTracker.ResolvedSituations)
+            if (StatTracker.DrawnSituations(0) == StatTracker.ResolvedSituations)
             { angry--; }
 
             // SUSPISCIOUS
-            if (StatTracker.TimesChangedNeighborhood > StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
+            if (StatTracker.TimesChangedNeighborhood(0) > StatTracker.ResolvedSituations + StatTracker.DrawnSituations(0) + StatTracker.TimesLoweredCrime(0))
             { suspicious++; }
-            if (StatTracker.TimesChangedNeighborhood < StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
+            if (StatTracker.TimesChangedNeighborhood(0) < StatTracker.ResolvedSituations + StatTracker.DrawnSituations(0) + StatTracker.TimesLoweredCrime(0))
             { suspicious--; }
 
             // HAPPY
@@ -149,6 +149,9 @@ namespace Assets.Scripts
                     else if (neighborhood.Value.Chaos >= neighborhood.Value.MafiaPresence && neighborhood.Value.Chaos >= neighborhood.Value.Corruption)
                         stat = "Chaos";
 
+                    // if (drastic (>5) change in stat with greatest change, which should be calculated above)
+                    // set temp to be drastic line 
+                    // else
                     temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
                 }
                 else

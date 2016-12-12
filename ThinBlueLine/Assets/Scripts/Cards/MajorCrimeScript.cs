@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Assets.Scripts
 {
-    public struct MajorCrimeTier
+    public class MajorCrimeTier
     {
         public string TierName;
         public string TierDescription;
@@ -12,9 +12,11 @@ namespace Assets.Scripts
         public string OptionOneText;
         public string OptionOneResult;
         public Vector3 OptionOneCosts;
+        public string OptionOneMethod;
         public string OptionTwoText;
         public string OptionTwoResult;
         public Vector3 OptionTwoCosts;
+        public string OptionTwoMethod;
     }
 
     /// <summary>
@@ -36,6 +38,7 @@ namespace Assets.Scripts
         public List<MajorCrimeTier> CrimeTiers
         {
             get { return tiers; }
+            set { tiers = value; }
         }
 
         public int CurrentTier

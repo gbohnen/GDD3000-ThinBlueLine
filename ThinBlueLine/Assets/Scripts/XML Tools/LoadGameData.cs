@@ -230,7 +230,7 @@ public class LoadGameData
         XmlNodeList majorCrimeList = majorCrimeDoc.GetElementsByTagName("majorcrime");           // get all tags labeled major crime
 
         MajorCrimeScript majorCrime = new MajorCrimeScript();
-        XmlNodeList nodeList = majorCrimeList[Random.Range(0, majorCrimeList.Count)].ChildNodes;
+        XmlNodeList nodeList = majorCrimeList[0].ChildNodes;
 
         foreach (XmlNode node in nodeList)
         {
@@ -266,11 +266,15 @@ public class LoadGameData
                             case "choiceone":       tier.OptionOneText = childNode.InnerText; break;
                             case "choiceonestats":  tier.OptionOneCosts = ParseStats(childNode.InnerText); break;
                             case "choiceoneresult": tier.OptionOneResult = childNode.InnerText; break;
+                            case "choiceonemethod": tier.OptionOneMethod = childNode.InnerText; break;
                             case "choicetwo":       tier.OptionTwoText = childNode.InnerText; break;
                             case "choicetwostats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
                             case "choicetworesult": tier.OptionTwoResult = childNode.InnerText; break;
+                            case "choicetwomethod": tier.OptionTwoMethod = childNode.InnerText; break;
                         }
                     }
+                    tier.TierStatsSpent = new Vector3(0, 0, 0);
+
                     majorCrime.CrimeTiers.Add(tier);
                     break;
             }

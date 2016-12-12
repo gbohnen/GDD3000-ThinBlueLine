@@ -88,6 +88,12 @@ public class GameManager : MonoBehaviour
         set { initMP = value; }
     }
 
+    public int CurrentCrimeTier
+    { get; set; }
+
+    public Vector3 CurrentCrimeStats
+    { get; set; }
+
     #endregion
 
     #region Public Methods
@@ -130,6 +136,9 @@ public class GameManager : MonoBehaviour
 
         // loads the major crimes in
         majorCrime = LoadGameData.LoadMajorCrimes();
+
+        CurrentCrimeTier = 0;
+        CurrentCrimeStats = new Vector3(0, 0, 0);
 
         // set up police chief
         policeChief = new PoliceChiefScript();
@@ -294,11 +303,6 @@ public class GameManager : MonoBehaviour
             if (sitch.Value != null)
             {
                 sitch.Value.GetComponent<SituationButton>().situation.TriggerOngoing();
-
-                foreach (string str in policeChief.BuildChiefReport())
-                {
-                    Debug.Log(str);
-                }
             }
         }
 

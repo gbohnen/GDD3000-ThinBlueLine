@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -53,27 +54,25 @@ namespace Assets.Scripts
         /// <summary>
         /// Gets or sets the stats spent towards major crime
         /// </summary>
-        public static int StatsToMajorCrime
+        public static int StatsToMajorCrime(int i)
         {
-            get { return player1StatsSpentOnMajorCrime + player2StatsSpentOnMajorCrime + player3StatsSpentOnMajorCrime + player4StatsSpentOnMajorCrime; }
-            set
+           switch (GameManager.Instance.CurrentPlayer)
             {
-                switch (GameManager.Instance.CurrentPlayer)
-                {
-                    case Players.Player1:
-                        player1StatsSpentOnMajorCrime = value;
-                        break;
-                    case Players.Player2:
-                        player2StatsSpentOnMajorCrime = value;
-                        break;
-                    case Players.Player3:
-                        player3StatsSpentOnMajorCrime = value;
-                        break;
-                    case Players.Player4:
-                        player4StatsSpentOnMajorCrime = value;
-                        break;
-                }
+                case Players.Player1:
+                    player1StatsSpentOnMajorCrime += i;
+                break;
+                case Players.Player2:
+                    player2StatsSpentOnMajorCrime += i;
+                break;
+                case Players.Player3:
+                    player3StatsSpentOnMajorCrime += i;
+                break;
+                case Players.Player4:
+                    player4StatsSpentOnMajorCrime += i;
+                break;
             }
+
+            return player1StatsSpentOnMajorCrime + player2StatsSpentOnMajorCrime + player3StatsSpentOnMajorCrime + player4StatsSpentOnMajorCrime;
         }
 
         /// <summary>
@@ -97,81 +96,75 @@ namespace Assets.Scripts
         /// <summary>
         /// Gets or sets the number of drawn situations
         /// </summary>
-        public static int DrawnSituations
+        public static int DrawnSituations(int i)
         {
-            get { return player1SituationsDrawn + player2SituationsDrawn + player3SituationsDrawn + player4SituationsDrawn; }
-            set
+            switch (GameManager.Instance.CurrentPlayer)
             {
-                switch (GameManager.Instance.CurrentPlayer)
-                {
-                    case Players.Player1:
-                        player1SituationsDrawn = value;
-                        break;
-                    case Players.Player2:
-                        player2SituationsDrawn = value;
-                        break;
-                    case Players.Player3:
-                        player3SituationsDrawn = value;
-                        break;
-                    case Players.Player4:
-                        player4SituationsDrawn = value;
-                        break;
-                }
+                case Players.Player1:
+                    player1SituationsDrawn += i;
+                    break;
+                case Players.Player2:
+                    player2SituationsDrawn += i;
+                    break;
+                case Players.Player3:
+                    player3SituationsDrawn += i;
+                    break;
+                case Players.Player4:
+                    player4SituationsDrawn += i;
+                    break;
             }
+
+            return player1SituationsDrawn + player2SituationsDrawn + player3SituationsDrawn + player4SituationsDrawn;            
         }
 
         /// <summary>
         /// Gets or sets the number of times lowered crime
         /// </summary>
-        public static int TimesLoweredCrime
+        public static int TimesLoweredCrime(int i)
         {
-            get { return player1CrimeLowered + player2CrimeLowered + player3CrimeLowered + player4CrimeLowered; }
-            set
+            switch (GameManager.Instance.CurrentPlayer)
             {
-                switch (GameManager.Instance.CurrentPlayer)
-                {
-                    case Players.Player1:
-                        player1CrimeLowered = value;
-                        break;
-                    case Players.Player2:
-                        player2CrimeLowered = value;
-                        break;
-                    case Players.Player3:
-                        player3CrimeLowered = value;
-                        break;
-                    case Players.Player4:
-                        player4CrimeLowered = value;
-                        break;
-                }
+                case Players.Player1:
+                    player1CrimeLowered += i;
+                    break;
+                case Players.Player2:
+                    player2CrimeLowered += i;
+                    break;
+                case Players.Player3:
+                    player3CrimeLowered += i;
+                    break;
+                case Players.Player4:
+                    player4CrimeLowered += i;
+                    break;
             }
+
+            return player1CrimeLowered + player2CrimeLowered + player3CrimeLowered + player4CrimeLowered;
         }
 
         /// <summary>
         /// Sets the number of times changed neighborhood
         /// </summary>
-        public static int TimesChangedNeighborhood
+        public static int TimesChangedNeighborhood(int i)
         {
-            get { return player1ChangeNeighborhood + player2ChangeNeighborhood + player3ChangeNeighborhood + player4ChangeNeighborhood; }
-            set
+            switch (GameManager.Instance.CurrentPlayer)
             {
-                switch (GameManager.Instance.CurrentPlayer)
-                {
-                    case Players.Player1:
-                        player1ChangeNeighborhood = value;
-                        break;
-                    case Players.Player2:
-                        player2ChangeNeighborhood = value;
-                        break;
-                    case Players.Player3:
-                        player3ChangeNeighborhood = value;
-                        break;
-                    case Players.Player4:
-                        player4ChangeNeighborhood = value;
-                        break;
-                }
+                case Players.Player1:
+                    player1ChangeNeighborhood += i;
+                    break;
+                case Players.Player2:
+                    player2ChangeNeighborhood += i;
+                    break;
+                case Players.Player3:
+                    player3ChangeNeighborhood += i;
+                    break;
+                case Players.Player4:
+                    player4ChangeNeighborhood += i;
+                    break;
             }
+
+            return player1ChangeNeighborhood + player2ChangeNeighborhood + player3ChangeNeighborhood + player4ChangeNeighborhood;
         }
+    }
 
         #endregion
-    }
 }

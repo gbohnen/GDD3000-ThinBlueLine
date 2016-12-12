@@ -291,13 +291,42 @@ namespace Assets.Scripts
 
             for (int i = 0; i < tierObjectList.Count; i++)
             {
-                tierObjectList[i].GetComponent<TierObject>().LoadTier(GameManager.Instance.majorCrime.CrimeTiers[i]);
+                tierObjectList[i].GetComponent<TierObject>().LoadTier(i);
+                tierObjectList[i].GetComponent<Button>().interactable = false;
             }
+            
+            tierObjectList[GameManager.Instance.CurrentCrimeTier].GetComponent<Button>().interactable = true;
         }
-        
-        public void LoadSituationTier(MajorCrimeTier tier, GameObject button)
-        {
 
+        public void ReduceCrime(int i, Vector3 change)
+        {
+            // update stats
+            GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Smarts -= (int)change.x;
+            GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Moxie -= (int)change.y;
+            GameLibrary.instance.Players[GameManager.Instance.CurrentPlayer].Muscle -= (int)change.z;
+
+            // commit change to tier
+            GameManager.Instance.CurrentCrimeStats += change;
+
+            // push action
+            GameManager.Instance.LogAction("Major Crime Fought");
+            StatTracker.StatsToMajorCrime((int)(change.x + change.y + change.z));
+
+            // choice one resolved
+            if (GameManager.Instance.CurrentCrimeStats.x >= tierObjectList[i].GetComponent<TierObject>().data.OptionOneCosts.x
+                && GameManager.Instance.CurrentCrimeStats.y >= tierObjectList[i].GetComponent<TierObject>().data.OptionOneCosts.y
+                && GameManager.Instance.CurrentCrimeStats.z >= tierObjectList[i].GetComponent<TierObject>().data.OptionOneCosts.z)
+            {
+                Debug.Log("Option One Chosen");
+            }
+
+            // choice two resolved
+            else if (GameManager.Instance.CurrentCrimeStats.x >= tierObjectList[i].GetComponent<TierObject>().data.OptionTwoCosts.x
+                && GameManager.Instance.CurrentCrimeStats.y >= tierObjectList[i].GetComponent<TierObject>().data.OptionTwoCosts.y
+                && GameManager.Instance.CurrentCrimeStats.z >= tierObjectList[i].GetComponent<TierObject>().data.OptionTwoCosts.z)
+            {
+                Debug.Log("Option Two Chosen");
+            }
         }
 
         #endregion
