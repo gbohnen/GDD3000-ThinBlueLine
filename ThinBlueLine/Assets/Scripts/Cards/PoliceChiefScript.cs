@@ -62,7 +62,6 @@ namespace Assets.Scripts
         public PoliceChiefScript()
         {
             dialogueOptions = new Dictionary<CurrentMood, List<string>>();
-
             dialogueOptions = LoadGameData.LoadChiefAdvice();
         }
 
@@ -172,6 +171,28 @@ namespace Assets.Scripts
             }
 
             return dialogue;
+        }
+
+        public List<string> BuildMajorCrimeReport(bool option)
+        {
+            List<string> result = new List<string>();
+
+            string temp = string.Empty;
+
+            if (option == true)
+            {
+                result.Add("Great choice! Lets take a look at the result: ");
+                temp = GameManager.Instance.majorCrime.CrimeTiers[currentMajorCrimeTier].OptionOneText;
+            }
+            else
+            {
+                result.Add("I like your style! Here's how it turned out: ");
+                temp = GameManager.Instance.majorCrime.CrimeTiers[currentMajorCrimeTier].OptionTwoText;
+            }
+
+            result.Add(temp);
+
+            return result;
         }
 
         #endregion
