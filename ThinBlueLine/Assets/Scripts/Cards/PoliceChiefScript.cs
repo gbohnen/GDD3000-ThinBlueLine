@@ -162,7 +162,7 @@ namespace Assets.Scripts
                     else if (neighborhood.Value.Chaos >= neighborhood.Value.MafiaPresence && neighborhood.Value.Chaos >= neighborhood.Value.Corruption)
                         stat = "Chaos";
 
-                    temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", stat);
+                    temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
                 }
                 else
                 {
