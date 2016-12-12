@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
@@ -109,6 +110,10 @@ namespace Assets.Scripts
 			catch (NullReferenceException)
 			{
 				Debug.Log("Method not found: " + commands[0]);
+			}
+
+			if (i >= 4) {
+				SceneManager.LoadScene(Constants.GAME_OVER_SCENE);
 			}
 
 			UIManager.instance.UpdateUI();
