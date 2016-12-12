@@ -64,7 +64,7 @@ namespace Assets.Scripts
         {
             dialogueOptions = new Dictionary<CurrentMood, List<string>>();
 
-            //dialogueOptions = LoadGameData.LoadChiefLines();
+            dialogueOptions = LoadGameData.LoadChiefAdvice();
         }
 
         /// <summary>
@@ -131,8 +131,11 @@ namespace Assets.Scripts
 
         public List<string> BuildChiefReport()
         {
+            CalculateMood();
+
             List<string> dialogue = new List<string>();
 
+            dialogue.Add("Ongoing effects triggered...");
             
             // for each neighborhood
             foreach (KeyValuePair<Neighborhood, NeighborhoodData> neighborhood in GameLibrary.instance.Neighborhoods)
@@ -159,7 +162,7 @@ namespace Assets.Scripts
                     else if (neighborhood.Value.Chaos >= neighborhood.Value.MafiaPresence && neighborhood.Value.Chaos >= neighborhood.Value.Corruption)
                         stat = "Chaos";
 
-                    temp = dialogueOptions[Mood][index].Replace("@", stat);
+                    temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", stat);
                 }
                 else
                 {

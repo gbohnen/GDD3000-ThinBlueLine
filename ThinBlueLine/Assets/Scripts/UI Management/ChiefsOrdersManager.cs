@@ -14,7 +14,7 @@ public class ChiefsOrdersManager : MonoBehaviour {
         foreach (string str in dialogue)
         {
             text += str;
-            text += "\\n";
+            text += "\n\n";
         }
 
         body.text = text;

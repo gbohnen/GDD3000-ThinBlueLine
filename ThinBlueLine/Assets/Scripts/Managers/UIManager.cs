@@ -237,4 +237,11 @@ public class UIManager : MonoBehaviour {
                 break;
         }
     }
+
+    public void TriggerChiefsOrder(List<string> list)
+    {
+        chiefsOrdersWindow.SetActive(true);
+        chiefsOrdersWindow.transform.SetAsLastSibling();
+        chiefsOrdersManager.Load(list);
+    }
 }
