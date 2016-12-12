@@ -15,8 +15,8 @@ namespace Assets.Scripts
         public string OptionTwoText;
         public string OptionTwoResult;
         public Vector3 OptionTwoCosts;
-
     }
+
     /// <summary>
     /// Script which handles the major crime
     /// </summary>
@@ -27,6 +27,7 @@ namespace Assets.Scripts
         string crimeName;
         string mobBoss;
         List<MajorCrimeTier> tiers;
+        public int currentTier;
 
         #endregion
 
@@ -35,6 +36,12 @@ namespace Assets.Scripts
         public List<MajorCrimeTier> CrimeTiers
         {
             get { return tiers; }
+        }
+
+        public int CurrentTier
+        {
+            get { return currentTier; }
+            set { currentTier = value; }
         }
 
         public string Name
