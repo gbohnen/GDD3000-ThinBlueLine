@@ -30,6 +30,9 @@ namespace Assets.Scripts
         CurrentMood mood = CurrentMood.Happy;
         Dictionary<CurrentMood, List<string>> dialogueOptions;
 
+        // stats array
+        int[,] stats = new int[3, 6];
+
         #endregion
 
         #region Properties
@@ -51,6 +54,8 @@ namespace Assets.Scripts
         {
             dialogueOptions = new Dictionary<CurrentMood, List<string>>();
             dialogueOptions = LoadGameData.LoadChiefAdvice();
+
+            SetStats();
         }
 
         /// <summary>
@@ -58,7 +63,6 @@ namespace Assets.Scripts
         /// </summary>
         public void CalculateMood()
         {
-            
             // ANGRY
             if (StatTracker.DrawnSituations > 2 * (StatTracker.ResolvedSituations + 2))
             { angry++; }
@@ -149,17 +153,84 @@ namespace Assets.Scripts
                     else if (neighborhood.Value.Chaos >= neighborhood.Value.MafiaPresence && neighborhood.Value.Chaos >= neighborhood.Value.Corruption)
                         stat = "Chaos";
 
-                    temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
+                    // corruption
+                    if (neighborhood.Value.Corruption - stats[1, (int)neighborhood.Key] > 5)
+                    {
+                        temp = neighborhood.Key.ToString() + ": " + dialogueOptions[CurrentMood.Drastic][0].Replace("@", "<b>" + stat + "</b>").Replace("%", "<b>" + neighborhood.Key + "</b>");
+                    }
+                    else if (neighborhood.Value.Corruption - stats[1, (int)neighborhood.Key] < 5)
+                    {
+                        temp = neighborhood.Key.ToString() + ": " + dialogueOptions[CurrentMood.Drastic][1].Replace("@", "<b>" + stat + "</b>").Replace("%", "<b>" + neighborhood.Key + "</b>");
+                    }
+                    // chaos
+                    if (neighborhood.Value.Chaos - stats[1, (int)neighborhood.Key] > 5)
+                    {
+                        temp = neighborhood.Key.ToString() + ": " + dialogueOptions[CurrentMood.Drastic][0].Replace("@", "<b>" + stat + "</b>").Replace("%", "<b>" + neighborhood.Key + "</b>");
+                    }
+                    else if (neighborhood.Value.Chaos - stats[1, (int)neighborhood.Key] < 5)
+                    {
+                        temp = neighborhood.Key.ToString() + ": " + dialogueOptions[CurrentMood.Drastic][1].Replace("@", "<b>" + stat + "</b>").Replace("%", "<b>" + neighborhood.Key + "</b>");
+                    }
+                    // mafia presence
+                    if (neighborhood.Value.MafiaPresence - stats[1, (int)neighborhood.Key] > 5)
+                    {
+                        temp = neighborhood.Key.ToString() + ": " + dialogueOptions[CurrentMood.Drastic][0].Replace("@", "<b>" + stat + "</b>").Replace("%", "<b>" + neighborhood.Key + "</b>");
+                    }
+                    else if (neighborhood.Value.MafiaPresence - stats[1, (int)neighborhood.Key] < 5)
+                    {
+                        temp = neighborhood.Key.ToString() + ": " + dialogueOptions[CurrentMood.Drastic][1].Replace("@", "<b>" + stat + "</b>").Replace("%", "<b>" + neighborhood.Key + "</b>");
+                    }
+                    // else
+                    else
+                    {
+                        temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
+                    }
                 }
                 else
-                {
-
-                }
+                { }
 
                 dialogue.Add(temp);
             }
 
+            SetStats();
+
             return dialogue;
+        }
+
+        /// <summary>
+        /// Sets the stats
+        /// </summary>
+        public void SetStats()
+        {
+            // stony gate
+            stats[0, 0] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate].Corruption;
+            stats[1, 0] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate].Chaos;
+            stats[2, 0] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.StonyGate].MafiaPresence;
+
+            // suburbia
+            stats[0, 1] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Suburbia].Corruption;
+            stats[1, 1] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Suburbia].Chaos;
+            stats[2, 1] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Suburbia].MafiaPresence;
+
+            // downtown
+            stats[0, 2] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Downtown].Corruption;
+            stats[1, 2] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Downtown].Chaos;
+            stats[2, 2] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Downtown].MafiaPresence;
+
+            // boxes
+            stats[0, 3] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes].Corruption;
+            stats[1, 3] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes].Chaos;
+            stats[2, 3] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.TheBoxes].MafiaPresence;
+
+            // portside
+            stats[0, 4] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Portside].Corruption;
+            stats[1, 4] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Portside].Chaos;
+            stats[2, 4] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Portside].MafiaPresence;
+
+            // overall
+            stats[0, 5] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption;
+            stats[1, 5] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos;
+            stats[2, 5] = (int)GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence;
         }
 
         public List<string> BuildMajorCrimeReport(bool option)
