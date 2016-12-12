@@ -19,29 +19,29 @@ namespace Assets.Scripts
         static int nbrLowerCrime = 0;
         static int nbrChangeNeigh = 0;
 
-        static int player1SituationsDrawn;
-        static int player1SituationsClosed;
-        static int player1CrimeLowered;
-        static int player1ChangeNeighborhood;
-        static int player1StatsSpentOnMajorCrime;
+        public static int player1SituationsDrawn;
+        public static int player1SituationsClosed;
+        public static int player1CrimeLowered;
+        public static int player1ChangeNeighborhood;
+        public static int player1StatsSpentOnMajorCrime;
 
-        static int player2SituationsDrawn;
-        static int player2SituationsClosed;
-        static int player2CrimeLowered;
-        static int player2ChangeNeighborhood;
-        static int player2StatsSpentOnMajorCrime;
+        public static int player2SituationsDrawn;
+        public static int player2SituationsClosed;
+        public static int player2CrimeLowered;
+        public static int player2ChangeNeighborhood;
+        public static int player2StatsSpentOnMajorCrime;
 
-        static int player3SituationsDrawn;
-        static int player3SituationsClosed;
-        static int player3CrimeLowered;
-        static int player3ChangeNeighborhood;
-        static int player3StatsSpentOnMajorCrime;
+        public static int player3SituationsDrawn;
+        public static int player3SituationsClosed;
+        public static int player3CrimeLowered;
+        public static int player3ChangeNeighborhood;
+        public static int player3StatsSpentOnMajorCrime;
 
-        static int player4SituationsDrawn;
-        static int player4SituationsClosed;
-        static int player4CrimeLowered;
-        static int player4ChangeNeighborhood;
-        static int player4StatsSpentOnMajorCrime;
+        public static int player4SituationsDrawn;
+        public static int player4SituationsClosed;
+        public static int player4CrimeLowered;
+        public static int player4ChangeNeighborhood;
+        public static int player4StatsSpentOnMajorCrime;
         #endregion
 
         #region Properties

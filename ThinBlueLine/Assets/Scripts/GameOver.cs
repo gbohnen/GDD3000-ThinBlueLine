@@ -138,25 +138,37 @@ namespace Assets.Scripts
         /// </summary>
         public void SetPlayerInfo()
         {
-            // player W
-            playerWSmartsAmt.text = GameLibrary.instance.Players[Players.Player1].Smarts.ToString();
-            playerWMoxieAmt.text = GameLibrary.instance.Players[Players.Player1].Moxie.ToString();
-            playerWMuscleAmt.text = GameLibrary.instance.Players[Players.Player1].Muscle.ToString();
+            // player 1
+            player1Name.text = GameLibrary.instance.Players[Players.Player1].Name;
+            player1majorcrimes.text = StatTracker.player1StatsSpentOnMajorCrime.ToString();
+            player1sitdrawn.text = StatTracker.player1SituationsDrawn.ToString();
+            player1sitresolved.text = StatTracker.player1SituationsClosed.ToString();
+            player1crimelowered.text = StatTracker.player1CrimeLowered.ToString();
+            player1neighborhoodchanges.text = StatTracker.player1ChangeNeighborhood.ToString();
 
-            // player X
-            playerXSmartsAmt.text = GameLibrary.instance.Players[Players.Player2].Smarts.ToString();
-            playerXMoxieAmt.text = GameLibrary.instance.Players[Players.Player2].Moxie.ToString();
-            playerXMuscleAmt.text = GameLibrary.instance.Players[Players.Player2].Muscle.ToString();
+            // player 2
+            player2Name.text = GameLibrary.instance.Players[Players.Player2].Name;
+            player2majorcrimes.text = StatTracker.player2StatsSpentOnMajorCrime.ToString();
+            player2sitdrawn.text = StatTracker.player2SituationsDrawn.ToString();
+            player2sitresolved.text = StatTracker.player2SituationsClosed.ToString();
+            player2crimelowered.text = StatTracker.player2CrimeLowered.ToString();
+            player2neighborhoodchanges.text = StatTracker.player2ChangeNeighborhood.ToString();
 
-            // player Y
-            playerYSmartsAmt.text = GameLibrary.instance.Players[Players.Player3].Smarts.ToString();
-            playerYMoxieAmt.text = GameLibrary.instance.Players[Players.Player3].Moxie.ToString();
-            playerYMuscleAmt.text = GameLibrary.instance.Players[Players.Player3].Muscle.ToString();
+            // player 3
+            player3Name.text = GameLibrary.instance.Players[Players.Player3].Name;
+            player3majorcrimes.text = StatTracker.player3StatsSpentOnMajorCrime.ToString();
+            player3sitdrawn.text = StatTracker.player3SituationsDrawn.ToString();
+            player3sitresolved.text = StatTracker.player3SituationsClosed.ToString();
+            player3crimelowered.text = StatTracker.player3CrimeLowered.ToString();
+            player3neighborhoodchanges.text = StatTracker.player3ChangeNeighborhood.ToString();
 
-            // player Z
-            playerZSmartsAmt.text = GameLibrary.instance.Players[Players.Player4].Smarts.ToString();
-            playerZMoxieAmt.text = GameLibrary.instance.Players[Players.Player4].Moxie.ToString();
-            playerZMuscleAmt.text = GameLibrary.instance.Players[Players.Player4].Muscle.ToString();
+            // player 4
+            player4Name.text = GameLibrary.instance.Players[Players.Player4].Name;
+            player4majorcrimes.text = StatTracker.player4StatsSpentOnMajorCrime.ToString();
+            player4sitdrawn.text = StatTracker.player4SituationsDrawn.ToString();
+            player4sitresolved.text = StatTracker.player4SituationsClosed.ToString();
+            player4crimelowered.text = StatTracker.player4CrimeLowered.ToString();
+            player4neighborhoodchanges.text = StatTracker.player4ChangeNeighborhood.ToString();
         }
 
         /// <summary>
