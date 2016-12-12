@@ -10,9 +10,12 @@ namespace Assets.Scripts
         public string CrimeEffectText;
         public string CrimeEffectMethod;
         public string OptionOneText;
+        public string OptionOneResult;
         public Vector3 OptionOneCosts;
         public string OptionTwoText;
+        public string OptionTwoResult;
         public Vector3 OptionTwoCosts;
+
     }
     /// <summary>
     /// Script which handles the major crime

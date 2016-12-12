@@ -264,9 +264,11 @@ public class LoadGameData
                             case "tierstory":       tier.TierDescription = childNode.InnerText; break;
                             case "crimeeffect":     tier.CrimeEffectText = childNode.InnerText; break;
                             case "choiceone":       tier.OptionOneText = childNode.InnerText; break;
-                            case "choiceonestats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
+                            case "choiceonestats":  tier.OptionOneCosts = ParseStats(childNode.InnerText); break;
+                            case "choiceoneresult": tier.OptionOneResult = childNode.InnerText; break;
                             case "choicetwo":       tier.OptionTwoText = childNode.InnerText; break;
-                            case "choicetwostats":  tier.OptionOneCosts = ParseStats(childNode.InnerText); break;
+                            case "choicetwostats":  tier.OptionTwoCosts = ParseStats(childNode.InnerText); break;
+                            case "choicetworesult": tier.OptionTwoResult = childNode.InnerText; break;
                         }
                     }
                     majorCrime.CrimeTiers.Add(tier);
