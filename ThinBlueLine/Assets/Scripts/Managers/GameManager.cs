@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     //// store the mob boss & police chief
     //MobBossScript mobBoss;
-    //PoliceChiefScript policeChief;
+    PoliceChiefScript policeChief;
 
     // first action flag
     bool firstAction;
@@ -133,6 +133,9 @@ public class GameManager : MonoBehaviour
 
         // loads the major crimes in
         majorCrime = LoadGameData.LoadMajorCrimes();
+
+        // set up police chief
+        policeChief = new PoliceChiefScript();
 
         // clear the first action
         firstAction = false;
@@ -294,6 +297,11 @@ public class GameManager : MonoBehaviour
             if (sitch.Value != null)
             {
                 sitch.Value.GetComponent<SituationButton>().situation.TriggerOngoing();
+
+                foreach (string str in policeChief.BuildChiefReport())
+                {
+                    Debug.Log(str);
+                }
             }
         }
     }

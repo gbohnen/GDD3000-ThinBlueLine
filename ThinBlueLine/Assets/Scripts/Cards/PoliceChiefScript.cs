@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts
+﻿using System.Collections.Generic;
+
+namespace Assets.Scripts
 {
     /// <summary>
     /// An enumeration for the different moods of the police chief
@@ -39,6 +41,8 @@
 
         CurrentMood mood = CurrentMood.Happy;
 
+        Dictionary<CurrentMood, List<string>> dialogueOptions;
+
         #endregion
 
         #region Properties
@@ -54,47 +58,14 @@
 
         #endregion
 
-        #region Constructor
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public PoliceChiefScript() : base()
-        { }
-
-        #endregion
-
         #region Public Methods
 
-        /// <summary>
-        /// Does nothing, play continues
-        /// </summary>
-        public void DoNothing()
-        { }
+        public PoliceChiefScript()
+        {
+            dialogueOptions = new Dictionary<CurrentMood, List<string>>();
 
-        /// <summary>
-        /// Reveals a situation to a random neighborhood
-        /// </summary>
-        public void RevealSituation()
-        { }
-
-        /// <summary>
-        /// Increases random player(s) reputation within a random neighborhood
-        /// </summary>
-        public void GrantComm()
-        { }
-
-        /// <summary>
-        /// Increases each players stats between specified amount (1 and 3)
-        /// </summary>
-        public void RewardInves()
-        { }
-
-        /// <summary>
-        /// Investigates a random player, forcing that player to only take 1 Action
-        /// </summary>
-        public void IntAffairs()
-        { }
+            //dialogueOptions = LoadGameData.LoadChiefLines();
+        }
 
         /// <summary>
         /// Calculates the mood of the police chief
@@ -109,7 +80,7 @@
 
             // SUSPISCIOUS
             if (timesChangedNeigh > situationsResolved + situationsDrawn + timesLoweredCrime)
-            { suspicious++;}
+            { suspicious++; }
             if (timesChangedNeigh < situationsResolved + situationsDrawn + timesLoweredCrime)
             { suspicious--; }
 
@@ -157,7 +128,50 @@
                 Mood = CurrentMood.Happy;
             }
         }
-        
+
+        public List<string> BuildChiefReport()
+        {
+            List<string> dialogue = new List<string>();
+
+            
+            // for each neighborhood
+            foreach (KeyValuePair<Neighborhood, NeighborhoodData> neighborhood in GameLibrary.instance.Neighborhoods)
+            {
+                string temp = "";
+
+                if (neighborhood.Key != Neighborhood.Overall)
+                {
+                    // choose line
+                    int index = 0;
+                    if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 10)
+                        index = 2;
+                    else if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 5)
+                        index = 1;
+                    else
+                        index = 0;
+
+                    // choose stat
+                    string stat = "";
+                    if (neighborhood.Value.Corruption >= neighborhood.Value.Chaos && neighborhood.Value.Corruption >= neighborhood.Value.MafiaPresence)
+                        stat = "Corruption";
+                    else if (neighborhood.Value.MafiaPresence >= neighborhood.Value.Chaos && neighborhood.Value.MafiaPresence >= neighborhood.Value.Corruption)
+                        stat = "Mafia Presence";
+                    else if (neighborhood.Value.Chaos >= neighborhood.Value.MafiaPresence && neighborhood.Value.Chaos >= neighborhood.Value.Corruption)
+                        stat = "Chaos";
+
+                    temp = dialogueOptions[Mood][index].Replace("@", stat);
+                }
+                else
+                {
+
+                }
+
+                dialogue.Add(temp);
+            }
+
+            return dialogue;
+        }
+
         #endregion
     }
 }
