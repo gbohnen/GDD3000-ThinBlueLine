@@ -253,6 +253,8 @@ public class GameManager : MonoBehaviour
     {
 		if (!IsInvoking ()) 
 		{
+
+            canvasBlock.blocksRaycasts = false;
             // set next player
             switch (currentPlayer)
             {
@@ -275,7 +277,6 @@ public class GameManager : MonoBehaviour
 
             // wipe player actions
 			UIManager.instance.WipeActions ();
-            canvasBlock.blocksRaycasts = false;
         }
     }
 
@@ -290,13 +291,9 @@ public class GameManager : MonoBehaviour
     {
         foreach (KeyValuePair<string, GameObject> sitch in CrimeSitManager.ActiveSituations)
         {
-            try
+            if (sitch.Value != null)
             {
                 sitch.Value.GetComponent<SituationButton>().situation.TriggerOngoing();
-            }
-            catch (NullReferenceException e)
-            {
-                Debug.Log(sitch.Key);
             }
         }
     }
