@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour
         {
             UIManager.instance.PushPlayerAction(action);
             canvasBlock.blocksRaycasts = true;
-            Invoke("ResetTurn", 1.5f);
+            Invoke("ResetTurn", .5f);
         }
     }
 
@@ -304,6 +304,8 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        UIManager.instance.TriggerChiefsOrder(policeChief.BuildChiefReport());
     }
 
     #endregion

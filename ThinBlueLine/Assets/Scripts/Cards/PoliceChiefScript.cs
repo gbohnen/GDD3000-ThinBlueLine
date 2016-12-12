@@ -5,7 +5,7 @@ namespace Assets.Scripts
     /// <summary>
     /// An enumeration for the different moods of the police chief
     /// </summary>
-    public enum CurrentMood { Angry, Happy, Worried, Suspicious }
+    public enum CurrentMood { Angry, Happy, Worried, Suspicious, Drastic }
 
     /// <summary>
     /// Script which handles the police chief
@@ -29,7 +29,6 @@ namespace Assets.Scripts
         int currentMajorCrimeTier = 0;
         int overallStatLevel = 0;
         int overallCrimeLevel = 0;
-        int openSituations = 0;
 
         // mood weights
         float worriedWeight = 0.3f;
@@ -64,7 +63,7 @@ namespace Assets.Scripts
         {
             dialogueOptions = new Dictionary<CurrentMood, List<string>>();
 
-            //dialogueOptions = LoadGameData.LoadChiefLines();
+            dialogueOptions = LoadGameData.LoadChiefAdvice();
         }
 
         /// <summary>
@@ -85,9 +84,9 @@ namespace Assets.Scripts
             { suspicious--; }
 
             // HAPPY
-            if (overallStatLevel < 7 && overallCrimeLevel < 7 && openSituations < 7)
+            if (overallStatLevel < 7 && overallCrimeLevel < 7 && unresolvedSituations < 7)
             { happy++; }
-            if (overallStatLevel > 7 && overallCrimeLevel > 7 && openSituations > 7)
+            if (overallStatLevel > 7 && overallCrimeLevel > 7 && unresolvedSituations > 7)
             { happy--; }
 
             // WORRIED
@@ -131,8 +130,11 @@ namespace Assets.Scripts
 
         public List<string> BuildChiefReport()
         {
+            CalculateMood();
+
             List<string> dialogue = new List<string>();
 
+            dialogue.Add("Ongoing effects triggered...");
             
             // for each neighborhood
             foreach (KeyValuePair<Neighborhood, NeighborhoodData> neighborhood in GameLibrary.instance.Neighborhoods)
@@ -143,9 +145,9 @@ namespace Assets.Scripts
                 {
                     // choose line
                     int index = 0;
-                    if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 10)
+                    if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 9)
                         index = 2;
-                    else if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 5)
+                    else if (neighborhood.Value.Chaos + neighborhood.Value.Corruption + neighborhood.Value.MafiaPresence > 4)
                         index = 1;
                     else
                         index = 0;
@@ -159,7 +161,7 @@ namespace Assets.Scripts
                     else if (neighborhood.Value.Chaos >= neighborhood.Value.MafiaPresence && neighborhood.Value.Chaos >= neighborhood.Value.Corruption)
                         stat = "Chaos";
 
-                    temp = dialogueOptions[Mood][index].Replace("@", stat);
+                    temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
                 }
                 else
                 {

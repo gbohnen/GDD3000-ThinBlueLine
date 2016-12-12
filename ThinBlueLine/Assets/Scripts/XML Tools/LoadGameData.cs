@@ -312,6 +312,67 @@ public class LoadGameData
         return tutorial;
     }
 
+    /// <summary>
+    /// Loads in the chiefs advice
+    /// </summary>
+    /// <returns>the dialogue</returns>
+    public static Dictionary<CurrentMood, List<string>> LoadChiefAdvice()
+    {
+        Dictionary<CurrentMood, List<string>> dialogueLines = new Dictionary<CurrentMood, List<string>>();                                        // list of dialogue lines
+
+        // instantiate
+        dialogueLines[CurrentMood.Angry] = new List<string>();
+        dialogueLines[CurrentMood.Happy] = new List<string>();
+        dialogueLines[CurrentMood.Suspicious] = new List<string>();
+        dialogueLines[CurrentMood.Worried] = new List<string>();
+        dialogueLines[CurrentMood.Drastic] = new List<string>();
+
+        TextAsset chiefFile = (TextAsset)Resources.Load(Constants.CHIEF_DIALOGUE_FILE_NAME);
+
+        // instantiate necessary components
+        XmlDocument chiefDoc = new XmlDocument();                                                                                                 // blank xml doc
+        chiefDoc.LoadXml(chiefFile.text);
+
+        // mood lists
+        XmlNodeList drasticList = chiefDoc.GetElementsByTagName("drasticchange");                                                                   // get all tags labeled tutorial
+        XmlNodeList happyList = chiefDoc.GetElementsByTagName("happy");                                                                           // get all tags labeled tutorial
+        XmlNodeList angryList = chiefDoc.GetElementsByTagName("angry");                                                                           // get all tags labeled tutorial
+        XmlNodeList worriedList = chiefDoc.GetElementsByTagName("worried");                                                                         // get all tags labeled tutorial
+        XmlNodeList suspiciousList = chiefDoc.GetElementsByTagName("suspicious");                                                                      // get all tags labeled tutorial
+
+        // drastic change
+        foreach (XmlNode childNode in drasticList[0].ChildNodes)
+        {
+            dialogueLines[CurrentMood.Drastic].Add(childNode.InnerText);
+        }
+
+        // happy
+        foreach (XmlNode childNodes in happyList[0])
+        {
+            dialogueLines[CurrentMood.Happy].Add(childNodes.InnerText);
+        }
+
+        // angry
+        foreach (XmlNode childNodes in angryList[0])
+        {
+            dialogueLines[CurrentMood.Angry].Add(childNodes.InnerText);
+        }
+
+        // worried
+        foreach (XmlNode childNodes in worriedList[0])
+        {
+            dialogueLines[CurrentMood.Worried].Add(childNodes.InnerText);
+        }
+
+        // suspicious
+        foreach (XmlNode childNodes in suspiciousList[0])
+        {
+            dialogueLines[CurrentMood.Suspicious].Add(childNodes.InnerText);
+        }
+
+        return dialogueLines;
+    }
+
     public static Vector3 ParseStats(string str)
     {
         string[] stats = str.Split(new char[] { ':' });
