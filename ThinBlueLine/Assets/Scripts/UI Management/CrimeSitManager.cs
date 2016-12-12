@@ -317,7 +317,8 @@ namespace Assets.Scripts
                 && GameManager.Instance.CurrentCrimeStats.y >= tierObjectList[i].GetComponent<TierObject>().data.OptionOneCosts.y
                 && GameManager.Instance.CurrentCrimeStats.z >= tierObjectList[i].GetComponent<TierObject>().data.OptionOneCosts.z)
             {
-                Debug.Log("Option One Chosen");
+				Debug.Log ("Option One");
+				GameManager.Instance.ResolveTier (false);
             }
 
             // choice two resolved
@@ -325,7 +326,8 @@ namespace Assets.Scripts
                 && GameManager.Instance.CurrentCrimeStats.y >= tierObjectList[i].GetComponent<TierObject>().data.OptionTwoCosts.y
                 && GameManager.Instance.CurrentCrimeStats.z >= tierObjectList[i].GetComponent<TierObject>().data.OptionTwoCosts.z)
             {
-                Debug.Log("Option Two Chosen");
+				GameManager.Instance.ResolveTier (true);
+				Debug.Log ("Option Two");
             }
         }
 

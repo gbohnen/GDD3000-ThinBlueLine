@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -169,20 +171,18 @@ namespace Assets.Scripts
         {
             List<string> result = new List<string>();
 
-            string temp = string.Empty;
-
-            if (option == true)
+            if (!option)
             {
+				result.Add(GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionOneText.Substring(0, GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionOneText.IndexOf(':')));
                 result.Add("Great choice! Lets take a look at the result: ");
-                temp = GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.majorCrime.CurrentTier].OptionOneResult;
+				result.Add(GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionOneResult);
             }
             else
-            {
+			{
+				result.Add(GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionTwoText.Substring(0, GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionTwoText.IndexOf(':')));
                 result.Add("I like your style! Here's how it turned out: ");
-                temp = GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.majorCrime.CurrentTier].OptionTwoResult;
+				result.Add(GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionTwoResult);
             }
-
-            result.Add(temp);
 
             return result;
         }

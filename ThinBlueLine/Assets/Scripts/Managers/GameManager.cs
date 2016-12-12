@@ -289,6 +289,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+	public void ResolveTier (bool option)
+	{
+		UIManager.instance.TriggerChiefsOrder(policeChief.BuildMajorCrimeReport (option));
+
+		majorCrime.TriggerTierEffect(CurrentCrimeTier, option);
+
+		CurrentCrimeStats = new Vector3 (0, 0, 0);
+		CurrentCrimeTier++;
+
+
+		UIManager.instance.UpdateUI ();
+
+	}
+
+
     /// <summary>
     /// Logs the given string
     /// </summary>

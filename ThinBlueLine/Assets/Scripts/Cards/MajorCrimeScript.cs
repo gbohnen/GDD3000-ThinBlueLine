@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace Assets.Scripts
 {
@@ -78,9 +81,37 @@ namespace Assets.Scripts
         /// <summary>
         /// Triggers a negative outcome
         /// </summary>
-        public void TriggerTierEffect(int i)
+		public void TriggerTierEffect(int i, bool option)
         {
+			string[] commands;
 
+			if (!option) {
+				commands = tiers[i].OptionOneMethod.Split (new char[] { ',' });
+			} else {
+				commands = tiers[i].OptionTwoMethod.Split (new char[] { ',' });
+			}
+
+			try
+			{
+				Debug.Log(commands[0]);
+
+				foreach (string str in commands) 
+				{
+					string[] command = str.Split (new char[] { ':' });
+					MethodInfo method = typeof(CardActions).GetMethod (command [0]);
+
+					if (command.Length > 1)
+						method.Invoke (this, new object[]{ Int32.Parse (command [1]) });
+					else 
+						method.Invoke (this, new object[]{});
+				}
+			}
+			catch (NullReferenceException)
+			{
+				Debug.Log("Method not found: " + commands[0]);
+			}
+
+			UIManager.instance.UpdateUI();
         }
 
         #endregion

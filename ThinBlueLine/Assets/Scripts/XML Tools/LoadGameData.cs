@@ -273,7 +273,6 @@ public class LoadGameData
                             case "choicetwomethod": tier.OptionTwoMethod = childNode.InnerText; break;
                         }
                     }
-                    tier.TierStatsSpent = new Vector3(0, 0, 0);
 
                     majorCrime.CrimeTiers.Add(tier);
                     break;

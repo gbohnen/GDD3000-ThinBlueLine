@@ -63,8 +63,8 @@ public class UIManager : MonoBehaviour {
         modalWindows.Add(changeNeighborhoodWindow);
         modalWindows.Add(useSpecialActionWindow);
         modalWindows.Add(lowerCrimeWindow);
-        modalWindows.Add(chiefsOrdersWindow);
-        modalWindows.Add(fightMajorCrimeWindow);
+		modalWindows.Add(fightMajorCrimeWindow);
+		modalWindows.Add(chiefsOrdersWindow);
     }
 
     public void UpdateUI()
@@ -190,8 +190,10 @@ public class UIManager : MonoBehaviour {
 
     public void ChangeMajorCrimeCommit(Vector3 change)
     {
+		CloseWindows();
         situationManager.ReduceCrime(GameManager.Instance.CurrentCrimeTier, change);
-        CloseWindows();
+		situationManager.UpdateMajorCrimeDisplay ();
+		situationManager.CloseDrawer ();
         UpdateUI();
     }
 
@@ -253,13 +255,6 @@ public class UIManager : MonoBehaviour {
     }
 
     public void TriggerChiefsOrder(List<string> list)
-    {
-        chiefsOrdersWindow.SetActive(true);
-        chiefsOrdersWindow.transform.SetAsLastSibling();
-        chiefsOrdersManager.Load(list);
-    }
-
-    public void TriggerMajorCrimeResult(List<string> list)
     {
         chiefsOrdersWindow.SetActive(true);
         chiefsOrdersWindow.transform.SetAsLastSibling();
