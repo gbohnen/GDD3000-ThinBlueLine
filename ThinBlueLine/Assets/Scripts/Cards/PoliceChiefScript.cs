@@ -29,7 +29,6 @@ namespace Assets.Scripts
         int currentMajorCrimeTier = 0;
         int overallStatLevel = 0;
         int overallCrimeLevel = 0;
-        int openSituations = 0;
 
         // mood weights
         float worriedWeight = 0.3f;
@@ -85,9 +84,9 @@ namespace Assets.Scripts
             { suspicious--; }
 
             // HAPPY
-            if (overallStatLevel < 7 && overallCrimeLevel < 7 && openSituations < 7)
+            if (overallStatLevel < 7 && overallCrimeLevel < 7 && unresolvedSituations < 7)
             { happy++; }
-            if (overallStatLevel > 7 && overallCrimeLevel > 7 && openSituations > 7)
+            if (overallStatLevel > 7 && overallCrimeLevel > 7 && unresolvedSituations > 7)
             { happy--; }
 
             // WORRIED
