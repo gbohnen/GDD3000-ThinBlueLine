@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Assets.Scripts;
 
 public class NeighborhoodManager : MonoBehaviour {
 
@@ -38,6 +39,7 @@ public class NeighborhoodManager : MonoBehaviour {
         {
             GameManager.Instance.CurrentPlayerObj.Neighborhood = curr;
             GameManager.Instance.LogAction("Neighborhood Changed");
+            StatTracker.TimesChangedNeighborhood++;
             animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", (int)curr + 1);
         }
     }
@@ -48,6 +50,7 @@ public class NeighborhoodManager : MonoBehaviour {
         {
             GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.StonyGate;
             GameManager.Instance.LogAction("Neighborhood Changed");
+            StatTracker.TimesChangedNeighborhood++;
             animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 1);
         }
     }
@@ -57,6 +60,7 @@ public class NeighborhoodManager : MonoBehaviour {
         {
             GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.Suburbia;
             GameManager.Instance.LogAction("Neighborhood Changed");
+            StatTracker.TimesChangedNeighborhood++;
             animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 2);
         }
     }
@@ -66,6 +70,7 @@ public class NeighborhoodManager : MonoBehaviour {
         {
             GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.Downtown;
             GameManager.Instance.LogAction("Neighborhood Changed");
+            StatTracker.TimesChangedNeighborhood++;
             animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 3);
         }
     }
@@ -75,6 +80,7 @@ public class NeighborhoodManager : MonoBehaviour {
         {
             GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.TheBoxes;
             GameManager.Instance.LogAction("Neighborhood Changed");
+            StatTracker.TimesChangedNeighborhood++;
             animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 4);
         }
     }
@@ -84,6 +90,7 @@ public class NeighborhoodManager : MonoBehaviour {
         {
             GameManager.Instance.CurrentPlayerObj.Neighborhood = Neighborhood.Portside;
             GameManager.Instance.LogAction("Neighborhood Changed");
+            StatTracker.TimesChangedNeighborhood++;
             animators[GameManager.Instance.CurrentPlayer].SetInteger("CurrNeigh", 5);
         }
     }

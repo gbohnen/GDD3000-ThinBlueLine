@@ -137,6 +137,7 @@ namespace Assets.Scripts.UI_Management
                 UIManager.instance.CloseWindows();
 
                 GameManager.Instance.LogAction("Lowered Neighborhood Crime");
+                StatTracker.TimesLoweredCrime++;
             }
         }
 
