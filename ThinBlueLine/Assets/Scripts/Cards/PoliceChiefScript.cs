@@ -154,8 +154,7 @@ namespace Assets.Scripts
                         stat = "Mafia Presence";
                     else if (neighborhood.Value.Chaos >= neighborhood.Value.MafiaPresence && neighborhood.Value.Chaos >= neighborhood.Value.Corruption)
                         stat = "Chaos";
-
-<<<<<<< HEAD
+                    
                     // corruption
                     if (neighborhood.Value.Corruption - stats[1, (int)neighborhood.Key] > 5)
                     {
@@ -188,12 +187,10 @@ namespace Assets.Scripts
                     {
                         temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
                     }
-=======
                     // if (drastic (>5) change in stat with greatest change, which should be calculated above)
                     // set temp to be drastic line 
                     // else
                     temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
->>>>>>> origin/master
                 }
                 else
                 { }

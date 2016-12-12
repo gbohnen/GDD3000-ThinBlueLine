@@ -96,6 +96,9 @@ public class FightMajorCrimeCard : MonoBehaviour
         if (SliderSum <= totalThreshold && SliderSum > 0)
         {
             UIManager.instance.ChangeMajorCrimeCommit(new Vector3(smartsSlider.value, moxieSlider.value, muscleSlider.value));
+            StatTracker.crimeMoxieSpent += (int)moxieSlider.value;
+            StatTracker.crimeSmartsSpent += (int)smartsSlider.value;
+            StatTracker.crimeStrengthSpent += (int)muscleSlider.value;
         }
     }
 }

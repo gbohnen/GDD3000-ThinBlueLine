@@ -105,10 +105,10 @@ namespace Assets.Scripts
         {
             majorCrimeName.text = GameManager.Instance.majorCrime.Name;
             majorCrimeDescr.text = GameManager.Instance.majorCrime.CrimeTiers[3].TierDescription;
-            majorCrimeTier.text = "Tier: 3";
-            smartsSpent.text = "000";
-            moxieSpent.text = "000";
-            muscleSpent.text = "000";
+            majorCrimeTier.text = "Tier 3";
+            smartsSpent.text = StatTracker.crimeSmartsSpent.ToString();
+            moxieSpent.text = StatTracker.crimeMoxieSpent.ToString();
+            muscleSpent.text = StatTracker.crimeStrengthSpent.ToString();
     }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Assets.Scripts
 
             // Great
             if (i <= 0)
-                status = "Perfick!";
+                status = "Almost Perfect!";
             // Good
             else if (i <= 3)
                 status = "Pretty Solid!";
