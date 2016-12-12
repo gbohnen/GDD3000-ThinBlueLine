@@ -124,6 +124,7 @@ public class ResolveSituationCard : MonoBehaviour {
             UIManager.instance.CloseWindows();
 
             GameManager.Instance.LogAction("Situation Resolved");
+            StatTracker.ResolvedSituations++;
         }
     }
 }
