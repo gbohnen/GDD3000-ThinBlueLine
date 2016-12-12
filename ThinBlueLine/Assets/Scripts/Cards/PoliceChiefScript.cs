@@ -20,16 +20,6 @@ namespace Assets.Scripts
         float worried;
         float suspicious;
 
-        // store mood stuff
-        int situationsDrawn = 0;
-        int situationsResolved = 0;
-        int timesLoweredCrime = 0;
-        int timesChangedNeigh = 0;
-        int unresolvedSituations = 0;
-        int currentMajorCrimeTier = 0;
-        int overallStatLevel = 0;
-        int overallCrimeLevel = 0;
-
         // mood weights
         float worriedWeight = 0.3f;
         float angryWeight = 0.5f;
@@ -37,9 +27,7 @@ namespace Assets.Scripts
         float happyWeight = 0.9f;
 
         int number = 0;
-
         CurrentMood mood = CurrentMood.Happy;
-
         Dictionary<CurrentMood, List<string>> dialogueOptions;
 
         #endregion
@@ -70,28 +58,29 @@ namespace Assets.Scripts
         /// </summary>
         public void CalculateMood()
         {
+            
             // ANGRY
-            if (situationsDrawn > 2 * (situationsResolved + 2))
+            if (StatTracker.DrawnSituations > 2 * (StatTracker.ResolvedSituations + 2))
             { angry++; }
-            if (situationsDrawn == situationsResolved)
+            if (StatTracker.DrawnSituations == StatTracker.ResolvedSituations)
             { angry--; }
 
             // SUSPISCIOUS
-            if (timesChangedNeigh > situationsResolved + situationsDrawn + timesLoweredCrime)
+            if (StatTracker.TimesChangedNeigh > StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
             { suspicious++; }
-            if (timesChangedNeigh < situationsResolved + situationsDrawn + timesLoweredCrime)
+            if (StatTracker.TimesChangedNeigh < StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
             { suspicious--; }
 
             // HAPPY
-            if (overallStatLevel < 7 && overallCrimeLevel < 7 && unresolvedSituations < 7)
+            if ( (GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence) < 7 && StatTracker.UnresolvedSituations < 7)
             { happy++; }
-            if (overallStatLevel > 7 && overallCrimeLevel > 7 && unresolvedSituations > 7)
+            if ((GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Chaos + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].Corruption + GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence) > 7 && StatTracker.UnresolvedSituations > 7)
             { happy--; }
 
             // WORRIED
-            if (unresolvedSituations > 10 && currentMajorCrimeTier > 3)
+            if (StatTracker.UnresolvedSituations > 10 && GameManager.Instance.majorCrime.CurrentTier > 3)
             { worried++; }
-            if (unresolvedSituations < 10 && currentMajorCrimeTier < 3)
+            if (StatTracker.UnresolvedSituations < 10 && GameManager.Instance.majorCrime.currentTier < 3)
             { worried--; }
 
             // WORRIED
