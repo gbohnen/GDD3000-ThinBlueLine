@@ -57,8 +57,6 @@ namespace Assets.Scripts.UI_Management
             mafiaPresText.text = GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence.ToString() + 
                                  Constants.ARROW + GameLibrary.instance.Neighborhoods[GameManager.Instance.CurrentPlayerObj.Neighborhood].MafiaPresence.ToString();
 
-            Debug.Log(GameManager.Instance.CurrentPlayerObj.Neighborhood);
-
             // resets the buttons
             ResetButton();
         }
@@ -137,7 +135,7 @@ namespace Assets.Scripts.UI_Management
                 UIManager.instance.CloseWindows();
 
                 GameManager.Instance.LogAction("Lowered Neighborhood Crime");
-                StatTracker.TimesLoweredCrime++;
+                StatTracker.TimesLoweredCrime(1);
             }
         }
 

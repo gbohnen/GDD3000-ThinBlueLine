@@ -82,7 +82,7 @@ namespace Assets.Scripts
 				}
 
 				GameManager.Instance.LogAction("Situation Drawn");
-                StatTracker.DrawnSituations++;
+                StatTracker.DrawnSituations(1);
 
 				situation.TriggerImmediate ();
 

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -64,15 +66,15 @@ namespace Assets.Scripts
         public void CalculateMood()
         {
             // ANGRY
-            if (StatTracker.DrawnSituations > 2 * (StatTracker.ResolvedSituations + 2))
+            if (StatTracker.DrawnSituations(0) > 2 * (StatTracker.ResolvedSituations + 2))
             { angry++; }
-            if (StatTracker.DrawnSituations == StatTracker.ResolvedSituations)
+            if (StatTracker.DrawnSituations(0) == StatTracker.ResolvedSituations)
             { angry--; }
 
             // SUSPISCIOUS
-            if (StatTracker.TimesChangedNeighborhood > StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
+            if (StatTracker.TimesChangedNeighborhood(0) > StatTracker.ResolvedSituations + StatTracker.DrawnSituations(0) + StatTracker.TimesLoweredCrime(0))
             { suspicious++; }
-            if (StatTracker.TimesChangedNeighborhood < StatTracker.ResolvedSituations + StatTracker.DrawnSituations + StatTracker.TimesLoweredCrime)
+            if (StatTracker.TimesChangedNeighborhood(0) < StatTracker.ResolvedSituations + StatTracker.DrawnSituations(0) + StatTracker.TimesLoweredCrime(0))
             { suspicious--; }
 
             // HAPPY
@@ -153,6 +155,7 @@ namespace Assets.Scripts
                     else if (neighborhood.Value.Chaos >= neighborhood.Value.MafiaPresence && neighborhood.Value.Chaos >= neighborhood.Value.Corruption)
                         stat = "Chaos";
 
+<<<<<<< HEAD
                     // corruption
                     if (neighborhood.Value.Corruption - stats[1, (int)neighborhood.Key] > 5)
                     {
@@ -185,6 +188,12 @@ namespace Assets.Scripts
                     {
                         temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
                     }
+=======
+                    // if (drastic (>5) change in stat with greatest change, which should be calculated above)
+                    // set temp to be drastic line 
+                    // else
+                    temp = neighborhood.Key.ToString() + ": " + dialogueOptions[Mood][index].Replace("@", "<b>" + stat + "</b>");
+>>>>>>> origin/master
                 }
                 else
                 { }
@@ -237,20 +246,18 @@ namespace Assets.Scripts
         {
             List<string> result = new List<string>();
 
-            string temp = string.Empty;
-
-            if (option == true)
+            if (!option)
             {
+				result.Add(GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionOneText.Substring(0, GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionOneText.IndexOf(':')));
                 result.Add("Great choice! Lets take a look at the result: ");
-                temp = GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.majorCrime.CurrentTier].OptionOneResult;
+				result.Add(GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionOneResult);
             }
             else
-            {
+			{
+				result.Add(GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionTwoText.Substring(0, GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionTwoText.IndexOf(':')));
                 result.Add("I like your style! Here's how it turned out: ");
-                temp = GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.majorCrime.CurrentTier].OptionTwoResult;
+				result.Add(GameManager.Instance.majorCrime.CrimeTiers[GameManager.Instance.CurrentCrimeTier].OptionTwoResult);
             }
-
-            result.Add(temp);
 
             return result;
         }

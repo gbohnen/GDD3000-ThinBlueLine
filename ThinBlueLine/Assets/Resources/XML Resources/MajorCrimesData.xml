@@ -4,271 +4,71 @@
   <!-- content of XML goes 'here'  -->
   <majorcrimes>
     <majorcrime>
-      <name>
-        Bank Heist
-      </name>
-      <mobboss>
-        Ricky Veers
-      </mobboss>
+      <name>Bank Heist</name>
+      <mobboss>Ricky Veers</mobboss>
       <tierone>
-        <tiername>
-          Bank Heist Tip-Off
-        </tiername>
-        <crimeeffect>
-          No crime effect.
-        </crimeeffect>
-        <crimeeffectmethod/>
-
-        <tieronestorydescription>
-          The air feels charged. At least that's what you and your fellow officers have been feeling for the past few months. You all had been able to place what had been causing this feeling, this foreboding sense of dread. It's only when a tip off of the street finally came in did it all come together. Ricky Veers, most know him in the department, a carreer criminal for some years now, his rise to power has been a blemish on the department for a good ammount of time. But it seems that Ricky is planning something to set himself up for life, a bank heist. Lucky for you and your own, you can finally use this to put him behind bars, at least if you catch him. Which shouldn't be a problem, you're all prepared this time... You just wish the rest of the city didn't feel like it was holding its breath...
-        </tieronestorydescription>
-        <tierstory>
-          The air feels charged. At least that's what you and your fellow officers have been feeling for the past few months. You all had been able to place what had been causing this feeling, this foreboding sense of dread. It's only when a tip off of the street finally came in did it all come together. Ricky Veers, most know him in the department, a carreer criminal for some years now, his rise to power has been a blemish on the department for a good ammount of time. But it seems that Ricky is planning something to set himself up for life, a bank heist. Lucky for you and your own, you can finally use this to put him behind bars, at least if you catch him. Which shouldn't be a problem, you're all prepared this time... You just wish the rest of the city didn't feel like it was holding its breath...
-
-        </tierstory>
-        <choiceone>
-          Amp up Security:Move to Tier Two and Chaos +4
-        </choiceone>
-        <chouceoneeffect>
-          ChangeOverallChaos:4
-        </chouceoneeffect>
-
-
-        <choiceonestorydescription>
-          Having decided to increase your manpower around the bank, you all feel more secure in apprehending Veers and his gang. The drawback is that there is now less men to go around partrolling the city, as well as worrying the people with an increase of force.
-        </choiceonestorydescription>
-        <choiceoneresult>
-          Having decided to increase your manpower around the bank, you all feel more secure in apprehending Veers and his gang. The drawback is that there is now less men to go around partrolling the city, as well as worrying the people with an increase of force.
-
-        </choiceoneresult>
-        <choiceonestats>
-          0:0:6
-        </choiceonestats>
-
-        <choiceonemethod>
-          ChangeCityChaos:4
-        </choiceonemethod>
-        <choicetwo>
-          Establish Surveillance:Move to Tier Two and Mafia Presence +4.
-        </choicetwo>
-        <choicetwoeffect/>
-
-
-        <choicetwostorydescription>
-          Taking a less blunt measure, you all decide to keep your eyes on the bank, ready to deploy at any time. However, with the increase of focus on the bank itself, you know Veers is going to use this opportunity to bolster his gang with fresh numbers.
-        </choicetwostorydescription>
-        <choicetworesult>
-          Taking a less blunt measure, you all decide to keep your eyes on the bank, ready to deploy at any time. However, with the increase of focus on the bank itself, you know Veers is going to use this opportunity to bolster his gang with fresh numbers.
-
-        </choicetworesult>
-        <choicetwostats>
-          3:3:0
-        </choicetwostats>
-
-        <choicetwomethod>
-          ChangeCityMafiaPresence:4
-        </choicetwomethod>
+        <tiername>Bank Heist Tip-Off</tiername>
+        <crimeeffect>No crime effect.</crimeeffect>
+        <tierstory>The air feels charged. At least that's what you and your fellow officers have been feeling for the past few months. You all had been able to place what had been causing this feeling, this foreboding sense of dread. It's only when a tip off of the street finally came in did it all come together. Ricky Veers, most know him in the department, a carreer criminal for some years now, his rise to power has been a blemish on the department for a good ammount of time. But it seems that Ricky is planning something to set himself up for life, a bank heist. Lucky for you and your own, you can finally use this to put him behind bars, at least if you catch him. Which shouldn't be a problem, you're all prepared this time... You just wish the rest of the city didn't feel like it was holding its breath...</tierstory>
+        <choiceone>Amp up Security:Move to Tier Two and Chaos +4</choiceone>
+        <choiceoneeffect>ChangeOverallChaos:4</choiceoneeffect>
+        <choiceoneresult>Having decided to increase your manpower around the bank, you all feel more secure in apprehending Veers and his gang. The drawback is that there is now less men to go around partrolling the city, as well as worrying the people with an increase of force.</choiceoneresult>
+        <choiceonestats>0:0:6</choiceonestats>
+        <choiceonemethod>ChangeCityChaos:4</choiceonemethod>
+        <choicetwo>Establish Surveillance:Move to Tier Two and Mafia Presence +4.</choicetwo>
+        <choicetworesult>Taking a less blunt measure, you all decide to keep your eyes on the bank, ready to deploy at any time. However, with the increase of focus on the bank itself, you know Veers is going to use this opportunity to bolster his gang with fresh numbers.</choicetworesult>
+        <choicetwostats>3:3:0</choicetwostats>
+        <choicetwomethod>ChangeCityMafiaPresence:4</choicetwomethod>
       </tierone>
       <tiertwo>
-        <tiername>
-          Get Some Info
-        </tiername>
-        <crimeeffect>
-          Chaos goes +1 every turn.
-        </crimeeffect>
-        <tierstory>
-          With your plans set in motion, and the city now simmering fromn your choices. The decision is made that instead of resting on your laurels, some background information may help turn the tide, the question is how do you wish to go about it?
-        </tierstory>
-
-
-        <crimeeffectmethod>
-          ChangeCityChaos:1
-        </crimeeffectmethod>
-
-        <tiertwostorydescription>
-          With your plans set in motion, and the city now simmering fromn your choices. The decision is made that instead of resting on your laurels, some background information may help turn the tide, the question is how do you wish to go about it?
-        </tiertwostorydescription>
-        <choiceone>
-          Shake Down Informants:Move to Tier Three and Police Corruption +4.
-        </choiceone>
-        <choiceoneresult>
-          You know you don't have the whole picture here, and you know that your contacts out on the streets are holding out on you. So you decide to participate in some... "persuasion". Sure, this isn't exactly legal... but no one's going to know that.
-        </choiceoneresult>
-
-
-        <choiceonestorydescription>
-          You know you don't have the whole picture here, and you know that your contacts out on the streets are holding out on you. So you decide to participate in some... "persuasion". Sure, this isn't exactly legal... but no one's going to know that.
-        </choiceonestorydescription>
-        <choiceonestats>
-          0:5:6
-        </choiceonestats>
-
-        <choiceonemethod>
-          ChangeCityPoliceCorruption:4
-        </choiceonemethod>
-        <choicetwo>
-          Piece Together Evidence:Move to Tier Three. +1 to all.
-        </choicetwo>
-        <choicetworesult>
-          You know that there's something you missed with the information you've got, you've just got to find it. You and your fellows spend some time combing over your present evidence, ignoring your duties for a bit, to try and focus at the matter at hand.
-        </choicetworesult>
-
-
-        <choicetwostorydescription>
-          You know that there's something you missed with the information you've got, you've just got to find it. You and your fellows spend some time combing over your present evidence, ignoring your duties for a bit, to try and focus at the matter at hand.
-        </choicetwostorydescription>
-        <choicetwostats>
-          7:4:0
-        </choicetwostats>
-
-        <choicetwomethod>
-          ChangeCityCrimes:1
-        </choicetwomethod>
+        <tiername>Get Some Info</tiername>
+        <crimeeffect>Chaos goes +1 every turn.</crimeeffect>
+        <tierstory>With your plans set in motion, and the city now simmering fromn your choices. The decision is made that instead of resting on your laurels, some background information may help turn the tide, the question is how do you wish to go about it?</tierstory>
+        <crimeeffectmethod>ChangeCityChaos:1</crimeeffectmethod>
+        <choiceone>Shake Down Informants:Move to Tier Three and Police Corruption +4.</choiceone>
+        <choiceoneresult>You know you don't have the whole picture here, and you know that your contacts out on the streets are holding out on you. So you decide to participate in some... "persuasion". Sure, this isn't exactly legal... but no one's going to know that.</choiceoneresult>
+        <choiceonestats>0:5:6</choiceonestats>
+        <choiceonemethod>ChangeCityPoliceCorruption:4</choiceonemethod>
+        <choicetwo>Piece Together Evidence:Move to Tier Three. +1 to all.</choicetwo>
+        <choicetworesult>You know that there's something you missed with the information you've got, you've just got to find it. You and your fellows spend some time combing over your present evidence, ignoring your duties for a bit, to try and focus at the matter at hand.</choicetworesult>
+        <choicetwostats>7:4:0</choicetwostats>
+        <choicetwomethod>ChangeCityCrimes:1</choicetwomethod>
       </tiertwo>
       <tierthree>
-        <tiername>
-          Heist in Progress!
-        </tiername>
-        <crimeeffect>
-          Heist countdown begins, 15 turns until it reaches zero, if it does, the players lose.
-          Adds 1 to a Random City Crime category every turn.
-        </crimeeffect>
-        <tierstory>
-          Veers finally did it. A report comes in early one morning and you all immediately rush to arrive on the scene, it seems your earlier plans have payed off, otherwise you know yu'd never be warned in time. As you make your way there, you all begin to work on a plan of action, for once you arrive.
-        </tierstory>
-
-
-        <crimeeffectmethod>
-          ChangeCityRandomCrime:1
-        </crimeeffectmethod>
-
-        <tierthreestorydescription>
-          Veers finally did it. A report comes in early one morning and you all immediately rush to arrive on the scene, it seems your earlier plans have payed off, otherwise you know yu'd never be warned in time. As you make your way there, you all begin to work on a plan of action, for once you arrive.
-        </tierthreestorydescription>
-        <choiceone>
-          Rush the bank!:Move to Tier Four. Chaos +4.
-        </choiceone>
-        <choiceoneresult>
-          Veers hasn't been able to establish cover for himself and his goons yet, so you and a few others rush in to exract some hostages and take out some of Veers's men. There are casualties on both sides, and a few civallians are hit in the crossfire, but overall you find that you're successful, taking out five of Veers's gang, and saving four civalians.
-        </choiceoneresult>
-
-
-        <choiceonestorydescription>
-          Veers hasn't been able to establish cover for himself and his goons yet, so you and a few others rush in to exract some hostages and take out some of Veers's men. There are casualties on both sides, and a few civallians are hit in the crossfire, but overall you find that you're successful, taking out five of Veers's gang, and saving four civalians.
-        </choiceonestorydescription>
-        <choiceonestats>
-          0:5:8
-        </choiceonestats>
-
-        <choiceonemethod>
-          ChangeCityChaos:4
-        </choiceonemethod>
-        <choicetwo>
-          Set up a perimeter!:Move to Tier Four. Mafia Presence +5.
-        </choicetwo>
-        <choicetworesult>
-          It's best not to push your luck, who knows how bad things will go if you rush right in there. Instead, all four of you direct the officers on scene to cordon the bank. Veers may have more time to get what he wants, sure, but it'll be hell to get anywhere with it.
-        </choicetworesult>
-
-
-        <choicetwostorydescription>
-          It's best not to push your luck, who knows how bad things will go if you rush right in there. Instead, all four of you direct the officers on scene to cordon the bank. Veers may have more time to get what he wants, sure, but it'll be hell to get anywhere with it.
-        </choicetwostorydescription>
-        <choicetwostats>
-          10:0:0
-        </choicetwostats>
-
-        <choicetwomethod>
-          ChangeCityMafiaPresence:5
-        </choicetwomethod>
+        <tiername>Heist in Progress!</tiername>
+        <crimeeffect>Adds 1 to a Random City Crime category every turn.</crimeeffect>
+        <tierstory>Veers finally did it. A report comes in early one morning and you all immediately rush to arrive on the scene, it seems your earlier plans have payed off, otherwise you know yu'd never be warned in time. As you make your way there, you all begin to work on a plan of action, for once you arrive.</tierstory>
+        <crimeeffectmethod>ChangeCityRandomCrime:1</crimeeffectmethod>
+        <choiceone>Rush the bank!:Move to Tier Four. Chaos +4.</choiceone>
+        <choiceoneresult>Veers hasn't been able to establish cover for himself and his goons yet, so you and a few others rush in to exract some hostages and take out some of Veers's men. There are casualties on both sides, and a few civallians are hit in the crossfire, but overall you find that you're successful, taking out five of Veers's gang, and saving four civalians.</choiceoneresult>
+        <choiceonestats>0:5:8</choiceonestats>
+        <choiceonemethod>ChangeCityChaos:4</choiceonemethod>
+        <choicetwo>Set up a perimeter!:Move to Tier Four. Mafia Presence +5.</choicetwo>
+        <choicetworesult>It's best not to push your luck, who knows how bad things will go if you rush right in there. Instead, all four of you direct the officers on scene to cordon the bank. Veers may have more time to get what he wants, sure, but it'll be hell to get anywhere with it.</choicetworesult>
+        <choicetwostats>10:0:0</choicetwostats>
+        <choicetwomethod>ChangeCityMafiaPresence:5</choicetwomethod>
       </tierthree>
       <tierfour>
-        <tiername>
-          Hostage Situation!
-        </tiername>
-        <crimeeffect>
-          Countdown gains 3 counts (if the countdown was at 4 it's now at 7) but continues down, and if it reaches 0 the players lose. +1 to all every turn.
-          Adds 1 to all City Crime Categories each turn
-        </crimeeffect>
-        <tierstory>
-          Veers knows he's in trouble, he's got no way out, so it comes to little to no surprise when he begins to threaten the lives of the civalians still inside. Time is of the essence here, and the longer you wait, the worse things'll get.
-        </tierstory>
-
-
-        <crimeeffectmethod>
-          ChangeCityCrimes:1
-        </crimeeffectmethod>
-
-        <tierfourstorydescription>
-          Veers knows he's in trouble, he's got no way out, so it comes to little to no surprise when he begins to threaten the lives of the civalians still inside. Time is of the essence here, and the longer you wait, the worse things'll get.
-        </tierfourstorydescription>
-        <choiceone>
-          Call in a negotiator:Move to Tier Five. Police Corruption +6.
-        </choiceone>
-        <choiceoneresult>
-          You can't risk those peoples' lives, as much as it leaves a bitter taste in your mouth, you call in a negotiator. Once they arrive on the scene, Veers demands of a car and safe passage are met... At least up to a certain point. But Ricky doesn't need to know that.
-        </choiceoneresult>
-
-
-        <choiceonestorydescription>
-          You can't risk those peoples' lives, as much as it leaves a bitter taste in your mouth, you call in a negotiator. Once they arrive on the scene, Veers demands of a car and safe passage are met... At least up to a certain point. But Ricky doesn't need to know that.
-        </choiceonestorydescription>
-        <choiceonestats>
-          7:5:0
-        </choiceonestats>
-
-        <choiceonemethod>
-          ChangeCityPoliceCorruption:6
-        </choiceonemethod>
-        <choicetwo>
-          Take the shot:Move to Tier Five. Chaos +6.
-        </choicetwo>
-        <choicetworesult>
-          You know you've got this, and there's no way you're going to let Veers squeeze his way out of this one. So you begin to open up the "negotiations," while getting your men into place. You wait for the right moment, then strike! pushing Veers and his crew back, as you secure all the hostages. It's too bad they're already making a get-away as you secure the bank. It's not like they'll get far though.
-        </choicetworesult>
-
-
-        <choicetwostorydescription>
-          You know you've got this, and there's no way you're going to let Veers squeeze his way out of this one. So you begin to open up the "negotiations," while getting your men into place. You wait for the right moment, then strike! pushing Veers and his crew back, as you secure all the hostages. It's too bad they're already making a get-away as you secure the bank. It's not like they'll get far though.
-        </choicetwostorydescription>
-        <choicetwostats>
-          0:9:4
-        </choicetwostats>
-
-        <choicetwomethod>
-          ChangeCityChaos:6
-        </choicetwomethod>
+        <tiername>Hostage Situation!</tiername>
+        <crimeeffect>Adds 1 to all City Crime Categories each turn.</crimeeffect>
+        <tierstory>Veers knows he's in trouble, he's got no way out, so it comes to little to no surprise when he begins to threaten the lives of the civalians still inside. Time is of the essence here, and the longer you wait, the worse things'll get.</tierstory>
+        <crimeeffectmethod>ChangeCityCrimes:1</crimeeffectmethod>
+        <choiceone>Call in a negotiator:Move to Tier Five. Police Corruption +6.</choiceone>
+        <choiceoneresult>You can't risk those peoples' lives, as much as it leaves a bitter taste in your mouth, you call in a negotiator. Once they arrive on the scene, Veers demands of a car and safe passage are met... At least up to a certain point. But Ricky doesn't need to know that.</choiceoneresult>
+        <choiceonestats>7:5:0</choiceonestats>
+        <choiceonemethod>ChangeCityPoliceCorruption:6</choiceonemethod>
+        <choicetwo>Take the shot:Move to Tier Five. Chaos +6.</choicetwo>
+        <choicetworesult>You know you've got this, and there's no way you're going to let Veers squeeze his way out of this one. So you begin to open up the "negotiations," while getting your men into place. You wait for the right moment, then strike! pushing Veers and his crew back, as you secure all the hostages. It's too bad they're already making a get-away as you secure the bank. It's not like they'll get far though.</choicetworesult>
+        <choicetwostats>0:9:4</choicetwostats>
+        <choicetwomethod>ChangeCityChaos:6</choicetwomethod>
       </tierfour>
       <tierfive>
-        <tiername>
-          Stop the Getaway!
-        </tiername>
-        <crimeeffect>
-          Countdown gains 5 counts, but still continues to countdown. Each category +2 each turn.
-        </crimeeffect>
-        <tierstory>
-          Veers and what's left of his men have piled into a car, and are tring to escape with what money they were able to grab, wreaking havoc through the city as they tear through it. It's going to take all of your skills and experience to successfully catch them, and bring them in.
-        </tierstory>
-
-
-        <crimeeffectmethod>
-          ChangeCityCrimes:2
-        </crimeeffectmethod>
-
-        <tierfivestorydescription>
-          Veers and what's left of his men have piled into a car, and are tring to escape with what money they were able to grab, wreaking havoc through the city as they tear through it. It's going to take all of your skills and experience to successfully catch them, and bring them in.
-        </tierfivestorydescription>
-        <choicefinal>
-          Catch Veers:30 points total from the stat pools.: Players win.
-        </choicefinal>
-        <choicefinalresult>
-          You did it! Veers and his men weren't asble to withstand the heat you were laying down on him, eventually crashing as they tried to make their escape. Now though, they'll never be able to get away, Ricky is going to be put away for a long time, and the streets will be better for it.
-        </choicefinalresult>
-
-
-        <choicefinalstorydescription>
-          You did it! Veers and his men weren't asble to withstand the heat you were laying down on him, eventually crashing as they tried to make their escape. Now though, they'll never be able to get away, Ricky is going to be put away for a long time, and the streets will be better for it.
-        </choicefinalstorydescription>
+        <tiername>Stop the Getaway!</tiername>
+        <crimeeffect>Countdown gains 5 counts, but still continues to countdown. Each category +2 each turn.</crimeeffect>
+        <tierstory>Veers and what's left of his men have piled into a car, and are tring to escape with what money they were able to grab, wreaking havoc through the city as they tear through it. It's going to take all of your skills and experience to successfully catch them, and bring them in.</tierstory>
+        <crimeeffectmethod>ChangeCityCrimes:2</crimeeffectmethod>
+        <choicefinal>Catch Veers:30 points total from the stat pools.: Players win.</choicefinal>
+        <choicefinalresult>You did it! Veers and his men weren't asble to withstand the heat you were laying down on him, eventually crashing as they tried to make their escape. Now though, they'll never be able to get away, Ricky is going to be put away for a long time, and the streets will be better for it.</choicefinalresult>
       </tierfive>
     </majorcrime>
     <majorcrime>

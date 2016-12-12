@@ -122,7 +122,7 @@ namespace Assets.Scripts
             cityMafiaPres.text = GameLibrary.instance.Neighborhoods[Neighborhood.Overall].MafiaPresence.ToString();
 
             // store and get the # of situations open & resolved
-            sitOpen.text = GameLibrary.instance.SituationList.Count.ToString();
+            sitOpen.text = StatTracker.ResolvedSituations.ToString();
             sitResolved.text = StatTracker.ResolvedSituations.ToString();
 
             // TODO: store and get the status of each neighborhood, dependent on their stats

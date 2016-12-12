@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour {
     public GameObject useSpecialActionWindow;
     public GameObject lowerCrimeWindow;
     public GameObject chiefsOrdersWindow;
+    public GameObject fightMajorCrimeWindow;
 
     public Image bubble1;
     public Image bubble2;
@@ -62,7 +63,8 @@ public class UIManager : MonoBehaviour {
         modalWindows.Add(changeNeighborhoodWindow);
         modalWindows.Add(useSpecialActionWindow);
         modalWindows.Add(lowerCrimeWindow);
-        modalWindows.Add(chiefsOrdersWindow);
+		modalWindows.Add(fightMajorCrimeWindow);
+		modalWindows.Add(chiefsOrdersWindow);
     }
 
     public void UpdateUI()
@@ -164,6 +166,13 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    public void ResolveTier(int level)
+    {
+        fightMajorCrimeWindow.SetActive(true);
+        fightMajorCrimeWindow.transform.SetAsLastSibling();
+        fightMajorCrimeWindow.GetComponent<FightMajorCrimeCard>().LoadCard(level);
+    }
+
     public void CloseWindows()
     {
         // set all popup windows to inactive
@@ -177,6 +186,15 @@ public class UIManager : MonoBehaviour {
     {
         neighborhoodManager.ChangeNeighborhood(changeNeighborhoodWindow.GetComponent<NewNeighborhoodCard>().CurrentNeighborhood);
         CloseWindows();
+    }
+
+    public void ChangeMajorCrimeCommit(Vector3 change)
+    {
+		CloseWindows();
+        situationManager.ReduceCrime(GameManager.Instance.CurrentCrimeTier, change);
+		situationManager.UpdateMajorCrimeDisplay ();
+		situationManager.CloseDrawer ();
+        UpdateUI();
     }
 
     public void ReduceSituation(float i)
@@ -237,13 +255,6 @@ public class UIManager : MonoBehaviour {
     }
 
     public void TriggerChiefsOrder(List<string> list)
-    {
-        chiefsOrdersWindow.SetActive(true);
-        chiefsOrdersWindow.transform.SetAsLastSibling();
-        chiefsOrdersManager.Load(list);
-    }
-
-    public void TriggerMajorCrimeResult(List<string> list)
     {
         chiefsOrdersWindow.SetActive(true);
         chiefsOrdersWindow.transform.SetAsLastSibling();

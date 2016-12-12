@@ -166,7 +166,7 @@ public class CardActions
         // for each player in the game library, modify all stat pools by amt
         foreach (KeyValuePair<Players, PlayerScript> player in GameLibrary.instance.Players)
         {
-            player.Value.Muscle += amt;
+            player.Value.Smarts += amt;
             player.Value.Moxie += amt;
             player.Value.Muscle += amt;
         }
